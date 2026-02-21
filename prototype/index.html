@@ -244,6 +244,42 @@
         border-color: #ff2d95;
         box-shadow: 0 0 12px #ff2d9544;
       }
+      .bumpers-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        flex-shrink: 0;
+        user-select: none;
+      }
+      .bumpers-checkbox:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+      .bumpers-checkbox input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: #00e5ff;
+        margin: 0;
+      }
+      .bumpers-checkbox label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .bumpers-checkbox input[type="checkbox"]:checked + label {
+        color: #00e5ff;
+      }
       .remove-player-btn {
         width: 32px;
         height: 32px;
@@ -595,6 +631,7 @@
       <button
         class="btn btn-pink"
         onclick="
+          playSound('click', 800, 100);
           showScreen('player-screen');
           buildPlayerSlots();
         "
@@ -615,7 +652,7 @@
           <button
             class="btn btn-cyan btn-small"
             id="add-player-btn"
-            onclick="addPlayerSlot()"
+            onclick="playSound('click', 700, 80); addPlayerSlot()"
           >
             + ADD PLAYER
           </button>
@@ -640,7 +677,7 @@
         <button
           class="btn btn-pink"
           id="start-singing-btn"
-          onclick="beginCountdown()"
+          onclick="playSound('click', 900, 100); beginCountdown()"
         >
           🎤 START SINGING
         </button>
@@ -705,7 +742,7 @@
 
       <div class="breakdown-container" id="breakdown-container"></div>
 
-      <button class="btn btn-pink" onclick="playAgain()">PLAY AGAIN</button>
+      <button class="btn btn-pink" onclick="playSound('click', 800, 100); playAgain()">PLAY AGAIN</button>
     </div>
 
     <script>
@@ -726,10 +763,50 @@
       const MAX_PLAYERS = 8;
 
       // ══════════════════════════════════════════
+      //  BUMPERS SYSTEM CONSTANTS (like bowling!)
+      // ══════════════════════════════════════════
+      const BUMPERS_MULTIPLIER = 1.3;  // 30% score boost with bumpers on
+
+      // ══════════════════════════════════════════
+      //  SOUND EFFECTS
+      // ══════════════════════════════════════════
+      const SOUNDS = {
+        click: new Audio('data:audio/wav;base64,UklGRhYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAD//wAA'),
+        countdown: new Audio('data:audio/wav;base64,UklGRhYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAD//wAA'),
+        start: new Audio('data:audio/wav;base64,UklGRhYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAD//wAA'),
+        stop: new Audio('data:audio/wav;base64,UklGRhYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAD//wAA'),
+        applause: new Audio('data:audio/wav;base64,UklGRhYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAD//wAA'),
+      };
+
+      // Simple beep generator
+      function playSound(type, frequency = 800, duration = 100) {
+        try {
+          if (!audioCtx) return;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          
+          osc.frequency.value = frequency;
+          osc.type = 'sine';
+          
+          gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration / 1000);
+          
+          osc.start(audioCtx.currentTime);
+          osc.stop(audioCtx.currentTime + duration / 1000);
+        } catch (e) {
+          console.log('Sound playback failed:', e);
+        }
+      }
+
+      // ══════════════════════════════════════════
       //  STATE
       // ══════════════════════════════════════════
       let playerCount = 2;
       let players = [];
+      let playerBumpers = []; // stores whether bumpers are on for each player
       let currentPlayer = 0;
       let scores = [];
       let audioCtx, analyser, micStream, dataArray, freqArray;
@@ -827,9 +904,14 @@
         row.className = "player-row";
         row.dataset.index = index;
         const color = PLAYER_COLORS[index % PLAYER_COLORS.length];
+        const checkboxId = `bumpers-${index}`;
         row.innerHTML = `
     <span class="player-num" style="color:${color.hex}">${index + 1}</span>
     <input type="text" placeholder="Player ${index + 1}..." maxlength="16" autocomplete="off" class="p-name-input">
+    <div class="bumpers-checkbox">
+      <input type="checkbox" id="${checkboxId}" class="bumpers-input">
+      <label for="${checkboxId}">Bumpers</label>
+    </div>
     <button class="remove-player-btn" onclick="removePlayerSlot(this)" title="Remove">&times;</button>
   `;
         container.appendChild(row);
@@ -837,6 +919,7 @@
 
       function removePlayerSlot(btn) {
         if (playerCount <= MIN_PLAYERS) return;
+        playSound('click', 500, 80);
         btn.closest(".player-row").remove();
         playerCount--;
         // Re-index
@@ -870,12 +953,16 @@
       // ══════════════════════════════════════════
       function startGame() {
         const inputs = document.querySelectorAll("#player-slots .p-name-input");
+        const bumpersCheckboxes = document.querySelectorAll("#player-slots .bumpers-input");
         players = [];
+        playerBumpers = [];
         inputs.forEach((inp, i) => {
           players.push(inp.value.trim() || `Player ${i + 1}`);
+          playerBumpers.push(bumpersCheckboxes[i].checked);
         });
         scores = new Array(players.length).fill(null);
         currentPlayer = 0;
+        playSound('click', 600, 80);
         prepTurn();
       }
 
@@ -937,12 +1024,14 @@
           numEl.style.animation = "none";
           void numEl.offsetWidth; // reflow
           numEl.style.animation = "count-pop 0.6s ease-out";
+          playSound('countdown', 600 + (i * 100), 150);
           await sleep(900);
         }
         numEl.textContent = "🎤";
         numEl.style.animation = "none";
         void numEl.offsetWidth;
         numEl.style.animation = "count-pop 0.6s ease-out";
+        playSound('start', 1200, 200);
         await sleep(600);
         overlay.classList.remove("active");
 
@@ -1192,6 +1281,8 @@
         isListening = false;
         if (animFrameId) cancelAnimationFrame(animFrameId);
 
+        playSound('stop', 400, 150);
+
         const elapsed = (performance.now() - turnStart) / 1000;
 
         // Compute sub-scores (0-100 each)
@@ -1210,12 +1301,18 @@
         );
 
         // Weighted total
-        const total = Math.round(
+        let total = Math.round(
           energyScore * 0.4 +
             pitchScore * 0.3 +
             sustainScore * 0.2 +
             durationScore * 0.1,
         );
+
+        // Apply bumpers multiplier
+        const hasBumpers = playerBumpers[currentPlayer];
+        if (hasBumpers) {
+          total = Math.round(total * BUMPERS_MULTIPLIER);
+        }
 
         scores[currentPlayer] = {
           total: Math.min(100, Math.max(0, total)),
@@ -1224,6 +1321,7 @@
           sustain: Math.round(sustainScore),
           duration: Math.round(durationScore),
           time: elapsed,
+          bumpers: hasBumpers,
         };
 
         currentPlayer++;
@@ -1241,6 +1339,8 @@
       // ══════════════════════════════════════════
       function showResults() {
         showScreen("results-screen");
+
+        playSound('applause', 800, 400);
 
         // Rank players by score descending
         const ranked = players.map((name, i) => ({
@@ -1271,9 +1371,10 @@
           card.className = cls;
           const medal = rank < 3 ? medals[rank] : "🎤";
           const color = getPlayerColor(p.i);
+          const bumpersLabel = p.score.bumpers ? ' <span style="font-size:0.75rem;opacity:0.5">🎳</span>' : '';
           card.innerHTML = `
       <div class="crown">${medal}</div>
-      <div class="player-name-result ${color.name}">${p.name}</div>
+      <div class="player-name-result ${color.name}">${p.name}${bumpersLabel}</div>
       <div class="player-label">#${rank + 1}</div>
       <div class="score-big ${rank === 0 ? "neon-gold" : ""}" id="score-anim-${p.i}">0</div>
       <div class="score-suffix">/ 100</div>
