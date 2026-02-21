@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karaoke Hero</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: #0a0a1a;
+        color: #fff;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .screen {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .screen.active {
+        display: flex;
+      }
+
+      /* ── Backgrounds ── */
+      .bg-gradient {
+        background: radial-gradient(ellipse at 50% 0%, #2d1b69 0%, #0a0a1a 70%);
+      }
+      .bg-gradient::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 0, 128, 0.12) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 200, 255, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      /* ── Neon text ── */
+      .neon {
+        font-family: "Bangers", cursive;
+        letter-spacing: 4px;
+      }
+      .neon-pink {
+        color: #ff2d95;
+        text-shadow:
+          0 0 10px #ff2d95,
+          0 0 40px #ff2d9588,
+          0 0 80px #ff2d9544;
+      }
+      .neon-cyan {
+        color: #00e5ff;
+        text-shadow:
+          0 0 10px #00e5ff,
+          0 0 40px #00e5ff88,
+          0 0 80px #00e5ff44;
+      }
+      .neon-gold {
+        color: #ffd700;
+        text-shadow:
+          0 0 10px #ffd700,
+          0 0 40px #ffd70088,
+          0 0 80px #ffd70044;
+      }
+      .neon-green {
+        color: #39ff14;
+        text-shadow:
+          0 0 10px #39ff14,
+          0 0 40px #39ff1488,
+          0 0 80px #39ff1444;
+      }
+
+      /* ── Buttons ── */
+      .btn {
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        font-size: 1.2rem;
+        padding: 16px 48px;
+        border: none;
+        border-radius: 60px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        position: relative;
+        z-index: 1;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+      }
+      .btn:active {
+        transform: scale(0.97);
+      }
+
+      .btn-pink {
+        background: linear-gradient(135deg, #ff2d95, #ff6ec7);
+        color: #fff;
+        box-shadow:
+          0 0 20px #ff2d9566,
+          0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-cyan {
+        background: linear-gradient(135deg, #00e5ff, #00b8d4);
+        color: #0a0a1a;
+        box-shadow:
+          0 0 20px #00e5ff66,
+          0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, #ffd700, #ffaa00);
+        color: #0a0a1a;
+        box-shadow:
+          0 0 20px #ffd70066,
+          0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-red {
+        background: linear-gradient(135deg, #ff3b3b, #ff6b6b);
+        color: #fff;
+        box-shadow:
+          0 0 20px #ff3b3b66,
+          0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-small {
+        font-size: 0.85rem;
+        padding: 8px 20px;
+      }
+
+      /* ── Title Screen ── */
+      #title-screen .title {
+        font-size: clamp(3rem, 10vw, 7rem);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      #title-screen .subtitle {
+        font-size: 1.3rem;
+        opacity: 0.7;
+        margin-bottom: 48px;
+        letter-spacing: 3px;
+      }
+      .mic-icon {
+        font-size: 5rem;
+        margin-bottom: 24px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+      }
+
+      /* ── Player Entry ── */
+      #player-screen {
+        overflow-y: auto;
+        padding: 40px 20px;
+      }
+      #player-screen .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        width: 100%;
+        max-width: 420px;
+      }
+      .player-slots {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .player-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        animation: slide-in 0.25s ease-out;
+      }
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .player-row .player-num {
+        font-family: "Bangers", cursive;
+        font-size: 1.1rem;
+        width: 28px;
+        text-align: center;
+        flex-shrink: 0;
+        letter-spacing: 1px;
+      }
+      .player-row input {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 10px 16px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        text-align: center;
+        flex: 1;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .player-row input:focus {
+        border-color: #ff2d95;
+        box-shadow: 0 0 12px #ff2d9544;
+      }
+      .remove-player-btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 60, 60, 0.15);
+        color: #ff6b6b;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.15s,
+          transform 0.15s;
+        flex-shrink: 0;
+      }
+      .remove-player-btn:hover {
+        background: rgba(255, 60, 60, 0.35);
+        transform: scale(1.1);
+      }
+      .player-count-label {
+        font-size: 0.8rem;
+        opacity: 0.4;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+
+      /* ── Sing Screen ── */
+      #sing-screen {
+        padding: 40px;
+      }
+      .singer-name {
+        font-size: clamp(2rem, 6vw, 4rem);
+        margin-bottom: 8px;
+      }
+      .turn-label {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        opacity: 0.6;
+        margin-bottom: 32px;
+      }
+      #visualizer-container {
+        width: min(600px, 85vw);
+        height: 160px;
+        margin-bottom: 16px;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      #visualizer {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ── Feedback toast ── */
+      #feedback-toast {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      #feedback-text {
+        font-family: "Bangers", cursive;
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+        white-space: nowrap;
+      }
+      #feedback-text.pop {
+        animation: feedback-pop 0.4s ease-out;
+      }
+      @keyframes feedback-pop {
+        0% {
+          transform: scale(1.4);
+          opacity: 0.6;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      #energy-bar-container {
+        width: min(500px, 75vw);
+        height: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 99px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+      #energy-bar {
+        height: 100%;
+        width: 0%;
+        border-radius: 99px;
+        background: linear-gradient(90deg, #ff2d95, #ff6ec7, #ffd700);
+        transition: width 0.1s;
+      }
+      .stats-row {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 24px;
+      }
+      .stat-box {
+        text-align: center;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.5;
+        margin-bottom: 4px;
+      }
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .sing-instructions {
+        font-size: 0.9rem;
+        opacity: 0.4;
+        margin-top: 12px;
+      }
+
+      /* ready overlay */
+      #ready-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(10, 10, 26, 0.92);
+        z-index: 10;
+      }
+      #ready-overlay .ready-name {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        margin-bottom: 12px;
+      }
+      #ready-overlay .ready-sub {
+        font-size: 1.1rem;
+        opacity: 0.6;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+      }
+      #ready-overlay .ready-turn-info {
+        font-size: 0.85rem;
+        opacity: 0.35;
+        margin-bottom: 32px;
+        letter-spacing: 2px;
+      }
+
+      /* ── Results Screen ── */
+      #results-screen {
+        gap: 16px;
+        overflow-y: auto;
+        padding: 32px 20px;
+      }
+      .results-title {
+        font-size: clamp(2rem, 6vw, 4rem);
+        margin-bottom: 0;
+      }
+      .results-subtitle {
+        font-size: 1rem;
+        opacity: 0.5;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+      .winner-banner {
+        font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+        margin-bottom: 20px;
+        animation: glow-pulse 1.5s ease-in-out infinite alternate;
+      }
+      @keyframes glow-pulse {
+        from {
+          text-shadow:
+            0 0 10px #ffd700,
+            0 0 40px #ffd70066;
+        }
+        to {
+          text-shadow:
+            0 0 20px #ffd700,
+            0 0 60px #ffd70088,
+            0 0 100px #ffd70044;
+        }
+      }
+      .scores-container {
+        display: flex;
+        gap: 16px;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        max-width: 900px;
+      }
+      .score-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 24px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        min-width: 130px;
+        transition:
+          transform 0.4s,
+          box-shadow 0.4s;
+      }
+      .score-card.winner {
+        transform: scale(1.08);
+        border-color: #ffd700;
+        box-shadow: 0 0 40px #ffd70033;
+      }
+      .score-card.second {
+        border-color: #c0c0c0;
+        box-shadow: 0 0 20px #c0c0c022;
+      }
+      .score-card.third {
+        border-color: #cd7f32;
+        box-shadow: 0 0 20px #cd7f3222;
+      }
+      .score-card .crown {
+        font-size: 2rem;
+        margin-bottom: 4px;
+      }
+      .score-card .player-name-result {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 2px;
+      }
+      .score-card .player-label {
+        font-size: 0.7rem;
+        opacity: 0.4;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+      }
+      .score-card .score-big {
+        font-family: "Bangers", cursive;
+        font-size: 3rem;
+        line-height: 1;
+      }
+      .score-card .score-suffix {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+
+      .breakdown-container {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 24px;
+        max-width: 900px;
+      }
+      .breakdown {
+        text-align: center;
+        padding: 12px 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        min-width: 140px;
+      }
+      .breakdown h4 {
+        font-size: 0.8rem;
+        opacity: 0.5;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+      }
+      .breakdown-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        padding: 3px 0;
+        opacity: 0.7;
+      }
+      .breakdown-row span:last-child {
+        font-weight: 800;
+        opacity: 1;
+      }
+
+      /* ── Confetti ── */
+      .confetti-piece {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        top: -20px;
+        z-index: 100;
+        opacity: 0;
+        animation: confetti-fall linear forwards;
+      }
+      @keyframes confetti-fall {
+        0% {
+          opacity: 1;
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(110vh) rotate(720deg);
+        }
+      }
+
+      /* ── Countdown overlay ── */
+      #countdown-overlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(10, 10, 26, 0.85);
+        z-index: 50;
+      }
+      #countdown-overlay.active {
+        display: flex;
+      }
+      #countdown-number {
+        font-family: "Bangers", cursive;
+        font-size: 12rem;
+        animation: count-pop 0.6s ease-out;
+      }
+      @keyframes count-pop {
+        0% {
+          transform: scale(2);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(0.9);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ════════════ TITLE SCREEN ════════════ -->
+    <div id="title-screen" class="screen bg-gradient active">
+      <div class="mic-icon">🎤</div>
+      <h1 class="neon neon-pink title">KARAOKE HERO</h1>
+      <p class="subtitle">BATTLE FOR GLORY</p>
+      <button
+        class="btn btn-pink"
+        onclick="
+          showScreen('player-screen');
+          buildPlayerSlots();
+        "
+      >
+        START GAME
+      </button>
+    </div>
+
+    <!-- ════════════ PLAYER ENTRY ════════════ -->
+    <div id="player-screen" class="screen bg-gradient">
+      <h2 class="neon neon-cyan" style="font-size: 2.2rem; margin-bottom: 24px">
+        ENTER THE ARENA
+      </h2>
+      <div class="form-container">
+        <p class="player-count-label" id="player-count-label">2 / 8 Players</p>
+        <div class="player-slots" id="player-slots"></div>
+        <div style="display: flex; gap: 12px; margin-bottom: 8px">
+          <button
+            class="btn btn-cyan btn-small"
+            id="add-player-btn"
+            onclick="addPlayerSlot()"
+          >
+            + ADD PLAYER
+          </button>
+        </div>
+        <button
+          class="btn btn-gold"
+          style="margin-top: 8px"
+          onclick="startGame()"
+        >
+          LET'S GO!
+        </button>
+      </div>
+    </div>
+
+    <!-- ════════════ SING SCREEN ════════════ -->
+    <div id="sing-screen" class="screen bg-gradient">
+      <!-- Ready overlay -->
+      <div id="ready-overlay">
+        <div id="ready-name" class="neon ready-name"></div>
+        <p class="ready-sub">GET READY TO SING!</p>
+        <p class="ready-turn-info" id="ready-turn-info"></p>
+        <button
+          class="btn btn-pink"
+          id="start-singing-btn"
+          onclick="beginCountdown()"
+        >
+          🎤 START SINGING
+        </button>
+      </div>
+
+      <p class="turn-label" id="turn-label">PLAYER 1'S TURN</p>
+      <h2 class="neon singer-name" id="singer-name"></h2>
+
+      <div id="visualizer-container">
+        <canvas id="visualizer"></canvas>
+      </div>
+
+      <div id="feedback-toast">
+        <div id="feedback-text"></div>
+      </div>
+
+      <div id="energy-bar-container">
+        <div id="energy-bar"></div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-label">Time</div>
+          <div class="stat-value neon-cyan" id="stat-time">0:00</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Energy</div>
+          <div class="stat-value neon-pink" id="stat-energy">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Pitch Hits</div>
+          <div class="stat-value neon-gold" id="stat-pitch">0</div>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-red"
+        id="stop-singing-btn"
+        onclick="stopSinging()"
+        style="display: none"
+      >
+        ⏹ STOP
+      </button>
+      <p class="sing-instructions" id="sing-instructions">
+        Hit the button when you're ready to sing!
+      </p>
+    </div>
+
+    <!-- ════════════ COUNTDOWN OVERLAY ════════════ -->
+    <div id="countdown-overlay">
+      <div id="countdown-number" class="neon neon-gold"></div>
+    </div>
+
+    <!-- ════════════ RESULTS SCREEN ════════════ -->
+    <div id="results-screen" class="screen bg-gradient">
+      <h2 class="neon neon-pink results-title">RESULTS</h2>
+      <p class="results-subtitle">THE MOMENT OF TRUTH</p>
+
+      <div class="winner-banner neon neon-gold" id="winner-banner"></div>
+
+      <div class="scores-container" id="scores-container"></div>
+
+      <div class="breakdown-container" id="breakdown-container"></div>
+
+      <button class="btn btn-pink" onclick="playAgain()">PLAY AGAIN</button>
+    </div>
+
+    <script>
+      // ══════════════════════════════════════════
+      //  PLAYER COLORS
+      // ══════════════════════════════════════════
+      const PLAYER_COLORS = [
+        { name: "neon-pink", hex: "#ff2d95" },
+        { name: "neon-cyan", hex: "#00e5ff" },
+        { name: "neon-gold", hex: "#ffd700" },
+        { name: "neon-green", hex: "#39ff14" },
+        { name: "neon-pink", hex: "#ff6ec7" },
+        { name: "neon-cyan", hex: "#00b8d4" },
+        { name: "neon-gold", hex: "#ffaa00" },
+        { name: "neon-green", hex: "#76ff03" },
+      ];
+      const MIN_PLAYERS = 2;
+      const MAX_PLAYERS = 8;
+
+      // ══════════════════════════════════════════
+      //  STATE
+      // ══════════════════════════════════════════
+      let playerCount = 2;
+      let players = [];
+      let currentPlayer = 0;
+      let scores = [];
+      let audioCtx, analyser, micStream, dataArray, freqArray;
+      let isListening = false;
+      let animFrameId = null;
+
+      // Per-turn accumulators
+      let turnStart = 0;
+      let frameCount = 0;
+      let totalRMS = 0;
+      let activeFrames = 0; // frames above noise floor
+      let pitchBuckets = new Set();
+      let lastPitchBucket = -1;
+      let pitchChanges = 0;
+
+      // Feedback state
+      let lastFeedbackTime = 0;
+      let quietStreak = 0;
+      let loudStreak = 0;
+
+      const NOISE_FLOOR = 0.02; // RMS threshold
+      const MAX_DURATION_BONUS = 60; // seconds cap
+      const FEEDBACK_COOLDOWN = 1800; // ms between feedback changes
+
+      // ══════════════════════════════════════════
+      //  FEEDBACK MESSAGES
+      // ══════════════════════════════════════════
+      const QUIET_MSGS = [
+        "C'MON, LET IT OUT!",
+        "WE CAN'T HEAR YOU!",
+        "LOUDER! LOUDER!",
+        "DON'T BE SHY!",
+        "GIVE IT SOME POWER!",
+        "TURN IT UP!",
+        "BELT IT OUT!",
+        "YOU GOT THIS, LOUDER!",
+        "WAKE UP THAT VOICE!",
+        "UNLEASH THE BEAST!",
+      ];
+      const MEDIUM_MSGS = [
+        "KEEP GOING!",
+        "NICE, NICE!",
+        "NOT BAD!",
+        "WARMING UP!",
+        "GETTING THERE!",
+        "THAT'S THE SPIRIT!",
+        "FEELING IT!",
+      ];
+      const LOUD_MSGS = [
+        "AMAZING!",
+        "YESSS!",
+        "ON FIRE!",
+        "INCREDIBLE!",
+        "SUPERSTAR!",
+        "CROWD GOES WILD!",
+        "LEGENDARY!",
+        "UNSTOPPABLE!",
+        "ABSOLUTE BANGER!",
+        "WHAT A VOICE!",
+        "SLAY!",
+        "ICONIC!",
+      ];
+
+      // ══════════════════════════════════════════
+      //  SCREEN MANAGEMENT
+      // ══════════════════════════════════════════
+      function showScreen(id) {
+        document
+          .querySelectorAll(".screen")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+      }
+
+      // ══════════════════════════════════════════
+      //  PLAYER SLOTS (dynamic 2-8)
+      // ══════════════════════════════════════════
+      function buildPlayerSlots() {
+        playerCount = 2;
+        const container = document.getElementById("player-slots");
+        container.innerHTML = "";
+        for (let i = 0; i < 2; i++) addSlotDOM(i);
+        updatePlayerUI();
+      }
+
+      function addPlayerSlot() {
+        if (playerCount >= MAX_PLAYERS) return;
+        addSlotDOM(playerCount);
+        playerCount++;
+        updatePlayerUI();
+      }
+
+      function addSlotDOM(index) {
+        const container = document.getElementById("player-slots");
+        const row = document.createElement("div");
+        row.className = "player-row";
+        row.dataset.index = index;
+        const color = PLAYER_COLORS[index % PLAYER_COLORS.length];
+        row.innerHTML = `
+    <span class="player-num" style="color:${color.hex}">${index + 1}</span>
+    <input type="text" placeholder="Player ${index + 1}..." maxlength="16" autocomplete="off" class="p-name-input">
+    <button class="remove-player-btn" onclick="removePlayerSlot(this)" title="Remove">&times;</button>
+  `;
+        container.appendChild(row);
+      }
+
+      function removePlayerSlot(btn) {
+        if (playerCount <= MIN_PLAYERS) return;
+        btn.closest(".player-row").remove();
+        playerCount--;
+        // Re-index
+        const rows = document.querySelectorAll("#player-slots .player-row");
+        rows.forEach((row, i) => {
+          row.dataset.index = i;
+          const color = PLAYER_COLORS[i % PLAYER_COLORS.length];
+          row.querySelector(".player-num").textContent = i + 1;
+          row.querySelector(".player-num").style.color = color.hex;
+          row.querySelector("input").placeholder = `Player ${i + 1}...`;
+        });
+        updatePlayerUI();
+      }
+
+      function updatePlayerUI() {
+        document.getElementById("player-count-label").textContent =
+          `${playerCount} / ${MAX_PLAYERS} Players`;
+        document.getElementById("add-player-btn").style.opacity =
+          playerCount >= MAX_PLAYERS ? "0.3" : "1";
+        document.getElementById("add-player-btn").style.pointerEvents =
+          playerCount >= MAX_PLAYERS ? "none" : "auto";
+        // Hide remove buttons if at minimum
+        document.querySelectorAll(".remove-player-btn").forEach((btn) => {
+          btn.style.visibility =
+            playerCount <= MIN_PLAYERS ? "hidden" : "visible";
+        });
+      }
+
+      // ══════════════════════════════════════════
+      //  START GAME
+      // ══════════════════════════════════════════
+      function startGame() {
+        const inputs = document.querySelectorAll("#player-slots .p-name-input");
+        players = [];
+        inputs.forEach((inp, i) => {
+          players.push(inp.value.trim() || `Player ${i + 1}`);
+        });
+        scores = new Array(players.length).fill(null);
+        currentPlayer = 0;
+        prepTurn();
+      }
+
+      function getPlayerColor(idx) {
+        return PLAYER_COLORS[idx % PLAYER_COLORS.length];
+      }
+
+      function prepTurn() {
+        showScreen("sing-screen");
+        const overlay = document.getElementById("ready-overlay");
+        const nameEl = document.getElementById("ready-name");
+        overlay.style.display = "flex";
+        nameEl.textContent = players[currentPlayer];
+        const color = getPlayerColor(currentPlayer);
+        nameEl.className = "neon ready-name " + color.name;
+
+        document.getElementById("ready-turn-info").textContent =
+          `Singer ${currentPlayer + 1} of ${players.length}`;
+
+        document.getElementById("singer-name").textContent =
+          players[currentPlayer];
+        document.getElementById("singer-name").className =
+          "neon singer-name " + color.name;
+        document.getElementById("turn-label").textContent =
+          `SINGER ${currentPlayer + 1} OF ${players.length}`;
+
+        document.getElementById("stop-singing-btn").style.display = "none";
+        document.getElementById("sing-instructions").textContent =
+          "Hit the button when you're ready to sing!";
+        document.getElementById("stat-time").textContent = "0:00";
+        document.getElementById("stat-energy").textContent = "0";
+        document.getElementById("stat-pitch").textContent = "0";
+        document.getElementById("energy-bar").style.width = "0%";
+        document.getElementById("feedback-text").textContent = "";
+
+        // Clear canvas
+        const canvas = document.getElementById("visualizer");
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // ══════════════════════════════════════════
+      //  COUNTDOWN → LISTEN
+      // ══════════════════════════════════════════
+      async function beginCountdown() {
+        // Hide ready overlay
+        document.getElementById("ready-overlay").style.display = "none";
+
+        // Ensure mic is ready
+        await initAudio();
+
+        // 3-2-1 countdown
+        const overlay = document.getElementById("countdown-overlay");
+        const numEl = document.getElementById("countdown-number");
+        overlay.classList.add("active");
+
+        for (let i = 3; i >= 1; i--) {
+          numEl.textContent = i;
+          numEl.style.animation = "none";
+          void numEl.offsetWidth; // reflow
+          numEl.style.animation = "count-pop 0.6s ease-out";
+          await sleep(900);
+        }
+        numEl.textContent = "🎤";
+        numEl.style.animation = "none";
+        void numEl.offsetWidth;
+        numEl.style.animation = "count-pop 0.6s ease-out";
+        await sleep(600);
+        overlay.classList.remove("active");
+
+        startListening();
+      }
+
+      function sleep(ms) {
+        return new Promise((r) => setTimeout(r, ms));
+      }
+
+      // ══════════════════════════════════════════
+      //  AUDIO INIT
+      // ══════════════════════════════════════════
+      async function initAudio() {
+        if (audioCtx && micStream) return; // already init
+        try {
+          micStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+          });
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const source = audioCtx.createMediaStreamSource(micStream);
+          analyser = audioCtx.createAnalyser();
+          analyser.fftSize = 2048;
+          analyser.smoothingTimeConstant = 0.8;
+          source.connect(analyser);
+          dataArray = new Uint8Array(analyser.fftSize);
+          freqArray = new Uint8Array(analyser.frequencyBinCount);
+        } catch (err) {
+          alert(
+            "Microphone access is required for Karaoke Hero! Please allow mic access and try again.",
+          );
+          throw err;
+        }
+      }
+
+      // ══════════════════════════════════════════
+      //  LISTENING / ANALYSIS LOOP
+      // ══════════════════════════════════════════
+      function startListening() {
+        isListening = true;
+        turnStart = performance.now();
+        frameCount = 0;
+        totalRMS = 0;
+        activeFrames = 0;
+        pitchBuckets = new Set();
+        lastPitchBucket = -1;
+        pitchChanges = 0;
+        quietStreak = 0;
+        loudStreak = 0;
+        lastFeedbackTime = 0;
+
+        document.getElementById("stop-singing-btn").style.display = "";
+        document.getElementById("sing-instructions").textContent =
+          "SING YOUR HEART OUT! Hit STOP when done.";
+
+        const canvas = document.getElementById("visualizer");
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+
+        tick();
+      }
+
+      function tick() {
+        if (!isListening) return;
+        animFrameId = requestAnimationFrame(tick);
+
+        analyser.getByteTimeDomainData(dataArray);
+        analyser.getByteFrequencyData(freqArray);
+
+        // RMS
+        let sum = 0;
+        for (let i = 0; i < dataArray.length; i++) {
+          const v = (dataArray[i] - 128) / 128;
+          sum += v * v;
+        }
+        const rms = Math.sqrt(sum / dataArray.length);
+        frameCount++;
+        totalRMS += rms;
+        if (rms > NOISE_FLOOR) activeFrames++;
+
+        // Pitch estimation (autocorrelation)
+        const pitch = detectPitch(dataArray, audioCtx.sampleRate);
+        if (pitch > 0) {
+          const bucket = Math.round(12 * Math.log2(pitch / 440)); // semitone bucket
+          pitchBuckets.add(bucket);
+          if (lastPitchBucket !== -1 && bucket !== lastPitchBucket) {
+            pitchChanges++;
+          }
+          lastPitchBucket = bucket;
+        }
+
+        // UI updates
+        const elapsed = (performance.now() - turnStart) / 1000;
+        const mins = Math.floor(elapsed / 60);
+        const secs = Math.floor(elapsed % 60);
+        document.getElementById("stat-time").textContent =
+          `${mins}:${secs.toString().padStart(2, "0")}`;
+
+        const energyPct = Math.min(100, Math.round(rms * 400));
+        document.getElementById("energy-bar").style.width = energyPct + "%";
+        document.getElementById("stat-energy").textContent = Math.round(
+          (totalRMS / frameCount) * 300,
+        );
+        document.getElementById("stat-pitch").textContent = pitchBuckets.size;
+
+        // ── Live Feedback ──
+        updateFeedback(rms, elapsed);
+
+        drawVisualizer(rms);
+      }
+
+      // ══════════════════════════════════════════
+      //  LIVE FEEDBACK
+      // ══════════════════════════════════════════
+      function updateFeedback(rms, elapsed) {
+        if (elapsed < 1.5) return; // give them a moment to start
+
+        const now = performance.now();
+        if (now - lastFeedbackTime < FEEDBACK_COOLDOWN) return;
+
+        const feedbackEl = document.getElementById("feedback-text");
+        let msg = "";
+        let colorClass = "";
+
+        if (rms < NOISE_FLOOR * 1.5) {
+          // Very quiet
+          quietStreak++;
+          loudStreak = 0;
+          if (quietStreak >= 3) {
+            msg = pick(QUIET_MSGS);
+            colorClass = "neon-pink";
+          }
+        } else if (rms > 0.08) {
+          // Loud — great job!
+          loudStreak++;
+          quietStreak = 0;
+          if (loudStreak >= 2) {
+            msg = pick(LOUD_MSGS);
+            colorClass = "neon-gold";
+          }
+        } else {
+          // Medium
+          quietStreak = 0;
+          loudStreak = 0;
+          if (Math.random() < 0.3) {
+            msg = pick(MEDIUM_MSGS);
+            colorClass = "neon-cyan";
+          }
+        }
+
+        if (msg) {
+          feedbackEl.textContent = msg;
+          feedbackEl.className = colorClass;
+          // trigger pop animation
+          feedbackEl.classList.remove("pop");
+          void feedbackEl.offsetWidth;
+          feedbackEl.classList.add("pop");
+          lastFeedbackTime = now;
+        }
+      }
+
+      function pick(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function drawVisualizer(rms) {
+        const canvas = document.getElementById("visualizer");
+        const ctx = canvas.getContext("2d");
+        const W = canvas.width;
+        const H = canvas.height;
+
+        ctx.clearRect(0, 0, W, H);
+
+        const barCount = 64;
+        const barW = W / barCount;
+        const step = Math.floor(freqArray.length / barCount);
+
+        for (let i = 0; i < barCount; i++) {
+          const val = freqArray[i * step] / 255;
+          const barH = val * H * 0.9;
+
+          const hue = 300 + (i / barCount) * 60; // pink → purple
+          const alpha = 0.4 + val * 0.6;
+          ctx.fillStyle = `hsla(${hue}, 100%, 60%, ${alpha})`;
+
+          const x = i * barW;
+          const radius = barW * 0.3;
+          roundedRect(ctx, x + 1, H - barH, barW - 2, barH, radius);
+        }
+      }
+
+      function roundedRect(ctx, x, y, w, h, r) {
+        if (h < 1) return;
+        r = Math.min(r, h / 2, w / 2);
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h);
+        ctx.lineTo(x, y + h);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+        ctx.fill();
+      }
+
+      // Simple autocorrelation pitch detector
+      function detectPitch(buf, sampleRate) {
+        const SIZE = buf.length;
+        const signal = new Float32Array(SIZE);
+        let maxVal = 0;
+        for (let i = 0; i < SIZE; i++) {
+          signal[i] = (buf[i] - 128) / 128;
+          if (Math.abs(signal[i]) > maxVal) maxVal = Math.abs(signal[i]);
+        }
+        if (maxVal < NOISE_FLOOR) return -1;
+
+        // Autocorrelation
+        const corr = new Float32Array(SIZE);
+        for (let lag = 0; lag < SIZE; lag++) {
+          let sum = 0;
+          for (let i = 0; i < SIZE - lag; i++) {
+            sum += signal[i] * signal[i + lag];
+          }
+          corr[lag] = sum;
+        }
+
+        // Find first dip then first peak
+        let d = 0;
+        while (d < SIZE / 2 && corr[d] > corr[d + 1]) d++;
+        let maxCorr = -1,
+          maxIdx = d;
+        for (let i = d; i < SIZE / 2; i++) {
+          if (corr[i] > maxCorr) {
+            maxCorr = corr[i];
+            maxIdx = i;
+          }
+        }
+
+        if (maxCorr < 0.01) return -1;
+        return sampleRate / maxIdx;
+      }
+
+      // ══════════════════════════════════════════
+      //  STOP & SCORE
+      // ══════════════════════════════════════════
+      function stopSinging() {
+        isListening = false;
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+
+        const elapsed = (performance.now() - turnStart) / 1000;
+
+        // Compute sub-scores (0-100 each)
+        const avgRMS = frameCount > 0 ? totalRMS / frameCount : 0;
+        const energyScore = Math.min(100, avgRMS * 500);
+
+        const pitchScore = Math.min(100, pitchBuckets.size * 5);
+
+        const sustainPct =
+          frameCount > 0 ? (activeFrames / frameCount) * 100 : 0;
+        const sustainScore = Math.min(100, sustainPct);
+
+        const durationScore = Math.min(
+          100,
+          (Math.min(elapsed, MAX_DURATION_BONUS) / MAX_DURATION_BONUS) * 100,
+        );
+
+        // Weighted total
+        const total = Math.round(
+          energyScore * 0.4 +
+            pitchScore * 0.3 +
+            sustainScore * 0.2 +
+            durationScore * 0.1,
+        );
+
+        scores[currentPlayer] = {
+          total: Math.min(100, Math.max(0, total)),
+          energy: Math.round(energyScore),
+          pitch: Math.round(pitchScore),
+          sustain: Math.round(sustainScore),
+          duration: Math.round(durationScore),
+          time: elapsed,
+        };
+
+        currentPlayer++;
+        if (currentPlayer < players.length) {
+          // Next player
+          setTimeout(() => prepTurn(), 600);
+        } else {
+          // Show results
+          setTimeout(() => showResults(), 800);
+        }
+      }
+
+      // ══════════════════════════════════════════
+      //  RESULTS
+      // ══════════════════════════════════════════
+      function showResults() {
+        showScreen("results-screen");
+
+        // Rank players by score descending
+        const ranked = players.map((name, i) => ({
+          name,
+          i,
+          score: scores[i],
+        }));
+        ranked.sort((a, b) => b.score.total - a.score.total);
+
+        const topScore = ranked[0].score.total;
+        const isTie =
+          ranked.length > 1 && ranked[0].score.total === ranked[1].score.total;
+
+        document.getElementById("winner-banner").textContent = isTie
+          ? "IT'S A TIE AT THE TOP!"
+          : `👑 ${ranked[0].name} WINS! 👑`;
+
+        // Score cards
+        const container = document.getElementById("scores-container");
+        container.innerHTML = "";
+        const medals = ["👑", "🥈", "🥉"];
+        ranked.forEach((p, rank) => {
+          const card = document.createElement("div");
+          let cls = "score-card";
+          if (rank === 0) cls += " winner";
+          else if (rank === 1) cls += " second";
+          else if (rank === 2) cls += " third";
+          card.className = cls;
+          const medal = rank < 3 ? medals[rank] : "🎤";
+          const color = getPlayerColor(p.i);
+          card.innerHTML = `
+      <div class="crown">${medal}</div>
+      <div class="player-name-result ${color.name}">${p.name}</div>
+      <div class="player-label">#${rank + 1}</div>
+      <div class="score-big ${rank === 0 ? "neon-gold" : ""}" id="score-anim-${p.i}">0</div>
+      <div class="score-suffix">/ 100</div>
+    `;
+          container.appendChild(card);
+        });
+
+        // Breakdown
+        const bdContainer = document.getElementById("breakdown-container");
+        bdContainer.innerHTML = "";
+        ranked.forEach((p) => {
+          const s = p.score;
+          const bd = document.createElement("div");
+          bd.className = "breakdown";
+          bd.innerHTML = `
+      <h4>${p.name}</h4>
+      <div class="breakdown-row"><span>Energy</span><span>${s.energy}</span></div>
+      <div class="breakdown-row"><span>Pitch Range</span><span>${s.pitch}</span></div>
+      <div class="breakdown-row"><span>Sustain</span><span>${s.sustain}</span></div>
+      <div class="breakdown-row"><span>Duration</span><span>${s.duration}</span></div>
+      <div class="breakdown-row"><span>Time</span><span>${Math.round(s.time)}s</span></div>
+    `;
+          bdContainer.appendChild(bd);
+        });
+
+        // Animate score count-up for all players
+        ranked.forEach((p) => animateScore(p.i, p.score.total));
+
+        // Confetti
+        spawnConfetti();
+      }
+
+      function animateScore(idx, target) {
+        const el = document.getElementById(`score-anim-${idx}`);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 40));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(interval);
+          }
+          el.textContent = current;
+        }, 40);
+      }
+
+      function spawnConfetti() {
+        const colors = [
+          "#ff2d95",
+          "#00e5ff",
+          "#ffd700",
+          "#ff6ec7",
+          "#00b8d4",
+          "#ff3b3b",
+          "#a855f7",
+          "#39ff14",
+        ];
+        for (let i = 0; i < 100; i++) {
+          const piece = document.createElement("div");
+          piece.className = "confetti-piece";
+          piece.style.left = Math.random() * 100 + "vw";
+          piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          piece.style.width = 6 + Math.random() * 8 + "px";
+          piece.style.height = 6 + Math.random() * 8 + "px";
+          piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+          piece.style.animationDuration = 2 + Math.random() * 3 + "s";
+          piece.style.animationDelay = Math.random() * 1.5 + "s";
+          document.body.appendChild(piece);
+          setTimeout(() => piece.remove(), 6000);
+        }
+      }
+
+      // ══════════════════════════════════════════
+      //  PLAY AGAIN
+      // ══════════════════════════════════════════
+      function playAgain() {
+        currentPlayer = 0;
+        scores = [];
+        showScreen("title-screen");
+      }
+    </script>
+  </body>
+</html>
