@@ -1287,32 +1287,36 @@
 
         // Compute sub-scores (0-100 each)
         const avgRMS = frameCount > 0 ? totalRMS / frameCount : 0;
-        const energyScore = Math.min(100, avgRMS * 500);
+        let energyScore = Math.min(100, avgRMS * 500);
 
-        const pitchScore = Math.min(100, pitchBuckets.size * 5);
+        let pitchScore = Math.min(100, pitchBuckets.size * 5);
 
         const sustainPct =
           frameCount > 0 ? (activeFrames / frameCount) * 100 : 0;
-        const sustainScore = Math.min(100, sustainPct);
+        let sustainScore = Math.min(100, sustainPct);
 
-        const durationScore = Math.min(
+        let durationScore = Math.min(
           100,
           (Math.min(elapsed, MAX_DURATION_BONUS) / MAX_DURATION_BONUS) * 100,
         );
 
-        // Weighted total
-        let total = Math.round(
+        // Apply bumpers boost to component scores BEFORE weighting
+        // This ensures the boost works at all skill levels
+        const hasBumpers = playerBumpers[currentPlayer];
+        if (hasBumpers) {
+          energyScore = Math.min(100, energyScore * BUMPERS_MULTIPLIER);
+          pitchScore = Math.min(100, pitchScore * BUMPERS_MULTIPLIER);
+          sustainScore = Math.min(100, sustainScore * BUMPERS_MULTIPLIER);
+          durationScore = Math.min(100, durationScore * BUMPERS_MULTIPLIER);
+        }
+
+        // Weighted total (already boosted if bumpers enabled)
+        const total = Math.round(
           energyScore * 0.4 +
             pitchScore * 0.3 +
             sustainScore * 0.2 +
             durationScore * 0.1,
         );
-
-        // Apply bumpers multiplier
-        const hasBumpers = playerBumpers[currentPlayer];
-        if (hasBumpers) {
-          total = Math.round(total * BUMPERS_MULTIPLIER);
-        }
 
         scores[currentPlayer] = {
           total: Math.min(100, Math.max(0, total)),
