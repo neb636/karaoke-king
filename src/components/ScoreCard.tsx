@@ -48,7 +48,7 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
       >
         {player.name}
         {player.score.bumpers && (
-          <span className="ml-1 text-xs opacity-50">🎳</span>
+          <span className="ml-1 text-xs opacity-50">⚡</span>
         )}
       </div>
       <div className="text-xs uppercase tracking-widest opacity-40 mb-2">
