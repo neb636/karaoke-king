@@ -23,7 +23,7 @@ export function CumulativeStandings({
     .sort((a, b) => b.cum - a.cum);
 
   return (
-    <div className="w-full max-w-[600px]">
+    <div className="w-full max-w-[600px] px-0">
       <div className="text-xs uppercase tracking-[3px] opacity-40 text-center mb-2.5">
         Tournament Standings
       </div>

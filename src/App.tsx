@@ -7,8 +7,8 @@ import { ResultsPage } from "@/pages/ResultsPage";
 
 export function App() {
   return (
-    <BrowserRouter>
-      <div className="relative w-screen h-screen overflow-hidden bg-game flex items-center justify-center">
+    <BrowserRouter basename="/karaoke-king">
+      <div className="relative w-screen h-screen overflow-hidden bg-game flex items-stretch justify-center">
         <Routes>
           <Route path="/" element={<TitlePage />} />
           <Route path="/players" element={<PlayerSetupPage />} />

@@ -15,11 +15,11 @@ function BreakdownRow({ label, value }: { label: string; value: string | number 
 
 export function ScoreBreakdown({ players }: ScoreBreakdownProps) {
   return (
-    <div className="flex gap-3 flex-wrap justify-center max-w-[900px]">
+    <div className="flex gap-3 flex-wrap justify-center w-full max-w-[900px]">
       {players.map((p) => (
         <div
           key={p.index}
-          className="text-center p-3 px-4 rounded-2xl bg-white/[0.03] min-w-[140px]"
+          className="text-center p-3 px-4 rounded-2xl bg-white/[0.03] min-w-[130px] flex-1"
         >
           <h4 className="text-xs uppercase tracking-widest opacity-50 mb-2">{p.name}</h4>
           <BreakdownRow label="Energy" value={p.score.energy} />
