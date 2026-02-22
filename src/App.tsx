@@ -5,9 +5,11 @@ import { ModeSelectPage } from "@/pages/ModeSelectPage";
 import { SingPage } from "@/pages/SingPage";
 import { ResultsPage } from "@/pages/ResultsPage";
 
+const basename = (import.meta.env.VITE_BASE_PATH ?? "/karaoke-king/").replace(/\/$/, "");
+
 export function App() {
   return (
-    <BrowserRouter basename="/karaoke-king">
+    <BrowserRouter basename={basename}>
       <div className="relative w-screen h-screen overflow-hidden bg-game flex items-stretch justify-center">
         <Routes>
           <Route path="/" element={<TitlePage />} />

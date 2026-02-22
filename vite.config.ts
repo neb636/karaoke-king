@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "/karaoke-king/",
+  base: process.env.VITE_BASE_PATH ?? "/karaoke-king/",
   plugins: [react()],
   resolve: {
     alias: {
