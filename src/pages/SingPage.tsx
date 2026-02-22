@@ -51,16 +51,16 @@ export function SingPage() {
     const score = stopListening(player.bumpers);
     playSound(400, 150);
     recordScore(score);
-    advancePlayer();
 
     const nextPlayerIdx = currentPlayer + 1;
     if (nextPlayerIdx < players.length) {
-      // Next player: reset overlay after a short delay
+      // More players — advance then show the next player's ready overlay
+      advancePlayer();
       setTimeout(() => {
         setShowReadyOverlay(true);
       }, 600);
     } else {
-      // All done — go to results
+      // Last player done — navigate without advancing so currentPlayer stays valid
       setTimeout(() => {
         void navigate("/results");
       }, 800);

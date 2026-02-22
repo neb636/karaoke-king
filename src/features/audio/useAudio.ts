@@ -100,7 +100,15 @@ export function useAudio(): AudioHook {
   // ── Mic init ─────────────────────────────────────────────────────────────
 
   const initAudio = useCallback(async () => {
-    if (audioCtx && micStream) return;
+    if (audioCtx && micStream) {
+      // Hook may have remounted (e.g. new round) — restore refs from singletons
+      if (analyser) {
+        dataArray.current = new Uint8Array(analyser.fftSize);
+        freqArray.current = new Uint8Array(analyser.frequencyBinCount);
+        analyserRef.current = analyser;
+      }
+      return;
+    }
     micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
     audioCtx = new AudioContext();
     const source = audioCtx.createMediaStreamSource(micStream);
@@ -215,6 +223,7 @@ export function useAudio(): AudioHook {
     turnStart.current = performance.now();
     isListeningRef.current = true;
     setIsListening(true);
+    setStats({ elapsed: 0, energyPct: 0, avgEnergy: 0, pitchHits: 0 });
     setFeedback({ message: "", colorClass: "" });
     tick();
   }, [tick]);
