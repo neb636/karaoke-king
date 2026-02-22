@@ -77,20 +77,4 @@ At the core this will prioritize fun with others over singing quality. A silly p
 
 ## Additional Ideas
 
-### Social Features
-
-- **Lobby System**: Create rooms with friends or join public matches
-- **Spectator Mode**: Watch and vote on performances
-- **Clips & Highlights**: Auto-capture best/worst moments to share
-
-### Progression System
-
-- Unlock new song packs, themes, avatars
-- Seasonal leaderboards
-- "Karaoke Hero" title for tournament winners
-
-### Hardware Integration
-
-- Works with standard mics, phone as mic option
-- TV/projector display for lyrics
-- Optional: LED lighting sync for atmosphere
+- **Clips & Highlights**: Auto-capture best/worst moments and play as highlights at end of match/tournment
