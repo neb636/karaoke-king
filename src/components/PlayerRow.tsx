@@ -47,13 +47,14 @@ export function PlayerRow({
         )}
       />
 
-      {/* Assist toggle */}
+      {/* Assist toggle — hidden for now, logic remains intact */}
       <button
         type="button"
         title={player.bumpers ? "Assist on" : "Assist off (score boost)"}
         aria-label={`Toggle assist for player ${index + 1}`}
         aria-pressed={player.bumpers}
         onClick={() => onBumpersChange(!player.bumpers)}
+        style={{ display: "none" }}
         className={cn(
           "flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0",
           "border transition-all duration-200",
