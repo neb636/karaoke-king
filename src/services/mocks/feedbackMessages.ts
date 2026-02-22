@@ -1,0 +1,37 @@
+export const QUIET_MSGS = [
+  "C'MON, LET IT OUT!",
+  "WE CAN'T HEAR YOU!",
+  "LOUDER! LOUDER!",
+  "DON'T BE SHY!",
+  "GIVE IT SOME POWER!",
+  "TURN IT UP!",
+  "BELT IT OUT!",
+  "YOU GOT THIS, LOUDER!",
+  "WAKE UP THAT VOICE!",
+  "UNLEASH THE BEAST!",
+];
+
+export const MEDIUM_MSGS = [
+  "KEEP GOING!",
+  "NICE, NICE!",
+  "NOT BAD!",
+  "WARMING UP!",
+  "GETTING THERE!",
+  "THAT'S THE SPIRIT!",
+  "FEELING IT!",
+];
+
+export const LOUD_MSGS = [
+  "AMAZING!",
+  "YESSS!",
+  "ON FIRE!",
+  "INCREDIBLE!",
+  "SUPERSTAR!",
+  "CROWD GOES WILD!",
+  "LEGENDARY!",
+  "UNSTOPPABLE!",
+  "ABSOLUTE BANGER!",
+  "WHAT A VOICE!",
+  "SLAY!",
+  "ICONIC!",
+];

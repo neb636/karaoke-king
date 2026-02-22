@@ -1,8 +1,8 @@
-# Karaoke Hero
+# Karaoke King
 
 ## Core Concept
 
-A competitive multiplayer karaoke game that connects to players' music libraries to create personalized, high-energy singing battles.
+A competitive multiplayer karaoke game that connects to players' music libraries to create personalized, high-energy singing battles. Similar energy to Guitar hero.
 
 At the core this will prioritize fun with others over singing quality. A silly party game with friends or family.
 
