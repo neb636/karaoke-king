@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 322 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 188 100% 50%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 322 100% 58%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+    overflow: hidden;
+  }
+}
+
+/* ── Neon text utilities ──────────────────────────────────────────────────── */
+@layer utilities {
+  .neon-pink {
+    color: #ff2d95;
+    text-shadow:
+      0 0 10px #ff2d95,
+      0 0 40px rgba(255, 45, 149, 0.53),
+      0 0 80px rgba(255, 45, 149, 0.27);
+  }
+  .neon-cyan {
+    color: #00e5ff;
+    text-shadow:
+      0 0 10px #00e5ff,
+      0 0 40px rgba(0, 229, 255, 0.53),
+      0 0 80px rgba(0, 229, 255, 0.27);
+  }
+  .neon-gold {
+    color: #ffd700;
+    text-shadow:
+      0 0 10px #ffd700,
+      0 0 40px rgba(255, 215, 0, 0.53),
+      0 0 80px rgba(255, 215, 0, 0.27);
+  }
+  .neon-green {
+    color: #39ff14;
+    text-shadow:
+      0 0 10px #39ff14,
+      0 0 40px rgba(57, 255, 20, 0.53),
+      0 0 80px rgba(57, 255, 20, 0.27);
+  }
+
+  .font-display {
+    font-family: "Bangers", cursive;
+    letter-spacing: 4px;
+  }
+
+  /* Game screen backgrounds */
+  .bg-game {
+    background: radial-gradient(ellipse at 50% 0%, #2d1b69 0%, #0a0a1a 70%);
+  }
+  .bg-game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 0, 128, 0.12) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(0, 200, 255, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+}
+
+/* ── Page screen layout ───────────────────────────────────────────────────── */
+@layer components {
+  .screen-container {
+    @apply flex flex-col items-center justify-center w-full h-full relative;
+  }
+}
+
+/* Confetti animation (spawned imperatively via useConfetti) */
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
