@@ -89,10 +89,21 @@ export function SingPage() {
             Singer {currentPlayer + 1} of {players.length}
           </p>
           {totalRounds > 1 && (
-            <p className="text-sm opacity-30 mb-8 tracking-[2px]">
+            <p className="text-sm opacity-30 tracking-[2px]">
               Round {currentRound} of {totalRounds}
             </p>
           )}
+
+          {currentPlayer === 0 && currentRound === 1 && (
+            <div className="mt-5 mb-5 px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-center space-y-1">
+              <p className="text-xs uppercase tracking-[2px] opacity-40 mb-2">How to play</p>
+              <p className="text-sm opacity-60">🎵 Play a song in the background</p>
+              <p className="text-sm opacity-60">🎤 Sing near your device's microphone</p>
+            </div>
+          )}
+
+          {!(currentPlayer === 0 && currentRound === 1) && <div className="mb-8" />}
+
           <Button variant="pink" onClick={() => void handleStartSinging()}>
             🎤 Start Singing
           </Button>

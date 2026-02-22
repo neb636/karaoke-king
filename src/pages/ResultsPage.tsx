@@ -96,21 +96,21 @@ export function ResultsPage() {
   }
 
   return (
-    <div className="screen-container overflow-y-auto py-8 px-5 gap-4">
-      <NeonText as="h2" color="pink" className="text-[clamp(2rem,6vw,4rem)]">
+    <div className="screen-container overflow-y-auto justify-start py-8 px-4 gap-4">
+      <NeonText as="h2" color="pink" className="text-[clamp(1.8rem,6vw,4rem)]">
         {title}
       </NeonText>
-      <p className="text-base opacity-50 tracking-[3px]">{subtitle}</p>
+      <p className="text-sm opacity-50 tracking-[3px]">{subtitle}</p>
 
       <RoundIndicator totalRounds={totalRounds} currentRound={currentRound} />
 
       {/* Winner banner */}
-      <div className="font-display text-[clamp(1.3rem,3.5vw,2.2rem)] animate-glow-pulse neon-gold">
+      <div className="font-display text-[clamp(1.1rem,3.5vw,2.2rem)] animate-glow-pulse neon-gold text-center px-2">
         {winnerText}
       </div>
 
       {/* Score cards */}
-      <div className="flex gap-4 items-end justify-center flex-wrap max-w-[900px]">
+      <div className="flex gap-3 items-end justify-center flex-wrap w-full max-w-[900px]">
         {ranked.map((player, rank) => (
           <ScoreCard key={player.index} player={player} rank={rank} />
         ))}
@@ -129,7 +129,7 @@ export function ResultsPage() {
       <ScoreBreakdown players={ranked} />
 
       {/* Action buttons */}
-      <div className="flex gap-4 flex-wrap justify-center mt-2">
+      <div className="flex gap-4 flex-wrap justify-center mt-2 pb-4">
         {!isLastRound && (
           <Button variant="pink" onClick={handleNextRound}>
             ▶ Next Round

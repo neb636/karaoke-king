@@ -32,7 +32,8 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center p-5 px-6 rounded-2xl min-w-[130px]",
+        "flex flex-col items-center p-4 px-5 rounded-2xl",
+        "flex-1 min-w-[110px] max-w-[180px]",
         "bg-white/[0.04] border border-white/[0.08]",
         "transition-all duration-500",
         rank === 0 && "scale-105 border-[#ffd700] shadow-[0_0_40px_rgba(255,215,0,0.2)]",
@@ -40,9 +41,9 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
         rank === 2 && "border-[#cd7f32] shadow-[0_0_20px_rgba(205,127,50,0.13)]",
       )}
     >
-      <div className="text-3xl mb-1">{medal}</div>
+      <div className="text-2xl mb-1">{medal}</div>
       <div
-        className="text-lg font-extrabold mb-0.5"
+        className="text-base font-extrabold mb-0.5 truncate w-full text-center"
         style={{ color: player.color.hex }}
       >
         {player.name}
@@ -50,13 +51,13 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
           <span className="ml-1 text-xs opacity-50">🎳</span>
         )}
       </div>
-      <div className="text-xs uppercase tracking-widest opacity-40 mb-2.5">
+      <div className="text-xs uppercase tracking-widest opacity-40 mb-2">
         #{rank + 1}
       </div>
       <div
         ref={scoreRef}
         className={cn(
-          "font-display text-5xl leading-none",
+          "font-display text-[clamp(2.5rem,8vw,3.5rem)] leading-none",
           rank === 0 ? "neon-gold" : "",
         )}
       >
