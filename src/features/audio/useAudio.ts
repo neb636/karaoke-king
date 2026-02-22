@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from "react";
+import { MicVAD } from "@ricky0123/vad-web";
 import { FEEDBACK_COOLDOWN, NOISE_FLOOR } from "@/lib/constants";
 import { pick } from "@/lib/utils";
 import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/services/mocks/feedbackMessages";
@@ -11,6 +12,11 @@ import type { PlayerScore } from "@/types";
 let audioCtx: AudioContext | null = null;
 let analyser: AnalyserNode | null = null;
 let micStream: MediaStream | null = null;
+
+// ── VAD state (module-level so callbacks survive hook remounts) ───────────────
+let vadInstance: MicVAD | null = null;
+let voiceActive = false; // toggled by VAD callbacks
+let vadEnabled = false;  // false → accumulate every frame (VAD unavailable)
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -114,11 +120,40 @@ export function useAudio(): AudioHook {
     const source = audioCtx.createMediaStreamSource(micStream);
     analyser = audioCtx.createAnalyser();
     analyser.fftSize = 2048;
-    analyser.smoothingTimeConstant = 0.8;
-    source.connect(analyser);
+    analyser.smoothingTimeConstant = 0.4;
+    // Band-pass: keep voice fundamentals (100 Hz – 3.5 kHz), cut bass/kick and cymbals
+    const highpass = audioCtx.createBiquadFilter();
+    highpass.type = "highpass";
+    highpass.frequency.value = 100;
+
+    const lowpass = audioCtx.createBiquadFilter();
+    lowpass.type = "lowpass";
+    lowpass.frequency.value = 3500;
+
+    source.connect(highpass);
+    highpass.connect(lowpass);
+    lowpass.connect(analyser);
     dataArray.current = new Uint8Array(analyser.fftSize);
     freqArray.current = new Uint8Array(analyser.frequencyBinCount);
     analyserRef.current = analyser;
+
+    // Initialise VAD — gates score accumulation to frames where a human voice
+    // is actually detected, separating the singer from the backing track.
+    try {
+      vadInstance = await MicVAD.new({
+        // Reuse the already-acquired stream; no-op pause/resume so
+        // the VAD doesn't disable tracks shared with our analyser.
+        getStream: async () => micStream!,
+        pauseStream: async () => {},
+        resumeStream: async () => micStream!,
+        onSpeechStart: () => { voiceActive = true; },
+        onSpeechEnd: () => { voiceActive = false; },
+      });
+      vadEnabled = true;
+    } catch (e) {
+      console.warn("VAD init failed — scoring all frames:", e);
+      vadEnabled = false;
+    }
   }, []);
 
   // ── Live feedback logic ───────────────────────────────────────────────────
@@ -176,16 +211,22 @@ export function useAudio(): AudioHook {
       sum += v * v;
     }
     const rms = Math.sqrt(sum / dataArray.current.length);
-    frameCount.current++;
-    totalRMS.current += rms;
-    if (rms > NOISE_FLOOR) activeFrames.current++;
+
+    // Only accumulate scoring data while voice is detected (or VAD unavailable)
+    if (!vadEnabled || voiceActive) {
+      frameCount.current++;
+      totalRMS.current += rms;
+      if (rms > NOISE_FLOOR) activeFrames.current++;
+    }
 
     // Pitch
     const sampleRate = audioCtx?.sampleRate ?? 44100;
     const pitch = detectPitch(dataArray.current, sampleRate);
     if (pitch > 0) {
       const bucket = Math.round(12 * Math.log2(pitch / 440));
-      pitchBuckets.current.add(bucket);
+      if (!vadEnabled || voiceActive) {
+        pitchBuckets.current.add(bucket);
+      }
       if (lastPitchBucket.current !== -1 && bucket !== lastPitchBucket.current) {
         // pitchChanges unused for scoring but tracked for future
       }
@@ -220,11 +261,13 @@ export function useAudio(): AudioHook {
     quietStreak.current = 0;
     loudStreak.current = 0;
     lastFeedbackTime.current = 0;
+    voiceActive = false;
     turnStart.current = performance.now();
     isListeningRef.current = true;
     setIsListening(true);
     setStats({ elapsed: 0, energyPct: 0, avgEnergy: 0, pitchHits: 0 });
     setFeedback({ message: "", colorClass: "" });
+    vadInstance?.start();
     tick();
   }, [tick]);
 
@@ -232,6 +275,7 @@ export function useAudio(): AudioHook {
     (hasBumpers: boolean): PlayerScore => {
       isListeningRef.current = false;
       setIsListening(false);
+      vadInstance?.pause();
       if (animFrameId.current !== null) {
         cancelAnimationFrame(animFrameId.current);
         animFrameId.current = null;
