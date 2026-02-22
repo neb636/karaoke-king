@@ -11,6 +11,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ["@ricky0123/vad-web"],
+    include: ["@ricky0123/vad-web"],
   },
 });
