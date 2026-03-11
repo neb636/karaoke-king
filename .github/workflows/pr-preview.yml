@@ -28,6 +28,8 @@ jobs:
 
       - name: Build with PR base path
         run: npx tsc -b && npx vite build --base /karaoke-king/pr-preview/pr-${{ github.event.number }}/
+        env:
+          VITE_SPOTIFY_CLIENT_ID: ${{ secrets.VITE_SPOTIFY_CLIENT_ID }}
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
