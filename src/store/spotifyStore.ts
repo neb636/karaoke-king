@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { buildAuthUrl, exchangeCodeForToken, getStoredToken, clearToken } from "@/services/spotify/auth";
 import { getCurrentUser, type SpotifyUser } from "@/services/spotify/api";
+import { initSpotifySDK } from "@/services/spotify/sdk";
 
 interface SpotifyState {
   isAuthenticated: boolean;
@@ -41,12 +42,9 @@ export const useSpotifyStore = create<SpotifyState>((set) => ({
     try {
       await exchangeCodeForToken(code);
       const user = await getCurrentUser();
-      set({
-        isAuthenticated: true,
-        isPremium: user.product === "premium",
-        user,
-        isLoading: false,
-      });
+      const isPremium = user.product === "premium";
+      set({ isAuthenticated: true, isPremium, user, isLoading: false });
+      if (isPremium) initSpotifySDK();
     } catch (e) {
       set({
         error: e instanceof Error ? e.message : "Auth failed",
@@ -67,12 +65,9 @@ export const useSpotifyStore = create<SpotifyState>((set) => ({
     set({ isLoading: true });
     try {
       const user = await getCurrentUser();
-      set({
-        isAuthenticated: true,
-        isPremium: user.product === "premium",
-        user,
-        isLoading: false,
-      });
+      const isPremium = user.product === "premium";
+      set({ isAuthenticated: true, isPremium, user, isLoading: false });
+      if (isPremium) initSpotifySDK();
     } catch {
       clearToken();
       set({ isAuthenticated: false, isPremium: false, user: null, isLoading: false });

@@ -6,7 +6,6 @@ import { EnergyBar } from "@/components/EnergyBar";
 import { FeedbackToast } from "@/components/FeedbackToast";
 import { CountdownOverlay } from "@/components/CountdownOverlay";
 import { SongInfoBanner } from "@/components/SongInfoBanner";
-import { DeviceSelector } from "@/components/DeviceSelector";
 import { CoachingPrompt } from "@/components/CoachingPrompt";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
@@ -17,7 +16,6 @@ import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
 import { PLAYER_COLORS, DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { useState, useCallback } from "react";
-import { transferPlayback } from "@/services/spotify/api";
 
 export function SingPage() {
   const navigate = useNavigate();
@@ -49,13 +47,8 @@ export function SingPage() {
     isPlaying: spotifyPlaying,
     currentPositionMs,
     error: spotifyError,
-    devices,
-    needsDevice,
     play: spotifyPlay,
     pause: spotifyPause,
-    refreshDevices,
-    setNeedsDevice,
-    setError: setSpotifyError,
   } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
 
   const { currentCue } = useCoachingCues(
@@ -113,20 +106,6 @@ export function SingPage() {
     }
   }
 
-  async function handleDeviceSelect(deviceId: string) {
-    try {
-      await transferPlayback(deviceId);
-      setNeedsDevice(false);
-      setSpotifyError(null);
-      // Retry playback
-      if (isCurated) {
-        await spotifyPlay(song.spotifyUri, deviceId);
-      }
-    } catch {
-      // ignore
-    }
-  }
-
   const turnLabel =
     totalRounds > 1
       ? `ROUND ${currentRound}/${totalRounds} — SINGER ${currentPlayer + 1} OF ${players.length}`
@@ -134,16 +113,6 @@ export function SingPage() {
 
   return (
     <div className="screen-container px-10 relative">
-      {/* Device selector overlay */}
-      {needsDevice && (
-        <DeviceSelector
-          devices={devices}
-          onSelect={(id) => void handleDeviceSelect(id)}
-          onRefresh={() => void refreshDevices()}
-          onDismiss={() => setNeedsDevice(false)}
-        />
-      )}
-
       {/* Ready overlay */}
       {showReadyOverlay && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.92)] z-10">
@@ -177,7 +146,7 @@ export function SingPage() {
               <p className="text-xs uppercase tracking-[2px] opacity-40 mb-2">How to play</p>
               {isCurated ? (
                 <>
-                  <p className="text-sm opacity-60">🎵 Spotify will play the track</p>
+                  <p className="text-sm opacity-60">🎵 Music plays right here in your browser</p>
                   <p className="text-sm opacity-60">🎤 Sing along near your microphone</p>
                   <p className="text-sm opacity-60">🔊 Make sure your volume is up!</p>
                 </>
