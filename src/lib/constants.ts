@@ -49,6 +49,22 @@ export const MAX_DURATION_BONUS = 60; // seconds cap for duration score
 export const FEEDBACK_COOLDOWN = 1800; // ms between feedback changes
 export const BUMPERS_MULTIPLIER = 1.3; // 30% score boost
 
+// Difficulty colors
+export const DIFFICULTY_COLORS: Record<string, string> = {
+  easy: "#39ff14",
+  medium: "#00e5ff",
+  hard: "#ffd700",
+  expert: "#ff2d95",
+};
+
+// Difficulty score modifiers (applied to final score in curated mode)
+export const DIFFICULTY_MODIFIERS: Record<string, number> = {
+  easy: 0.95,
+  medium: 1.0,
+  hard: 1.1,
+  expert: 1.15,
+};
+
 // Scoring weights
 export const SCORE_WEIGHTS = {
   energy: 0.4,

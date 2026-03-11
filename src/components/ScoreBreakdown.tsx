@@ -1,7 +1,10 @@
-import type { RankedPlayer } from "@/types";
+import type { RankedPlayer, SongDifficulty } from "@/types";
+import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 
 interface ScoreBreakdownProps {
   players: RankedPlayer[];
+  isCurated?: boolean;
+  songDifficulty?: SongDifficulty;
 }
 
 function BreakdownRow({ label, value }: { label: string; value: string | number }) {
@@ -13,7 +16,11 @@ function BreakdownRow({ label, value }: { label: string; value: string | number 
   );
 }
 
-export function ScoreBreakdown({ players }: ScoreBreakdownProps) {
+export function ScoreBreakdown({ players, isCurated, songDifficulty }: ScoreBreakdownProps) {
+  const modifier = songDifficulty ? DIFFICULTY_MODIFIERS[songDifficulty] ?? 1.0 : 1.0;
+  const modifierLabel =
+    modifier > 1 ? `+${Math.round((modifier - 1) * 100)}%` : modifier < 1 ? `${Math.round((modifier - 1) * 100)}%` : "—";
+
   return (
     <div className="flex gap-3 flex-wrap justify-center w-full max-w-[900px]">
       {players.map((p) => (
@@ -27,6 +34,12 @@ export function ScoreBreakdown({ players }: ScoreBreakdownProps) {
           <BreakdownRow label="Sustain" value={p.score.sustain} />
           <BreakdownRow label="Duration" value={p.score.duration} />
           <BreakdownRow label="Time" value={`${Math.round(p.score.time)}s`} />
+          {isCurated && songDifficulty && (
+            <BreakdownRow
+              label={`Difficulty (${songDifficulty})`}
+              value={modifierLabel}
+            />
+          )}
         </div>
       ))}
     </div>

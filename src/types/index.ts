@@ -47,4 +47,16 @@ export type FeedbackLevel = "quiet" | "medium" | "loud";
 
 // ── App Screens (used by React Router routes) ─────────────────────────────────
 
-export type AppRoute = "/" | "/players" | "/mode" | "/sing" | "/results";
+export type AppRoute = "/" | "/players" | "/mode" | "/songs" | "/sing" | "/results" | "/spotify-callback";
+
+// ── Re-export song types ────────────────────────────────────────────────────
+
+export type {
+  SongDifficulty,
+  PlayMode,
+  RegionId,
+  Region,
+  CoachingCueType,
+  CoachingCue,
+  CuratedSong,
+} from "./songs";

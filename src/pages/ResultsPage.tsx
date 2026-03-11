@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
@@ -6,8 +6,11 @@ import { ScoreCard } from "@/components/ScoreCard";
 import { ScoreBreakdown } from "@/components/ScoreBreakdown";
 import { CumulativeStandings } from "@/components/CumulativeStandings";
 import { RoundIndicator } from "@/components/RoundIndicator";
+import { SongResultBadge } from "@/components/SongResultBadge";
 import { useGameStore } from "@/store/gameStore";
+import { useSongStore } from "@/store/songStore";
 import { useConfetti } from "@/hooks/useConfetti";
+import { saveSongScore } from "@/services/songHistory";
 import { GAME_MODES, PLAYER_COLORS } from "@/lib/constants";
 import type { RankedPlayer } from "@/types";
 
@@ -25,6 +28,10 @@ export function ResultsPage() {
     initNewGame,
     resetToPlayerSetup,
   } = useGameStore();
+
+  const { playMode, getCurrentSong } = useSongStore();
+  const song = getCurrentSong();
+  const isCurated = playMode === "curated" && !!song;
 
   const isLastRound = currentRound >= totalRounds;
   const isTournament = totalRounds > 1;
@@ -46,6 +53,17 @@ export function ResultsPage() {
 
   const isTie =
     ranked.length > 1 && ranked[0]!.score.total === ranked[1]!.score.total;
+
+  // Save song scores for curated mode
+  const newBestFlags = useMemo(() => {
+    if (!isCurated) return {};
+    const flags: Record<number, boolean> = {};
+    for (const p of ranked) {
+      flags[p.index] = saveSongScore(song.id, p.score.total);
+    }
+    return flags;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Tournament champion (by cumulative)
   const cumRanked = [...players]
@@ -82,12 +100,21 @@ export function ResultsPage() {
 
   function handleNextRound() {
     nextRound();
-    void navigate("/sing");
+    // In curated tournament mode, go back to song picker
+    if (isCurated && isTournament) {
+      void navigate("/songs");
+    } else {
+      void navigate("/sing");
+    }
   }
 
   function handleRematch() {
     initNewGame();
-    void navigate("/sing");
+    if (isCurated) {
+      void navigate("/songs");
+    } else {
+      void navigate("/sing");
+    }
   }
 
   function handleNewGame() {
@@ -103,6 +130,14 @@ export function ResultsPage() {
       <p className="text-sm opacity-50 tracking-[3px]">{subtitle}</p>
 
       <RoundIndicator totalRounds={totalRounds} currentRound={currentRound} />
+
+      {/* Song badge (curated mode) */}
+      {isCurated && (
+        <SongResultBadge
+          song={song}
+          isNewBest={Object.values(newBestFlags).some(Boolean)}
+        />
+      )}
 
       {/* Winner banner */}
       <div className="font-display text-[clamp(1.1rem,3.5vw,2.2rem)] animate-glow-pulse neon-gold text-center px-2">
@@ -126,13 +161,13 @@ export function ResultsPage() {
       )}
 
       {/* Per-player score breakdown */}
-      <ScoreBreakdown players={ranked} />
+      <ScoreBreakdown players={ranked} isCurated={isCurated} songDifficulty={song?.difficulty} />
 
       {/* Action buttons */}
       <div className="flex gap-4 flex-wrap justify-center mt-2 pb-4">
         {!isLastRound && (
           <Button variant="pink" onClick={handleNextRound}>
-            ▶ Next Round
+            {isCurated && isTournament ? "🎵 Pick Next Song" : "▶ Next Round"}
           </Button>
         )}
         {isLastRound && (
