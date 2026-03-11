@@ -5,12 +5,19 @@ import { AudioVisualizer } from "@/components/AudioVisualizer";
 import { EnergyBar } from "@/components/EnergyBar";
 import { FeedbackToast } from "@/components/FeedbackToast";
 import { CountdownOverlay } from "@/components/CountdownOverlay";
+import { SongInfoBanner } from "@/components/SongInfoBanner";
+import { DeviceSelector } from "@/components/DeviceSelector";
+import { CoachingPrompt } from "@/components/CoachingPrompt";
 import { useGameStore } from "@/store/gameStore";
+import { useSongStore } from "@/store/songStore";
 import { useAudio } from "@/features/audio/useAudio";
 import { useCountdown } from "@/hooks/useCountdown";
+import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
+import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
-import { PLAYER_COLORS } from "@/lib/constants";
-import { useState } from "react";
+import { PLAYER_COLORS, DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { useState, useCallback } from "react";
+import { transferPlayback } from "@/services/spotify/api";
 
 export function SingPage() {
   const navigate = useNavigate();
@@ -23,11 +30,38 @@ export function SingPage() {
     advancePlayer,
   } = useGameStore();
 
+  const { playMode, getCurrentSong } = useSongStore();
+  const song = getCurrentSong();
+  const isCurated = playMode === "curated" && !!song;
+
   const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =
     useAudio();
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
+
+  const handleTrackEnd = useCallback(() => {
+    handleStop();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const {
+    isPlaying: spotifyPlaying,
+    currentPositionMs,
+    error: spotifyError,
+    devices,
+    needsDevice,
+    play: spotifyPlay,
+    pause: spotifyPause,
+    refreshDevices,
+    setNeedsDevice,
+    setError: setSpotifyError,
+  } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
+
+  const { currentCue } = useCoachingCues(
+    isCurated ? song.id : null,
+    currentPositionMs,
+  );
 
   const player = players[currentPlayer];
   const color = player ? PLAYER_COLORS[currentPlayer % PLAYER_COLORS.length]! : PLAYER_COLORS[0]!;
@@ -41,29 +75,55 @@ export function SingPage() {
       return;
     }
     playSound(900, 100);
-    runCountdown(() => {
+    runCountdown(async () => {
       startListening();
+      if (isCurated) {
+        await spotifyPlay(song.spotifyUri);
+      }
     }, playSound);
   }
 
   function handleStop() {
     if (!player) return;
     const score = stopListening(player.bumpers);
+
+    // Apply difficulty modifier for curated mode
+    if (isCurated) {
+      const modifier = DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0;
+      score.total = Math.min(100, Math.round(score.total * modifier));
+    }
+
+    if (isCurated && spotifyPlaying) {
+      void spotifyPause();
+    }
+
     playSound(400, 150);
     recordScore(score);
 
     const nextPlayerIdx = currentPlayer + 1;
     if (nextPlayerIdx < players.length) {
-      // More players — advance then show the next player's ready overlay
       advancePlayer();
       setTimeout(() => {
         setShowReadyOverlay(true);
       }, 600);
     } else {
-      // Last player done — navigate without advancing so currentPlayer stays valid
       setTimeout(() => {
         void navigate("/results");
       }, 800);
+    }
+  }
+
+  async function handleDeviceSelect(deviceId: string) {
+    try {
+      await transferPlayback(deviceId);
+      setNeedsDevice(false);
+      setSpotifyError(null);
+      // Retry playback
+      if (isCurated) {
+        await spotifyPlay(song.spotifyUri, deviceId);
+      }
+    } catch {
+      // ignore
     }
   }
 
@@ -74,6 +134,16 @@ export function SingPage() {
 
   return (
     <div className="screen-container px-10 relative">
+      {/* Device selector overlay */}
+      {needsDevice && (
+        <DeviceSelector
+          devices={devices}
+          onSelect={(id) => void handleDeviceSelect(id)}
+          onRefresh={() => void refreshDevices()}
+          onDismiss={() => setNeedsDevice(false)}
+        />
+      )}
+
       {/* Ready overlay */}
       {showReadyOverlay && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.92)] z-10">
@@ -85,6 +155,14 @@ export function SingPage() {
             {player?.name || `Player ${currentPlayer + 1}`}
           </NeonText>
           <p className="text-lg opacity-60 mb-3 tracking-[2px]">GET READY TO SING!</p>
+
+          {isCurated && (
+            <div className="mb-3 text-center">
+              <p className="text-sm neon-pink font-bold">{song.title}</p>
+              <p className="text-xs text-white/50">{song.artist}</p>
+            </div>
+          )}
+
           <p className="text-sm opacity-35 mb-1 tracking-[2px]">
             Singer {currentPlayer + 1} of {players.length}
           </p>
@@ -97,8 +175,18 @@ export function SingPage() {
           {currentPlayer === 0 && currentRound === 1 && (
             <div className="mt-5 mb-5 px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-center space-y-1">
               <p className="text-xs uppercase tracking-[2px] opacity-40 mb-2">How to play</p>
-              <p className="text-sm opacity-60">🎵 Play a song in the background</p>
-              <p className="text-sm opacity-60">🎤 Sing near your device's microphone</p>
+              {isCurated ? (
+                <>
+                  <p className="text-sm opacity-60">🎵 Spotify will play the track</p>
+                  <p className="text-sm opacity-60">🎤 Sing along near your microphone</p>
+                  <p className="text-sm opacity-60">🔊 Make sure your volume is up!</p>
+                </>
+              ) : (
+                <>
+                  <p className="text-sm opacity-60">🎵 Play a song in the background</p>
+                  <p className="text-sm opacity-60">🎤 Sing near your device's microphone</p>
+                </>
+              )}
             </div>
           )}
 
@@ -118,16 +206,32 @@ export function SingPage() {
       <NeonText
         as="h2"
         color={color.name as "pink" | "cyan" | "gold" | "green"}
-        className="text-[clamp(2rem,6vw,4rem)] mb-8"
+        className="text-[clamp(2rem,6vw,4rem)] mb-4"
       >
         {player?.name || `Player ${currentPlayer + 1}`}
       </NeonText>
 
+      {isCurated && isListening && (
+        <SongInfoBanner title={song.title} artist={song.artist} />
+      )}
+
+      {/* Coaching prompt (curated) or feedback toast (freeform) */}
+      {isCurated && currentCue ? (
+        <CoachingPrompt cue={currentCue} />
+      ) : (
+        <FeedbackToast message={feedback.message} colorClass={feedback.colorClass} />
+      )}
+
       <AudioVisualizer freqArray={freqArray} isActive={isListening} />
 
-      <FeedbackToast message={feedback.message} colorClass={feedback.colorClass} />
-
       <EnergyBar percent={stats.energyPct} />
+
+      {/* Spotify error */}
+      {spotifyError && (
+        <p className="text-xs text-[#ff2d95] mt-1">
+          Spotify: {spotifyError}
+        </p>
+      )}
 
       {/* Stats row */}
       <div className="flex gap-10 my-6">
@@ -147,13 +251,13 @@ export function SingPage() {
 
       {isListening && (
         <Button variant="red" onClick={handleStop}>
-          ⏹ Stop
+          {isCurated ? "🏁 Finish Early" : "⏹ Stop"}
         </Button>
       )}
 
       {!isListening && !showReadyOverlay && !countdownActive && (
         <p className="text-sm opacity-40 mt-3">
-          SING YOUR HEART OUT! Hit STOP when done.
+          {isCurated ? "Sing along with the track!" : "SING YOUR HEART OUT! Hit STOP when done."}
         </p>
       )}
       {showReadyOverlay && (
