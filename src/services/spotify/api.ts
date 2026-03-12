@@ -54,38 +54,13 @@ export async function getCurrentUser(): Promise<SpotifyUser> {
   return res.json();
 }
 
-// ── Devices ─────────────────────────────────────────────────────────────────
-
-export interface SpotifyDevice {
-  id: string;
-  name: string;
-  type: string;
-  is_active: boolean;
-  volume_percent: number;
-}
-
-export async function getAvailableDevices(): Promise<SpotifyDevice[]> {
-  const res = await spotifyFetch("/me/player/devices");
-  if (!res.ok) throw new Error("Failed to get devices");
-  const data = await res.json();
-  return data.devices;
-}
-
-export async function transferPlayback(deviceId: string): Promise<void> {
-  await spotifyFetch("/me/player", {
-    method: "PUT",
-    body: JSON.stringify({ device_ids: [deviceId], play: false }),
-  });
-}
-
 // ── Playback ────────────────────────────────────────────────────────────────
 
 export async function startPlayback(
   spotifyUri: string,
-  deviceId?: string,
+  deviceId: string,
 ): Promise<void> {
-  const query = deviceId ? `?device_id=${deviceId}` : "";
-  const res = await spotifyFetch(`/me/player/play${query}`, {
+  const res = await spotifyFetch(`/me/player/play?device_id=${deviceId}`, {
     method: "PUT",
     body: JSON.stringify({ uris: [spotifyUri] }),
   });
@@ -94,34 +69,4 @@ export async function startPlayback(
     const err = await res.text();
     throw new Error(`Playback failed: ${err}`);
   }
-}
-
-export async function pausePlayback(): Promise<void> {
-  const res = await spotifyFetch("/me/player/pause", { method: "PUT" });
-  // 403 = already paused, which is fine
-  if (!res.ok && res.status !== 204 && res.status !== 403) {
-    throw new Error("Failed to pause");
-  }
-}
-
-export interface PlaybackState {
-  is_playing: boolean;
-  progress_ms: number;
-  item: {
-    uri: string;
-    duration_ms: number;
-    name: string;
-  } | null;
-  device: {
-    id: string;
-    name: string;
-    volume_percent: number;
-  } | null;
-}
-
-export async function getPlaybackState(): Promise<PlaybackState | null> {
-  const res = await spotifyFetch("/me/player");
-  if (res.status === 204) return null; // no active player
-  if (!res.ok) return null;
-  return res.json();
 }
