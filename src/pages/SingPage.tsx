@@ -28,8 +28,8 @@ export function SingPage() {
     advancePlayer,
   } = useGameStore();
 
-  const { playMode, getCurrentSong } = useSongStore();
-  const song = getCurrentSong();
+  const { playMode, getPlayerSong } = useSongStore();
+  const song = getPlayerSong(currentPlayer);
   const isCurated = playMode === "curated" && !!song;
 
   const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =

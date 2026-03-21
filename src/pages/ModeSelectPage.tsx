@@ -11,12 +11,14 @@ import { GAME_MODES, GAME_MODE_KEYS } from "@/lib/constants";
 export function ModeSelectPage() {
   const navigate = useNavigate();
   const { selectedMode, setSelectedMode, confirmMode, initNewGame } = useGameStore();
-  const { playMode, setPlayMode, selectedRegion, setRegion } = useSongStore();
+  const { playMode, setPlayMode, selectedRegion, setRegion, clearPlayerSongs, setPickingPlayer } = useSongStore();
 
   function handleConfirm() {
     confirmMode();
     initNewGame();
     if (playMode === "curated") {
+      clearPlayerSongs();
+      setPickingPlayer(0);
       void navigate("/songs");
     } else {
       void navigate("/sing");

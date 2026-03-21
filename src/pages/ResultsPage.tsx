@@ -29,9 +29,8 @@ export function ResultsPage() {
     resetToPlayerSetup,
   } = useGameStore();
 
-  const { playMode, getCurrentSong } = useSongStore();
-  const song = getCurrentSong();
-  const isCurated = playMode === "curated" && !!song;
+  const { playMode, getPlayerSong, clearPlayerSongs, setPickingPlayer } = useSongStore();
+  const isCurated = playMode === "curated";
 
   const isLastRound = currentRound >= totalRounds;
   const isTournament = totalRounds > 1;
@@ -54,12 +53,15 @@ export function ResultsPage() {
   const isTie =
     ranked.length > 1 && ranked[0]!.score.total === ranked[1]!.score.total;
 
-  // Save song scores for curated mode
+  // Save song scores for curated mode (per-player songs)
   const newBestFlags = useMemo(() => {
     if (!isCurated) return {};
     const flags: Record<number, boolean> = {};
     for (const p of ranked) {
-      flags[p.index] = saveSongScore(song.id, p.score.total);
+      const playerSong = getPlayerSong(p.index);
+      if (playerSong) {
+        flags[p.index] = saveSongScore(playerSong.id, p.score.total);
+      }
     }
     return flags;
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -100,8 +102,9 @@ export function ResultsPage() {
 
   function handleNextRound() {
     nextRound();
-    // In curated tournament mode, go back to song picker
-    if (isCurated && isTournament) {
+    if (isCurated) {
+      clearPlayerSongs();
+      setPickingPlayer(0);
       void navigate("/songs");
     } else {
       void navigate("/sing");
@@ -111,6 +114,8 @@ export function ResultsPage() {
   function handleRematch() {
     initNewGame();
     if (isCurated) {
+      clearPlayerSongs();
+      setPickingPlayer(0);
       void navigate("/songs");
     } else {
       void navigate("/sing");
@@ -131,12 +136,23 @@ export function ResultsPage() {
 
       <RoundIndicator totalRounds={totalRounds} currentRound={currentRound} />
 
-      {/* Song badge (curated mode) */}
+      {/* Per-player song badges (curated mode) */}
       {isCurated && (
-        <SongResultBadge
-          song={song}
-          isNewBest={Object.values(newBestFlags).some(Boolean)}
-        />
+        <div className="flex gap-3 flex-wrap justify-center w-full max-w-[900px]">
+          {ranked.map((p) => {
+            const playerSong = getPlayerSong(p.index);
+            if (!playerSong) return null;
+            return (
+              <div key={p.index} className="text-center">
+                <p className="text-xs uppercase tracking-widest opacity-40 mb-1">{p.name}</p>
+                <SongResultBadge
+                  song={playerSong}
+                  isNewBest={!!newBestFlags[p.index]}
+                />
+              </div>
+            );
+          })}
+        </div>
       )}
 
       {/* Winner banner */}
@@ -161,13 +177,13 @@ export function ResultsPage() {
       )}
 
       {/* Per-player score breakdown */}
-      <ScoreBreakdown players={ranked} isCurated={isCurated} songDifficulty={song?.difficulty} />
+      <ScoreBreakdown players={ranked} isCurated={isCurated} getPlayerSong={getPlayerSong} />
 
       {/* Action buttons */}
       <div className="flex gap-4 flex-wrap justify-center mt-2 pb-4">
         {!isLastRound && (
           <Button variant="pink" onClick={handleNextRound}>
-            {isCurated && isTournament ? "🎵 Pick Next Song" : "▶ Next Round"}
+            {isCurated ? "🎵 Pick Songs for Next Round" : "▶ Next Round"}
           </Button>
         )}
         {isLastRound && (
