@@ -8,16 +8,26 @@ import { SpotifyAuthButton } from "@/components/SpotifyAuthButton";
 import { SpotifyPremiumGate } from "@/components/SpotifyPremiumGate";
 import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
+import { useGameStore } from "@/store/gameStore";
 import { REGIONS } from "@/data/songs/regions";
+import { PLAYER_COLORS } from "@/lib/constants";
 
 export function SongSelectPage() {
   const navigate = useNavigate();
-  const { selectedRegion, setRegion, selectedSongId, selectSong, getRegionSongs } = useSongStore();
+  const {
+    selectedRegion, setRegion, selectedSongId, selectSong,
+    getRegionSongs, pickingPlayer, selectSongForPlayer, setPickingPlayer,
+  } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
+  const { players } = useGameStore();
   const [search, setSearch] = useState("");
 
   const songs = getRegionSongs();
   const region = REGIONS[selectedRegion];
+
+  const player = players[pickingPlayer];
+  const playerColor = PLAYER_COLORS[pickingPlayer % PLAYER_COLORS.length]!;
+  const playerName = player?.name || `Player ${pickingPlayer + 1}`;
 
   const filtered = useMemo(() => {
     if (!search.trim()) return songs;
@@ -30,22 +40,34 @@ export function SongSelectPage() {
     );
   }, [songs, search]);
 
-  const canSing = selectedSongId && isAuthenticated && isPremium;
+  const canConfirm = selectedSongId && isAuthenticated && isPremium;
 
-  function handleSing() {
-    if (!canSing) return;
-    void navigate("/sing");
+  function handleConfirmSong() {
+    if (!canConfirm || !selectedSongId) return;
+    selectSongForPlayer(pickingPlayer, selectedSongId);
+
+    const nextPlayer = pickingPlayer + 1;
+    if (nextPlayer < players.length) {
+      setPickingPlayer(nextPlayer);
+      setSearch("");
+    } else {
+      void navigate("/sing");
+    }
   }
 
   return (
     <div className="screen-container overflow-y-auto justify-start py-6 px-4 gap-4">
       <div className="flex items-center justify-between w-full max-w-[900px]">
         <div>
-          <NeonText as="h2" color="pink" className="text-[clamp(1.3rem,3.5vw,2.5rem)]">
-            {region.flag} PICK YOUR SONG
+          <NeonText
+            as="h2"
+            color={playerColor.name as "pink" | "cyan" | "gold" | "green"}
+            className="text-[clamp(1.3rem,3.5vw,2.5rem)]"
+          >
+            {region.flag} {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            {songs.length} songs in {region.label}
+            Player {pickingPlayer + 1} of {players.length} &middot; {songs.length} songs in {region.label}
           </p>
         </div>
         <SpotifyAuthButton />
@@ -53,7 +75,6 @@ export function SongSelectPage() {
 
       <RegionPicker selected={selectedRegion} onChange={setRegion} />
 
-      {/* Search */}
       <div className="w-full max-w-[900px]">
         <input
           type="text"
@@ -64,10 +85,8 @@ export function SongSelectPage() {
         />
       </div>
 
-      {/* Premium gate */}
       {isAuthenticated && !isPremium && <SpotifyPremiumGate />}
 
-      {/* Song grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full max-w-[900px]">
         {filtered.map((song) => (
           <SongCard
@@ -83,7 +102,6 @@ export function SongSelectPage() {
         <p className="text-sm opacity-40 mt-4">No songs match your search.</p>
       )}
 
-      {/* Bottom action */}
       <div className="sticky bottom-0 bg-gradient-to-t from-[#0a0a1a] via-[#0a0a1a] to-transparent pt-6 pb-4 w-full max-w-[900px] flex flex-col items-center gap-2">
         {!isAuthenticated && selectedSongId && (
           <p className="text-xs text-[#ff2d95] opacity-80">Connect Spotify to start singing</p>
@@ -98,11 +116,13 @@ export function SongSelectPage() {
           </Button>
           <Button
             variant="pink"
-            onClick={handleSing}
-            disabled={!canSing}
-            className={!canSing ? "opacity-40 cursor-not-allowed" : ""}
+            onClick={handleConfirmSong}
+            disabled={!canConfirm}
+            className={!canConfirm ? "opacity-40 cursor-not-allowed" : ""}
           >
-            🎤 Sing This Song
+            🎤 {pickingPlayer < players.length - 1
+              ? `Lock In & Next Player`
+              : `Lock In & Sing!`}
           </Button>
         </div>
       </div>
