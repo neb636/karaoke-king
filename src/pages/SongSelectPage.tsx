@@ -10,7 +10,6 @@ import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";
 import { REGIONS } from "@/data/songs/regions";
-import { PLAYER_COLORS } from "@/lib/constants";
 
 export function SongSelectPage() {
   const navigate = useNavigate();
@@ -26,7 +25,6 @@ export function SongSelectPage() {
   const region = REGIONS[selectedRegion];
 
   const player = players[pickingPlayer];
-  const playerColor = PLAYER_COLORS[pickingPlayer % PLAYER_COLORS.length]!;
   const playerName = player?.name || `Player ${pickingPlayer + 1}`;
 
   const filtered = useMemo(() => {
@@ -61,7 +59,7 @@ export function SongSelectPage() {
         <div>
           <NeonText
             as="h2"
-            color={playerColor.name as "pink" | "cyan" | "gold" | "green"}
+            color="cyan"
             className="text-[clamp(1.3rem,3.5vw,2.5rem)]"
           >
             {region.flag} {playerName.toUpperCase()}, PICK YOUR SONG

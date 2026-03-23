@@ -1,15 +1,4 @@
-import type { GameModeConfig, GameModeKey, PlayerColor } from "@/types";
-
-export const PLAYER_COLORS: PlayerColor[] = [
-  { name: "neon-pink", hex: "#ff2d95" },
-  { name: "neon-cyan", hex: "#00e5ff" },
-  { name: "neon-gold", hex: "#ffd700" },
-  { name: "neon-green", hex: "#39ff14" },
-  { name: "neon-pink", hex: "#ff6ec7" },
-  { name: "neon-cyan", hex: "#00b8d4" },
-  { name: "neon-gold", hex: "#ffaa00" },
-  { name: "neon-green", hex: "#76ff03" },
-];
+import type { GameModeConfig, GameModeKey } from "@/types";
 
 export const GAME_MODES: Record<GameModeKey, GameModeConfig> = {
   quick: {

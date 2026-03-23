@@ -22,10 +22,7 @@ export function PlayerRow({
   return (
     <div className="flex items-center gap-2.5 w-full animate-slide-in">
       {/* Player number */}
-      <span
-        className="font-display text-lg w-7 text-center flex-shrink-0"
-        style={{ color: player.color.hex }}
-      >
+      <span className="font-display text-lg w-7 text-center flex-shrink-0 opacity-40">
         {index + 1}
       </span>
 

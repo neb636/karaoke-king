@@ -14,7 +14,7 @@ import { useCountdown } from "@/hooks/useCountdown";
 import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
-import { PLAYER_COLORS, DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { useState, useCallback } from "react";
 
 export function SingPage() {
@@ -57,7 +57,6 @@ export function SingPage() {
   );
 
   const player = players[currentPlayer];
-  const color = player ? PLAYER_COLORS[currentPlayer % PLAYER_COLORS.length]! : PLAYER_COLORS[0]!;
 
   async function handleStartSinging() {
     setShowReadyOverlay(false);
@@ -118,7 +117,7 @@ export function SingPage() {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.92)] z-10">
           <NeonText
             as="div"
-            color={color.name as "pink" | "cyan" | "gold" | "green"}
+            color="pink"
             className="text-[clamp(2.5rem,7vw,5rem)] mb-3"
           >
             {player?.name || `Player ${currentPlayer + 1}`}
@@ -174,7 +173,7 @@ export function SingPage() {
       <p className="text-base uppercase tracking-[4px] opacity-60 mb-2">{turnLabel}</p>
       <NeonText
         as="h2"
-        color={color.name as "pink" | "cyan" | "gold" | "green"}
+        color="pink"
         className="text-[clamp(2rem,6vw,4rem)] mb-4"
       >
         {player?.name || `Player ${currentPlayer + 1}`}

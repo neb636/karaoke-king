@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { GAME_MODES, PLAYER_COLORS } from "@/lib/constants";
+import { GAME_MODES } from "@/lib/constants";
 import { savePlayerNames } from "@/services/playerHistory";
 import type { GameModeKey, Player, PlayerScore } from "@/types";
 
@@ -42,10 +42,9 @@ interface GameState {
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function makeDefaultPlayers(): Player[] {
-  return [0, 1].map((i) => ({
+  return [0, 1].map(() => ({
     name: "",
     bumpers: false,
-    color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
   }));
 }
 
@@ -63,15 +62,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   addPlayer: () => {
     const { players } = get();
     if (players.length >= 8) return;
-    const i = players.length;
-    const updated = [
-      ...players,
-      {
-        name: "",
-        bumpers: false,
-        color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
-      },
-    ];
+    const updated = [...players, { name: "", bumpers: false }];
     set({ players: updated });
     savePlayerNames(updated.map((p) => p.name));
   },
@@ -79,10 +70,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   removePlayer: (index) => {
     const { players } = get();
     if (players.length <= 2) return;
-    const updated = players.filter((_, i) => i !== index).map((p, i) => ({
-      ...p,
-      color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
-    }));
+    const updated = players.filter((_, i) => i !== index);
     set({ players: updated });
     savePlayerNames(updated.map((p) => p.name));
   },
@@ -163,7 +151,6 @@ export const useGameStore = create<GameState>((set, get) => ({
     const players: Player[] = Array.from({ length: count }, (_, i) => ({
       name: names[i] ?? "",
       bumpers: false,
-      color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
     }));
     set({ players });
   },

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import type { Player } from "@/types";
-import { PLAYER_COLORS } from "@/lib/constants";
 
 interface CumulativeStandingsProps {
   players: Player[];
@@ -18,7 +17,6 @@ export function CumulativeStandings({
       player,
       index: i,
       cum: cumulativeScores[i] ?? 0,
-      color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
     }))
     .sort((a, b) => b.cum - a.cum);
 
@@ -38,10 +36,7 @@ export function CumulativeStandings({
               <div className="font-display text-lg w-7 text-center opacity-50">
                 {rank + 1}
               </div>
-              <div
-                className="flex-1 font-bold text-base"
-                style={{ color: entry.color.hex }}
-              >
+              <div className="flex-1 font-bold text-base text-white/90">
                 {entry.player.name || `Player ${entry.index + 1}`}
               </div>
               <div

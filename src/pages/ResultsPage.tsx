@@ -11,7 +11,7 @@ import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useConfetti } from "@/hooks/useConfetti";
 import { saveSongScore } from "@/services/songHistory";
-import { GAME_MODES, PLAYER_COLORS } from "@/lib/constants";
+import { GAME_MODES } from "@/lib/constants";
 import type { RankedPlayer } from "@/types";
 
 export function ResultsPage() {
@@ -45,7 +45,6 @@ export function ResultsPage() {
         name: player.name || `Player ${i + 1}`,
         index: i,
         score,
-        color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
       };
     })
     .sort((a, b) => b.score.total - a.score.total);

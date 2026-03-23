@@ -42,10 +42,7 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
       )}
     >
       <div className="text-2xl mb-1">{medal}</div>
-      <div
-        className="text-base font-extrabold mb-0.5 truncate w-full text-center"
-        style={{ color: player.color.hex }}
-      >
+      <div className="text-base font-extrabold mb-0.5 truncate w-full text-center text-white/90">
         {player.name}
         {player.score.bumpers && (
           <span className="ml-1 text-xs opacity-50">⚡</span>

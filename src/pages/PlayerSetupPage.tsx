@@ -7,6 +7,8 @@ import { useGameStore } from "@/store/gameStore";
 import { loadPlayerNames } from "@/services/playerHistory";
 import { MAX_PLAYERS, MIN_PLAYERS } from "@/lib/constants";
 
+type SetupMode = "choose" | "edit";
+
 export function PlayerSetupPage() {
   const navigate = useNavigate();
   const {
@@ -18,24 +20,24 @@ export function PlayerSetupPage() {
     loadSavedPlayers,
   } = useGameStore();
 
+  const [mode, setMode] = useState<SetupMode>("edit");
   const [savedNames, setSavedNames] = useState<string[]>([]);
-  const [showReusePrompt, setShowReusePrompt] = useState(false);
 
   useEffect(() => {
     const names = loadPlayerNames();
     if (names.length >= 2) {
       setSavedNames(names);
-      setShowReusePrompt(true);
+      setMode("choose");
     }
   }, []);
 
-  function handleReusePlayers() {
+  function handleReuse() {
     loadSavedPlayers(savedNames);
-    setShowReusePrompt(false);
+    setMode("edit");
   }
 
-  function handleNewParty() {
-    setShowReusePrompt(false);
+  function handleFresh() {
+    setMode("edit");
   }
 
   function handleNext() {
@@ -45,6 +47,40 @@ export function PlayerSetupPage() {
   const canAdd = players.length < MAX_PLAYERS;
   const canRemove = players.length > MIN_PLAYERS;
 
+  if (mode === "choose") {
+    return (
+      <div className="screen-container px-5">
+        <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
+          BACK FOR MORE?
+        </NeonText>
+        <p className="text-sm uppercase tracking-[3px] opacity-40 mb-8">
+          We remember your crew
+        </p>
+
+        <div className="flex flex-col gap-4 items-center w-full max-w-[420px]">
+          {/* Saved player pills */}
+          <div className="flex flex-wrap gap-2.5 justify-center mb-2">
+            {savedNames.map((name, i) => (
+              <span
+                key={i}
+                className="px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-white/8 text-white/80"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+
+          <Button variant="gold" className="w-full" onClick={handleReuse}>
+            Play as this crew
+          </Button>
+          <Button variant="outline" className="w-full" onClick={handleFresh}>
+            Start fresh
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="screen-container overflow-y-auto py-10 px-5">
       <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-6">
@@ -52,44 +88,6 @@ export function PlayerSetupPage() {
       </NeonText>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
-
-        {/* Previous party prompt */}
-        {showReusePrompt && (
-          <div className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-3 animate-slide-in">
-            <p className="text-sm uppercase tracking-[2px] opacity-60 text-center">
-              Previous party found
-            </p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {savedNames.map((name, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 rounded-full text-sm font-semibold bg-white/10 border border-white/20 text-white/80"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-2 mt-1">
-              <Button
-                variant="cyan"
-                size="sm"
-                className="flex-1"
-                onClick={handleReusePlayers}
-              >
-                Reuse Party
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1"
-                onClick={handleNewParty}
-              >
-                New Party
-              </Button>
-            </div>
-          </div>
-        )}
-
         <p className="text-xs uppercase tracking-[2px] opacity-40 self-start">
           {players.length} / {MAX_PLAYERS} Players
         </p>
