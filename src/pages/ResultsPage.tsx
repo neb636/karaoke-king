@@ -29,7 +29,7 @@ export function ResultsPage() {
     resetToPlayerSetup,
   } = useGameStore();
 
-  const { playMode, getPlayerSong, clearPlayerSongs, setPickingPlayer } = useSongStore();
+  const { playMode, getPlayerSong, clearPlayerSongs } = useSongStore();
   const isCurated = playMode === "curated";
 
   const isLastRound = currentRound >= totalRounds;
@@ -110,7 +110,6 @@ export function ResultsPage() {
     nextRound();
     if (isCurated) {
       clearPlayerSongs();
-      setPickingPlayer(0);
       void navigate("/songs");
     } else {
       void navigate("/sing");
@@ -121,7 +120,6 @@ export function ResultsPage() {
     initNewGame();
     if (isCurated) {
       clearPlayerSongs();
-      setPickingPlayer(0);
       void navigate("/songs");
     } else {
       void navigate("/sing");
@@ -194,7 +192,7 @@ export function ResultsPage() {
       <div className="flex flex-col items-center gap-3 mt-2 pb-4 w-full">
         {!isLastRound && (
           <Button variant="pink" onClick={handleNextRound}>
-            {isCurated ? "🎵 Pick Songs for Next Round" : "▶ Next Round"}
+            {"▶ Next Round"}
           </Button>
         )}
 

@@ -99,7 +99,7 @@ export function SingPage() {
     if (nextPlayerIdx < players.length) {
       advancePlayer();
       setTimeout(() => {
-        setShowReadyOverlay(true);
+        void navigate("/songs");
       }, 600);
     } else {
       setTimeout(() => {
