@@ -59,6 +59,8 @@ export async function getCurrentUser(): Promise<SpotifyUser> {
 export interface SpotifyTrack {
   id: string;
   uri: string;
+  is_playable?: boolean;
+  restrictions?: { reason: string };
   album: {
     images: { url: string; width: number; height: number }[];
   };
@@ -66,6 +68,8 @@ export interface SpotifyTrack {
 
 /**
  * Fetch up to 50 tracks by their Spotify URIs.
+ * Includes market=from_token so Spotify returns accurate is_playable status
+ * for the authenticated user's market.
  * Returns a map of URI → SpotifyTrack for easy lookup.
  */
 export async function getTracksByUris(
@@ -83,7 +87,7 @@ export async function getTracksByUris(
   }
 
   for (const chunk of chunks) {
-    const res = await spotifyFetch(`/tracks?ids=${chunk.join(",")}`);
+    const res = await spotifyFetch(`/tracks?ids=${chunk.join(",")}&market=from_token`);
     if (!res.ok) continue;
     const data = (await res.json()) as { tracks: (SpotifyTrack | null)[] };
     for (let i = 0; i < chunk.length; i++) {

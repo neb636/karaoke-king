@@ -18,7 +18,7 @@ export function CoachingPrompt({ cue }: CoachingPromptProps) {
     <div
       key={cue.timestampMs}
       className={cn(
-        "text-center py-2 px-4 my-2 rounded-xl",
+        "text-center py-1 px-4 rounded-xl",
         "animate-feedback-pop",
         "font-display text-lg tracking-wide",
         typeStyles[cue.type],

@@ -28,21 +28,22 @@ export function SongSelectPage() {
 
   const songs = getRegionSongs();
   const region = REGIONS[selectedRegion];
-  const thumbnails = useSpotifyThumbnails(songs, isAuthenticated);
+  const { thumbnails, unavailable } = useSpotifyThumbnails(songs, isAuthenticated);
 
   const player = players[pickingPlayer];
   const playerName = player?.name || `Player ${pickingPlayer + 1}`;
 
   const filtered = useMemo(() => {
-    if (!search.trim()) return songs;
+    const available = songs.filter((s) => !unavailable.has(s.spotifyUri));
+    if (!search.trim()) return available;
     const q = search.toLowerCase();
-    return songs.filter(
+    return available.filter(
       (s) =>
         s.title.toLowerCase().includes(q) ||
         s.artist.toLowerCase().includes(q) ||
         s.genre.toLowerCase().includes(q),
     );
-  }, [songs, search]);
+  }, [songs, search, unavailable]);
 
   const canConfirm = selectedSongId && isAuthenticated && isPremium;
 
@@ -94,7 +95,7 @@ export function SongSelectPage() {
             {region.flag} {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            Player {pickingPlayer + 1} of {players.length} &middot; {songs.length} songs in {region.label}
+            Player {pickingPlayer + 1} of {players.length} &middot; {filtered.length} songs in {region.label}
           </p>
         </div>
         <SpotifyAuthButton />
