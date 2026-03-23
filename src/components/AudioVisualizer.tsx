@@ -16,18 +16,26 @@ export function AudioVisualizer({ freqArray, isActive }: AudioVisualizerProps) {
     if (!canvas) return;
 
     const resizeCanvas = () => {
-      if (canvas.parentElement) {
-        canvas.width = canvas.parentElement.clientWidth;
-        canvas.height = canvas.parentElement.clientHeight;
-      }
+      const parent = canvas.parentElement;
+      if (!parent) return;
+      const dpr = window.devicePixelRatio ?? 1;
+      const cssW = parent.clientWidth;
+      const cssH = parent.clientHeight;
+      canvas.width = Math.round(cssW * dpr);
+      canvas.height = Math.round(cssH * dpr);
+      canvas.style.width = `${cssW}px`;
+      canvas.style.height = `${cssH}px`;
     };
+
     resizeCanvas();
 
+    const ro = new ResizeObserver(resizeCanvas);
+    if (canvas.parentElement) ro.observe(canvas.parentElement);
+
     if (!isActive) {
-      // Clear canvas when not active
       const ctx = canvas.getContext("2d");
       ctx?.clearRect(0, 0, canvas.width, canvas.height);
-      return;
+      return () => ro.disconnect();
     }
 
     const loop = () => {
@@ -41,6 +49,7 @@ export function AudioVisualizer({ freqArray, isActive }: AudioVisualizerProps) {
 
     return () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      ro.disconnect();
     };
   }, [isActive, freqArray, draw]);
 

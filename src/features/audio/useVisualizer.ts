@@ -27,8 +27,12 @@ export function useVisualizer() {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      const W = canvas.width;
-      const H = canvas.height;
+      const dpr = window.devicePixelRatio ?? 1;
+      const W = canvas.width / dpr;
+      const H = canvas.height / dpr;
+
+      ctx.save();
+      ctx.scale(dpr, dpr);
 
       ctx.clearRect(0, 0, W, H);
 
@@ -45,6 +49,8 @@ export function useVisualizer() {
         const x = i * barW;
         roundedRect(ctx, x + 1, H - barH, barW - 2, barH, barW * 0.3);
       }
+
+      ctx.restore();
     },
     [],
   );
