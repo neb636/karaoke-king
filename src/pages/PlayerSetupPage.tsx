@@ -46,6 +46,7 @@ export function PlayerSetupPage() {
 
   const canAdd = players.length < MAX_PLAYERS;
   const canRemove = players.length > MIN_PLAYERS;
+  const canProceed = players.every((p) => p.name.trim().length > 0);
 
   if (mode === "choose") {
     return (
@@ -118,7 +119,12 @@ export function PlayerSetupPage() {
           </Button>
         </div>
 
-        <Button variant="gold" className="mt-2 w-full" onClick={handleNext}>
+        <Button
+          variant="gold"
+          className="mt-2 w-full"
+          onClick={handleNext}
+          disabled={!canProceed}
+        >
           Let's Go!
         </Button>
       </div>
