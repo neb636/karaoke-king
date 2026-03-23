@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { ArrowLeft } from "lucide-react";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { AudioVisualizer } from "@/components/AudioVisualizer";
@@ -9,12 +10,13 @@ import { SongInfoBanner } from "@/components/SongInfoBanner";
 import { CoachingPrompt } from "@/components/CoachingPrompt";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { useAudio } from "@/features/audio/useAudio";
 import { useCountdown } from "@/hooks/useCountdown";
 import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
-import { PLAYER_COLORS, DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { useState, useCallback } from "react";
 
 export function SingPage() {
@@ -29,6 +31,7 @@ export function SingPage() {
   } = useGameStore();
 
   const { playMode, getPlayerSong } = useSongStore();
+  const { coachingEnabled, toggleCoaching } = useSettingsStore();
   const song = getPlayerSong(currentPlayer);
   const isCurated = playMode === "curated" && !!song;
 
@@ -37,6 +40,7 @@ export function SingPage() {
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
+
 
   const handleTrackEnd = useCallback(() => {
     handleStop();
@@ -52,12 +56,11 @@ export function SingPage() {
   } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
 
   const { currentCue } = useCoachingCues(
-    isCurated ? song.id : null,
+    isCurated && coachingEnabled ? song.id : null,
     currentPositionMs,
   );
 
   const player = players[currentPlayer];
-  const color = player ? PLAYER_COLORS[currentPlayer % PLAYER_COLORS.length]! : PLAYER_COLORS[0]!;
 
   async function handleStartSinging() {
     setShowReadyOverlay(false);
@@ -80,7 +83,6 @@ export function SingPage() {
     if (!player) return;
     const score = stopListening(player.bumpers);
 
-    // Apply difficulty modifier for curated mode
     if (isCurated) {
       const modifier = DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0;
       score.total = Math.min(100, Math.round(score.total * modifier));
@@ -115,10 +117,21 @@ export function SingPage() {
     <div className="screen-container px-10 relative">
       {/* Ready overlay */}
       {showReadyOverlay && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.92)] z-10">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.95)] z-10 px-6">
+          {/* Back button — only on first player's first turn */}
+          {currentPlayer === 0 && currentRound === 1 && (
+            <button
+              onClick={() => void navigate(isCurated ? "/songs" : "/mode")}
+              className="absolute top-4 left-4 flex items-center gap-1.5 text-white/40 hover:text-white/80 transition-colors text-sm"
+            >
+              <ArrowLeft size={16} />
+              <span className="tracking-wide">Back</span>
+            </button>
+          )}
+
           <NeonText
             as="div"
-            color={color.name as "pink" | "cyan" | "gold" | "green"}
+            color="pink"
             className="text-[clamp(2.5rem,7vw,5rem)] mb-3"
           >
             {player?.name || `Player ${currentPlayer + 1}`}
@@ -161,8 +174,39 @@ export function SingPage() {
 
           {!(currentPlayer === 0 && currentRound === 1) && <div className="mb-8" />}
 
+          {/* Coaching toggle for curated mode */}
+          {isCurated && (
+            <div className="mb-5 flex items-center gap-2">
+              <button
+                onClick={toggleCoaching}
+                className={[
+                  "relative w-9 h-5 rounded-full border transition-all duration-200 flex-shrink-0",
+                  coachingEnabled
+                    ? "bg-[#00e5ff]/20 border-[#00e5ff]/50"
+                    : "bg-white/[0.06] border-white/15",
+                ].join(" ")}
+                aria-label="Toggle coaching tips"
+              >
+                <span
+                  className={[
+                    "absolute top-0.5 w-4 h-4 rounded-full transition-all duration-200",
+                    coachingEnabled
+                      ? "left-[calc(100%-1.1rem)] bg-[#00e5ff]"
+                      : "left-0.5 bg-white/30",
+                  ].join(" ")}
+                />
+              </button>
+              <span className="text-xs text-white/50 tracking-wide">
+                Coaching tips {coachingEnabled ? "on" : "off"}
+              </span>
+            </div>
+          )}
+
+          {/* Pulsing mic idle state */}
+          <div className="text-5xl animate-pulse-mic mb-5">🎤</div>
+
           <Button variant="pink" onClick={() => void handleStartSinging()}>
-            🎤 Start Singing
+            Start Singing
           </Button>
         </div>
       )}
@@ -170,11 +214,11 @@ export function SingPage() {
       {/* Countdown overlay */}
       <CountdownOverlay isActive={countdownActive} value={countdownValue} />
 
-      {/* Main sing UI */}
+      {/* Main sing UI — only show content after ready overlay dismissed */}
       <p className="text-base uppercase tracking-[4px] opacity-60 mb-2">{turnLabel}</p>
       <NeonText
         as="h2"
-        color={color.name as "pink" | "cyan" | "gold" | "green"}
+        color="pink"
         className="text-[clamp(2rem,6vw,4rem)] mb-4"
       >
         {player?.name || `Player ${currentPlayer + 1}`}
@@ -184,56 +228,50 @@ export function SingPage() {
         <SongInfoBanner title={song.title} artist={song.artist} />
       )}
 
-      {/* Coaching prompt (curated) or feedback toast (freeform) */}
-      {isCurated && currentCue ? (
+      {/* Coaching prompt or feedback toast */}
+      {isCurated && currentCue && coachingEnabled ? (
         <CoachingPrompt cue={currentCue} />
       ) : (
         <FeedbackToast message={feedback.message} colorClass={feedback.colorClass} />
       )}
 
-      <AudioVisualizer freqArray={freqArray} isActive={isListening} />
+      {isListening ? (
+        <>
+          <AudioVisualizer freqArray={freqArray} isActive={isListening} />
+          <EnergyBar percent={stats.energyPct} />
 
-      <EnergyBar percent={stats.energyPct} />
+          {/* Spotify error */}
+          {spotifyError && (
+            <p className="text-xs text-[#ff2d95] mt-1">
+              Spotify: {spotifyError}
+            </p>
+          )}
 
-      {/* Spotify error */}
-      {spotifyError && (
-        <p className="text-xs text-[#ff2d95] mt-1">
-          Spotify: {spotifyError}
-        </p>
-      )}
+          {/* Stats row */}
+          <div className="flex gap-10 my-6">
+            <div className="text-center">
+              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Time</div>
+              <div className="text-3xl font-extrabold neon-cyan">{formatTime(stats.elapsed)}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Energy</div>
+              <div className="text-3xl font-extrabold neon-pink">{stats.avgEnergy}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Pitch Hits</div>
+              <div className="text-3xl font-extrabold neon-gold">{stats.pitchHits}</div>
+            </div>
+          </div>
 
-      {/* Stats row */}
-      <div className="flex gap-10 my-6">
-        <div className="text-center">
-          <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Time</div>
-          <div className="text-3xl font-extrabold neon-cyan">{formatTime(stats.elapsed)}</div>
-        </div>
-        <div className="text-center">
-          <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Energy</div>
-          <div className="text-3xl font-extrabold neon-pink">{stats.avgEnergy}</div>
-        </div>
-        <div className="text-center">
-          <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Pitch Hits</div>
-          <div className="text-3xl font-extrabold neon-gold">{stats.pitchHits}</div>
-        </div>
-      </div>
-
-      {isListening && (
-        <Button variant="red" onClick={handleStop}>
-          {isCurated ? "🏁 Finish Early" : "⏹ Stop"}
-        </Button>
-      )}
-
-      {!isListening && !showReadyOverlay && !countdownActive && (
+          <Button variant="red" onClick={handleStop}>
+            {isCurated ? "🏁 Finish Early" : "⏹ Stop"}
+          </Button>
+        </>
+      ) : !showReadyOverlay && !countdownActive ? (
         <p className="text-sm opacity-40 mt-3">
           {isCurated ? "Sing along with the track!" : "SING YOUR HEART OUT! Hit STOP when done."}
         </p>
-      )}
-      {showReadyOverlay && (
-        <p className="text-sm opacity-40 mt-3">
-          Hit the button when you're ready to sing!
-        </p>
-      )}
+      ) : null}
     </div>
   );
 }

@@ -1,14 +1,8 @@
 // ── Player ──────────────────────────────────────────────────────────────────
 
-export interface PlayerColor {
-  name: string; // CSS class suffix, e.g. "neon-pink"
-  hex: string;
-}
-
 export interface Player {
   name: string;
   bumpers: boolean;
-  color: PlayerColor;
 }
 
 // ── Game Modes ───────────────────────────────────────────────────────────────
@@ -38,7 +32,6 @@ export interface RankedPlayer {
   name: string;
   index: number;
   score: PlayerScore;
-  color: PlayerColor;
 }
 
 // ── Feedback ─────────────────────────────────────────────────────────────────

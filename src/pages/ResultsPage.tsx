@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useConfetti } from "@/hooks/useConfetti";
 import { saveSongScore } from "@/services/songHistory";
-import { GAME_MODES, PLAYER_COLORS } from "@/lib/constants";
+import { GAME_MODES } from "@/lib/constants";
 import type { RankedPlayer } from "@/types";
 
 export function ResultsPage() {
@@ -35,6 +35,13 @@ export function ResultsPage() {
   const isLastRound = currentRound >= totalRounds;
   const isTournament = totalRounds > 1;
 
+  // Delay winner announcement for dramatic effect
+  const [showWinner, setShowWinner] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShowWinner(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
+
   // Build ranked list
   const ranked: RankedPlayer[] = players
     .map((player, i) => {
@@ -45,7 +52,6 @@ export function ResultsPage() {
         name: player.name || `Player ${i + 1}`,
         index: i,
         score,
-        color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
       };
     })
     .sort((a, b) => b.score.total - a.score.total);
@@ -155,16 +161,21 @@ export function ResultsPage() {
         </div>
       )}
 
-      {/* Winner banner */}
-      <div className="font-display text-[clamp(1.1rem,3.5vw,2.2rem)] animate-glow-pulse neon-gold text-center px-2">
-        {winnerText}
-      </div>
-
       {/* Score cards */}
       <div className="flex gap-3 items-end justify-center flex-wrap w-full max-w-[900px]">
         {ranked.map((player, rank) => (
           <ScoreCard key={player.index} player={player} rank={rank} />
         ))}
+      </div>
+
+      {/* Winner banner — delayed for drama */}
+      <div
+        className={[
+          "font-display text-[clamp(1.6rem,5vw,3rem)] animate-glow-pulse neon-gold text-center px-2 transition-all duration-700",
+          showWinner ? "opacity-100 scale-100" : "opacity-0 scale-95",
+        ].join(" ")}
+      >
+        {winnerText}
       </div>
 
       {/* Cumulative standings (multi-round) */}
@@ -180,20 +191,35 @@ export function ResultsPage() {
       <ScoreBreakdown players={ranked} isCurated={isCurated} getPlayerSong={getPlayerSong} />
 
       {/* Action buttons */}
-      <div className="flex gap-4 flex-wrap justify-center mt-2 pb-4">
+      <div className="flex flex-col items-center gap-3 mt-2 pb-4 w-full">
         {!isLastRound && (
           <Button variant="pink" onClick={handleNextRound}>
             {isCurated ? "🎵 Pick Songs for Next Round" : "▶ Next Round"}
           </Button>
         )}
+
         {isLastRound && (
-          <Button variant="gold" onClick={handleRematch}>
-            🔄 Rematch
+          <div className="flex gap-4 flex-wrap justify-center">
+            <div className="flex flex-col items-center gap-1">
+              <Button variant="gold" onClick={handleNewGame}>
+                New Game
+              </Button>
+              <span className="text-[10px] text-white/30 tracking-wide">Change players</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <Button variant="outline" onClick={handleRematch}>
+                🔄 Rematch
+              </Button>
+              <span className="text-[10px] text-white/30 tracking-wide">Same players, new songs</span>
+            </div>
+          </div>
+        )}
+
+        {!isLastRound && (
+          <Button variant="outline" size="sm" onClick={handleNewGame}>
+            New Game
           </Button>
         )}
-        <Button variant="outline" size="sm" onClick={handleNewGame}>
-          New Game
-        </Button>
       </div>
     </div>
   );
