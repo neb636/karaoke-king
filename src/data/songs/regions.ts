@@ -47,7 +47,7 @@ export const REGIONS: Record<RegionId, Region> = {
 
 export const REGION_IDS = Object.keys(REGIONS) as RegionId[];
 
-/** Song IDs per region — each region has exactly 25 songs. Cross-region songs share catalog entries. */
+/** Song IDs per region. Cross-region songs share catalog entries. */
 export const REGION_SONGS: Record<RegionId, string[]> = {
   us: [
     "dont-stop-believin",
@@ -75,6 +75,16 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "hallelujah",
     "wonderwall",
     "all-star",
+    "pink-pony-club",
+    "jolene",
+    "you-dont-know-how-it-feels",
+    "id-do-anything-for-love",
+    "espresso",
+    "drivers-license",
+    "good-4-u",
+    "gold-digger",
+    "sweet-home-alabama",
+    "always-be-my-baby",
   ],
   uk: [
     "bohemian-rhapsody",
@@ -102,6 +112,7 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "dakota",
     "september",
     "dancing-queen",
+    "im-too-sexy",
   ],
   latin: [
     "despacito",
@@ -156,6 +167,8 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "happy",
     "shake-it-off",
     "uptown-funk",
+    "forever-young-blackpink",
+    "gabriela",
   ],
   bollywood: [
     "jai-ho",
@@ -210,6 +223,10 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "blue-da-ba-dee",
     "september",
     "despacito",
+    "who-let-the-dogs-out",
+    "barbie-girl",
+    "espresso",
+    "always-be-my-baby",
   ],
   classics: [
     "my-way",
@@ -237,5 +254,10 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "billie-jean",
     "beat-it",
     "purple-rain",
+    "jolene",
+    "you-dont-know-how-it-feels",
+    "id-do-anything-for-love",
+    "sweet-home-alabama",
+    "always-be-my-baby",
   ],
 };
