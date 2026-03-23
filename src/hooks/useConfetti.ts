@@ -13,6 +13,9 @@ const COLORS = [
 
 export function useConfetti() {
   const spawn = useCallback(() => {
+    const fragment = document.createDocumentFragment();
+    const removals: Array<{ el: HTMLDivElement; removeAt: number }> = [];
+
     for (let i = 0; i < 100; i++) {
       const piece = document.createElement("div");
       const size = 6 + Math.random() * 8;
@@ -32,10 +35,18 @@ export function useConfetti() {
         opacity: "0",
         animation: `confetti-fall ${dur}s linear ${delay}s forwards`,
         pointerEvents: "none",
+        willChange: "transform, opacity",
       });
 
-      document.body.appendChild(piece);
-      setTimeout(() => piece.remove(), (dur + delay + 0.5) * 1000);
+      fragment.appendChild(piece);
+      removals.push({ el: piece, removeAt: (dur + delay + 0.5) * 1000 });
+    }
+
+    // Single DOM insertion for all 100 pieces
+    document.body.appendChild(fragment);
+
+    for (const { el, removeAt } of removals) {
+      setTimeout(() => el.remove(), removeAt);
     }
   }, []);
 
