@@ -9,13 +9,11 @@ interface SongState {
   selectedRegion: RegionId;
   selectedSongId: string | null;
   playerSongIds: Record<number, string>;
-  pickingPlayer: number;
 
   setPlayMode: (mode: PlayMode) => void;
   setRegion: (region: RegionId) => void;
   selectSong: (songId: string | null) => void;
   selectSongForPlayer: (playerIndex: number, songId: string) => void;
-  setPickingPlayer: (playerIndex: number) => void;
   clearPlayerSongs: () => void;
   getCurrentSong: () => CuratedSong | null;
   getPlayerSong: (playerIndex: number) => CuratedSong | null;
@@ -27,7 +25,6 @@ export const useSongStore = create<SongState>((set, get) => ({
   selectedRegion: detectRegion(),
   selectedSongId: null,
   playerSongIds: {},
-  pickingPlayer: 0,
 
   setPlayMode: (mode) => set({ playMode: mode }),
   setRegion: (region) => set({ selectedRegion: region, selectedSongId: null }),
@@ -38,10 +35,7 @@ export const useSongStore = create<SongState>((set, get) => ({
       playerSongIds: { ...s.playerSongIds, [playerIndex]: songId },
     })),
 
-  setPickingPlayer: (playerIndex) =>
-    set({ pickingPlayer: playerIndex, selectedSongId: null }),
-
-  clearPlayerSongs: () => set({ playerSongIds: {}, pickingPlayer: 0 }),
+  clearPlayerSongs: () => set({ playerSongIds: {}, selectedSongId: null }),
 
   getCurrentSong: () => {
     const { selectedSongId } = get();

@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { Check } from "lucide-react";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { SongCard } from "@/components/SongCard";
@@ -18,20 +17,25 @@ export function SongSelectPage() {
   const navigate = useNavigate();
   const {
     selectedRegion, setRegion, selectedSongId, selectSong,
-    getRegionSongs, pickingPlayer, selectSongForPlayer, setPickingPlayer,
-    playerSongIds,
+    getRegionSongs, selectSongForPlayer,
   } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
-  const { players } = useGameStore();
+  const { players, currentPlayer, currentRound, totalRounds } = useGameStore();
   const [search, setSearch] = useState("");
   const [regionChangedClear, setRegionChangedClear] = useState(false);
+
+  // Clear selection when this page mounts (fresh pick for each player)
+  useEffect(() => {
+    selectSong(null);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const songs = getRegionSongs();
   const region = REGIONS[selectedRegion];
   const { thumbnails, unavailable } = useSpotifyThumbnails(songs, isAuthenticated);
 
-  const player = players[pickingPlayer];
-  const playerName = player?.name || `Player ${pickingPlayer + 1}`;
+  const player = players[currentPlayer];
+  const playerName = player?.name || `Player ${currentPlayer + 1}`;
 
   const filtered = useMemo(() => {
     const available = songs.filter((s) => !unavailable.has(s.spotifyUri));
@@ -47,11 +51,10 @@ export function SongSelectPage() {
 
   const canConfirm = selectedSongId && isAuthenticated && isPremium;
 
-  // Derive a human-readable hint for why confirm is disabled
   const confirmHint = useMemo(() => {
     if (!selectedSongId) return "Select a song to continue";
-    if (!isAuthenticated) return "Connect Spotify to lock in your song";
-    if (!isPremium) return null; // SpotifyPremiumGate handles this case
+    if (!isAuthenticated) return "Connect Spotify to pick your song";
+    if (!isPremium) return null;
     return null;
   }, [selectedSongId, isAuthenticated, isPremium]);
 
@@ -62,7 +65,6 @@ export function SongSelectPage() {
     setRegion(region);
   }
 
-  // Auto-clear the "region changed" notice after 3s
   useEffect(() => {
     if (!regionChangedClear) return;
     const t = setTimeout(() => setRegionChangedClear(false), 3000);
@@ -71,17 +73,13 @@ export function SongSelectPage() {
 
   function handleConfirmSong() {
     if (!canConfirm || !selectedSongId) return;
-    selectSongForPlayer(pickingPlayer, selectedSongId);
-
-    const nextPlayer = pickingPlayer + 1;
-    if (nextPlayer < players.length) {
-      setPickingPlayer(nextPlayer);
-      setSearch("");
-      setRegionChangedClear(false);
-    } else {
-      void navigate("/sing");
-    }
+    selectSongForPlayer(currentPlayer, selectedSongId);
+    void navigate("/sing");
   }
+
+  const roundLabel = totalRounds > 1
+    ? `Round ${currentRound} of ${totalRounds} · `
+    : "";
 
   return (
     <div className="screen-container overflow-y-auto justify-start py-6 px-4 gap-4">
@@ -95,51 +93,11 @@ export function SongSelectPage() {
             {region.flag} {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            Player {pickingPlayer + 1} of {players.length} &middot; {filtered.length} songs in {region.label}
+            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs in {region.label}
           </p>
         </div>
         <SpotifyAuthButton />
       </div>
-
-      {/* Player progress stepper */}
-      {players.length > 1 && (
-        <div className="flex items-center gap-2 flex-wrap justify-center w-full max-w-[900px]">
-          {players.map((p, i) => {
-            const isLocked = !!playerSongIds[i];
-            const isCurrent = i === pickingPlayer;
-            const isPending = !isLocked && !isCurrent;
-            return (
-              <div key={i} className="flex items-center gap-2">
-                <div
-                  className={[
-                    "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border transition-all duration-300",
-                    isLocked
-                      ? "bg-[#00e5ff]/10 border-[#00e5ff]/40 text-[#00e5ff]"
-                      : isCurrent
-                        ? "bg-[#ff2d95]/10 border-[#ff2d95]/60 text-white animate-pulse"
-                        : "bg-white/[0.03] border-white/10 text-white/30",
-                  ].join(" ")}
-                >
-                  {isLocked ? (
-                    <Check size={10} strokeWidth={3} />
-                  ) : (
-                    <span className={[
-                      "w-1.5 h-1.5 rounded-full inline-block",
-                      isCurrent ? "bg-[#ff2d95]" : "bg-white/20",
-                    ].join(" ")} />
-                  )}
-                  <span className={isPending ? "opacity-40" : ""}>
-                    {p.name || `Player ${i + 1}`}
-                  </span>
-                </div>
-                {i < players.length - 1 && (
-                  <span className="text-white/15 text-xs">›</span>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
 
       <RegionPicker selected={selectedRegion} onChange={handleRegionChange} />
 
@@ -178,11 +136,9 @@ export function SongSelectPage() {
       )}
 
       <div className="sticky bottom-0 bg-gradient-to-t from-[#0a0a1a] via-[#0a0a1a] to-transparent pt-6 pb-4 w-full max-w-[900px] flex flex-col items-center gap-2">
-        {/* Contextual hint for disabled confirm button */}
         {confirmHint && (
           <p className="text-xs text-white/50 tracking-wide">{confirmHint}</p>
         )}
-        {/* Only show confirm button if premium (or not yet authenticated) */}
         {!(isAuthenticated && !isPremium) && (
           <div className="flex gap-3">
             <Button
@@ -198,13 +154,10 @@ export function SongSelectPage() {
               disabled={!canConfirm}
               className={!canConfirm ? "opacity-40 cursor-not-allowed" : ""}
             >
-              🎤 {pickingPlayer < players.length - 1
-                ? `Lock In & Next Player`
-                : `Lock In & Sing!`}
+              🎤 Sing This!
             </Button>
           </div>
         )}
-        {/* If premium gate is showing, still show a Back button */}
         {isAuthenticated && !isPremium && (
           <Button
             variant="outline"
