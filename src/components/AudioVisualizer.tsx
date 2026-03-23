@@ -45,7 +45,7 @@ export function AudioVisualizer({ freqArray, isActive }: AudioVisualizerProps) {
   }, [isActive, freqArray, draw]);
 
   return (
-    <div className="w-full max-w-[600px] h-40 relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/[0.06]">
+    <div className="w-full max-w-[600px] h-28 relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/[0.06]">
       <canvas ref={canvasRef} className="w-full h-full" />
     </div>
   );

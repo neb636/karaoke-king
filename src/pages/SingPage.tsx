@@ -114,7 +114,7 @@ export function SingPage() {
       : `SINGER ${currentPlayer + 1} OF ${players.length}`;
 
   return (
-    <div className="screen-container px-10 relative">
+    <div className="screen-container px-8 relative">
       {/* Ready overlay */}
       {showReadyOverlay && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-[rgba(10,10,26,0.95)] z-10 px-6">
@@ -132,20 +132,20 @@ export function SingPage() {
           <NeonText
             as="div"
             color="pink"
-            className="text-[clamp(2.5rem,7vw,5rem)] mb-3"
+            className="text-[clamp(2.5rem,7vw,5rem)] mb-2"
           >
             {player?.name || `Player ${currentPlayer + 1}`}
           </NeonText>
-          <p className="text-lg opacity-60 mb-3 tracking-[2px]">GET READY TO SING!</p>
+          <p className="text-lg opacity-60 mb-2 tracking-[2px]">GET READY TO SING!</p>
 
           {isCurated && (
-            <div className="mb-3 text-center">
+            <div className="mb-2 text-center">
               <p className="text-sm neon-pink font-bold">{song.title}</p>
               <p className="text-xs text-white/50">{song.artist}</p>
             </div>
           )}
 
-          <p className="text-sm opacity-35 mb-1 tracking-[2px]">
+          <p className="text-sm opacity-35 mb-0.5 tracking-[2px]">
             Singer {currentPlayer + 1} of {players.length}
           </p>
           {totalRounds > 1 && (
@@ -155,8 +155,8 @@ export function SingPage() {
           )}
 
           {currentPlayer === 0 && currentRound === 1 && (
-            <div className="mt-5 mb-5 px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-center space-y-1">
-              <p className="text-xs uppercase tracking-[2px] opacity-40 mb-2">How to play</p>
+            <div className="mt-4 mb-4 px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-center space-y-1">
+              <p className="text-xs uppercase tracking-[2px] opacity-40 mb-1.5">How to play</p>
               {isCurated ? (
                 <>
                   <p className="text-sm opacity-60">🎵 Music plays right here in your browser</p>
@@ -172,11 +172,11 @@ export function SingPage() {
             </div>
           )}
 
-          {!(currentPlayer === 0 && currentRound === 1) && <div className="mb-8" />}
+          {!(currentPlayer === 0 && currentRound === 1) && <div className="mb-5" />}
 
           {/* Coaching toggle for curated mode */}
           {isCurated && (
-            <div className="mb-5 flex items-center gap-2">
+            <div className="mb-4 flex items-center gap-2">
               <button
                 onClick={toggleCoaching}
                 className={[
@@ -203,7 +203,7 @@ export function SingPage() {
           )}
 
           {/* Pulsing mic idle state */}
-          <div className="text-5xl animate-pulse-mic mb-5">🎤</div>
+          <div className="text-4xl animate-pulse-mic mb-4">🎤</div>
 
           <Button variant="pink" onClick={() => void handleStartSinging()}>
             Start Singing
@@ -214,19 +214,24 @@ export function SingPage() {
       {/* Countdown overlay */}
       <CountdownOverlay isActive={countdownActive} value={countdownValue} />
 
-      {/* Main sing UI — only show content after ready overlay dismissed */}
-      <p className="text-base uppercase tracking-[4px] opacity-60 mb-2">{turnLabel}</p>
+      {/* Main sing UI — compact header row */}
+      <div className="flex items-center gap-3 mb-1 self-stretch justify-center flex-wrap">
+        <p className="text-xs uppercase tracking-[3px] opacity-50">{turnLabel}</p>
+        {isCurated && isListening && (
+          <>
+            <span className="text-white/20 text-xs">·</span>
+            <SongInfoBanner title={song.title} artist={song.artist} compact />
+          </>
+        )}
+      </div>
+
       <NeonText
         as="h2"
         color="pink"
-        className="text-[clamp(2rem,6vw,4rem)] mb-4"
+        className="text-[clamp(1.8rem,5vw,3.2rem)] mb-2 leading-none"
       >
         {player?.name || `Player ${currentPlayer + 1}`}
       </NeonText>
-
-      {isCurated && isListening && (
-        <SongInfoBanner title={song.title} artist={song.artist} />
-      )}
 
       {/* Coaching prompt or feedback toast */}
       {isCurated && currentCue && coachingEnabled ? (
@@ -238,7 +243,9 @@ export function SingPage() {
       {isListening ? (
         <>
           <AudioVisualizer freqArray={freqArray} isActive={isListening} />
-          <EnergyBar percent={stats.energyPct} />
+          <div className="mt-2 w-full max-w-[600px]">
+            <EnergyBar percent={stats.energyPct} />
+          </div>
 
           {/* Spotify error */}
           {spotifyError && (
@@ -247,23 +254,23 @@ export function SingPage() {
             </p>
           )}
 
-          {/* Stats row */}
-          <div className="flex gap-10 my-6">
-            <div className="text-center">
-              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Time</div>
-              <div className="text-3xl font-extrabold neon-cyan">{formatTime(stats.elapsed)}</div>
+          {/* Compact stats strip */}
+          <div className="flex gap-2 mt-3 mb-3">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
+              <span className="text-[10px] uppercase tracking-[2px] opacity-40">Time</span>
+              <span className="text-xl font-extrabold neon-cyan tabular-nums">{formatTime(stats.elapsed)}</span>
             </div>
-            <div className="text-center">
-              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Energy</div>
-              <div className="text-3xl font-extrabold neon-pink">{stats.avgEnergy}</div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
+              <span className="text-[10px] uppercase tracking-[2px] opacity-40">Energy</span>
+              <span className="text-xl font-extrabold neon-pink tabular-nums">{stats.avgEnergy}</span>
             </div>
-            <div className="text-center">
-              <div className="text-xs uppercase tracking-[2px] opacity-50 mb-1">Pitch Hits</div>
-              <div className="text-3xl font-extrabold neon-gold">{stats.pitchHits}</div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
+              <span className="text-[10px] uppercase tracking-[2px] opacity-40">Pitch Hits</span>
+              <span className="text-xl font-extrabold neon-gold tabular-nums">{stats.pitchHits}</span>
             </div>
           </div>
 
-          <Button variant="red" onClick={handleStop}>
+          <Button variant="red" size="sm" onClick={handleStop}>
             {isCurated ? "🏁 Finish Early" : "⏹ Stop"}
           </Button>
         </>
