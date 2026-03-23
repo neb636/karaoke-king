@@ -10,6 +10,7 @@ import { SpotifyPremiumGate } from "@/components/SpotifyPremiumGate";
 import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";
+import { useSpotifyThumbnails } from "@/hooks/useSpotifyThumbnails";
 import { REGIONS } from "@/data/songs/regions";
 import type { RegionId } from "@/types/songs";
 
@@ -27,6 +28,7 @@ export function SongSelectPage() {
 
   const songs = getRegionSongs();
   const region = REGIONS[selectedRegion];
+  const thumbnails = useSpotifyThumbnails(songs, isAuthenticated);
 
   const player = players[pickingPlayer];
   const playerName = player?.name || `Player ${pickingPlayer + 1}`;
@@ -165,6 +167,7 @@ export function SongSelectPage() {
             song={song}
             selected={selectedSongId === song.id}
             onSelect={() => selectSong(song.id)}
+            thumbnailUrl={thumbnails.get(song.spotifyUri)}
           />
         ))}
       </div>
