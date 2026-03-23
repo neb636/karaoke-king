@@ -54,6 +54,49 @@ export async function getCurrentUser(): Promise<SpotifyUser> {
   return res.json();
 }
 
+// ── Tracks ──────────────────────────────────────────────────────────────────
+
+export interface SpotifyTrack {
+  id: string;
+  uri: string;
+  album: {
+    images: { url: string; width: number; height: number }[];
+  };
+}
+
+/**
+ * Fetch up to 50 tracks by their Spotify URIs.
+ * Returns a map of URI → SpotifyTrack for easy lookup.
+ */
+export async function getTracksByUris(
+  uris: string[],
+): Promise<Map<string, SpotifyTrack>> {
+  const ids = uris.map((uri) => uri.split(":")[2]).filter(Boolean);
+  if (ids.length === 0) return new Map();
+
+  const result = new Map<string, SpotifyTrack>();
+
+  // Spotify /tracks endpoint accepts up to 50 IDs per request
+  const chunks: string[][] = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    chunks.push(ids.slice(i, i + 50));
+  }
+
+  for (const chunk of chunks) {
+    const res = await spotifyFetch(`/tracks?ids=${chunk.join(",")}`);
+    if (!res.ok) continue;
+    const data = (await res.json()) as { tracks: (SpotifyTrack | null)[] };
+    for (let i = 0; i < chunk.length; i++) {
+      const track = data.tracks[i];
+      if (track) {
+        result.set(`spotify:track:${chunk[i]}`, track);
+      }
+    }
+  }
+
+  return result;
+}
+
 // ── Playback ────────────────────────────────────────────────────────────────
 
 export async function startPlayback(
