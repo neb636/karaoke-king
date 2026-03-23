@@ -101,6 +101,18 @@
 @layer components {
   .screen-container {
     @apply flex flex-col items-center justify-center w-full h-full relative;
+    animation: page-fade-in 0.25s ease-out;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { ArrowLeft } from "lucide-react";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { PlayerRow } from "@/components/PlayerRow";
@@ -51,11 +52,23 @@ export function PlayerSetupPage() {
   if (mode === "choose") {
     return (
       <div className="screen-container px-5">
+        {/* Back to title */}
+        <button
+          onClick={() => void navigate("/")}
+          className="absolute top-4 left-4 flex items-center gap-1.5 text-white/40 hover:text-white/80 transition-colors text-sm"
+        >
+          <ArrowLeft size={16} />
+          <span className="tracking-wide">Home</span>
+        </button>
+
         <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
           BACK FOR MORE?
         </NeonText>
-        <p className="text-sm uppercase tracking-[3px] opacity-40 mb-8">
+        <p className="text-sm uppercase tracking-[3px] opacity-40 mb-2">
           We remember your crew
+        </p>
+        <p className="text-xs text-white/50 mb-6">
+          {savedNames.length} player{savedNames.length !== 1 ? "s" : ""} returning
         </p>
 
         <div className="flex flex-col gap-4 items-center w-full max-w-[420px]">
@@ -84,12 +97,21 @@ export function PlayerSetupPage() {
 
   return (
     <div className="screen-container overflow-y-auto py-10 px-5">
+      {/* Back to title */}
+      <button
+        onClick={() => void navigate("/")}
+        className="absolute top-4 left-4 flex items-center gap-1.5 text-white/40 hover:text-white/80 transition-colors text-sm"
+      >
+        <ArrowLeft size={16} />
+        <span className="tracking-wide">Home</span>
+      </button>
+
       <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-6">
         ENTER THE ARENA
       </NeonText>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
-        <p className="text-xs uppercase tracking-[2px] opacity-40 self-start">
+        <p className="text-xs uppercase tracking-[2px] opacity-60 self-start font-semibold">
           {players.length} / {MAX_PLAYERS} Players
         </p>
 
@@ -107,21 +129,18 @@ export function PlayerSetupPage() {
           ))}
         </div>
 
-        <div className="flex gap-3 mt-1">
-          <Button
-            variant="cyan"
-            size="sm"
+        {canAdd && (
+          <button
             onClick={addPlayer}
-            disabled={!canAdd}
-            className={!canAdd ? "opacity-30 pointer-events-none" : ""}
+            className="w-full py-2.5 rounded-2xl border-2 border-dashed border-white/15 text-white/40 hover:border-[#00e5ff]/40 hover:text-[#00e5ff]/70 transition-all duration-200 text-sm font-semibold tracking-wide"
           >
             + Add Player
-          </Button>
-        </div>
+          </button>
+        )}
 
         <Button
           variant="gold"
-          className="mt-2 w-full"
+          className="mt-1 w-full"
           onClick={handleNext}
           disabled={!canProceed}
         >
