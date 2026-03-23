@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { PlayerRow } from "@/components/PlayerRow";
 import { useGameStore } from "@/store/gameStore";
+import { loadPlayerNames } from "@/services/playerHistory";
 import { MAX_PLAYERS, MIN_PLAYERS } from "@/lib/constants";
 
 export function PlayerSetupPage() {
@@ -13,7 +15,28 @@ export function PlayerSetupPage() {
     removePlayer,
     updatePlayerName,
     updatePlayerBumpers,
+    loadSavedPlayers,
   } = useGameStore();
+
+  const [savedNames, setSavedNames] = useState<string[]>([]);
+  const [showReusePrompt, setShowReusePrompt] = useState(false);
+
+  useEffect(() => {
+    const names = loadPlayerNames();
+    if (names.length >= 2) {
+      setSavedNames(names);
+      setShowReusePrompt(true);
+    }
+  }, []);
+
+  function handleReusePlayers() {
+    loadSavedPlayers(savedNames);
+    setShowReusePrompt(false);
+  }
+
+  function handleNewParty() {
+    setShowReusePrompt(false);
+  }
 
   function handleNext() {
     void navigate("/mode");
@@ -29,6 +52,44 @@ export function PlayerSetupPage() {
       </NeonText>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
+
+        {/* Previous party prompt */}
+        {showReusePrompt && (
+          <div className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-4 flex flex-col gap-3 animate-slide-in">
+            <p className="text-sm uppercase tracking-[2px] opacity-60 text-center">
+              Previous party found
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {savedNames.map((name, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 rounded-full text-sm font-semibold bg-white/10 border border-white/20 text-white/80"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-2 mt-1">
+              <Button
+                variant="cyan"
+                size="sm"
+                className="flex-1"
+                onClick={handleReusePlayers}
+              >
+                Reuse Party
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1"
+                onClick={handleNewParty}
+              >
+                New Party
+              </Button>
+            </div>
+          </div>
+        )}
+
         <p className="text-xs uppercase tracking-[2px] opacity-40 self-start">
           {players.length} / {MAX_PLAYERS} Players
         </p>

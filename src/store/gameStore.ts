@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { GAME_MODES, PLAYER_COLORS } from "@/lib/constants";
+import { savePlayerNames } from "@/services/playerHistory";
 import type { GameModeKey, Player, PlayerScore } from "@/types";
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -35,6 +36,7 @@ interface GameState {
   advancePlayer: () => void;
   nextRound: () => void;
   resetToPlayerSetup: () => void;
+  loadSavedPlayers: (names: string[]) => void;
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -62,16 +64,16 @@ export const useGameStore = create<GameState>((set, get) => ({
     const { players } = get();
     if (players.length >= 8) return;
     const i = players.length;
-    set({
-      players: [
-        ...players,
-        {
-          name: "",
-          bumpers: false,
-          color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
-        },
-      ],
-    });
+    const updated = [
+      ...players,
+      {
+        name: "",
+        bumpers: false,
+        color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
+      },
+    ];
+    set({ players: updated });
+    savePlayerNames(updated.map((p) => p.name));
   },
 
   removePlayer: (index) => {
@@ -82,6 +84,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
     }));
     set({ players: updated });
+    savePlayerNames(updated.map((p) => p.name));
   },
 
   updatePlayerName: (index, name) => {
@@ -89,6 +92,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     const player = players[index];
     if (player) players[index] = { ...player, name };
     set({ players });
+    savePlayerNames(players.map((p) => p.name));
   },
 
   updatePlayerBumpers: (index, bumpers) => {
@@ -152,5 +156,15 @@ export const useGameStore = create<GameState>((set, get) => ({
       scores: [],
       cumulativeScores: [],
     });
+  },
+
+  loadSavedPlayers: (names) => {
+    const count = Math.min(Math.max(names.length, 2), 8);
+    const players: Player[] = Array.from({ length: count }, (_, i) => ({
+      name: names[i] ?? "",
+      bumpers: false,
+      color: PLAYER_COLORS[i % PLAYER_COLORS.length]!,
+    }));
+    set({ players });
   },
 }));
