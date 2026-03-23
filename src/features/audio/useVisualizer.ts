@@ -1,56 +1,57 @@
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 
-function roundedRect(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  w: number,
-  h: number,
-  r: number,
-) {
-  if (h < 1) return;
-  r = Math.min(r, h / 2, w / 2);
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h);
-  ctx.lineTo(x, y + h);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.fill();
-}
+const BAR_COUNT = 64;
+
+// Pre-compute the fixed hue per bar so we don't recalculate each frame
+const BAR_HUES = Array.from(
+  { length: BAR_COUNT },
+  (_, i) => 300 + (i / BAR_COUNT) * 60,
+);
 
 export function useVisualizer() {
+  // Cache the 2D context so we don't look it up every frame
+  const ctxCache = useRef<{ canvas: HTMLCanvasElement; ctx: CanvasRenderingContext2D } | null>(null);
+
   const draw = useCallback(
     (canvas: HTMLCanvasElement, freqArray: Uint8Array) => {
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+      let ctx: CanvasRenderingContext2D;
+      if (ctxCache.current?.canvas === canvas) {
+        ctx = ctxCache.current.ctx;
+      } else {
+        const acquired = canvas.getContext("2d");
+        if (!acquired) return;
+        ctx = acquired;
+        ctxCache.current = { canvas, ctx };
+      }
 
-      const dpr = window.devicePixelRatio ?? 1;
-      const W = canvas.width / dpr;
-      const H = canvas.height / dpr;
-
-      ctx.save();
-      ctx.scale(dpr, dpr);
+      // canvas.width/height are already in physical pixels (set by resizeCanvas)
+      // Work directly in physical pixels — no save/restore/scale needed
+      const W = canvas.width;
+      const H = canvas.height;
 
       ctx.clearRect(0, 0, W, H);
 
-      const barCount = 64;
-      const barW = W / barCount;
-      const step = Math.floor(freqArray.length / barCount);
+      const barW = W / BAR_COUNT;
+      const step = Math.floor(freqArray.length / BAR_COUNT);
+      const radius = barW * 0.3;
 
-      for (let i = 0; i < barCount; i++) {
+      for (let i = 0; i < BAR_COUNT; i++) {
         const val = (freqArray[i * step] ?? 0) / 255;
         const barH = val * H * 0.9;
-        const hue = 300 + (i / barCount) * 60; // pink → purple
-        const alpha = 0.4 + val * 0.6;
-        ctx.fillStyle = `hsla(${hue}, 100%, 60%, ${alpha})`;
-        const x = i * barW;
-        roundedRect(ctx, x + 1, H - barH, barW - 2, barH, barW * 0.3);
-      }
+        if (barH < 1) continue;
 
-      ctx.restore();
+        const alpha = 0.4 + val * 0.6;
+        ctx.fillStyle = `hsla(${BAR_HUES[i]}, 100%, 60%, ${alpha})`;
+
+        const x = i * barW + 1;
+        const y = H - barH;
+        const w = barW - 2;
+        const r = Math.min(radius, barH / 2, w / 2);
+
+        ctx.beginPath();
+        ctx.roundRect(x, y, w, barH, r);
+        ctx.fill();
+      }
     },
     [],
   );

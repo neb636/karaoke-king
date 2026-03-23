@@ -162,6 +162,8 @@ export function useAudio(): AudioHook {
 
   // ── Animation frame loop ─────────────────────────────────────────────────
 
+  const lastStatsUpdate = useRef(0);
+
   const tick = useCallback(() => {
     if (!isListeningRef.current || !analyser) return;
     animFrameId.current = requestAnimationFrame(tick);
@@ -192,21 +194,23 @@ export function useAudio(): AudioHook {
       lastPitchBucket.current = bucket;
     }
 
-    // UI update
-    const elapsed = (performance.now() - turnStart.current) / 1000;
-    const energyPct = Math.min(100, Math.round(rms * 400));
-    const avgEnergy = Math.round(
-      frameCount.current > 0 ? (totalRMS.current / frameCount.current) * 300 : 0,
-    );
-
-    setStats({
-      elapsed,
-      energyPct,
-      avgEnergy,
-      pitchHits: pitchBuckets.current.size,
-    });
-
-    updateFeedback(rms, elapsed);
+    // UI update — throttled to ~10fps to avoid 60fps React re-renders
+    const now = performance.now();
+    if (now - lastStatsUpdate.current >= 100) {
+      lastStatsUpdate.current = now;
+      const elapsed = (now - turnStart.current) / 1000;
+      const energyPct = Math.min(100, Math.round(rms * 400));
+      const avgEnergy = Math.round(
+        frameCount.current > 0 ? (totalRMS.current / frameCount.current) * 300 : 0,
+      );
+      setStats({
+        elapsed,
+        energyPct,
+        avgEnergy,
+        pitchHits: pitchBuckets.current.size,
+      });
+      updateFeedback(rms, elapsed);
+    }
   }, [updateFeedback]);
 
   // ── Start / Stop ──────────────────────────────────────────────────────────
@@ -220,6 +224,7 @@ export function useAudio(): AudioHook {
     quietStreak.current = 0;
     loudStreak.current = 0;
     lastFeedbackTime.current = 0;
+    lastStatsUpdate.current = 0;
     turnStart.current = performance.now();
     isListeningRef.current = true;
     setIsListening(true);
