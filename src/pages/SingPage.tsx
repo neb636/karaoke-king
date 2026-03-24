@@ -215,7 +215,7 @@ export function SingPage() {
       <CountdownOverlay isActive={countdownActive} value={countdownValue} />
 
       {/* Main sing UI — compact header row */}
-      <div className="flex items-center gap-3 mb-1 self-stretch justify-center flex-wrap">
+      <div className="flex items-center gap-3 mb-4 self-stretch justify-center flex-wrap">
         <p className="text-xs uppercase tracking-[3px] opacity-50">{turnLabel}</p>
         {isCurated && isListening && (
           <>
