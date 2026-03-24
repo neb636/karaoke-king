@@ -1,8 +1,10 @@
 import { useCallback, useRef, useState } from "react";
-import { FEEDBACK_COOLDOWN, NOISE_FLOOR } from "@/lib/constants";
+import { FEEDBACK_COOLDOWN, NOISE_FLOOR, PITCH_ACCURACY_TOLERANCE_SEMITONES } from "@/lib/constants";
 import { pick } from "@/lib/utils";
 import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/services/mocks/feedbackMessages";
-import { calculateScore, detectPitch } from "@/features/scoring/scoring";
+import { calculateScore, calculateCuratedScore, detectPitch } from "@/features/scoring/scoring";
+import { getExpectedSemitoneAt } from "@/types/songContext";
+import type { SongContext } from "@/types/songContext";
 import type { PlayerScore } from "@/types";
 
 // ── Web Audio refs (module-level singletons) ──────────────────────────────────
@@ -37,6 +39,8 @@ export interface AudioHook {
   startListening: () => void;
   stopListening: (hasBumpers: boolean) => PlayerScore;
   playSound: (frequency?: number, duration?: number) => void;
+  /** Update the active song context mid-session (e.g. after async load). */
+  setSongContext: (ctx: SongContext | null) => void;
 }
 
 // ── Hook ──────────────────────────────────────────────────────────────────────
@@ -54,6 +58,9 @@ export function useAudio(): AudioHook {
     colorClass: "",
   });
 
+  // Song context for pitch accuracy scoring (set externally after async load)
+  const songContextRef = useRef<SongContext | null>(null);
+
   // Per-turn accumulators (refs — mutated every animation frame)
   const turnStart = useRef(0);
   const frameCount = useRef(0);
@@ -61,6 +68,9 @@ export function useAudio(): AudioHook {
   const activeFrames = useRef(0);
   const pitchBuckets = useRef(new Set<number>());
   const lastPitchBucket = useRef(-1);
+  // Curated pitch accuracy accumulators
+  const pitchAccuracyHits = useRef(0);
+  const referencedFrames = useRef(0);
   const animFrameId = useRef<number | null>(null);
   const isListeningRef = useRef(false);
 
@@ -182,16 +192,26 @@ export function useAudio(): AudioHook {
     totalRMS.current += rms;
     if (rms > NOISE_FLOOR) activeFrames.current++;
 
-    // Pitch
+    // Pitch detection
     const sampleRate = audioCtx?.sampleRate ?? 44100;
     const pitch = detectPitch(dataArray.current, sampleRate);
     if (pitch > 0) {
       const bucket = Math.round(12 * Math.log2(pitch / 440));
       pitchBuckets.current.add(bucket);
-      if (lastPitchBucket.current !== -1 && bucket !== lastPitchBucket.current) {
-        // pitchChanges unused for scoring but tracked for future
-      }
       lastPitchBucket.current = bucket;
+
+      // Pitch accuracy against reference (curated mode only)
+      const ctx = songContextRef.current;
+      if (ctx) {
+        const elapsed = (performance.now() - turnStart.current);
+        const expectedSemitone = getExpectedSemitoneAt(ctx.pitchPhrases, elapsed);
+        if (expectedSemitone !== -1) {
+          referencedFrames.current++;
+          if (Math.abs(bucket - expectedSemitone) <= PITCH_ACCURACY_TOLERANCE_SEMITONES) {
+            pitchAccuracyHits.current++;
+          }
+        }
+      }
     }
 
     // UI update — throttled to ~10fps to avoid 60fps React re-renders
@@ -221,6 +241,8 @@ export function useAudio(): AudioHook {
     activeFrames.current = 0;
     pitchBuckets.current = new Set();
     lastPitchBucket.current = -1;
+    pitchAccuracyHits.current = 0;
+    referencedFrames.current = 0;
     quietStreak.current = 0;
     loudStreak.current = 0;
     lastFeedbackTime.current = 0;
@@ -243,18 +265,32 @@ export function useAudio(): AudioHook {
       }
 
       const elapsed = (performance.now() - turnStart.current) / 1000;
-
-      return calculateScore({
+      const base = {
         frameCount: frameCount.current,
         totalRMS: totalRMS.current,
         activeFrames: activeFrames.current,
         pitchBuckets: pitchBuckets.current,
         elapsed,
         hasBumpers,
-      });
+      };
+
+      // Use curated scoring when a context with pitch phrases is loaded
+      if (songContextRef.current && songContextRef.current.pitchPhrases.length > 0) {
+        return calculateCuratedScore({
+          ...base,
+          pitchHits: pitchAccuracyHits.current,
+          referencedFrames: referencedFrames.current,
+        });
+      }
+
+      return calculateScore(base);
     },
     [],
   );
+
+  const setSongContext = useCallback((ctx: SongContext | null) => {
+    songContextRef.current = ctx;
+  }, []);
 
   return {
     isListening,
@@ -267,5 +303,6 @@ export function useAudio(): AudioHook {
     startListening,
     stopListening,
     playSound,
+    setSongContext,
   };
 }

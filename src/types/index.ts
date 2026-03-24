@@ -53,3 +53,17 @@ export type {
   CoachingCue,
   CuratedSong,
 } from "./songs";
+
+// ── Re-export song context types ─────────────────────────────────────────────
+
+export type {
+  SectionType,
+  SingingIntensity,
+  SongSection,
+  PitchPoint,
+  PitchPhrase,
+  SongMeta,
+  SongContext,
+} from "./songContext";
+
+export { getSectionAt, getExpectedPitchAt, getExpectedSemitoneAt } from "./songContext";

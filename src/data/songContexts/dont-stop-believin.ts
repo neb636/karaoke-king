@@ -1,0 +1,95 @@
+import type { SongContext } from "@/types/songContext";
+
+const context: SongContext = {
+  songId: "dont-stop-believin",
+  version: 1,
+  meta: {
+    bpm: 148,
+    keySignature: "E major",
+    timeSignature: "4/4",
+    vocalRangeLowHz: 196.0,  // G3
+    vocalRangeHighHz: 659.3, // E5
+  },
+  sections: [
+    { type: "intro",        startMs: 0,      endMs: 17000,  label: "Piano Intro",    isSinging: false, intensity: "soft"   },
+    { type: "verse",        startMs: 17000,  endMs: 50000,  label: "Verse 1",        isSinging: true,  intensity: "medium" },
+    { type: "verse",        startMs: 50000,  endMs: 84000,  label: "Verse 2",        isSinging: true,  intensity: "medium" },
+    { type: "pre-chorus",   startMs: 84000,  endMs: 120000, label: "Pre-Chorus",     isSinging: true,  intensity: "loud"   },
+    { type: "chorus",       startMs: 120000, endMs: 180000, label: "Chorus",         isSinging: true,  intensity: "belt"   },
+    { type: "instrumental", startMs: 180000, endMs: 210000, label: "Guitar Solo",    isSinging: false, intensity: "soft"   },
+    { type: "chorus",       startMs: 210000, endMs: 250000, label: "Final Chorus",   isSinging: true,  intensity: "belt"   },
+  ],
+  pitchPhrases: [
+    {
+      startMs: 17000,
+      endMs: 34000,
+      notes: [
+        { timeMs: 17000,  frequency: 329.6,  durationMs: 500,  semitone: -10, syllable: "Just" },
+        { timeMs: 17500,  frequency: 329.6,  durationMs: 500,  semitone: -10, syllable: "a" },
+        { timeMs: 18000,  frequency: 349.2,  durationMs: 500,  semitone: -9,  syllable: "small" },
+        { timeMs: 18500,  frequency: 392.0,  durationMs: 750,  semitone: -6,  syllable: "town" },
+        { timeMs: 19250,  frequency: 440.0,  durationMs: 750,  semitone: 0,   syllable: "girl" },
+        { timeMs: 21000,  frequency: 329.6,  durationMs: 500,  semitone: -10, syllable: "liv-" },
+        { timeMs: 21500,  frequency: 349.2,  durationMs: 500,  semitone: -9,  syllable: "in'" },
+        { timeMs: 22000,  frequency: 392.0,  durationMs: 500,  semitone: -6,  syllable: "in" },
+        { timeMs: 22500,  frequency: 440.0,  durationMs: 1000, semitone: 0,   syllable: "a" },
+        { timeMs: 23500,  frequency: 392.0,  durationMs: 1000, semitone: -6,  syllable: "lone-" },
+        { timeMs: 24500,  frequency: 349.2,  durationMs: 2000, semitone: -9,  syllable: "ly" },
+        { timeMs: 27000,  frequency: 329.6,  durationMs: 500,  semitone: -10, syllable: "world" },
+        { timeMs: 29000,  frequency: 329.6,  durationMs: 500,  semitone: -10, syllable: "She" },
+        { timeMs: 29500,  frequency: 349.2,  durationMs: 500,  semitone: -9,  syllable: "took" },
+        { timeMs: 30000,  frequency: 392.0,  durationMs: 500,  semitone: -6,  syllable: "the" },
+        { timeMs: 30500,  frequency: 440.0,  durationMs: 750,  semitone: 0,   syllable: "mid-" },
+        { timeMs: 31250,  frequency: 493.9,  durationMs: 750,  semitone: 2,   syllable: "night" },
+        { timeMs: 32000,  frequency: 523.3,  durationMs: 2000, semitone: 3,   syllable: "train" },
+      ],
+    },
+    {
+      startMs: 120000,
+      endMs: 180000,
+      notes: [
+        { timeMs: 120000, frequency: 493.9,  durationMs: 500,  semitone: 2,   syllable: "Don't" },
+        { timeMs: 120500, frequency: 523.3,  durationMs: 500,  semitone: 3,   syllable: "stop" },
+        { timeMs: 121000, frequency: 587.3,  durationMs: 750,  semitone: 5,   syllable: "be-" },
+        { timeMs: 121750, frequency: 659.3,  durationMs: 1500, semitone: 7,   syllable: "liev-" },
+        { timeMs: 123250, frequency: 587.3,  durationMs: 750,  semitone: 5,   syllable: "in'" },
+        { timeMs: 126000, frequency: 523.3,  durationMs: 500,  semitone: 3,   syllable: "Hold" },
+        { timeMs: 126500, frequency: 493.9,  durationMs: 500,  semitone: 2,   syllable: "on" },
+        { timeMs: 127000, frequency: 440.0,  durationMs: 750,  semitone: 0,   syllable: "to" },
+        { timeMs: 127750, frequency: 493.9,  durationMs: 1500, semitone: 2,   syllable: "the" },
+        { timeMs: 129250, frequency: 523.3,  durationMs: 2000, semitone: 3,   syllable: "feel-" },
+        { timeMs: 131250, frequency: 440.0,  durationMs: 3000, semitone: 0,   syllable: "in'" },
+      ],
+    },
+    {
+      startMs: 210000,
+      endMs: 250000,
+      notes: [
+        { timeMs: 210000, frequency: 493.9,  durationMs: 500,  semitone: 2,   syllable: "Don't" },
+        { timeMs: 210500, frequency: 523.3,  durationMs: 500,  semitone: 3,   syllable: "stop" },
+        { timeMs: 211000, frequency: 587.3,  durationMs: 750,  semitone: 5,   syllable: "be-" },
+        { timeMs: 211750, frequency: 659.3,  durationMs: 1500, semitone: 7,   syllable: "liev-" },
+        { timeMs: 213250, frequency: 587.3,  durationMs: 750,  semitone: 5,   syllable: "in'" },
+        { timeMs: 235000, frequency: 493.9,  durationMs: 500,  semitone: 2,   syllable: "Don't" },
+        { timeMs: 235500, frequency: 523.3,  durationMs: 500,  semitone: 3,   syllable: "stop" },
+        { timeMs: 236000, frequency: 587.3,  durationMs: 750,  semitone: 5,   syllable: "be-" },
+        { timeMs: 236750, frequency: 659.3,  durationMs: 2500, semitone: 7,   syllable: "liev-" },
+        { timeMs: 239250, frequency: 587.3,  durationMs: 2000, semitone: 5,   syllable: "in'" },
+      ],
+    },
+  ],
+  coachingCues: [
+    { timestampMs: 0,      message: "Here comes the piano intro...",  type: "intro"        },
+    { timestampMs: 17000,  message: "Just a small town girl...",       type: "verse"        },
+    { timestampMs: 34000,  message: "Keep that melody going!",         type: "verse"        },
+    { timestampMs: 50000,  message: "Strangers waiting...",            type: "verse"        },
+    { timestampMs: 68000,  message: "Build it up!",                    type: "hype"         },
+    { timestampMs: 120000, message: "DON'T STOP! Here it comes!",      type: "hype"         },
+    { timestampMs: 150000, message: "🎵 CHORUS TIME! Belt it out!",    type: "chorus"       },
+    { timestampMs: 180000, message: "Guitar solo — catch your breath!", type: "instrumental" },
+    { timestampMs: 210000, message: "Don't stop believin'!",           type: "chorus"       },
+    { timestampMs: 235000, message: "Hold on to that feelin'! LOUDER!", type: "hype"        },
+  ],
+};
+
+export default context;

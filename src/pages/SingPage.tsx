@@ -15,9 +15,11 @@ import { useAudio } from "@/features/audio/useAudio";
 import { useCountdown } from "@/hooks/useCountdown";
 import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
+import { loadSongContext } from "@/data/songContexts";
 import { formatTime } from "@/lib/utils";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import type { SongContext } from "@/types/songContext";
 
 export function SingPage() {
   const navigate = useNavigate();
@@ -35,8 +37,23 @@ export function SingPage() {
   const song = getPlayerSong(currentPlayer);
   const isCurated = playMode === "curated" && !!song;
 
-  const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =
+  const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound, setSongContext } =
     useAudio();
+
+  // Song context — loaded asynchronously for curated songs
+  const [songContext, setSongContextState] = useState<SongContext | null>(null);
+  const contextLoadedForRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!isCurated || !song) return;
+    if (contextLoadedForRef.current === song.id) return;
+    contextLoadedForRef.current = song.id;
+
+    void loadSongContext(song.id).then((ctx) => {
+      setSongContextState(ctx);
+      setSongContext(ctx);
+    });
+  }, [isCurated, song, setSongContext]);
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
@@ -58,6 +75,7 @@ export function SingPage() {
   const { currentCue } = useCoachingCues(
     isCurated && coachingEnabled ? song.id : null,
     currentPositionMs,
+    songContext,
   );
 
   const player = players[currentPlayer];

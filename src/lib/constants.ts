@@ -54,10 +54,21 @@ export const DIFFICULTY_MODIFIERS: Record<string, number> = {
   expert: 1.15,
 };
 
-// Scoring weights
+// Scoring weights — freeform mode
 export const SCORE_WEIGHTS = {
   energy: 0.4,
   pitch: 0.3,
   sustain: 0.2,
   duration: 0.1,
 } as const;
+
+// Scoring weights — curated mode (pitch accuracy replaces variety; duration weighted more)
+export const CURATED_SCORE_WEIGHTS = {
+  energy: 0.3,
+  pitch: 0.35,
+  sustain: 0.2,
+  duration: 0.15,
+} as const;
+
+// Semitone tolerance for pitch accuracy scoring (±N semitones = "hit")
+export const PITCH_ACCURACY_TOLERANCE_SEMITONES = 1;
