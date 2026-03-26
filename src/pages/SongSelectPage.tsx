@@ -10,19 +10,17 @@ import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";
 import { useSpotifyThumbnails } from "@/hooks/useSpotifyThumbnails";
-import { REGIONS } from "@/data/songs/regions";
 import type { RegionId } from "@/types/songs";
 
 export function SongSelectPage() {
   const navigate = useNavigate();
   const {
-    selectedRegion, setRegion, selectedSongId, selectSong,
+    selectedRegions, toggleRegion, selectedSongId, selectSong,
     getRegionSongs, selectSongForPlayer,
   } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
   const { players, currentPlayer, currentRound, totalRounds } = useGameStore();
   const [search, setSearch] = useState("");
-  const [regionChangedClear, setRegionChangedClear] = useState(false);
 
   // Clear selection when this page mounts (fresh pick for each player)
   useEffect(() => {
@@ -31,7 +29,6 @@ export function SongSelectPage() {
   }, []);
 
   const songs = getRegionSongs();
-  const region = REGIONS[selectedRegion];
   const { thumbnails, unavailable } = useSpotifyThumbnails(songs, isAuthenticated);
 
   const player = players[currentPlayer];
@@ -58,18 +55,9 @@ export function SongSelectPage() {
     return null;
   }, [selectedSongId, isAuthenticated, isPremium]);
 
-  function handleRegionChange(region: RegionId) {
-    if (selectedSongId) {
-      setRegionChangedClear(true);
-    }
-    setRegion(region);
+  function handleRegionToggle(region: RegionId) {
+    toggleRegion(region);
   }
-
-  useEffect(() => {
-    if (!regionChangedClear) return;
-    const t = setTimeout(() => setRegionChangedClear(false), 3000);
-    return () => clearTimeout(t);
-  }, [regionChangedClear]);
 
   function handleConfirmSong() {
     if (!canConfirm || !selectedSongId) return;
@@ -81,6 +69,12 @@ export function SongSelectPage() {
     ? `Round ${currentRound} of ${totalRounds} · `
     : "";
 
+  const regionLabel = selectedRegions.length === 0
+    ? "All Regions"
+    : selectedRegions.length === 1
+      ? (selectedRegions[0] as string)
+      : `${selectedRegions.length} regions`;
+
   return (
     <div className="screen-container overflow-y-auto justify-start py-6 px-4 gap-4">
       <div className="flex items-center justify-between w-full max-w-[900px]">
@@ -90,22 +84,16 @@ export function SongSelectPage() {
             color="cyan"
             className="text-[clamp(1.3rem,3.5vw,2.5rem)]"
           >
-            {region.flag} {playerName.toUpperCase()}, PICK YOUR SONG
+            {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs in {region.label}
+            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs &middot; {regionLabel}
           </p>
         </div>
         <SpotifyAuthButton />
       </div>
 
-      <RegionPicker selected={selectedRegion} onChange={handleRegionChange} />
-
-      {regionChangedClear && (
-        <p className="text-xs text-[#ffd700]/70 -mt-1 tracking-wide">
-          Song selection cleared — pick one from {region.label}
-        </p>
-      )}
+      <RegionPicker selected={selectedRegions} onToggle={handleRegionToggle} />
 
       <div className="w-full max-w-[900px]">
         <input

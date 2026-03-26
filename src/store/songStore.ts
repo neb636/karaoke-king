@@ -1,17 +1,16 @@
 import { create } from "zustand";
 import type { PlayMode, RegionId, CuratedSong } from "@/types/songs";
 import { SONG_CATALOG } from "@/data/songs/catalog";
-import { REGION_SONGS } from "@/data/songs/regions";
-import { detectRegion } from "@/lib/regionDetection";
+import { REGION_SONGS, REGION_IDS } from "@/data/songs/regions";
 
 interface SongState {
   playMode: PlayMode;
-  selectedRegion: RegionId;
+  selectedRegions: RegionId[];
   selectedSongId: string | null;
   playerSongIds: Record<number, string>;
 
   setPlayMode: (mode: PlayMode) => void;
-  setRegion: (region: RegionId) => void;
+  toggleRegion: (region: RegionId) => void;
   selectSong: (songId: string | null) => void;
   selectSongForPlayer: (playerIndex: number, songId: string) => void;
   clearPlayerSongs: () => void;
@@ -22,12 +21,20 @@ interface SongState {
 
 export const useSongStore = create<SongState>((set, get) => ({
   playMode: "curated",
-  selectedRegion: detectRegion(),
+  selectedRegions: [],
   selectedSongId: null,
   playerSongIds: {},
 
   setPlayMode: (mode) => set({ playMode: mode }),
-  setRegion: (region) => set({ selectedRegion: region, selectedSongId: null }),
+
+  toggleRegion: (region) =>
+    set((s) => {
+      const next = s.selectedRegions.includes(region)
+        ? s.selectedRegions.filter((id) => id !== region)
+        : [...s.selectedRegions, region];
+      return { selectedRegions: next, selectedSongId: null };
+    }),
+
   selectSong: (songId) => set({ selectedSongId: songId }),
 
   selectSongForPlayer: (playerIndex, songId) =>
@@ -51,10 +58,19 @@ export const useSongStore = create<SongState>((set, get) => ({
   },
 
   getRegionSongs: () => {
-    const { selectedRegion } = get();
-    const songIds = REGION_SONGS[selectedRegion] ?? [];
-    return songIds
-      .map((id) => SONG_CATALOG[id])
-      .filter((s): s is CuratedSong => !!s);
+    const { selectedRegions } = get();
+    const regions = selectedRegions.length > 0 ? selectedRegions : REGION_IDS;
+    const seen = new Set<string>();
+    const songs: CuratedSong[] = [];
+    for (const regionId of regions) {
+      for (const id of REGION_SONGS[regionId] ?? []) {
+        if (!seen.has(id)) {
+          seen.add(id);
+          const song = SONG_CATALOG[id];
+          if (song) songs.push(song);
+        }
+      }
+    }
+    return songs;
   },
 }));
