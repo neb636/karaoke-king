@@ -8,6 +8,8 @@ import { useGameStore } from "@/store/gameStore";
 import { loadPlayerNames } from "@/services/playerHistory";
 import { MAX_PLAYERS, MIN_PLAYERS } from "@/lib/constants";
 
+const TIMER_SECONDS = 50;
+
 type SetupMode = "choose" | "edit";
 
 export function PlayerSetupPage() {
@@ -17,12 +19,14 @@ export function PlayerSetupPage() {
     addPlayer,
     removePlayer,
     updatePlayerName,
+    updatePlayerEmoji,
     updatePlayerBumpers,
     loadSavedPlayers,
   } = useGameStore();
 
   const [mode, setMode] = useState<SetupMode>("edit");
   const [savedNames, setSavedNames] = useState<string[]>([]);
+  const [secondsLeft, setSecondsLeft] = useState(TIMER_SECONDS);
 
   useEffect(() => {
     const names = loadPlayerNames();
@@ -31,6 +35,20 @@ export function PlayerSetupPage() {
       setMode("choose");
     }
   }, []);
+
+  // Reset and start countdown whenever edit mode is entered
+  useEffect(() => {
+    if (mode === "edit") {
+      setSecondsLeft(TIMER_SECONDS);
+    }
+  }, [mode]);
+
+  // Tick down every second while in edit mode
+  useEffect(() => {
+    if (mode !== "edit" || secondsLeft <= 0) return;
+    const t = setTimeout(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
+    return () => clearTimeout(t);
+  }, [mode, secondsLeft]);
 
   function handleReuse() {
     loadSavedPlayers(savedNames);
@@ -47,7 +65,10 @@ export function PlayerSetupPage() {
 
   const canAdd = players.length < MAX_PLAYERS;
   const canRemove = players.length > MIN_PLAYERS;
-  const canProceed = players.every((p) => p.name.trim().length > 0);
+  const allNamed = players.every((p) => p.name.trim().length > 0);
+  const allHaveEmoji = players.every((p) => p.emoji.length > 0);
+  const timerDone = secondsLeft === 0;
+  const canProceed = allNamed && allHaveEmoji && timerDone;
 
   if (mode === "choose") {
     return (
@@ -106,9 +127,12 @@ export function PlayerSetupPage() {
         <span className="tracking-wide">Home</span>
       </button>
 
-      <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-6">
+      <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
         ENTER THE ARENA
       </NeonText>
+      <p className="text-xs uppercase tracking-[2px] opacity-40 mb-6">
+        Pick your emoji &amp; enter your name
+      </p>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
         <p className="text-xs uppercase tracking-[2px] opacity-60 self-start font-semibold">
@@ -123,6 +147,7 @@ export function PlayerSetupPage() {
               index={i}
               showRemove={canRemove}
               onNameChange={(name) => updatePlayerName(i, name)}
+              onEmojiChange={(emoji) => updatePlayerEmoji(i, emoji)}
               onBumpersChange={(bumpers) => updatePlayerBumpers(i, bumpers)}
               onRemove={() => removePlayer(i)}
             />
@@ -144,8 +169,14 @@ export function PlayerSetupPage() {
           onClick={handleNext}
           disabled={!canProceed}
         >
-          Let's Go!
+          {timerDone ? "Let's Go!" : `Let's Go! (${secondsLeft}s)`}
         </Button>
+
+        {!timerDone && (
+          <p className="text-xs text-white/30 text-center tracking-wide">
+            Get everyone set up — button unlocks soon
+          </p>
+        )}
       </div>
     </div>
   );

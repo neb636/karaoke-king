@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { X, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Player } from "@/types";
@@ -7,8 +8,18 @@ interface PlayerRowProps {
   index: number;
   showRemove: boolean;
   onNameChange: (name: string) => void;
+  onEmojiChange: (emoji: string) => void;
   onBumpersChange: (bumpers: boolean) => void;
   onRemove: () => void;
+}
+
+function extractFirstEmoji(text: string): string | null {
+  const segmenter = new Intl.Segmenter();
+  for (const { segment } of segmenter.segment(text)) {
+    const cp = segment.codePointAt(0);
+    if (cp !== undefined && cp > 127) return segment;
+  }
+  return null;
 }
 
 export function PlayerRow({
@@ -16,15 +27,77 @@ export function PlayerRow({
   index,
   showRemove,
   onNameChange,
+  onEmojiChange,
   onBumpersChange,
   onRemove,
 }: PlayerRowProps) {
+  const [editingEmoji, setEditingEmoji] = useState(false);
+  const emojiInputRef = useRef<HTMLInputElement>(null);
+
+  function handleEmojiButtonClick() {
+    setEditingEmoji(true);
+    setTimeout(() => emojiInputRef.current?.focus(), 0);
+  }
+
+  function handleEmojiInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const emoji = extractFirstEmoji(e.target.value);
+    if (emoji) {
+      onEmojiChange(emoji);
+      setEditingEmoji(false);
+    }
+  }
+
+  function handleEmojiInputBlur() {
+    setEditingEmoji(false);
+  }
+
+  function handleEmojiInputKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Escape") {
+      setEditingEmoji(false);
+    }
+  }
+
   return (
     <div className="flex items-center gap-2.5 w-full animate-slide-in">
       {/* Player number */}
       <span className="font-display text-lg w-7 text-center flex-shrink-0 opacity-40">
         {index + 1}
       </span>
+
+      {/* Emoji picker */}
+      <div className="relative flex-shrink-0">
+        {editingEmoji ? (
+          <input
+            ref={emojiInputRef}
+            type="text"
+            inputMode="text"
+            placeholder="😀"
+            onChange={handleEmojiInputChange}
+            onBlur={handleEmojiInputBlur}
+            onKeyDown={handleEmojiInputKeyDown}
+            className={cn(
+              "w-11 h-11 text-center text-xl rounded-2xl outline-none",
+              "bg-white/10 border-2 border-[#ff2d95] shadow-[0_0_12px_rgba(255,45,149,0.27)]",
+              "placeholder:text-white/30",
+            )}
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={handleEmojiButtonClick}
+            title="Pick your emoji"
+            className={cn(
+              "w-11 h-11 text-center text-xl rounded-2xl flex-shrink-0 flex items-center justify-center",
+              "transition-all duration-200",
+              player.emoji
+                ? "bg-white/10 border-2 border-white/20 hover:border-[#ff2d95]/60"
+                : "bg-white/5 border-2 border-dashed border-white/20 hover:border-[#ff2d95]/60 text-white/30",
+            )}
+          >
+            {player.emoji || <span className="text-sm">+</span>}
+          </button>
+        )}
+      </div>
 
       {/* Name input */}
       <input
