@@ -49,8 +49,7 @@ export function PlayerSetupPage() {
   const canAdd = players.length < MAX_PLAYERS;
   const canRemove = players.length > MIN_PLAYERS;
   const allNamed = players.every((p) => p.name.trim().length > 0);
-  const allHaveEmoji = players.every((p) => p.emoji.length > 0);
-  const canProceed = allNamed && allHaveEmoji;
+  const canProceed = allNamed;
 
   if (mode === "choose") {
     return (
@@ -112,8 +111,8 @@ export function PlayerSetupPage() {
       <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
         ENTER THE ARENA
       </NeonText>
-      <p className="text-xs uppercase tracking-[2px] opacity-40 mb-6">
-        Pick your emoji &amp; enter your name
+      <p className="text-sm uppercase tracking-[2px] opacity-70 mb-6">
+        Enter your name
       </p>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
@@ -145,6 +144,11 @@ export function PlayerSetupPage() {
           </button>
         )}
 
+        {!canProceed && (
+          <p className="text-xs text-[#ff2d95]/80 text-center tracking-wide">
+            Each player needs a name
+          </p>
+        )}
         <Button
           variant="gold"
           className="mt-1 w-full"
