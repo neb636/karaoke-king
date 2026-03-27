@@ -10,6 +10,7 @@ import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";
 import { useSpotifyThumbnails } from "@/hooks/useSpotifyThumbnails";
+import { useAudioAnalysisExtractor } from "@/hooks/useAudioAnalysisExtractor";
 import type { RegionId } from "@/types/songs";
 
 export function SongSelectPage() {
@@ -20,6 +21,7 @@ export function SongSelectPage() {
   } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
   const { players, currentPlayer, currentRound, totalRounds } = useGameStore();
+  const { status: extractStatus, done: extractDone, total: extractTotal, downloadResults } = useAudioAnalysisExtractor(isAuthenticated);
   const [search, setSearch] = useState("");
 
   // Clear selection when this page mounts (fresh pick for each player)
@@ -90,7 +92,22 @@ export function SongSelectPage() {
             {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs &middot; {regionLabel}
           </p>
         </div>
-        <SpotifyAuthButton />
+        <div className="flex items-center gap-3">
+          {extractStatus === "running" && (
+            <span className="text-[10px] text-white/40 tabular-nums">
+              extracting {extractDone}/{extractTotal}
+            </span>
+          )}
+          {extractStatus === "done" && (
+            <button
+              onClick={downloadResults}
+              className="text-[10px] px-2 py-1 rounded bg-[#1DB954]/20 text-[#1DB954] border border-[#1DB954]/30 hover:bg-[#1DB954]/30 transition-colors"
+            >
+              ↓ Download Analysis JSON
+            </button>
+          )}
+          <SpotifyAuthButton />
+        </div>
       </div>
 
       <RegionPicker selected={selectedRegions} onToggle={handleRegionToggle} />
