@@ -56,8 +56,6 @@ export function SingPage() {
     return () => clearTimeout(t);
   }, [showReadyOverlay, secondsLeft]);
 
-  const timerDone = secondsLeft === 0;
-
   const handleTrackEnd = useCallback(() => {
     handleStop();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -224,16 +222,11 @@ export function SingPage() {
           <Button
             variant="pink"
             onClick={() => void handleStartSinging()}
-            disabled={!timerDone}
           >
-            {timerDone ? "Start Singing" : `Start Singing (${secondsLeft}s)`}
+           Start Singing
           </Button>
 
-          {!timerDone && (
-            <p className="text-xs text-white/30 text-center tracking-wide mt-3 max-w-xs">
-              Get ready — button unlocks soon
-            </p>
-          )}
+         
         </div>
       )}
 
