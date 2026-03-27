@@ -8,8 +8,6 @@ import { useGameStore } from "@/store/gameStore";
 import { loadPlayerNames } from "@/services/playerHistory";
 import { MAX_PLAYERS, MIN_PLAYERS } from "@/lib/constants";
 
-const TIMER_SECONDS = 50;
-
 type SetupMode = "choose" | "edit";
 
 export function PlayerSetupPage() {
@@ -26,7 +24,6 @@ export function PlayerSetupPage() {
 
   const [mode, setMode] = useState<SetupMode>("edit");
   const [savedNames, setSavedNames] = useState<string[]>([]);
-  const [secondsLeft, setSecondsLeft] = useState(TIMER_SECONDS);
 
   useEffect(() => {
     const names = loadPlayerNames();
@@ -35,20 +32,6 @@ export function PlayerSetupPage() {
       setMode("choose");
     }
   }, []);
-
-  // Reset and start countdown whenever edit mode is entered
-  useEffect(() => {
-    if (mode === "edit") {
-      setSecondsLeft(TIMER_SECONDS);
-    }
-  }, [mode]);
-
-  // Tick down every second while in edit mode
-  useEffect(() => {
-    if (mode !== "edit" || secondsLeft <= 0) return;
-    const t = setTimeout(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
-    return () => clearTimeout(t);
-  }, [mode, secondsLeft]);
 
   function handleReuse() {
     loadSavedPlayers(savedNames);
@@ -67,8 +50,7 @@ export function PlayerSetupPage() {
   const canRemove = players.length > MIN_PLAYERS;
   const allNamed = players.every((p) => p.name.trim().length > 0);
   const allHaveEmoji = players.every((p) => p.emoji.length > 0);
-  const timerDone = secondsLeft === 0;
-  const canProceed = allNamed && allHaveEmoji && timerDone;
+  const canProceed = allNamed && allHaveEmoji;
 
   if (mode === "choose") {
     return (
@@ -169,14 +151,8 @@ export function PlayerSetupPage() {
           onClick={handleNext}
           disabled={!canProceed}
         >
-          {timerDone ? "Let's Go!" : `Let's Go! (${secondsLeft}s)`}
+          Let&apos;s Go!
         </Button>
-
-        {!timerDone && (
-          <p className="text-xs text-white/30 text-center tracking-wide">
-            Get everyone set up — button unlocks soon
-          </p>
-        )}
       </div>
     </div>
   );
