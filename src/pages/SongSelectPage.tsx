@@ -1,4 +1,3 @@
-
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { NeonText } from "@/components/NeonText";
