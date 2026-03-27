@@ -101,58 +101,10 @@ export async function getTracksByUris(
   return result;
 }
 
-// ── Audio Features ──────────────────────────────────────────────────────────
-
-export interface SpotifyAudioFeatures {
-  key: number;
-  mode: number;
-  tempo: number;
-  time_signature: number;
-  loudness: number;
-  energy: number;
-  danceability: number;
-  valence: number;
-  acousticness: number;
-  speechiness: number;
-  duration_ms: number;
-}
 
 export async function getAudioFeatures(trackId: string): Promise<SpotifyAudioFeatures> {
   const res = await spotifyFetch(`/audio-features/${trackId}`);
   if (!res.ok) throw new Error(`audio-features failed for ${trackId}: ${res.status}`);
-  return res.json();
-}
-
-// ── Audio Analysis ───────────────────────────────────────────────────────────
-
-export interface RawAudioAnalysis {
-  track: {
-    key: number;
-    mode: number;
-    tempo: number;
-    time_signature: number;
-    loudness: number;
-    duration: number;
-  };
-  sections: {
-    start: number;
-    duration: number;
-    loudness: number;
-    tempo: number;
-    key: number;
-    mode: number;
-    confidence: number;
-  }[];
-  segments: {
-    start: number;
-    duration: number;
-    pitches: number[];
-  }[];
-}
-
-export async function getAudioAnalysis(trackId: string): Promise<RawAudioAnalysis> {
-  const res = await spotifyFetch(`/audio-analysis/${trackId}`);
-  if (!res.ok) throw new Error(`audio-analysis failed for ${trackId}: ${res.status}`);
   return res.json();
 }
 
