@@ -17,6 +17,7 @@ export function PlayerSetupPage() {
     addPlayer,
     removePlayer,
     updatePlayerName,
+    updatePlayerEmoji,
     updatePlayerBumpers,
     loadSavedPlayers,
   } = useGameStore();
@@ -47,7 +48,8 @@ export function PlayerSetupPage() {
 
   const canAdd = players.length < MAX_PLAYERS;
   const canRemove = players.length > MIN_PLAYERS;
-  const canProceed = players.every((p) => p.name.trim().length > 0);
+  const allNamed = players.every((p) => p.name.trim().length > 0);
+  const canProceed = allNamed;
 
   if (mode === "choose") {
     return (
@@ -106,9 +108,12 @@ export function PlayerSetupPage() {
         <span className="tracking-wide">Home</span>
       </button>
 
-      <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-6">
+      <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
         ENTER THE ARENA
       </NeonText>
+      <p className="text-sm uppercase tracking-[2px] opacity-70 mb-6">
+        Enter your name
+      </p>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
         <p className="text-xs uppercase tracking-[2px] opacity-60 self-start font-semibold">
@@ -123,6 +128,7 @@ export function PlayerSetupPage() {
               index={i}
               showRemove={canRemove}
               onNameChange={(name) => updatePlayerName(i, name)}
+              onEmojiChange={(emoji) => updatePlayerEmoji(i, emoji)}
               onBumpersChange={(bumpers) => updatePlayerBumpers(i, bumpers)}
               onRemove={() => removePlayer(i)}
             />
@@ -138,13 +144,18 @@ export function PlayerSetupPage() {
           </button>
         )}
 
+        {!canProceed && (
+          <p className="text-xs text-[#ff2d95]/80 text-center tracking-wide">
+            Each player needs a name
+          </p>
+        )}
         <Button
           variant="gold"
           className="mt-1 w-full"
           onClick={handleNext}
           disabled={!canProceed}
         >
-          Let's Go!
+          Let&apos;s Go!
         </Button>
       </div>
     </div>

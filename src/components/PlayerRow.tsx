@@ -7,6 +7,7 @@ interface PlayerRowProps {
   index: number;
   showRemove: boolean;
   onNameChange: (name: string) => void;
+  onEmojiChange: (emoji: string) => void;
   onBumpersChange: (bumpers: boolean) => void;
   onRemove: () => void;
 }
@@ -20,7 +21,7 @@ export function PlayerRow({
   onRemove,
 }: PlayerRowProps) {
   return (
-    <div className="flex items-center gap-2.5 w-full animate-slide-in">
+    <div className="flex items-center gap-2.5 w-full animate-slide-in mb-1">
       {/* Player number */}
       <span className="font-display text-lg w-7 text-center flex-shrink-0 opacity-40">
         {index + 1}

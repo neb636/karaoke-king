@@ -1,34 +1,36 @@
-import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { RegionId } from "@/types/songs";
 import { REGIONS, REGION_IDS } from "@/data/songs/regions";
 
 interface RegionPickerProps {
-  selected: RegionId;
-  onChange: (region: RegionId) => void;
+  selected: RegionId[];
+  onToggle: (region: RegionId) => void;
 }
 
-export function RegionPicker({ selected, onChange }: RegionPickerProps) {
-  const selectedRegion = REGIONS[selected];
+export function RegionPicker({ selected, onToggle }: RegionPickerProps) {
   return (
-    <div className="relative inline-flex items-center">
-      <span className="absolute left-3 text-base pointer-events-none select-none">
-        {selectedRegion.flag}
-      </span>
-      <select
-        value={selected}
-        onChange={(e) => onChange(e.target.value as RegionId)}
-        className="appearance-none pl-9 pr-8 py-1.5 rounded-full text-sm font-semibold
-          bg-white/[0.06] border border-white/[0.15] text-white
-          focus:outline-none focus:border-[#ff2d95] focus:shadow-[0_0_12px_rgba(255,45,149,0.2)]
-          transition-all duration-200 cursor-pointer"
-      >
-        {REGION_IDS.map((id) => (
-          <option key={id} value={id} className="bg-[#1a0a2e] text-white">
-            {REGIONS[id].label}
-          </option>
-        ))}
-      </select>
-      <ChevronDown size={13} className="absolute right-2.5 text-white/40 pointer-events-none" />
+    <div className="flex flex-wrap gap-2 w-full max-w-[900px]">
+      {REGION_IDS.map((id) => {
+        const region = REGIONS[id];
+        const isActive = selected.includes(id);
+        return (
+          <button
+            key={id}
+            type="button"
+            onClick={() => onToggle(id)}
+            className={cn(
+              "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold",
+              "border transition-all duration-200 select-none",
+              isActive
+                ? "bg-[#ff2d95]/20 border-[#ff2d95]/60 text-white shadow-[0_0_8px_rgba(255,45,149,0.3)]"
+                : "bg-white/[0.05] border-white/15 text-white/55 hover:border-white/30 hover:text-white/85",
+            )}
+          >
+            <span>{region.flag}</span>
+            <span>{region.label}</span>
+          </button>
+        );
+      })}
     </div>
   );
 }

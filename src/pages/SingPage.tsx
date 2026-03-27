@@ -17,7 +17,9 @@ import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+
+const START_SINGING_TIMER_SECONDS = 50;
 
 export function SingPage() {
   const navigate = useNavigate();
@@ -40,7 +42,21 @@ export function SingPage() {
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
+  const [secondsLeft, setSecondsLeft] = useState(START_SINGING_TIMER_SECONDS);
 
+  useEffect(() => {
+    if (showReadyOverlay) {
+      setSecondsLeft(START_SINGING_TIMER_SECONDS);
+    }
+  }, [showReadyOverlay]);
+
+  useEffect(() => {
+    if (!showReadyOverlay || secondsLeft <= 0) return;
+    const t = setTimeout(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
+    return () => clearTimeout(t);
+  }, [showReadyOverlay, secondsLeft]);
+
+  const timerDone = secondsLeft === 0;
 
   const handleTrackEnd = useCallback(() => {
     handleStop();
@@ -205,9 +221,19 @@ export function SingPage() {
           {/* Pulsing mic idle state */}
           <div className="text-4xl animate-pulse-mic mb-4">🎤</div>
 
-          <Button variant="pink" onClick={() => void handleStartSinging()}>
-            Start Singing
+          <Button
+            variant="pink"
+            onClick={() => void handleStartSinging()}
+            disabled={!timerDone}
+          >
+            {timerDone ? "Start Singing" : `Start Singing (${secondsLeft}s)`}
           </Button>
+
+          {!timerDone && (
+            <p className="text-xs text-white/30 text-center tracking-wide mt-3 max-w-xs">
+              Get ready — button unlocks soon
+            </p>
+          )}
         </div>
       )}
 

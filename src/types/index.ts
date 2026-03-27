@@ -2,6 +2,7 @@
 
 export interface Player {
   name: string;
+  emoji: string;
   bumpers: boolean;
 }
 
