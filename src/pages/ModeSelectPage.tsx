@@ -7,14 +7,12 @@ import { PlayModeToggle } from "@/components/PlayModeToggle";
 import { ScoringModeToggle } from "@/components/ScoringModeToggle";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
-import { useSettingsStore } from "@/store/settingsStore";
 import { GAME_MODES, GAME_MODE_KEYS } from "@/lib/constants";
 
 export function ModeSelectPage() {
   const navigate = useNavigate();
-  const { selectedMode, setSelectedMode, confirmMode, initNewGame } = useGameStore();
+  const { selectedMode, setSelectedMode, confirmMode, initNewGame, scoringMode, setScoringMode } = useGameStore();
   const { playMode, setPlayMode, clearPlayerSongs } = useSongStore();
-  const { scoringMode, setScoringMode } = useSettingsStore();
 
   function handleConfirm() {
     confirmMode();

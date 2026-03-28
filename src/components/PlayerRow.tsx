@@ -1,4 +1,4 @@
-import { X, Zap } from "lucide-react";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Player } from "@/types";
 
@@ -8,7 +8,6 @@ interface PlayerRowProps {
   showRemove: boolean;
   onNameChange: (name: string) => void;
   onEmojiChange: (emoji: string) => void;
-  onBumpersChange: (bumpers: boolean) => void;
   onRemove: () => void;
 }
 
@@ -17,7 +16,6 @@ export function PlayerRow({
   index,
   showRemove,
   onNameChange,
-  onBumpersChange,
   onRemove,
 }: PlayerRowProps) {
   return (
@@ -44,25 +42,6 @@ export function PlayerRow({
           "placeholder:text-white/30",
         )}
       />
-
-      {/* Assist toggle — hidden for now, logic remains intact */}
-      <button
-        type="button"
-        title={player.bumpers ? "Assist on" : "Assist off (score boost)"}
-        aria-label={`Toggle assist for player ${index + 1}`}
-        aria-pressed={player.bumpers}
-        onClick={() => onBumpersChange(!player.bumpers)}
-        style={{ display: "none" }}
-        className={cn(
-          "flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0",
-          "border transition-all duration-200",
-          player.bumpers
-            ? "bg-[#00e5ff]/15 border-[#00e5ff]/50 text-[#00e5ff] shadow-[0_0_8px_rgba(0,229,255,0.25)]"
-            : "bg-white/5 border-white/10 text-white/35 hover:bg-white/10 hover:border-white/20 hover:text-white/60",
-        )}
-      >
-        <Zap size={16} fill={player.bumpers ? "currentColor" : "none"} />
-      </button>
 
       {/* Remove button */}
       <button

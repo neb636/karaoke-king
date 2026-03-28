@@ -9,11 +9,10 @@ import { RoundIndicator } from "@/components/RoundIndicator";
 import { SongResultBadge } from "@/components/SongResultBadge";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
-import { useSettingsStore } from "@/store/settingsStore";
 import { useConfetti } from "@/hooks/useConfetti";
 import { saveSongScore } from "@/services/songHistory";
 import { GAME_MODES } from "@/lib/constants";
-import type { RankedPlayer } from "@/types";
+import { rankPlayersByScore, rankPlayersByCumulative } from "@/lib/utils";
 
 export function ResultsPage() {
   const navigate = useNavigate();
@@ -25,41 +24,26 @@ export function ResultsPage() {
     currentRound,
     totalRounds,
     selectedMode,
+    scoringMode,
     nextRound,
     initNewGame,
     resetToPlayerSetup,
   } = useGameStore();
 
   const { playMode, getPlayerSong, clearPlayerSongs } = useSongStore();
-  const { scoringMode } = useSettingsStore();
   const isCurated = playMode === "curated";
 
   const isLastRound = currentRound >= totalRounds;
   const isTournament = totalRounds > 1;
 
-  // Delay winner announcement for dramatic effect
   const [showWinner, setShowWinner] = useState(false);
   useEffect(() => {
     const t = setTimeout(() => setShowWinner(true), 1200);
     return () => clearTimeout(t);
   }, []);
 
-  // Build ranked list
-  const ranked: RankedPlayer[] = players
-    .map((player, i) => {
-      const score = scores[i] ?? {
-        total: 0, energy: 0, pitch: 0, sustain: 0, duration: 0, time: 0, bumpers: false,
-      };
-      return {
-        name: player.name || `Player ${i + 1}`,
-        index: i,
-        score,
-      };
-    })
-    .sort((a, b) => b.score.total - a.score.total);
-
-  const isTie =
-    ranked.length > 1 && ranked[0]!.score.total === ranked[1]!.score.total;
+  const ranked = rankPlayersByScore(players, scores);
+  const isTie = ranked.length > 1 && ranked[0]!.score.total === ranked[1]!.score.total;
 
   // Save song scores for curated mode (per-player songs)
   const newBestFlags = useMemo(() => {
@@ -75,13 +59,9 @@ export function ResultsPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Tournament champion (by cumulative)
-  const cumRanked = [...players]
-    .map((_, i) => ({ i, cum: cumulativeScores[i] ?? 0 }))
-    .sort((a, b) => b.cum - a.cum);
-  const cumTie =
-    cumRanked.length > 1 && cumRanked[0]!.cum === cumRanked[1]!.cum;
-  const champion = players[cumRanked[0]?.i ?? 0];
+  const cumRanked = rankPlayersByCumulative(players, cumulativeScores);
+  const cumTie = cumRanked.length > 1 && cumRanked[0]!.cum === cumRanked[1]!.cum;
+  const champion = cumRanked[0]?.player;
 
   const title = isTournament
     ? isLastRound

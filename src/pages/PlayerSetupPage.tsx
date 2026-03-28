@@ -18,7 +18,6 @@ export function PlayerSetupPage() {
     removePlayer,
     updatePlayerName,
     updatePlayerEmoji,
-    updatePlayerBumpers,
     loadSavedPlayers,
   } = useGameStore();
 
@@ -129,7 +128,6 @@ export function PlayerSetupPage() {
               showRemove={canRemove}
               onNameChange={(name) => updatePlayerName(i, name)}
               onEmojiChange={(emoji) => updatePlayerEmoji(i, emoji)}
-              onBumpersChange={(bumpers) => updatePlayerBumpers(i, bumpers)}
               onRemove={() => removePlayer(i)}
             />
           ))}

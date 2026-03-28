@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { GAME_MODES } from "@/lib/constants";
 import { savePlayerNames } from "@/services/playerHistory";
 import type { GameModeKey, Player, PlayerScore } from "@/types";
+import type { ScoringMode } from "@/lib/constants";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -23,6 +24,10 @@ interface GameState {
   // Cumulative scores across all rounds
   cumulativeScores: number[];
 
+  // Settings
+  coachingEnabled: boolean;
+  scoringMode: ScoringMode;
+
   // Actions
   addPlayer: () => void;
   removePlayer: (index: number) => void;
@@ -38,6 +43,8 @@ interface GameState {
   nextRound: () => void;
   resetToPlayerSetup: () => void;
   loadSavedPlayers: (names: string[]) => void;
+  toggleCoaching: () => void;
+  setScoringMode: (mode: ScoringMode) => void;
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -60,6 +67,8 @@ export const useGameStore = create<GameState>((set, get) => ({
   currentPlayer: 0,
   scores: [],
   cumulativeScores: [],
+  coachingEnabled: true,
+  scoringMode: "fun",
 
   addPlayer: () => {
     const { players } = get();
@@ -152,6 +161,8 @@ export const useGameStore = create<GameState>((set, get) => ({
       currentPlayer: 0,
       scores: [],
       cumulativeScores: [],
+      coachingEnabled: true,
+      scoringMode: "fun",
     });
   },
 
@@ -164,4 +175,8 @@ export const useGameStore = create<GameState>((set, get) => ({
     }));
     set({ players });
   },
+
+  toggleCoaching: () => set((s) => ({ coachingEnabled: !s.coachingEnabled })),
+
+  setScoringMode: (mode) => set({ scoringMode: mode }),
 }));

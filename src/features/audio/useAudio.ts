@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { FEEDBACK_COOLDOWN, NOISE_FLOOR } from "@/lib/constants";
 import { pick } from "@/lib/utils";
-import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/services/mocks/feedbackMessages";
+import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/data/feedbackMessages";
 import { calculatePitchClassAccuracy, calculateScore, detectPitch } from "@/features/scoring/scoring";
 import type { ScoreOptions } from "@/features/scoring/scoring";
 import type { PlayerScore } from "@/types";
