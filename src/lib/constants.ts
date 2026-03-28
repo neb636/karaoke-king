@@ -61,3 +61,21 @@ export const SCORE_WEIGHTS = {
   sustain: 0.2,
   duration: 0.1,
 } as const;
+
+export type ScoringMode = "fun" | "expert";
+
+// Fun mode: rewards energy & enthusiasm (great for families/kids)
+export const FUN_SCORE_WEIGHTS = {
+  energy: 0.6,
+  pitch: 0.1,
+  sustain: 0.2,
+  duration: 0.1,
+} as const;
+
+// Expert mode: rewards pitch accuracy as the primary component
+export const EXPERT_SCORE_WEIGHTS = {
+  energy: 0.3,
+  pitch: 0.45,
+  sustain: 0.15,
+  duration: 0.1,
+} as const;

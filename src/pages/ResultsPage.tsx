@@ -9,6 +9,7 @@ import { RoundIndicator } from "@/components/RoundIndicator";
 import { SongResultBadge } from "@/components/SongResultBadge";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { useConfetti } from "@/hooks/useConfetti";
 import { saveSongScore } from "@/services/songHistory";
 import { GAME_MODES } from "@/lib/constants";
@@ -30,6 +31,7 @@ export function ResultsPage() {
   } = useGameStore();
 
   const { playMode, getPlayerSong, clearPlayerSongs } = useSongStore();
+  const { scoringMode } = useSettingsStore();
   const isCurated = playMode === "curated";
 
   const isLastRound = currentRound >= totalRounds;
@@ -186,7 +188,7 @@ export function ResultsPage() {
       )}
 
       {/* Per-player score breakdown */}
-      <ScoreBreakdown players={ranked} isCurated={isCurated} getPlayerSong={getPlayerSong} />
+      <ScoreBreakdown players={ranked} isCurated={isCurated} getPlayerSong={getPlayerSong} scoringMode={isCurated ? scoringMode : undefined} />
 
       {/* Action buttons */}
       <div className="flex flex-col items-center gap-3 mt-2 pb-4 w-full">

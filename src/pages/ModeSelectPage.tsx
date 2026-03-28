@@ -4,14 +4,17 @@ import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { ModeCard } from "@/components/ModeCard";
 import { PlayModeToggle } from "@/components/PlayModeToggle";
+import { ScoringModeToggle } from "@/components/ScoringModeToggle";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { GAME_MODES, GAME_MODE_KEYS } from "@/lib/constants";
 
 export function ModeSelectPage() {
   const navigate = useNavigate();
   const { selectedMode, setSelectedMode, confirmMode, initNewGame } = useGameStore();
   const { playMode, setPlayMode, clearPlayerSongs } = useSongStore();
+  const { scoringMode, setScoringMode } = useSettingsStore();
 
   function handleConfirm() {
     confirmMode();
@@ -38,9 +41,19 @@ export function ModeSelectPage() {
         CHOOSE YOUR BATTLE
       </NeonText>
 
-      <div className="mb-5">
+      <div className="mb-4">
         <PlayModeToggle mode={playMode} onChange={setPlayMode} />
       </div>
+
+      {playMode === "curated" && (
+        <div className="mb-5 flex flex-col items-center gap-1">
+          <p className="text-[10px] uppercase tracking-widest text-white/30 mb-1">Scoring Style</p>
+          <ScoringModeToggle mode={scoringMode} onChange={setScoringMode} />
+          <p className="text-[10px] text-white/20 mt-1">
+            {scoringMode === "fun" ? "Rewards energy & enthusiasm" : "Rewards pitch accuracy"}
+          </p>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-[min(96vw,760px)] mb-5">
         {GAME_MODE_KEYS.map((key) => (

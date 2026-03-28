@@ -2,7 +2,8 @@ import { useCallback, useRef, useState } from "react";
 import { FEEDBACK_COOLDOWN, NOISE_FLOOR } from "@/lib/constants";
 import { pick } from "@/lib/utils";
 import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/services/mocks/feedbackMessages";
-import { calculateScore, detectPitch } from "@/features/scoring/scoring";
+import { calculatePitchClassAccuracy, calculateScore, detectPitch } from "@/features/scoring/scoring";
+import type { ScoreOptions } from "@/features/scoring/scoring";
 import type { PlayerScore } from "@/types";
 
 // ── Web Audio refs (module-level singletons) ──────────────────────────────────
@@ -19,6 +20,7 @@ export interface LiveStats {
   energyPct: number;
   avgEnergy: number;
   pitchHits: number;
+  noteAccuracy: number;
 }
 
 export interface FeedbackState {
@@ -35,20 +37,24 @@ export interface AudioHook {
   analyserRef: React.MutableRefObject<AnalyserNode | null>;
   initAudio: () => Promise<void>;
   startListening: () => void;
-  stopListening: (hasBumpers: boolean) => PlayerScore;
+  stopListening: (hasBumpers: boolean, options?: ScoreOptions) => PlayerScore;
   playSound: (frequency?: number, duration?: number) => void;
 }
 
 // ── Hook ──────────────────────────────────────────────────────────────────────
 
-export function useAudio(): AudioHook {
+export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
   const [isListening, setIsListening] = useState(false);
   const [stats, setStats] = useState<LiveStats>({
     elapsed: 0,
     energyPct: 0,
     avgEnergy: 0,
     pitchHits: 0,
+    noteAccuracy: 0,
   });
+  // Keep expected pitch classes in a ref so the RAF closure always reads the latest value
+  const expectedPitchClassesRef = useRef<Set<number> | undefined>(expectedPitchClasses);
+  expectedPitchClassesRef.current = expectedPitchClasses;
   const [feedback, setFeedback] = useState<FeedbackState>({
     message: "",
     colorClass: "",
@@ -60,6 +66,7 @@ export function useAudio(): AudioHook {
   const totalRMS = useRef(0);
   const activeFrames = useRef(0);
   const pitchBuckets = useRef(new Set<number>());
+  const pitchClasses = useRef(new Set<number>());
   const lastPitchBucket = useRef(-1);
   const animFrameId = useRef<number | null>(null);
   const isListeningRef = useRef(false);
@@ -188,9 +195,7 @@ export function useAudio(): AudioHook {
     if (pitch > 0) {
       const bucket = Math.round(12 * Math.log2(pitch / 440));
       pitchBuckets.current.add(bucket);
-      if (lastPitchBucket.current !== -1 && bucket !== lastPitchBucket.current) {
-        // pitchChanges unused for scoring but tracked for future
-      }
+      pitchClasses.current.add(((bucket % 12) + 12) % 12);
       lastPitchBucket.current = bucket;
     }
 
@@ -203,11 +208,17 @@ export function useAudio(): AudioHook {
       const avgEnergy = Math.round(
         frameCount.current > 0 ? (totalRMS.current / frameCount.current) * 300 : 0,
       );
+      const expected = expectedPitchClassesRef.current;
+      const noteAccuracy =
+        expected && expected.size > 0
+          ? calculatePitchClassAccuracy(pitchClasses.current, expected)
+          : 0;
       setStats({
         elapsed,
         energyPct,
         avgEnergy,
         pitchHits: pitchBuckets.current.size,
+        noteAccuracy,
       });
       updateFeedback(rms, elapsed);
     }
@@ -220,6 +231,7 @@ export function useAudio(): AudioHook {
     totalRMS.current = 0;
     activeFrames.current = 0;
     pitchBuckets.current = new Set();
+    pitchClasses.current = new Set();
     lastPitchBucket.current = -1;
     quietStreak.current = 0;
     loudStreak.current = 0;
@@ -228,13 +240,13 @@ export function useAudio(): AudioHook {
     turnStart.current = performance.now();
     isListeningRef.current = true;
     setIsListening(true);
-    setStats({ elapsed: 0, energyPct: 0, avgEnergy: 0, pitchHits: 0 });
+    setStats({ elapsed: 0, energyPct: 0, avgEnergy: 0, pitchHits: 0, noteAccuracy: 0 });
     setFeedback({ message: "", colorClass: "" });
     tick();
   }, [tick]);
 
   const stopListening = useCallback(
-    (hasBumpers: boolean): PlayerScore => {
+    (hasBumpers: boolean, options: ScoreOptions = { mode: "fun" }): PlayerScore => {
       isListeningRef.current = false;
       setIsListening(false);
       if (animFrameId.current !== null) {
@@ -244,14 +256,18 @@ export function useAudio(): AudioHook {
 
       const elapsed = (performance.now() - turnStart.current) / 1000;
 
-      return calculateScore({
-        frameCount: frameCount.current,
-        totalRMS: totalRMS.current,
-        activeFrames: activeFrames.current,
-        pitchBuckets: pitchBuckets.current,
-        elapsed,
-        hasBumpers,
-      });
+      return calculateScore(
+        {
+          frameCount: frameCount.current,
+          totalRMS: totalRMS.current,
+          activeFrames: activeFrames.current,
+          pitchBuckets: pitchBuckets.current,
+          pitchClasses: pitchClasses.current,
+          elapsed,
+          hasBumpers,
+        },
+        options,
+      );
     },
     [],
   );
