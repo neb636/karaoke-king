@@ -19,6 +19,8 @@ import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { getSongExtractedData, getExpectedPitchClasses } from "@/data/songs/songData";
 import { useLyrics } from "@/hooks/useLyrics";
 import { LyricsDisplay } from "@/components/LyricsDisplay";
+import { useLyricsV2 } from "@/hooks/useLyricsV2";
+import { LyricsDisplayV2 } from "@/components/LyricsDisplayV2";
 import { useState, useCallback, useEffect } from "react";
 
 const FINISH_EARLY_TIMER_SECONDS = 40;
@@ -89,8 +91,9 @@ export function SingPage() {
     extractedData,
   );
 
+  const _lyricsV1 = useLyrics(extractedData, currentPositionMs);
   const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } =
-    useLyrics(extractedData, currentPositionMs);
+    useLyricsV2(extractedData, currentPositionMs);
 
   const player = players[currentPlayer];
 
@@ -194,7 +197,7 @@ export function SingPage() {
       )}
 
       {extractedData && isListening && (
-        <LyricsDisplay
+        <LyricsDisplayV2
           prevLine={prevLine}
           activeLine={activeLine}
           nextLine={nextLine}
