@@ -17,6 +17,7 @@ import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { getSongExtractedData, getExpectedPitchClasses } from "@/data/songs/songData";
 import { useState, useCallback, useEffect } from "react";
 
 const FINISH_EARLY_TIMER_SECONDS = 40;
@@ -33,12 +34,16 @@ export function SingPage() {
   } = useGameStore();
 
   const { playMode, getPlayerSong } = useSongStore();
-  const { coachingEnabled, toggleCoaching } = useSettingsStore();
+  const { coachingEnabled, toggleCoaching, scoringMode } = useSettingsStore();
   const song = getPlayerSong(currentPlayer);
   const isCurated = playMode === "curated" && !!song;
 
+  const extractedData =
+    isCurated && scoringMode === "expert" && song ? getSongExtractedData(song.id) : null;
+  const expectedPitchClasses = extractedData ? getExpectedPitchClasses(extractedData) : undefined;
+
   const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =
-    useAudio();
+    useAudio(expectedPitchClasses);
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
@@ -57,6 +62,7 @@ export function SingPage() {
   }, [isListening, isCurated, finishSecondsLeft]);
 
   const finishTimerDone = finishSecondsLeft === 0;
+
 
   const handleTrackEnd = useCallback(() => {
     handleStop();
@@ -97,7 +103,10 @@ export function SingPage() {
 
   function handleStop() {
     if (!player) return;
-    const score = stopListening(player.bumpers);
+    const score = stopListening(player.bumpers, {
+      mode: isCurated ? scoringMode : "fun",
+      expectedPitchClasses,
+    });
 
     if (isCurated) {
       const modifier = DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0;
@@ -284,8 +293,14 @@ export function SingPage() {
               <span className="text-xl font-extrabold neon-pink tabular-nums">{stats.avgEnergy}</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
-              <span className="text-[10px] uppercase tracking-[2px] opacity-40">Pitch Hits</span>
-              <span className="text-xl font-extrabold neon-gold tabular-nums">{stats.pitchHits}</span>
+              <span className="text-[10px] uppercase tracking-[2px] opacity-40">
+                {isCurated && scoringMode === "expert" ? "Note Acc" : "Pitch Hits"}
+              </span>
+              <span className="text-xl font-extrabold neon-gold tabular-nums">
+                {isCurated && scoringMode === "expert"
+                  ? `${stats.noteAccuracy}%`
+                  : stats.pitchHits}
+              </span>
             </div>
           </div>
 

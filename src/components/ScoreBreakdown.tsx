@@ -1,10 +1,12 @@
 import type { RankedPlayer, CuratedSong } from "@/types";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import type { ScoringMode } from "@/lib/constants";
 
 interface ScoreBreakdownProps {
   players: RankedPlayer[];
   isCurated?: boolean;
   getPlayerSong?: (playerIndex: number) => CuratedSong | null;
+  scoringMode?: ScoringMode;
 }
 
 function BreakdownRow({ label, value }: { label: string; value: string | number }) {
@@ -22,7 +24,8 @@ function difficultyLabel(modifier: number): string {
   return "—";
 }
 
-export function ScoreBreakdown({ players, isCurated, getPlayerSong }: ScoreBreakdownProps) {
+export function ScoreBreakdown({ players, isCurated, getPlayerSong, scoringMode }: ScoreBreakdownProps) {
+  const pitchLabel = scoringMode === "expert" ? "Note Accuracy" : "Pitch Range";
   return (
     <div className="flex gap-3 flex-wrap justify-center w-full max-w-[900px]">
       {players.map((p) => {
@@ -36,7 +39,7 @@ export function ScoreBreakdown({ players, isCurated, getPlayerSong }: ScoreBreak
           >
             <h4 className="text-xs uppercase tracking-widest opacity-50 mb-2">{p.name}</h4>
             <BreakdownRow label="Energy" value={p.score.energy} />
-            <BreakdownRow label="Pitch Range" value={p.score.pitch} />
+            <BreakdownRow label={pitchLabel} value={p.score.pitch} />
             <BreakdownRow label="Sustain" value={p.score.sustain} />
             <BreakdownRow label="Duration" value={p.score.duration} />
             <BreakdownRow label="Time" value={`${Math.round(p.score.time)}s`} />
