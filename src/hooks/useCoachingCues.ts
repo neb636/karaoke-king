@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import type { CoachingCue } from "@/types/songs";
-import { COACHING_DATA } from "@/data/coaching";
+import { useState, useEffect, useRef, useMemo } from "react";
+import type { CoachingCue, DataFormat } from "@/types/songs";
+import { COACHING_DATA, generateCoachingCues } from "@/data/coaching";
 
 const CUE_DISPLAY_MS = 3000;
 const MIN_GAP_MS = 5000;
@@ -8,12 +8,19 @@ const MIN_GAP_MS = 5000;
 export function useCoachingCues(
   songId: string | null,
   currentPositionMs: number,
+  extractedData?: DataFormat | null,
 ) {
   const [currentCue, setCurrentCue] = useState<CoachingCue | null>(null);
   const lastCueTimeRef = useRef(0);
   const pointerRef = useRef(0);
 
-  const cues = songId ? COACHING_DATA[songId] ?? null : null;
+  const manualCues = songId ? COACHING_DATA[songId] ?? null : null;
+  const autoCues = useMemo<CoachingCue[] | null>(
+    () => (!manualCues && extractedData ? generateCoachingCues(extractedData) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [extractedData, !!manualCues],
+  );
+  const cues = manualCues ?? autoCues;
 
   useEffect(() => {
     // Reset when song changes

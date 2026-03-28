@@ -18,6 +18,8 @@ import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { formatTime } from "@/lib/utils";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { getSongExtractedData, getExpectedPitchClasses } from "@/data/songs/songData";
+import { useLyrics } from "@/hooks/useLyrics";
+import { LyricsDisplay } from "@/components/LyricsDisplay";
 import { useState, useCallback, useEffect } from "react";
 
 const FINISH_EARLY_TIMER_SECONDS = 40;
@@ -39,7 +41,7 @@ export function SingPage() {
   const isCurated = playMode === "curated" && !!song;
 
   const extractedData =
-    isCurated && scoringMode === "expert" && song ? getSongExtractedData(song.id) : null;
+    isCurated && song ? getSongExtractedData(song.id) : null;
   const expectedPitchClasses = extractedData ? getExpectedPitchClasses(extractedData) : undefined;
 
   const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =
@@ -78,9 +80,13 @@ export function SingPage() {
   } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
 
   const { currentCue } = useCoachingCues(
-    isCurated && coachingEnabled ? song.id : null,
+    isCurated && coachingEnabled ? song!.id : null,
     currentPositionMs,
+    extractedData,
   );
+
+  const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } =
+    useLyrics(extractedData, currentPositionMs);
 
   const player = players[currentPlayer];
 
@@ -266,6 +272,16 @@ export function SingPage() {
         <CoachingPrompt cue={currentCue} />
       ) : (
         <FeedbackToast message={feedback.message} colorClass={feedback.colorClass} />
+      )}
+
+      {extractedData && isListening && (
+        <LyricsDisplay
+          prevLine={prevLine}
+          activeLine={activeLine}
+          nextLine={nextLine}
+          activeSyllableIdx={activeSyllableIdx}
+          activeLineHasGolden={activeLineHasGolden}
+        />
       )}
 
       {isListening ? (

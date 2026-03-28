@@ -27,7 +27,7 @@ export interface Track {
 // Video Metadata ─────────────────────────────────────────────────
 
 export interface TrackVideo {
-  youtubeId: string;
+  youtubeId: string | null;
   coverImage: string | null;
   backgroundImage: string | null;
   /** Preview playback start in seconds */

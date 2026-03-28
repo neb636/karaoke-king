@@ -7,6 +7,14 @@ export function getSongExtractedData(songId: string): DataFormat | null {
   return SONG_DATA[songId]?.extractedData ?? null;
 }
 
+/**
+ * Converts a UltraStar beat number to absolute track position in milliseconds.
+ * The result is directly comparable to Spotify's currentPositionMs.
+ */
+export function beatToMs(beat: number, bpm: number, gapMs: number): number {
+  return gapMs + (beat * 15000) / bpm;
+}
+
 /** Returns the set of expected pitch classes (mod 12) from a song's note data. */
 export function getExpectedPitchClasses(data: DataFormat): Set<number> {
   const classes = new Set<number>();
