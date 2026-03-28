@@ -78,6 +78,11 @@ export function initSpotifySDK(): void {
   }
 }
 
+/** Returns the Spotify player instance (for position polling). */
+export function getPlayer(): Spotify.Player | null {
+  return player;
+}
+
 /** Subscribe to SDK playback state changes. Returns an unsubscribe function. */
 export function onPlaybackStateChange(listener: StateListener): () => void {
   stateListeners.add(listener);

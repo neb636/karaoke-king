@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { initSpotifySDK, onPlaybackStateChange, playTrack, pauseTrack } from "@/services/spotify/sdk";
+import { initSpotifySDK, onPlaybackStateChange, getPlayer, playTrack, pauseTrack } from "@/services/spotify/sdk";
 
 interface UseSpotifyPlaybackOptions {
   onTrackEnd?: () => void;
@@ -44,6 +44,25 @@ export function useSpotifyPlayback(options: UseSpotifyPlaybackOptions = {}) {
 
     return unsubscribe;
   }, []);
+
+  // Poll position continuously during playback for smooth lyrics sync
+  useEffect(() => {
+    if (!isPlaying) return;
+    let rafId: number;
+    const poll = () => {
+      const p = getPlayer();
+      if (p) {
+        p.getCurrentState().then((state) => {
+          if (state && !state.paused) {
+            setCurrentPositionMs(state.position);
+          }
+        });
+      }
+      rafId = requestAnimationFrame(poll);
+    };
+    rafId = requestAnimationFrame(poll);
+    return () => cancelAnimationFrame(rafId);
+  }, [isPlaying]);
 
   const play = useCallback(async (spotifyUri: string) => {
     setError(null);
