@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { rankPlayersByCumulative } from "@/lib/utils";
 import type { Player } from "@/types";
 
 interface CumulativeStandingsProps {
@@ -12,13 +13,7 @@ export function CumulativeStandings({
   cumulativeScores,
   currentRound,
 }: CumulativeStandingsProps) {
-  const ranked = players
-    .map((player, i) => ({
-      player,
-      index: i,
-      cum: cumulativeScores[i] ?? 0,
-    }))
-    .sort((a, b) => b.cum - a.cum);
+  const ranked = rankPlayersByCumulative(players, cumulativeScores);
 
   return (
     <div className="w-full max-w-[600px] px-0">
