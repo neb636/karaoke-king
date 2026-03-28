@@ -38,23 +38,24 @@ export function useLyrics(
 ): UseLyricsResult {
   const windows = useMemo<LineWindow[]>(() => {
     if (!extractedData) return [];
-    const { bpm, gapMs } = extractedData;
+    const { bpm, gapMs, startSeconds } = extractedData;
+    const audioOffsetMs = (startSeconds ?? 0) * 1000;
     const lines = getLeadLines(extractedData);
 
     return lines.map((line, i) => {
       const firstNote = line.notes[0]!;
       const lastNote = line.notes[line.notes.length - 1]!;
-      const startMs = beatToMs(firstNote.beat, bpm, gapMs);
+      const startMs = beatToMs(firstNote.beat, bpm, gapMs) + audioOffsetMs;
 
       // End: use nextLineStartBeat if available, otherwise last note's end
       const endMs =
-        line.nextLineStartBeat != null
+        (line.nextLineStartBeat != null
           ? beatToMs(line.nextLineStartBeat, bpm, gapMs)
           : i + 1 < lines.length
             ? beatToMs(lines[i + 1]!.notes[0]!.beat, bpm, gapMs)
-            : beatToMs(lastNote.beat + lastNote.duration, bpm, gapMs);
+            : beatToMs(lastNote.beat + lastNote.duration, bpm, gapMs)) + audioOffsetMs;
 
-      const noteStartMs = line.notes.map((n) => beatToMs(n.beat, bpm, gapMs));
+      const noteStartMs = line.notes.map((n) => beatToMs(n.beat, bpm, gapMs) + audioOffsetMs);
 
       return { line, startMs, endMs, noteStartMs };
     });
