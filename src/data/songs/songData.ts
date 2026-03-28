@@ -1,10 +1,14 @@
-import songDataRaw from "@/data/song-data.json";
 import type { DataFormat } from "@/types/songs";
 
-const SONG_DATA = songDataRaw as Record<string, { extractedData: DataFormat | null }>;
-
-export function getSongExtractedData(songId: string): DataFormat | null {
-  return SONG_DATA[songId]?.extractedData ?? null;
+export async function fetchSongExtractedData(songId: string): Promise<DataFormat | null> {
+  const url = `${import.meta.env.BASE_URL}song-data/${songId}.json`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return (await res.json()) as DataFormat;
+  } catch {
+    return null;
+  }
 }
 
 /**

@@ -15,6 +15,7 @@ interface ReadyOverlayProps {
   onToggleCoaching: () => void;
   onStartSinging: () => void;
   onBack: () => void;
+  isLoadingSongData?: boolean;
 }
 
 export function ReadyOverlay({
@@ -30,6 +31,7 @@ export function ReadyOverlay({
   onToggleCoaching,
   onStartSinging,
   onBack,
+  isLoadingSongData,
 }: ReadyOverlayProps) {
   const isFirstTurn = currentPlayer === 0 && currentRound === 1;
 
@@ -86,7 +88,11 @@ export function ReadyOverlay({
 
       {!isFirstTurn && <div className="mb-5" />}
 
-      {isCurated && (
+      {isCurated && isLoadingSongData && (
+        <p className="text-xs text-white/40 tracking-wide mb-4">Loading song data...</p>
+      )}
+
+      {isCurated && !isLoadingSongData && (
         <div className="mb-4 flex items-center gap-2">
           <button
             onClick={onToggleCoaching}
