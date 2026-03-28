@@ -102,12 +102,6 @@ export async function getTracksByUris(
 }
 
 
-export async function getAudioFeatures(trackId: string): Promise<SpotifyAudioFeatures> {
-  const res = await spotifyFetch(`/audio-features/${trackId}`);
-  if (!res.ok) throw new Error(`audio-features failed for ${trackId}: ${res.status}`);
-  return res.json();
-}
-
 // ── Playback ────────────────────────────────────────────────────────────────
 
 export async function startPlayback(
