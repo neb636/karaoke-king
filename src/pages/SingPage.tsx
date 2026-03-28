@@ -20,7 +20,7 @@ import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { getSongExtractedData, getExpectedPitchClasses } from "@/data/songs/songData";
 import { useState, useCallback, useEffect } from "react";
 
-const START_SINGING_TIMER_SECONDS = 50;
+const FINISH_EARLY_TIMER_SECONDS = 40;
 
 export function SingPage() {
   const navigate = useNavigate();
@@ -47,19 +47,22 @@ export function SingPage() {
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
-  const [secondsLeft, setSecondsLeft] = useState(START_SINGING_TIMER_SECONDS);
+  const [finishSecondsLeft, setFinishSecondsLeft] = useState(FINISH_EARLY_TIMER_SECONDS);
 
   useEffect(() => {
-    if (showReadyOverlay) {
-      setSecondsLeft(START_SINGING_TIMER_SECONDS);
+    if (isListening) {
+      setFinishSecondsLeft(FINISH_EARLY_TIMER_SECONDS);
     }
-  }, [showReadyOverlay]);
+  }, [isListening]);
 
   useEffect(() => {
-    if (!showReadyOverlay || secondsLeft <= 0) return;
-    const t = setTimeout(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
+    if (!isListening || !isCurated || finishSecondsLeft <= 0) return;
+    const t = setTimeout(() => setFinishSecondsLeft((s) => Math.max(0, s - 1)), 1000);
     return () => clearTimeout(t);
-  }, [showReadyOverlay, secondsLeft]);
+  }, [isListening, isCurated, finishSecondsLeft]);
+
+  const finishTimerDone = finishSecondsLeft === 0;
+
 
   const handleTrackEnd = useCallback(() => {
     handleStop();
@@ -231,10 +234,8 @@ export function SingPage() {
             variant="pink"
             onClick={() => void handleStartSinging()}
           >
-           Start Singing
+            Start Singing
           </Button>
-
-         
         </div>
       )}
 
@@ -303,8 +304,17 @@ export function SingPage() {
             </div>
           </div>
 
-          <Button variant="red" size="sm" onClick={handleStop}>
-            {isCurated ? "🏁 Finish Early" : "⏹ Stop"}
+          <Button
+            variant="red"
+            size="sm"
+            onClick={handleStop}
+            disabled={isCurated && !finishTimerDone}
+          >
+            {isCurated
+              ? finishTimerDone
+                ? "🏁 Finish Early"
+                : `🏁 Finish Early (${finishSecondsLeft}s)`
+              : "⏹ Stop"}
           </Button>
         </>
       ) : !showReadyOverlay && !countdownActive ? (
