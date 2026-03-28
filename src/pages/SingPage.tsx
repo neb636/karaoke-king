@@ -16,9 +16,8 @@ import { useCountdown } from "@/hooks/useCountdown";
 import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
-import { getSongExtractedData, getExpectedPitchClasses } from "@/data/songs/songData";
-import { useLyrics } from "@/hooks/useLyrics";
-import { LyricsDisplay } from "@/components/LyricsDisplay";
+import { getExpectedPitchClasses } from "@/data/songs/songData";
+import { useSongData } from "@/hooks/useSongData";
 import { useLyricsV2 } from "@/hooks/useLyricsV2";
 import { LyricsDisplayV2 } from "@/components/LyricsDisplayV2";
 import { useState, useCallback, useEffect } from "react";
@@ -43,8 +42,9 @@ export function SingPage() {
   const song = getPlayerSong(currentPlayer);
   const isCurated = playMode === "curated" && !!song;
 
-  const extractedData =
-    isCurated && song ? getSongExtractedData(song.id) : null;
+  const { extractedData, isLoading: songDataLoading } = useSongData(
+    isCurated ? song?.id ?? null : null
+  );
   const expectedPitchClasses = extractedData ? getExpectedPitchClasses(extractedData) : undefined;
 
   const { isListening, stats, feedback, freqArray, initAudio, startListening, stopListening, playSound } =
@@ -91,7 +91,6 @@ export function SingPage() {
     extractedData,
   );
 
-  const _lyricsV1 = useLyrics(extractedData, currentPositionMs);
   const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } =
     useLyricsV2(extractedData, currentPositionMs);
 
@@ -167,6 +166,7 @@ export function SingPage() {
           onToggleCoaching={toggleCoaching}
           onStartSinging={() => void handleStartSinging()}
           onBack={() => void navigate(isCurated ? "/songs" : "/mode")}
+          isLoadingSongData={songDataLoading}
         />
       )}
 
