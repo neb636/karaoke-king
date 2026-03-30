@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { getTracksByUris } from "@/services/spotify/api";
 import type { CuratedSong } from "@/types/songs";
 
-/** Map of spotifyUri → smallest usable album art URL (≥ 64px) */
+/** Map of spotifyUri → largest available album art URL */
 export type ThumbnailMap = Map<string, string>;
 
 /** Set of spotifyUris that are not playable in the user's market */
@@ -64,9 +64,9 @@ export function useSpotifyThumbnails(
         }
 
         if (!thumbnailCache.has(uri)) {
-          // Prefer the smallest image that's at least 64px wide (usually 300px)
-          const images = [...track.album.images].sort((a, b) => a.width - b.width);
-          const img = images.find((i) => i.width >= 64) ?? images[0];
+          // Prefer the largest available image for best quality
+          const images = [...track.album.images].sort((a, b) => b.width - a.width);
+          const img = images[0];
           if (img) {
             thumbnailCache.set(uri, img.url);
             thumbnailChanged = true;
