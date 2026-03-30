@@ -1820,16 +1820,6 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6WQyAlZ8sYKvyvSwgX85TO",
     durationMs: 214506,
   },
-  "a-whole-new-world": {
-    id: "a-whole-new-world",
-    title: "A Whole New World",
-    artist: "Lea Salonga, Brad Kane, Disney",
-    year: 2004,
-    genre: "Pop",
-    difficulty: "easy",
-    spotifyUri: "spotify:track:1hwdPQtFHISvZ9SXMkNrIK",
-    durationMs: 160800,
-  },
   "apt": {
     id: "apt",
     title: "APT.",
