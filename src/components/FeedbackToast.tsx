@@ -21,11 +21,11 @@ export function FeedbackToast({ message, colorClass }: FeedbackToastProps) {
   }, [message]);
 
   return (
-    <div className="h-12 flex items-center justify-center">
+    <div className="h-8 flex items-center justify-center">
       <span
         ref={spanRef}
         className={cn(
-          "font-display text-2xl tracking-widest whitespace-nowrap animate-feedback-pop",
+          "font-display text-lg md:text-xl tracking-widest whitespace-nowrap animate-feedback-pop",
           colorClass,
         )}
       >

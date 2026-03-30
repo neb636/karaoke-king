@@ -21,23 +21,25 @@ export function StatsStrip({
   const showNoteAccuracy = isCurated && scoringMode === "expert";
 
   return (
-    <div className="flex gap-2 mt-3 mb-3">
-      <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
-        <span className="text-[10px] uppercase tracking-[2px] opacity-40">Time</span>
-        <span className="text-xl font-extrabold neon-cyan tabular-nums">{formatTime(elapsed)}</span>
-      </div>
-      <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
-        <span className="text-[10px] uppercase tracking-[2px] opacity-40">Energy</span>
-        <span className="text-xl font-extrabold neon-pink tabular-nums">{avgEnergy}</span>
-      </div>
-      <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
-        <span className="text-[10px] uppercase tracking-[2px] opacity-40">
-          {showNoteAccuracy ? "Note Acc" : "Pitch Hits"}
+    <div className="flex items-center gap-4 md:gap-6 text-sm tabular-nums">
+      <span className="flex items-center gap-1.5">
+        <span className="text-[10px] uppercase tracking-[2px] text-white/30">Time</span>
+        <span className="font-bold neon-cyan">{formatTime(elapsed)}</span>
+      </span>
+      <span className="text-white/10">|</span>
+      <span className="flex items-center gap-1.5">
+        <span className="text-[10px] uppercase tracking-[2px] text-white/30">Energy</span>
+        <span className="font-bold neon-pink">{avgEnergy}</span>
+      </span>
+      <span className="text-white/10">|</span>
+      <span className="flex items-center gap-1.5">
+        <span className="text-[10px] uppercase tracking-[2px] text-white/30">
+          {showNoteAccuracy ? "Acc" : "Pitch"}
         </span>
-        <span className="text-xl font-extrabold neon-gold tabular-nums">
+        <span className="font-bold neon-gold">
           {showNoteAccuracy ? `${noteAccuracy}%` : pitchHits}
         </span>
-      </div>
+      </span>
     </div>
   );
 }

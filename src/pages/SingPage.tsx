@@ -151,7 +151,7 @@ export function SingPage() {
       : `SINGER ${currentPlayer + 1} OF ${players.length}`;
 
   return (
-    <div className="screen-container px-8 relative">
+    <div className="screen-container px-4 md:px-8 relative">
       {showReadyOverlay && (
         <ReadyOverlay
           playerName={player?.name || `Player ${currentPlayer + 1}`}
@@ -172,75 +172,85 @@ export function SingPage() {
 
       <CountdownOverlay isActive={countdownActive} value={countdownValue} />
 
-      <div className="flex items-center gap-3 mb-4 self-stretch justify-center flex-wrap">
-        <p className="text-xs uppercase tracking-[3px] opacity-50">{turnLabel}</p>
+      {/* ── Header: turn info + song ── */}
+      <div className="flex items-center gap-2 mb-1 justify-center flex-wrap">
+        <p className="text-[10px] md:text-xs uppercase tracking-[3px] opacity-40">{turnLabel}</p>
         {isCurated && isListening && (
           <>
-            <span className="text-white/20 text-xs">·</span>
+            <span className="text-white/15 text-xs">·</span>
             <SongInfoBanner title={song.title} artist={song.artist} compact />
           </>
         )}
       </div>
 
+      {/* ── Player name ── */}
       <NeonText
         as="h2"
         color="pink"
-        className="text-[clamp(1.8rem,5vw,3.2rem)] mb-2 leading-none"
+        className="text-[clamp(1.6rem,4vw,2.8rem)] mb-1 leading-none"
       >
         {player?.name || `Player ${currentPlayer + 1}`}
       </NeonText>
 
+      {/* ── Coaching / feedback ── */}
       {isCurated && currentCue && coachingEnabled ? (
         <CoachingPrompt cue={currentCue} />
       ) : (
         <FeedbackToast message={feedback.message} colorClass={feedback.colorClass} />
       )}
 
-      {extractedData && isListening && (
-        <LyricsDisplayV2
-          prevLine={prevLine}
-          activeLine={activeLine}
-          nextLine={nextLine}
-          activeSyllableIdx={activeSyllableIdx}
-          activeLineHasGolden={activeLineHasGolden}
-        />
-      )}
-
       {isListening ? (
-        <>
-          <AudioVisualizer freqArray={freqArray} isActive={isListening} />
-          <div className="mt-2 w-full max-w-[600px]">
-            <EnergyBar percent={stats.energyPct} />
-          </div>
+        <div className="flex flex-col items-center gap-3 w-full max-w-2xl">
+          {/* ── Lyrics with integrated visualizer ── */}
+          {extractedData ? (
+            <LyricsDisplayV2
+              prevLine={prevLine}
+              activeLine={activeLine}
+              nextLine={nextLine}
+              activeSyllableIdx={activeSyllableIdx}
+              activeLineHasGolden={activeLineHasGolden}
+              freqArray={freqArray}
+              isActive={isListening}
+            />
+          ) : (
+            <AudioVisualizer freqArray={freqArray} isActive={isListening} />
+          )}
+
+          {/* ── Energy bar ── */}
+          <EnergyBar percent={stats.energyPct} />
 
           {spotifyError && (
-            <p className="text-xs text-[#ff2d95] mt-1">
+            <p className="text-xs text-[#ff2d95]">
               Spotify: {spotifyError}
             </p>
           )}
 
-          <StatsStrip
-            elapsed={stats.elapsed}
-            avgEnergy={stats.avgEnergy}
-            pitchHits={stats.pitchHits}
-            noteAccuracy={stats.noteAccuracy}
-            isCurated={isCurated}
-            scoringMode={scoringMode}
-          />
+          {/* ── Stats + stop button on one row ── */}
+          <div className="flex items-center justify-between w-full max-w-lg gap-4">
+            <StatsStrip
+              elapsed={stats.elapsed}
+              avgEnergy={stats.avgEnergy}
+              pitchHits={stats.pitchHits}
+              noteAccuracy={stats.noteAccuracy}
+              isCurated={isCurated}
+              scoringMode={scoringMode}
+            />
 
-          <Button
-            variant="red"
-            size="sm"
-            onClick={handleStop}
-            disabled={isCurated && !finishTimerDone}
-          >
-            {isCurated
-              ? finishTimerDone
-                ? "🏁 Finish Early"
-                : `🏁 Finish Early (${finishSecondsLeft}s)`
-              : "⏹ Stop"}
-          </Button>
-        </>
+            <Button
+              variant="red"
+              size="sm"
+              onClick={handleStop}
+              disabled={isCurated && !finishTimerDone}
+              className="shrink-0"
+            >
+              {isCurated
+                ? finishTimerDone
+                  ? "🏁 Finish"
+                  : `🏁 ${finishSecondsLeft}s`
+                : "⏹ Stop"}
+            </Button>
+          </div>
+        </div>
       ) : !showReadyOverlay && !countdownActive ? (
         <p className="text-sm opacity-40 mt-3">
           {isCurated ? "Sing along with the track!" : "SING YOUR HEART OUT! Hit STOP when done."}
