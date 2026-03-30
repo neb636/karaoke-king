@@ -64,9 +64,9 @@ export function useSpotifyThumbnails(
         }
 
         if (!thumbnailCache.has(uri)) {
-          // Prefer the largest available image for best quality
-          const images = [...track.album.images].sort((a, b) => b.width - a.width);
-          const img = images[0];
+          // Prefer 300px image — good quality without the 640px bandwidth cost
+          const images = [...track.album.images].sort((a, b) => a.width - b.width);
+          const img = images.find((i) => i.width >= 300) ?? images[images.length - 1];
           if (img) {
             thumbnailCache.set(uri, img.url);
             thumbnailChanged = true;
