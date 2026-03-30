@@ -1,19 +1,19 @@
-import type { RegionId } from "@/types/songs";
-import { REGIONS, REGION_IDS } from "@/data/songs/regions";
+import type { CategoryId } from "@/types/songs";
+import { CATEGORIES, CATEGORY_IDS } from "@/data/songs/categories";
 
 /**
- * Detect the best region based on the user's browser locale.
+ * Detect the best category based on the user's browser locale.
  * Falls back to "us" if no match found.
  */
-export function detectRegion(): RegionId {
+export function detectCategory(): CategoryId {
   const locale = navigator.language ?? "";
   const lower = locale.toLowerCase();
 
-  for (const regionId of REGION_IDS) {
-    const region = REGIONS[regionId];
-    for (const prefix of region.localePrefixes) {
+  for (const categoryId of CATEGORY_IDS) {
+    const category = CATEGORIES[categoryId];
+    for (const prefix of category.localePrefixes) {
       if (lower.startsWith(prefix.toLowerCase())) {
-        return regionId;
+        return categoryId;
       }
     }
   }

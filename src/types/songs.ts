@@ -73,19 +73,20 @@ export type SongDifficulty = "easy" | "medium" | "hard" | "expert";
 
 export type PlayMode = "curated" | "freeform";
 
-// ── Region ──────────────────────────────────────────────────────────────────
+// ── Category ───────────────────────────────────────────────────────────────
 
-export type RegionId =
+export type CategoryId =
   | "us"
   | "uk"
   | "latin"
   | "kpop"
   | "bollywood"
   | "global"
-  | "classics";
+  | "classics"
+  | "kids";
 
-export interface Region {
-  id: RegionId;
+export interface Category {
+  id: CategoryId;
   label: string;
   flag: string;
   localePrefixes: string[];

@@ -2,7 +2,7 @@ import type { CuratedSong } from "@/types/songs";
 
 /**
  * Master catalog of 138 curated songs keyed by slug ID.
- * Cross-region songs share the same entry — regions reference by ID.
+ * Cross-category songs share the same entry — categories reference by ID.
  */
 export const SONG_CATALOG: Record<string, CuratedSong> = {
   // ─── US Pop / Rock ────────────────────────────────────────────────────────

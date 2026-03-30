@@ -48,8 +48,8 @@ export type AppRoute = "/" | "/players" | "/mode" | "/songs" | "/sing" | "/resul
 export type {
   SongDifficulty,
   PlayMode,
-  RegionId,
-  Region,
+  CategoryId,
+  Category,
   CoachingCueType,
   CoachingCue,
   CuratedSong,
