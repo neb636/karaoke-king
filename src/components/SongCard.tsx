@@ -14,7 +14,7 @@ export function SongCard({ song, selected, onSelect, thumbnailUrl }: SongCardPro
     <button
       onClick={onSelect}
       className={cn(
-        "flex items-center gap-3 rounded-2xl cursor-pointer select-none text-left",
+        "flex items-center gap-3 rounded-2xl overflow-hidden cursor-pointer select-none text-left",
         "bg-white/[0.04] border-2 border-white/[0.08]",
         "transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/[0.07]",
         "active:scale-[0.98]",
@@ -23,12 +23,12 @@ export function SongCard({ song, selected, onSelect, thumbnailUrl }: SongCardPro
       )}
     >
       {/* Album art */}
-      <div className="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white/[0.06]">
+      <div className="relative flex-shrink-0 rounded-xl overflow-hidden bg-white/[0.06]" style={{ width: 100, height: 100 }}>
         {thumbnailUrl ? (
           <img
             src={thumbnailUrl}
             alt={`${song.title} album art`}
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
         ) : (
