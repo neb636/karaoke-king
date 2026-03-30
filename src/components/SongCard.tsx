@@ -23,7 +23,7 @@ export function SongCard({ song, selected, onSelect, thumbnailUrl }: SongCardPro
       )}
     >
       {/* Album art */}
-      <div className="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white/[0.06]">
+      <div className="flex-shrink-0 w-22 h-22 rounded-xl overflow-hidden bg-white/[0.06]">
         {thumbnailUrl ? (
           <img
             src={thumbnailUrl}
