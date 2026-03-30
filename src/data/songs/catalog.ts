@@ -2,7 +2,7 @@ import type { CuratedSong } from "@/types/songs";
 
 /**
  * Master catalog of 138 curated songs keyed by slug ID.
- * Cross-region songs share the same entry — regions reference by ID.
+ * Cross-category songs share the same entry — categories reference by ID.
  */
 export const SONG_CATALOG: Record<string, CuratedSong> = {
   // ─── US Pop / Rock ────────────────────────────────────────────────────────
@@ -1777,5 +1777,77 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     difficulty: "easy",
     spotifyUri: "spotify:track:7e89621JPkKaeDSTQ3avtg",
     durationMs: 283800,
+  },
+
+  // ─── Added by add-playlist.mjs ────────────────────────────────────────
+  "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version": {
+    id: "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version",
+    title: "Do You Want to Build a Snowman? - From \"Frozen\"/Soundtrack Version",
+    artist: "Kristen Bell, Agatha Lee Monn, Katie Lopez",
+    year: 2013,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:2yi7HZrBOC4bMUSTcs4VK6",
+    durationMs: 206506,
+  },
+  "let-it-go-from-frozen-soundtrack-version": {
+    id: "let-it-go-from-frozen-soundtrack-version",
+    title: "Let It Go - From \"Frozen\"/Soundtrack Version",
+    artist: "Idina Menzel",
+    year: 2013,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:0qcr5FMsEO85NAQjrlDRKo",
+    durationMs: 223840,
+  },
+  "a-whole-new-world": {
+    id: "a-whole-new-world",
+    title: "A Whole New World",
+    artist: "Lea Salonga, Brad Kane, Disney",
+    year: 1992,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:5VIfacsWytkcgr7aTt8Tql",
+    durationMs: 160800,
+  },
+  "i-always-wanted-a-brother": {
+    id: "i-always-wanted-a-brother",
+    title: "I Always Wanted A Brother",
+    artist: "Braelyn Rankins, Theo Somolu, Aaron Pierre, Kelvin Harrison Jr., Disney",
+    year: 2024,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:6WQyAlZ8sYKvyvSwgX85TO",
+    durationMs: 214506,
+  },
+  "apt": {
+    id: "apt",
+    title: "APT.",
+    artist: "ROSÉ, Bruno Mars",
+    year: 2024,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:5vNRhkKd0yEAg8suGBpjeY",
+    durationMs: 169917,
+  },
+  "baby-shark": {
+    id: "baby-shark",
+    title: "Baby Shark",
+    artist: "Pinkfong",
+    year: 2017,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:5ygDXis42ncn6kYG14lEVG",
+    durationMs: 80927,
+  },
+  "under-the-sea": {
+    id: "under-the-sea",
+    title: "Under the Sea",
+    artist: "Samuel E. Wright, Disney",
+    year: 2006,
+    genre: "Pop",
+    difficulty: "easy",
+    spotifyUri: "spotify:track:6oYkwjI1TKP9D0Y9II1GT7",
+    durationMs: 195146,
   },
 };

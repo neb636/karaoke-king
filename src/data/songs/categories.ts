@@ -1,6 +1,6 @@
-import type { Region, RegionId } from "@/types/songs";
+import type { Category, CategoryId } from "@/types/songs";
 
-export const REGIONS: Record<RegionId, Region> = {
+export const CATEGORIES: Record<CategoryId, Category> = {
   us: {
     id: "us",
     label: "USA",
@@ -43,12 +43,18 @@ export const REGIONS: Record<RegionId, Region> = {
     flag: "🎵",
     localePrefixes: [],
   },
+  kids: {
+    id: "kids",
+    label: "Kids",
+    flag: "🧒",
+    localePrefixes: [],
+  },
 };
 
-export const REGION_IDS = Object.keys(REGIONS) as RegionId[];
+export const CATEGORY_IDS = Object.keys(CATEGORIES) as CategoryId[];
 
-/** Song IDs per region. Cross-region songs share catalog entries. */
-export const REGION_SONGS: Record<RegionId, string[]> = {
+/** Song IDs per category. Cross-category songs share catalog entries. */
+export const CATEGORY_SONGS: Record<CategoryId, string[]> = {
   us: [
     "dont-stop-believin",
     "bohemian-rhapsody",
@@ -259,5 +265,28 @@ export const REGION_SONGS: Record<RegionId, string[]> = {
     "id-do-anything-for-love",
     "sweet-home-alabama",
     "always-be-my-baby",
+  ],
+  kids: [
+    "happy",
+    "shake-it-off",
+    "barbie-girl",
+    "who-let-the-dogs-out",
+    "call-me-maybe",
+    "wannabe",
+    "ymca",
+    "macarena",
+    "waka-waka",
+    "dancing-queen",
+    "uptown-funk",
+    "old-town-road",
+    "september",
+      "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version",
+    "let-it-go-from-frozen-soundtrack-version",
+    "a-whole-new-world",
+    "i-always-wanted-a-brother",
+    "a-whole-new-world",
+    "apt",
+    "baby-shark",
+    "under-the-sea",
   ],
 };

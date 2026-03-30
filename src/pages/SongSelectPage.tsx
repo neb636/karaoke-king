@@ -3,20 +3,20 @@ import { useNavigate } from "react-router";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
 import { SongCard } from "@/components/SongCard";
-import { RegionPicker } from "@/components/RegionPicker";
+import { CategoryPicker } from "@/components/CategoryPicker";
 import { SpotifyAuthButton } from "@/components/SpotifyAuthButton";
 import { SpotifyPremiumGate } from "@/components/SpotifyPremiumGate";
 import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";
 import { useSpotifyThumbnails } from "@/hooks/useSpotifyThumbnails";
-import type { RegionId } from "@/types/songs";
+import type { CategoryId } from "@/types/songs";
 
 export function SongSelectPage() {
   const navigate = useNavigate();
   const {
-    selectedRegions, toggleRegion, selectedSongId, selectSong,
-    getRegionSongs, selectSongForPlayer,
+    selectedCategories, toggleCategory, selectedSongId, selectSong,
+    getCategorySongs, selectSongForPlayer,
   } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
   const { players, currentPlayer, currentRound, totalRounds } = useGameStore();
@@ -28,7 +28,7 @@ export function SongSelectPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const songs = getRegionSongs();
+  const songs = getCategorySongs();
   const { thumbnails, unavailable } = useSpotifyThumbnails(songs, isAuthenticated);
 
   const player = players[currentPlayer];
@@ -55,8 +55,8 @@ export function SongSelectPage() {
     return null;
   }, [selectedSongId, isAuthenticated, isPremium]);
 
-  function handleRegionToggle(region: RegionId) {
-    toggleRegion(region);
+  function handleCategoryToggle(category: CategoryId) {
+    toggleCategory(category);
   }
 
   function handleConfirmSong() {
@@ -69,11 +69,11 @@ export function SongSelectPage() {
     ? `Round ${currentRound} of ${totalRounds} · `
     : "";
 
-  const regionLabel = selectedRegions.length === 0
-    ? "All Regions"
-    : selectedRegions.length === 1
-      ? (selectedRegions[0] as string)
-      : `${selectedRegions.length} regions`;
+  const categoryLabel = selectedCategories.length === 0
+    ? "All Categories"
+    : selectedCategories.length === 1
+      ? (selectedCategories[0] as string)
+      : `${selectedCategories.length} categories`;
 
   return (
     <div className="screen-container overflow-y-auto justify-start py-6 px-4 gap-4">
@@ -87,13 +87,13 @@ export function SongSelectPage() {
             {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs &middot; {regionLabel}
+            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs &middot; {categoryLabel}
           </p>
         </div>
         <SpotifyAuthButton />
       </div>
 
-      <RegionPicker selected={selectedRegions} onToggle={handleRegionToggle} />
+      <CategoryPicker selected={selectedCategories} onToggle={handleCategoryToggle} />
 
       <div className="w-full max-w-[900px]">
         <input

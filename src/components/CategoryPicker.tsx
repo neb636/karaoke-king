@@ -1,17 +1,17 @@
 import { cn } from "@/lib/utils";
-import type { RegionId } from "@/types/songs";
-import { REGIONS, REGION_IDS } from "@/data/songs/regions";
+import type { CategoryId } from "@/types/songs";
+import { CATEGORIES, CATEGORY_IDS } from "@/data/songs/categories";
 
-interface RegionPickerProps {
-  selected: RegionId[];
-  onToggle: (region: RegionId) => void;
+interface CategoryPickerProps {
+  selected: CategoryId[];
+  onToggle: (category: CategoryId) => void;
 }
 
-export function RegionPicker({ selected, onToggle }: RegionPickerProps) {
+export function CategoryPicker({ selected, onToggle }: CategoryPickerProps) {
   return (
     <div className="flex flex-wrap gap-2 w-full max-w-[900px]">
-      {REGION_IDS.map((id) => {
-        const region = REGIONS[id];
+      {CATEGORY_IDS.map((id) => {
+        const category = CATEGORIES[id];
         const isActive = selected.includes(id);
         return (
           <button
@@ -26,8 +26,8 @@ export function RegionPicker({ selected, onToggle }: RegionPickerProps) {
                 : "bg-white/[0.05] border-white/15 text-white/55 hover:border-white/30 hover:text-white/85",
             )}
           >
-            <span>{region.flag}</span>
-            <span>{region.label}</span>
+            <span>{category.flag}</span>
+            <span>{category.label}</span>
           </button>
         );
       })}
