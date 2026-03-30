@@ -5,7 +5,7 @@ import { PlayerSetupPage } from "@/pages/PlayerSetupPage";
 import { ModeSelectPage } from "@/pages/ModeSelectPage";
 import { SongSelectPage } from "@/pages/SongSelectPage";
 import { SpotifyConnectPage } from "@/pages/SpotifyConnectPage";
-import { SingPage } from "@/pages/SingPage";
+import { SingPageV2 as SingPage } from "@/pages/SingPageV2";
 import { ResultsPage } from "@/pages/ResultsPage";
 import { SpotifyCallbackPage } from "@/pages/SpotifyCallbackPage";
 import { RequireSpotify } from "@/components/RequireSpotify";
