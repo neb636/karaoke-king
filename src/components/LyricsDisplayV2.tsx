@@ -136,8 +136,6 @@ export function LyricsDisplayV2({
   freqArray,
   isActive = false,
 }: LyricsDisplayV2Props) {
-  if (!prevLine && !activeLine && !nextLine) return null;
-
   const borderColor =
     activeLineHasGolden && activeLine
       ? "border-[#ffd700]/40"
