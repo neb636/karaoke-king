@@ -18,6 +18,7 @@ import { FeedbackFloatV2 } from "./sing-page-v2/components/FeedbackFloatV2";
 import { LyricsCardV2 } from "./sing-page-v2/components/LyricsCardV2";
 import { VisualizerV2 } from "./sing-page-v2/components/VisualizerV2";
 import { BottomBarV2 } from "./sing-page-v2/components/BottomBarV2";
+import { DebugPanel } from "./sing-page-v2/components/DebugPanel";
 
 const FINISH_EARLY_TIMER_SECONDS = 40;
 
@@ -248,6 +249,27 @@ export function SingPageV2() {
           </p>
         ) : null}
       </div>
+
+      <DebugPanel
+        songId={isCurated ? song.id : null}
+        isCurated={isCurated}
+        isListening={isListening}
+        showReadyOverlay={showReadyOverlay}
+        countdownActive={countdownActive}
+        currentPlayer={currentPlayer}
+        currentRound={currentRound}
+        totalRounds={totalRounds}
+        playersCount={players.length}
+        scoringMode={scoringMode}
+        coachingEnabled={coachingEnabled}
+        spotifyPlaying={spotifyPlaying}
+        currentPositionMs={currentPositionMs}
+        finishSecondsLeft={finishSecondsLeft}
+        stats={stats}
+        feedback={feedback}
+        activeLine={activeLine}
+        spotifyError={spotifyError}
+      />
     </div>
   );
 }
