@@ -1,4 +1,4 @@
-export const SPOTIFY_CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID as string ?? "";
+export const SPOTIFY_CLIENT_ID = (import.meta.env.VITE_SPOTIFY_CLIENT_ID as string) ?? "";
 
 export const SPOTIFY_REDIRECT_URI = `${window.location.origin}${import.meta.env.BASE_URL ?? "/"}spotify-callback`;
 

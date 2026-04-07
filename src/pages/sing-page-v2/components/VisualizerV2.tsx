@@ -3,20 +3,14 @@ import { memo, useEffect, useRef, useCallback } from "react";
 const BAR_COUNT = 32;
 
 // Pre-compute hues: magenta → purple → pink (300° → 360°)
-const BAR_HUES = Array.from(
-  { length: BAR_COUNT },
-  (_, i) => 300 + (i / BAR_COUNT) * 60,
-);
+const BAR_HUES = Array.from({ length: BAR_COUNT }, (_, i) => 300 + (i / BAR_COUNT) * 60);
 
 interface VisualizerV2Props {
   freqArray: React.MutableRefObject<Uint8Array>;
   isActive: boolean;
 }
 
-export const VisualizerV2 = memo(function VisualizerV2({
-  freqArray,
-  isActive,
-}: VisualizerV2Props) {
+export const VisualizerV2 = memo(function VisualizerV2({ freqArray, isActive }: VisualizerV2Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const rafRef = useRef<number>(0);

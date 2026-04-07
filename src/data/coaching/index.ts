@@ -114,7 +114,7 @@ export const COACHING_DATA: Record<string, CoachingCue[]> = {
     { timestampMs: 180000, message: "ROLLING IN THE DEEP! LOUDER!", type: "chorus" },
     { timestampMs: 210000, message: "You played it to the beat! 🔥", type: "hype" },
   ],
-  "dynamite": [
+  dynamite: [
     { timestampMs: 0, message: "Light it up!", type: "intro" },
     { timestampMs: 10000, message: "Shoes on, get up in the morn...", type: "verse" },
     { timestampMs: 25000, message: "Cup of milk, let's rock and roll!", type: "verse" },
@@ -134,9 +134,7 @@ export const COACHING_DATA: Record<string, CoachingCue[]> = {
  */
 export function generateCoachingCues(data: DataFormat): CoachingCue[] {
   const { bpm, gapMs, startSeconds } = data;
-  const track = data.isDuet
-    ? data.tracks.find((t) => t.player === "P1")
-    : data.tracks[0];
+  const track = data.isDuet ? data.tracks.find((t) => t.player === "P1") : data.tracks[0];
   const lines = track?.lines ?? [];
   if (lines.length === 0) return [];
 

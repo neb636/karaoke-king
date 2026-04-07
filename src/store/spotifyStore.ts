@@ -1,5 +1,10 @@
 import { create } from "zustand";
-import { buildAuthUrl, exchangeCodeForToken, getStoredToken, clearToken } from "@/services/spotify/auth";
+import {
+  buildAuthUrl,
+  exchangeCodeForToken,
+  getStoredToken,
+  clearToken,
+} from "@/services/spotify/auth";
 import { getCurrentUser, type SpotifyUser } from "@/services/spotify/api";
 import { initSpotifySDK } from "@/services/spotify/sdk";
 

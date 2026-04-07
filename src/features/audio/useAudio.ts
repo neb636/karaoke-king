@@ -2,7 +2,11 @@ import { useCallback, useRef, useState } from "react";
 import { FEEDBACK_COOLDOWN, NOISE_FLOOR } from "@/lib/constants";
 import { pick } from "@/lib/utils";
 import { LOUD_MSGS, MEDIUM_MSGS, QUIET_MSGS } from "@/data/feedbackMessages";
-import { calculatePitchClassAccuracy, calculateScore, detectPitch } from "@/features/scoring/scoring";
+import {
+  calculatePitchClassAccuracy,
+  calculateScore,
+  detectPitch,
+} from "@/features/scoring/scoring";
 import type { ScoreOptions } from "@/features/scoring/scoring";
 import type { PlayerScore } from "@/types";
 
@@ -93,10 +97,7 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
       osc.frequency.value = frequency;
       osc.type = "sine";
       gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(
-        0.01,
-        audioCtx.currentTime + duration / 1000,
-      );
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration / 1000);
       osc.start(audioCtx.currentTime);
       osc.stop(audioCtx.currentTime + duration / 1000);
     } catch {
@@ -206,7 +207,7 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
       const elapsed = (now - turnStart.current) / 1000;
       const energyPct = Math.min(100, Math.round(rms * 400));
       const avgEnergy = Math.round(
-        frameCount.current > 0 ? (totalRMS.current / frameCount.current) * 300 : 0,
+        frameCount.current > 0 ? (totalRMS.current / frameCount.current) * 300 : 0
       );
       const expected = expectedPitchClassesRef.current;
       const noteAccuracy =
@@ -266,10 +267,10 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
           elapsed,
           hasBumpers,
         },
-        options,
+        options
       );
     },
-    [],
+    []
   );
 
   return {

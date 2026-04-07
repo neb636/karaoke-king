@@ -280,7 +280,7 @@ export const CATEGORY_SONGS: Record<CategoryId, string[]> = {
     "uptown-funk",
     "old-town-road",
     "september",
-      "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version",
+    "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version",
     "let-it-go-from-frozen-soundtrack-version",
     "a-whole-new-world",
     "i-always-wanted-a-brother",

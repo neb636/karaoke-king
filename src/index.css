@@ -83,16 +83,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(
-        circle at 20% 80%,
-        rgba(255, 0, 128, 0.12) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        rgba(0, 200, 255, 0.1) 0%,
-        transparent 50%
-      );
+      radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
   }
 }

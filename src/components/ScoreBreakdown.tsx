@@ -24,13 +24,18 @@ function difficultyLabel(modifier: number): string {
   return "—";
 }
 
-export function ScoreBreakdown({ players, isCurated, getPlayerSong, scoringMode }: ScoreBreakdownProps) {
+export function ScoreBreakdown({
+  players,
+  isCurated,
+  getPlayerSong,
+  scoringMode,
+}: ScoreBreakdownProps) {
   const pitchLabel = scoringMode === "expert" ? "Note Accuracy" : "Pitch Range";
   return (
     <div className="flex gap-3 flex-wrap justify-center w-full max-w-[900px]">
       {players.map((p) => {
         const song = isCurated && getPlayerSong ? getPlayerSong(p.index) : null;
-        const modifier = song ? DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0 : 1.0;
+        const modifier = song ? (DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0) : 1.0;
 
         return (
           <div

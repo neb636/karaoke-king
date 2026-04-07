@@ -116,7 +116,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:1qDrWA6lyx8cLECdZE7TV7",
     durationMs: 244000,
   },
-  "happy": {
+  happy: {
     id: "happy",
     title: "Happy",
     artist: "Pharrell Williams",
@@ -226,7 +226,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:1D4PL9B8gOg78jiHg3FvBn",
     durationMs: 235000,
   },
-  "hallelujah": {
+  hallelujah: {
     id: "hallelujah",
     title: "Hallelujah",
     artist: "Leonard Cohen",
@@ -236,7 +236,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3qiyyUfYe7CRYLucrPmulD",
     durationMs: 282000,
   },
-  "wonderwall": {
+  wonderwall: {
     id: "wonderwall",
     title: "Wonderwall",
     artist: "Oasis",
@@ -266,7 +266,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6393yGahSJ9slVdOwSxOVR",
     durationMs: 258034,
   },
-  "espresso": {
+  espresso: {
     id: "espresso",
     title: "Espresso",
     artist: "Sabrina Carpenter",
@@ -318,7 +318,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
   },
 
   // ─── UK / British ─────────────────────────────────────────────────────────
-  "angels": {
+  angels: {
     id: "angels",
     title: "Angels",
     artist: "Robbie Williams",
@@ -378,7 +378,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:42M4GWs6hTe9JXfBs0PGtf",
     durationMs: 247000,
   },
-  "stop": {
+  stop: {
     id: "stop",
     title: "Stop",
     artist: "Spice Girls",
@@ -408,7 +408,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:7o2CTH4ctstm8TNelqjb51",
     durationMs: 356000,
   },
-  "heroes": {
+  heroes: {
     id: "heroes",
     title: "Heroes",
     artist: "David Bowie",
@@ -438,7 +438,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5IVuqXILoxVWvWEPm82Bkj",
     durationMs: 236000,
   },
-  "umbrella": {
+  umbrella: {
     id: "umbrella",
     title: "Umbrella",
     artist: "Rihanna",
@@ -468,7 +468,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0EMmVULe7fbnGSbmTmhiNR",
     durationMs: 248000,
   },
-  "freedom": {
+  freedom: {
     id: "freedom",
     title: "Freedom! '90",
     artist: "George Michael",
@@ -498,7 +498,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5jhBjKBR2pIXIhbU1g47LG",
     durationMs: 318000,
   },
-  "wannabe": {
+  wannabe: {
     id: "wannabe",
     title: "Wannabe",
     artist: "Spice Girls",
@@ -518,7 +518,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0GUOSHMsJaDLJjRSDPqfpk",
     durationMs: 220000,
   },
-  "dakota": {
+  dakota: {
     id: "dakota",
     title: "Dakota",
     artist: "Stereophonics",
@@ -528,7 +528,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:67GFKNPnzjwRJhOLXtYfev",
     durationMs: 298000,
   },
-  "september": {
+  september: {
     id: "september",
     title: "September",
     artist: "Earth, Wind & Fire",
@@ -550,7 +550,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
   },
 
   // ─── Latin ────────────────────────────────────────────────────────────────
-  "despacito": {
+  despacito: {
     id: "despacito",
     title: "Despacito",
     artist: "Luis Fonsi ft. Daddy Yankee",
@@ -580,7 +580,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5mcdJ9W4FTpNqLkOGnjGN2",
     durationMs: 124000,
   },
-  "bamboleo": {
+  bamboleo: {
     id: "bamboleo",
     title: "Bamboléo",
     artist: "Gipsy Kings",
@@ -590,7 +590,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5sBYdPeQE6VlIgZiXsJfVq",
     durationMs: 254000,
   },
-  "bailando": {
+  bailando: {
     id: "bailando",
     title: "Bailando",
     artist: "Enrique Iglesias",
@@ -600,7 +600,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0Gc1WR2enOACQWIDNSNOyT",
     durationMs: 252000,
   },
-  "suavemente": {
+  suavemente: {
     id: "suavemente",
     title: "Suavemente",
     artist: "Elvis Crespo",
@@ -620,7 +620,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3ZFTkvIE7kyPt6Nu3PEa7V",
     durationMs: 218000,
   },
-  "conga": {
+  conga: {
     id: "conga",
     title: "Conga",
     artist: "Gloria Estefan",
@@ -630,7 +630,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3k3SMlVpJcGZaGBm0tF6lQ",
     durationMs: 246000,
   },
-  "gasolina": {
+  gasolina: {
     id: "gasolina",
     title: "Gasolina",
     artist: "Daddy Yankee",
@@ -700,7 +700,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3GXsRC3h8OhOOaP6hSPoRi",
     durationMs: 228000,
   },
-  "obsesion": {
+  obsesion: {
     id: "obsesion",
     title: "Obsesión",
     artist: "Aventura",
@@ -710,7 +710,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:7tv8eyAq9tLwYMpdEdvV3y",
     durationMs: 236000,
   },
-  "clandestino": {
+  clandestino: {
     id: "clandestino",
     title: "Clandestino",
     artist: "Manu Chao",
@@ -782,7 +782,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
   },
 
   // ─── K-Pop ────────────────────────────────────────────────────────────────
-  "dynamite": {
+  dynamite: {
     id: "dynamite",
     title: "Dynamite",
     artist: "BTS",
@@ -812,7 +812,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:4w1aMicqNTqMYfOmSiEo7F",
     durationMs: 183000,
   },
-  "butter": {
+  butter: {
     id: "butter",
     title: "Butter",
     artist: "BTS",
@@ -832,7 +832,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0jhks09cKvFtfHxKVU4TUz",
     durationMs: 214000,
   },
-  "fancy": {
+  fancy: {
     id: "fancy",
     title: "FANCY",
     artist: "TWICE",
@@ -862,7 +862,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5sdQOyqq2IDhvmx2lHOpwd",
     durationMs: 150000,
   },
-  "monster": {
+  monster: {
     id: "monster",
     title: "Monster",
     artist: "EXO",
@@ -872,7 +872,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6f3sRMkBVFnWSdOTmDXnhD",
     durationMs: 212000,
   },
-  "fire": {
+  fire: {
     id: "fire",
     title: "FIRE",
     artist: "BTS",
@@ -942,7 +942,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3SRFOR5UhFauXqK3y3bIH3",
     durationMs: 188000,
   },
-  "antifragile": {
+  antifragile: {
     id: "antifragile",
     title: "ANTIFRAGILE",
     artist: "LE SSERAFIM",
@@ -952,7 +952,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:4fsQ0K37TOXa3hEQfjEic4",
     durationMs: 187000,
   },
-  "magnetic": {
+  magnetic: {
     id: "magnetic",
     title: "Magnetic",
     artist: "ILLIT",
@@ -962,7 +962,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3vl8V9g0id0vZJQj6jzJj7",
     durationMs: 160000,
   },
-  "seven": {
+  seven: {
     id: "seven",
     title: "Seven",
     artist: "Jung Kook ft. Latto",
@@ -972,7 +972,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:7x80II29Mir5SutpYCEBBn",
     durationMs: 185000,
   },
-  "savage": {
+  savage: {
     id: "savage",
     title: "Savage",
     artist: "aespa",
@@ -1012,7 +1012,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6veFyjNycn6EaNCKhkPXUY",
     durationMs: 239100,
   },
-  "gabriela": {
+  gabriela: {
     id: "gabriela",
     title: "Gabriela",
     artist: "KATSEYE",
@@ -1174,7 +1174,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6TGHVBLGxs1lWf1oDaFHgr",
     durationMs: 252000,
   },
-  "malhari": {
+  malhari: {
     id: "malhari",
     title: "Malhari",
     artist: "Vishal Dadlani",
@@ -1204,7 +1204,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3iWRFVbZpW1M3F7y5Suvp5",
     durationMs: 295000,
   },
-  "dilbar": {
+  dilbar: {
     id: "dilbar",
     title: "Dilbar",
     artist: "Neha Kakkar, Dhvani Bhanushali & Ikka",
@@ -1224,7 +1224,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:7IJaZVFCjSgzWlKKWUXfPj",
     durationMs: 259000,
   },
-  "ghungroo": {
+  ghungroo: {
     id: "ghungroo",
     title: "Ghungroo",
     artist: "Arijit Singh & Shilpa Rao",
@@ -1246,7 +1246,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0fPwXOFRBD6U5qGIQTcEoI",
     durationMs: 213000,
   },
-  "ymca": {
+  ymca: {
     id: "ymca",
     title: "Y.M.C.A.",
     artist: "Village People",
@@ -1256,7 +1256,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:1WGxbAkkePHAH0CgFc2gZO",
     durationMs: 287000,
   },
-  "africa": {
+  africa: {
     id: "africa",
     title: "Africa",
     artist: "Toto",
@@ -1356,7 +1356,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6v3KW9xbBJRFKDp5KS3FNb",
     durationMs: 268000,
   },
-  "levels": {
+  levels: {
     id: "levels",
     title: "Levels",
     artist: "Avicii",
@@ -1406,7 +1406,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:1sTJ0R5DrPvPJCO8ND2pOv",
     durationMs: 222000,
   },
-  "sandstorm": {
+  sandstorm: {
     id: "sandstorm",
     title: "Sandstorm",
     artist: "Darude",
@@ -1436,7 +1436,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:2GBlaMR0j2CMZe2fEEXzW3",
     durationMs: 309000,
   },
-  "titanium": {
+  titanium: {
     id: "titanium",
     title: "Titanium",
     artist: "David Guetta ft. Sia",
@@ -1446,7 +1446,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:0lHAMNU8RGiIObRAqnTqjZ",
     durationMs: 245000,
   },
-  "macarena": {
+  macarena: {
     id: "macarena",
     title: "Macarena",
     artist: "Los del Río",
@@ -1498,7 +1498,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:3faiJQfCVBhE3IZCd3IDPB",
     durationMs: 277000,
   },
-  "respect": {
+  respect: {
     id: "respect",
     title: "Respect",
     artist: "Aretha Franklin",
@@ -1508,7 +1508,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:7s25THrKz86DM225dOYwnr",
     durationMs: 148000,
   },
-  "imagine": {
+  imagine: {
     id: "imagine",
     title: "Imagine",
     artist: "John Lennon",
@@ -1558,7 +1558,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:4V3OMBICmvsCrGRT1y8bvi",
     durationMs: 178000,
   },
-  "superstition": {
+  superstition: {
     id: "superstition",
     title: "Superstition",
     artist: "Stevie Wonder",
@@ -1638,7 +1638,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:5CQ30WqJwcep0pYcV4AMNc",
     durationMs: 483000,
   },
-  "yesterday": {
+  yesterday: {
     id: "yesterday",
     title: "Yesterday",
     artist: "The Beatles",
@@ -1668,7 +1668,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:1qCQTy0fTXerET3JIAqBx3",
     durationMs: 138000,
   },
-  "summertime": {
+  summertime: {
     id: "summertime",
     title: "Summertime",
     artist: "DJ Jazzy Jeff & The Fresh Prince",
@@ -1698,7 +1698,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:4aKni5JtYEfZSjsJaRjaci",
     durationMs: 217000,
   },
-  "thriller": {
+  thriller: {
     id: "thriller",
     title: "Thriller",
     artist: "Michael Jackson",
@@ -1738,7 +1738,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:54X78diSLoUDI3joC2bjMz",
     durationMs: 521000,
   },
-  "jolene": {
+  jolene: {
     id: "jolene",
     title: "Jolene",
     artist: "Dolly Parton",
@@ -1782,7 +1782,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
   // ─── Added by add-playlist.mjs ────────────────────────────────────────
   "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version": {
     id: "do-you-want-to-build-a-snowman-from-frozen-soundtrack-version",
-    title: "Do You Want to Build a Snowman? - From \"Frozen\"/Soundtrack Version",
+    title: 'Do You Want to Build a Snowman? - From "Frozen"/Soundtrack Version',
     artist: "Kristen Bell, Agatha Lee Monn, Katie Lopez",
     year: 2013,
     genre: "Pop",
@@ -1792,7 +1792,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
   },
   "let-it-go-from-frozen-soundtrack-version": {
     id: "let-it-go-from-frozen-soundtrack-version",
-    title: "Let It Go - From \"Frozen\"/Soundtrack Version",
+    title: 'Let It Go - From "Frozen"/Soundtrack Version',
     artist: "Idina Menzel",
     year: 2013,
     genre: "Pop",
@@ -1820,7 +1820,7 @@ export const SONG_CATALOG: Record<string, CuratedSong> = {
     spotifyUri: "spotify:track:6WQyAlZ8sYKvyvSwgX85TO",
     durationMs: 214506,
   },
-  "apt": {
+  apt: {
     id: "apt",
     title: "APT.",
     artist: "ROSÉ, Bruno Mars",

@@ -14,7 +14,7 @@ declare namespace Spotify {
     addListener(event: "player_state_changed", cb: (state: PlaybackState | null) => void): boolean;
     addListener(
       event: "initialization_error" | "authentication_error" | "account_error" | "playback_error",
-      cb: (data: { message: string }) => void,
+      cb: (data: { message: string }) => void
     ): boolean;
     removeListener(event: string, cb?: (...args: unknown[]) => void): boolean;
     getCurrentState(): Promise<PlaybackState | null>;

@@ -14,7 +14,7 @@ export function DifficultyBadge({ difficulty, className }: DifficultyBadgeProps)
       className={cn(
         "inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider",
         "border",
-        className,
+        className
       )}
       style={{
         color: color,

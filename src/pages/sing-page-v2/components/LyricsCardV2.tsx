@@ -21,9 +21,7 @@ interface ActiveLineProps {
 }
 
 const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
-  const allRap = line.notes.every(
-    (n) => n.type === "rap" || n.type === "freestyle",
-  );
+  const allRap = line.notes.every((n) => n.type === "rap" || n.type === "freestyle");
 
   return (
     <span>
@@ -49,9 +47,7 @@ const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
         return (
           <span key={i}>
             {spacer}
-            <span className={`transition-colors duration-100 ${color}`}>
-              {text}
-            </span>
+            <span className={`transition-colors duration-100 ${color}`}>{text}</span>
           </span>
         );
       })}
@@ -99,11 +95,7 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
 
       {/* Active line */}
       <div className="min-h-[2rem] text-base sm:text-lg font-bold py-1">
-        {activeLine ? (
-          <ActiveLine line={activeLine} idx={activeSyllableIdx} />
-        ) : (
-          "\u00A0"
-        )}
+        {activeLine ? <ActiveLine line={activeLine} idx={activeSyllableIdx} /> : "\u00A0"}
       </div>
 
       {/* Next line */}

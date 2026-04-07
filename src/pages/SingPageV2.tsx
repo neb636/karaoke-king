@@ -40,11 +40,9 @@ export function SingPageV2() {
   const isCurated = playMode === "curated" && !!song;
 
   const { extractedData, isLoading: songDataLoading } = useSongData(
-    isCurated ? song?.id ?? null : null,
+    isCurated ? (song?.id ?? null) : null
   );
-  const expectedPitchClasses = extractedData
-    ? getExpectedPitchClasses(extractedData)
-    : undefined;
+  const expectedPitchClasses = extractedData ? getExpectedPitchClasses(extractedData) : undefined;
 
   const {
     isListening,
@@ -57,16 +55,10 @@ export function SingPageV2() {
     playSound,
   } = useAudio(expectedPitchClasses);
 
-  const {
-    isActive: countdownActive,
-    value: countdownValue,
-    run: runCountdown,
-  } = useCountdown();
+  const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
-  const [finishSecondsLeft, setFinishSecondsLeft] = useState(
-    FINISH_EARLY_TIMER_SECONDS,
-  );
+  const [finishSecondsLeft, setFinishSecondsLeft] = useState(FINISH_EARLY_TIMER_SECONDS);
 
   // Reset overlay when player changes
   useEffect(() => {
@@ -81,10 +73,7 @@ export function SingPageV2() {
   // Tick the finish countdown
   useEffect(() => {
     if (!isListening || !isCurated || finishSecondsLeft <= 0) return;
-    const t = setTimeout(
-      () => setFinishSecondsLeft((s) => Math.max(0, s - 1)),
-      1000,
-    );
+    const t = setTimeout(() => setFinishSecondsLeft((s) => Math.max(0, s - 1)), 1000);
     return () => clearTimeout(t);
   }, [isListening, isCurated, finishSecondsLeft]);
 
@@ -104,16 +93,13 @@ export function SingPageV2() {
   const { currentCue } = useCoachingCues(
     isCurated && coachingEnabled ? song!.id : null,
     currentPositionMs,
-    extractedData,
+    extractedData
   );
 
-  const {
-    prevLine,
-    activeLine,
-    nextLine,
-    activeSyllableIdx,
-    activeLineHasGolden,
-  } = useLyricsV2(extractedData, currentPositionMs);
+  const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } = useLyricsV2(
+    extractedData,
+    currentPositionMs
+  );
 
   const player = players[currentPlayer];
 
@@ -240,9 +226,7 @@ export function SingPageV2() {
             <VisualizerV2 freqArray={freqArray} isActive={isListening} />
 
             {/* Spotify error */}
-            {spotifyError && (
-              <p className="text-xs text-[#ff2d95]">Spotify: {spotifyError}</p>
-            )}
+            {spotifyError && <p className="text-xs text-[#ff2d95]">Spotify: {spotifyError}</p>}
 
             {/* Bottom bar: stats + energy + stop */}
             <BottomBarV2
@@ -260,9 +244,7 @@ export function SingPageV2() {
           </>
         ) : !showReadyOverlay && !countdownActive ? (
           <p className="text-sm opacity-40 mt-3">
-            {isCurated
-              ? "Sing along with the track!"
-              : "SING YOUR HEART OUT! Hit STOP when done."}
+            {isCurated ? "Sing along with the track!" : "SING YOUR HEART OUT! Hit STOP when done."}
           </p>
         ) : null}
       </div>

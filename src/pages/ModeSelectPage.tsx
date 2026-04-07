@@ -11,7 +11,8 @@ import { GAME_MODES, GAME_MODE_KEYS } from "@/lib/constants";
 
 export function ModeSelectPage() {
   const navigate = useNavigate();
-  const { selectedMode, setSelectedMode, confirmMode, initNewGame, scoringMode, setScoringMode } = useGameStore();
+  const { selectedMode, setSelectedMode, confirmMode, initNewGame, scoringMode, setScoringMode } =
+    useGameStore();
   const { playMode, setPlayMode, clearPlayerSongs } = useSongStore();
 
   function handleConfirm() {

@@ -56,7 +56,7 @@ export function ResultsPage() {
       }
     }
     return flags;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const cumRanked = rankPlayersByCumulative(players, cumulativeScores);
@@ -131,10 +131,7 @@ export function ResultsPage() {
             return (
               <div key={p.index} className="text-center">
                 <p className="text-xs uppercase tracking-widest opacity-40 mb-1">{p.name}</p>
-                <SongResultBadge
-                  song={playerSong}
-                  isNewBest={!!newBestFlags[p.index]}
-                />
+                <SongResultBadge song={playerSong} isNewBest={!!newBestFlags[p.index]} />
               </div>
             );
           })}
@@ -168,7 +165,12 @@ export function ResultsPage() {
       )}
 
       {/* Per-player score breakdown */}
-      <ScoreBreakdown players={ranked} isCurated={isCurated} getPlayerSong={getPlayerSong} scoringMode={isCurated ? scoringMode : undefined} />
+      <ScoreBreakdown
+        players={ranked}
+        isCurated={isCurated}
+        getPlayerSong={getPlayerSong}
+        scoringMode={isCurated ? scoringMode : undefined}
+      />
 
       {/* Action buttons */}
       <div className="flex flex-col items-center gap-3 mt-2 pb-4 w-full">
@@ -190,7 +192,9 @@ export function ResultsPage() {
               <Button variant="outline" onClick={handleRematch}>
                 🔄 Rematch
               </Button>
-              <span className="text-[10px] text-white/30 tracking-wide">Same players, new songs</span>
+              <span className="text-[10px] text-white/30 tracking-wide">
+                Same players, new songs
+              </span>
             </div>
           </div>
         )}

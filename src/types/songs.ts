@@ -1,15 +1,14 @@
-
 // extract
 
 /** `:` = normal, `*` = golden (bonus points), `R` = rap/freestyle, `F` = freestyle */
-export type NoteType = 'normal' | 'golden' | 'rap' | 'freestyle';
+export type NoteType = "normal" | "golden" | "rap" | "freestyle";
 
 export interface Note {
   type: NoteType;
-  beat: number;       // start beat (relative to GAP offset)
-  duration: number;   // length in beats
-  pitch: number;      // relative MIDI pitch (can be negative)
-  syllable: string;   // lyric syllable for this note
+  beat: number; // start beat (relative to GAP offset)
+  duration: number; // length in beats
+  pitch: number; // relative MIDI pitch (can be negative)
+  syllable: string; // lyric syllable for this note
 }
 
 export interface Line {
@@ -20,7 +19,7 @@ export interface Line {
 
 export interface Track {
   /** null = single-player song; 'P1'/'P2' = duet tracks */
-  player: 'P1' | 'P2' | null;
+  player: "P1" | "P2" | null;
   lines: Line[];
 }
 
@@ -63,7 +62,6 @@ export interface DataFormat {
   isDuet: boolean;
   tracks: Track[];
 }
-
 
 // ── Song Difficulty ──────────────────────────────────────────────────────────
 

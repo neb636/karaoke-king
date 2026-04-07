@@ -15,9 +15,7 @@ export function SongResultBadge({ song, isNewBest }: SongResultBadgeProps) {
       </div>
       <p className="text-xs text-white/40">{song.artist}</p>
       {isNewBest && (
-        <p className="text-xs font-bold neon-gold animate-glow-pulse">
-          NEW PERSONAL BEST!
-        </p>
+        <p className="text-xs font-bold neon-gold animate-glow-pulse">NEW PERSONAL BEST!</p>
       )}
     </div>
   );

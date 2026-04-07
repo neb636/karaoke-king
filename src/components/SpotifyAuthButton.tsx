@@ -4,9 +4,7 @@ export function SpotifyAuthButton() {
   const { isAuthenticated, user, login, logout, isLoading } = useSpotifyStore();
 
   if (isLoading) {
-    return (
-      <span className="text-xs text-white/40 animate-pulse">Connecting...</span>
-    );
+    return <span className="text-xs text-white/40 animate-pulse">Connecting...</span>;
   }
 
   if (isAuthenticated && user) {
