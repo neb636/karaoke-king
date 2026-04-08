@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useAudio } from "@/features/audio/useAudio";
@@ -10,6 +10,7 @@ import { useSongData } from "@/hooks/useSongData";
 import { useLyricsV2 } from "@/hooks/useLyricsV2";
 import { getExpectedPitchClasses } from "@/data/songs/songData";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { isDebugMode } from "./sing-page-v2/components/DebugPanel";
 
 import { ReadyOverlayV2 } from "./sing-page-v2/components/ReadyOverlayV2";
 import { CountdownOverlayV2 } from "./sing-page-v2/components/CountdownOverlayV2";
@@ -43,6 +44,21 @@ export function SingPageV2() {
   const { extractedData, isLoading: songDataLoading } = useSongData(
     isCurated ? (song?.id ?? null) : null
   );
+
+  const [gapMsOverride, setGapMsOverride] = useState<number | null>(null);
+
+  // Sync override to the song's gapMs when song data first loads
+  useEffect(() => {
+    if (extractedData) {
+      setGapMsOverride(extractedData.gapMs);
+    }
+  }, [extractedData?.gapMs]);
+
+  const effectiveExtractedData = useMemo(() => {
+    if (!extractedData || !isDebugMode() || gapMsOverride === null) return extractedData;
+    return { ...extractedData, gapMs: gapMsOverride };
+  }, [extractedData, gapMsOverride]);
+
   const expectedPitchClasses = extractedData ? getExpectedPitchClasses(extractedData) : undefined;
 
   const {
@@ -98,7 +114,7 @@ export function SingPageV2() {
   );
 
   const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } = useLyricsV2(
-    extractedData,
+    effectiveExtractedData,
     currentPositionMs
   );
 
@@ -151,6 +167,14 @@ export function SingPageV2() {
         void navigate("/results");
       }, 800);
     }
+  }
+
+  async function handleDebugRestart() {
+    if (isCurated && spotifyPlaying) {
+      await spotifyPause();
+    }
+    stopListening(player?.bumpers ?? false, { mode: "fun" });
+    setShowReadyOverlay(true);
   }
 
   const turnLabel =
@@ -269,6 +293,9 @@ export function SingPageV2() {
         feedback={feedback}
         activeLine={activeLine}
         spotifyError={spotifyError}
+        gapMs={gapMsOverride}
+        onGapMsChange={setGapMsOverride}
+        onRestart={() => void handleDebugRestart()}
       />
     </div>
   );
