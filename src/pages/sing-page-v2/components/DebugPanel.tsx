@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import type { LiveStats, FeedbackState } from "@/features/audio/useAudio";
 import type { ScoringMode } from "@/lib/constants";
+import { DataFormat } from "@/types/songs";
 
 const DEBUG_KEY = "karaoke-debug";
 
@@ -13,6 +14,7 @@ export function isDebugMode(): boolean {
 }
 
 interface DebugPanelProps {
+  extractedData: DataFormat | null;
   songId: string | null;
   isCurated: boolean;
   isListening: boolean;
@@ -54,6 +56,8 @@ export function DebugPanel(props: DebugPanelProps) {
     : null;
 
   const state = {
+    extractedData: !!props.extractedData,
+    isListening: props.isListening,
     phase: props.showReadyOverlay
       ? "ready-overlay"
       : props.countdownActive

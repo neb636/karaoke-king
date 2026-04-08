@@ -231,13 +231,15 @@ export function SingPageV2() {
           <>
             {/* Lyrics card (curated only) */}
             {extractedData && (
-              <LyricsCardV2
-                prevLine={prevLine}
-                activeLine={activeLine}
-                nextLine={nextLine}
-                activeSyllableIdx={activeSyllableIdx}
-                activeLineHasGolden={activeLineHasGolden}
-              />
+              <div className="w-full my-[10px]">
+                <LyricsCardV2
+                  prevLine={prevLine}
+                  activeLine={activeLine}
+                  nextLine={nextLine}
+                  activeSyllableIdx={activeSyllableIdx}
+                  activeLineHasGolden={activeLineHasGolden}
+                />
+              </div>
             )}
 
             {/* Freeform encouragement */}
@@ -275,6 +277,7 @@ export function SingPageV2() {
       </div>
 
       <DebugPanel
+        extractedData={extractedData}
         songId={isCurated ? song.id : null}
         isCurated={isCurated}
         isListening={isListening}

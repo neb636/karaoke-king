@@ -86,20 +86,20 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
 
   return (
     <div
-      className={`w-full rounded-2xl px-4 py-3 text-center bg-white/[0.04] border transition-colors duration-300 ${borderColor}`}
+      className={`w-full rounded-2xl px-[19px] py-[14px] text-center bg-white/[0.04] border transition-colors duration-300 ${borderColor}`}
     >
       {/* Previous line */}
-      <div className="min-h-[1.4rem] text-sm text-white/20 truncate">
+      <div className="min-h-[1.4rem] text-[16px] text-white/20 truncate">
         {prevLine ? lineText(prevLine) : "\u00A0"}
       </div>
 
       {/* Active line */}
-      <div className="min-h-[2rem] text-base sm:text-lg font-bold py-1">
+      <div className="min-h-[2rem] text-[18px] sm:text-[20px] font-bold py-1">
         {activeLine ? <ActiveLine line={activeLine} idx={activeSyllableIdx} /> : "\u00A0"}
       </div>
 
       {/* Next line */}
-      <div className="min-h-[1.4rem] text-sm text-white/30 truncate">
+      <div className="min-h-[1.4rem] text-[16px] text-white/30 truncate">
         {nextLine ? lineText(nextLine) : "\u00A0"}
       </div>
     </div>
