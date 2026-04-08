@@ -34,10 +34,10 @@ const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
         if (i === idx) {
           color =
             note.type === "golden"
-              ? "neon-gold"
+              ? "text-[#ffd700]/70"
               : note.type === "rap" || note.type === "freestyle"
-                ? "text-white/60"
-                : "neon-cyan";
+                ? "text-white/50"
+                : "text-[#00e5ff]/70";
         } else if (i < idx) {
           color = "text-white/50";
         } else {
@@ -77,7 +77,6 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
   activeSyllableIdx,
   activeLineHasGolden,
 }: LyricsCardV2Props) {
-  if (!prevLine && !activeLine && !nextLine) return null;
 
   const borderColor =
     activeLineHasGolden && activeLine
