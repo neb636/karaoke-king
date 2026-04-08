@@ -77,7 +77,6 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
   activeSyllableIdx,
   activeLineHasGolden,
 }: LyricsCardV2Props) {
-  if (!prevLine && !activeLine && !nextLine) return null;
 
   const borderColor =
     activeLineHasGolden && activeLine
