@@ -19,11 +19,15 @@ export function SongCard({ song, selected, onSelect, thumbnailUrl }: SongCardPro
         "transition-all duration-200 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/[0.07]",
         "active:scale-[0.98]",
         "p-3 min-h-[80px]",
-        selected && "border-[#ff2d95] shadow-[0_0_24px_rgba(255,45,149,0.27)] bg-[rgba(255,45,149,0.1)]",
+        selected &&
+          "border-[#ff2d95] shadow-[0_0_24px_rgba(255,45,149,0.27)] bg-[rgba(255,45,149,0.1)]"
       )}
     >
       {/* Album art */}
-      <div className="relative flex-shrink-0 rounded-xl overflow-hidden bg-white/[0.06]" style={{ width: 100, height: 100 }}>
+      <div
+        className="relative flex-shrink-0 rounded-xl overflow-hidden bg-white/[0.06]"
+        style={{ width: 100, height: 100 }}
+      >
         {thumbnailUrl ? (
           <img
             src={thumbnailUrl}

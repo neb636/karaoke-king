@@ -21,7 +21,7 @@ export function CoachingPrompt({ cue }: CoachingPromptProps) {
         "text-center py-1 px-4 rounded-xl",
         "animate-feedback-pop",
         "font-display text-lg tracking-wide",
-        typeStyles[cue.type],
+        typeStyles[cue.type]
       )}
     >
       {cue.message}

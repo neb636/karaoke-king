@@ -65,9 +65,7 @@ export function PlayerSetupPage() {
         <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
           BACK FOR MORE?
         </NeonText>
-        <p className="text-sm uppercase tracking-[3px] opacity-40 mb-2">
-          We remember your crew
-        </p>
+        <p className="text-sm uppercase tracking-[3px] opacity-40 mb-2">We remember your crew</p>
         <p className="text-xs text-white/50 mb-6">
           {savedNames.length} player{savedNames.length !== 1 ? "s" : ""} returning
         </p>
@@ -110,9 +108,7 @@ export function PlayerSetupPage() {
       <NeonText as="h2" color="cyan" className="text-[2.2rem] mb-2">
         ENTER THE ARENA
       </NeonText>
-      <p className="text-sm uppercase tracking-[2px] opacity-70 mb-6">
-        Enter your name
-      </p>
+      <p className="text-sm uppercase tracking-[2px] opacity-70 mb-6">Enter your name</p>
 
       <div className="flex flex-col gap-3 items-center w-full max-w-[420px]">
         <p className="text-xs uppercase tracking-[2px] opacity-60 self-start font-semibold">
@@ -147,12 +143,7 @@ export function PlayerSetupPage() {
             Each player needs a name
           </p>
         )}
-        <Button
-          variant="gold"
-          className="mt-1 w-full"
-          onClick={handleNext}
-          disabled={!canProceed}
-        >
+        <Button variant="gold" className="mt-1 w-full" onClick={handleNext} disabled={!canProceed}>
           Let&apos;s Go!
         </Button>
       </div>

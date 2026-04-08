@@ -30,7 +30,8 @@ export function SpotifyConnectPage() {
           CONNECT SPOTIFY
         </NeonText>
         <p className="text-white/50 text-sm max-w-xs leading-relaxed">
-          Curated mode uses Spotify to stream songs. Connect your account to pick your song and start singing.
+          Curated mode uses Spotify to stream songs. Connect your account to pick your song and
+          start singing.
         </p>
       </div>
 
@@ -56,12 +57,7 @@ export function SpotifyConnectPage() {
           )}
         </button>
 
-        <Button
-          variant="outline"
-          size="sm"
-          className="mt-1"
-          onClick={() => void navigate("/mode")}
-        >
+        <Button variant="outline" size="sm" className="mt-1" onClick={() => void navigate("/mode")}>
           Switch to Freeform Mode
         </Button>
       </div>

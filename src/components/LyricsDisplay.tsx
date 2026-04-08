@@ -24,9 +24,7 @@ interface ActiveLineProps {
 }
 
 function ActiveLineText({ line, activeSyllableIdx }: ActiveLineProps) {
-  const isAllRap = line.notes.every(
-    (n) => n.type === "rap" || n.type === "freestyle",
-  );
+  const isAllRap = line.notes.every((n) => n.type === "rap" || n.type === "freestyle");
 
   return (
     <span>
@@ -53,9 +51,7 @@ function ActiveLineText({ line, activeSyllableIdx }: ActiveLineProps) {
         return (
           <span key={i}>
             {spacer}
-            <span className={`transition-colors duration-100 ${colorClass}`}>
-              {text}
-            </span>
+            <span className={`transition-colors duration-100 ${colorClass}`}>{text}</span>
           </span>
         );
       })}
@@ -78,9 +74,7 @@ export function LyricsDisplay({
   const containerClass = [
     "w-full max-w-[600px] rounded-2xl px-4 py-2.5 text-center",
     "bg-white/[0.06] border transition-colors duration-300",
-    activeLineHasGolden && activeLine
-      ? "border-[#ffd700]/40"
-      : "border-white/[0.08]",
+    activeLineHasGolden && activeLine ? "border-[#ffd700]/40" : "border-white/[0.08]",
   ].join(" ");
 
   return (

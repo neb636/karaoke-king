@@ -33,7 +33,9 @@ function createPlayer(): void {
   player = new window.Spotify.Player({
     name: "Karaoke King",
     getOAuthToken: (cb) => {
-      getToken().then(cb).catch(() => cb(""));
+      getToken()
+        .then(cb)
+        .catch(() => cb(""));
     },
     volume: 1.0,
   });

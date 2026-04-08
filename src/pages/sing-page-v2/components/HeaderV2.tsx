@@ -20,14 +20,8 @@ export const HeaderV2 = memo(function HeaderV2({
 }: HeaderV2Props) {
   return (
     <div className="text-center shrink-0">
-      <p className="text-[0.62rem] uppercase tracking-[3px] text-white/35 mb-1">
-        {turnLabel}
-      </p>
-      <NeonText
-        as="h2"
-        color="pink"
-        className="text-[clamp(1.8rem,5vw,3rem)] leading-none"
-      >
+      <p className="text-[0.62rem] uppercase tracking-[3px] text-white/35 mb-1">{turnLabel}</p>
+      <NeonText as="h2" color="pink" className="text-[clamp(1.8rem,5vw,3rem)] leading-none">
         {playerName}
       </NeonText>
       {isCurated && isListening && songTitle && (

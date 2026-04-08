@@ -20,7 +20,7 @@ const fetchedUrisGlobal = new Set<string>();
  */
 export function useSpotifyThumbnails(
   songs: CuratedSong[],
-  isAuthenticated: boolean,
+  isAuthenticated: boolean
 ): { thumbnails: ThumbnailMap; unavailable: UnavailableSet } {
   const [thumbnails, setThumbnails] = useState<ThumbnailMap>(new Map(thumbnailCache));
   const [unavailable, setUnavailable] = useState<UnavailableSet>(new Set(unavailableCache));

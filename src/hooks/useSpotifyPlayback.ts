@@ -1,5 +1,11 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { initSpotifySDK, onPlaybackStateChange, getPlayer, playTrack, pauseTrack } from "@/services/spotify/sdk";
+import {
+  initSpotifySDK,
+  onPlaybackStateChange,
+  getPlayer,
+  playTrack,
+  pauseTrack,
+} from "@/services/spotify/sdk";
 
 interface UseSpotifyPlaybackOptions {
   onTrackEnd?: () => void;

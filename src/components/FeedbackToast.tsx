@@ -26,7 +26,7 @@ export function FeedbackToast({ message, colorClass }: FeedbackToastProps) {
         ref={spanRef}
         className={cn(
           "font-display text-2xl tracking-widest whitespace-nowrap animate-feedback-pop",
-          colorClass,
+          colorClass
         )}
       >
         {message}

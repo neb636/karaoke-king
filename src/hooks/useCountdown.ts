@@ -23,7 +23,7 @@ export function useCountdown() {
       setValue("");
       onDone();
     },
-    [],
+    []
   );
 
   return { isActive, value, run };

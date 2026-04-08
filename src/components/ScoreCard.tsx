@@ -38,24 +38,20 @@ export function ScoreCard({ player, rank }: ScoreCardProps) {
         "transition-all duration-500",
         rank === 0 && "scale-105 border-[#ffd700] shadow-[0_0_40px_rgba(255,215,0,0.2)]",
         rank === 1 && "border-[#c0c0c0] shadow-[0_0_20px_rgba(192,192,192,0.13)]",
-        rank === 2 && "border-[#cd7f32] shadow-[0_0_20px_rgba(205,127,50,0.13)]",
+        rank === 2 && "border-[#cd7f32] shadow-[0_0_20px_rgba(205,127,50,0.13)]"
       )}
     >
       <div className="text-2xl mb-1">{medal}</div>
       <div className="text-base font-extrabold mb-0.5 truncate w-full text-center text-white/90">
         {player.name}
-        {player.score.bumpers && (
-          <span className="ml-1 text-xs opacity-50">⚡</span>
-        )}
+        {player.score.bumpers && <span className="ml-1 text-xs opacity-50">⚡</span>}
       </div>
-      <div className="text-xs uppercase tracking-widest opacity-40 mb-2">
-        #{rank + 1}
-      </div>
+      <div className="text-xs uppercase tracking-widest opacity-40 mb-2">#{rank + 1}</div>
       <div
         ref={scoreRef}
         className={cn(
           "font-display text-[clamp(2.5rem,8vw,3.5rem)] leading-none",
-          rank === 0 ? "neon-gold" : "",
+          rank === 0 ? "neon-gold" : ""
         )}
       >
         0

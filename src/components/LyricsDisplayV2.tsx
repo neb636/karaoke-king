@@ -21,9 +21,7 @@ function lineText(line: Line): string {
 
 /** Renders the active line with per-syllable highlighting. */
 function ActiveLine({ line, idx }: { line: Line; idx: number }) {
-  const allRap = line.notes.every(
-    (n) => n.type === "rap" || n.type === "freestyle",
-  );
+  const allRap = line.notes.every((n) => n.type === "rap" || n.type === "freestyle");
 
   return (
     <span>
@@ -49,9 +47,7 @@ function ActiveLine({ line, idx }: { line: Line; idx: number }) {
         return (
           <span key={i}>
             {spacer}
-            <span className={`transition-colors duration-100 ${color}`}>
-              {text}
-            </span>
+            <span className={`transition-colors duration-100 ${color}`}>{text}</span>
           </span>
         );
       })}
@@ -75,9 +71,7 @@ export function LyricsDisplayV2({
   if (!prevLine && !activeLine && !nextLine) return null;
 
   const borderColor =
-    activeLineHasGolden && activeLine
-      ? "border-[#ffd700]/40"
-      : "border-white/[0.08]";
+    activeLineHasGolden && activeLine ? "border-[#ffd700]/40" : "border-white/[0.08]";
 
   return (
     <div
@@ -90,9 +84,7 @@ export function LyricsDisplayV2({
 
       {/* Active line */}
       <div className="min-h-[1.75rem] text-base font-bold transition-opacity duration-300">
-        {activeLine ? (
-          <ActiveLine line={activeLine} idx={activeSyllableIdx} />
-        ) : null}
+        {activeLine ? <ActiveLine line={activeLine} idx={activeSyllableIdx} /> : null}
       </div>
 
       {/* Next line */}

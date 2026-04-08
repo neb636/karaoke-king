@@ -15,16 +15,10 @@ export function TitlePage() {
   return (
     <div className="screen-container">
       <div className="text-8xl mb-6 animate-pulse-mic">🎤</div>
-      <NeonText
-        as="h1"
-        color="pink"
-        className="text-[clamp(3rem,10vw,7rem)] leading-none mb-2"
-      >
+      <NeonText as="h1" color="pink" className="text-[clamp(3rem,10vw,7rem)] leading-none mb-2">
         KARAOKE KING
       </NeonText>
-      <p className="text-xl opacity-70 mb-12 tracking-[3px] uppercase">
-        Battle for Glory
-      </p>
+      <p className="text-xl opacity-70 mb-12 tracking-[3px] uppercase">Battle for Glory</p>
       <Button variant="pink" onClick={handleStart}>
         Start Game
       </Button>

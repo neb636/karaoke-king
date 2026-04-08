@@ -72,9 +72,7 @@ export interface SpotifyTrack {
  * for the authenticated user's market.
  * Returns a map of URI → SpotifyTrack for easy lookup.
  */
-export async function getTracksByUris(
-  uris: string[],
-): Promise<Map<string, SpotifyTrack>> {
+export async function getTracksByUris(uris: string[]): Promise<Map<string, SpotifyTrack>> {
   const ids = uris.map((uri) => uri.split(":")[2]).filter(Boolean);
   if (ids.length === 0) return new Map();
 
@@ -101,13 +99,9 @@ export async function getTracksByUris(
   return result;
 }
 
-
 // ── Playback ────────────────────────────────────────────────────────────────
 
-export async function startPlayback(
-  spotifyUri: string,
-  deviceId: string,
-): Promise<void> {
+export async function startPlayback(spotifyUri: string, deviceId: string): Promise<void> {
   const res = await spotifyFetch(`/me/player/play?device_id=${deviceId}`, {
     method: "PUT",
     body: JSON.stringify({ uris: [spotifyUri] }),

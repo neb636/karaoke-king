@@ -46,7 +46,7 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
             "absolute font-display text-sm sm:text-base tracking-wide",
             "rounded-full border px-3 py-0.5 backdrop-blur-sm",
             "animate-feedback-pop whitespace-nowrap",
-            cueColors[coachingCue.type],
+            cueColors[coachingCue.type]
           )}
         >
           {coachingCue.message}
@@ -57,7 +57,7 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
           className={cn(
             "absolute font-display text-lg sm:text-xl tracking-widest whitespace-nowrap",
             "animate-feedback-pop",
-            feedbackColor,
+            feedbackColor
           )}
         >
           {feedbackMessage}

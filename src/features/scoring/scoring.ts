@@ -25,7 +25,7 @@ export interface ScoreOptions {
 
 export function calculatePitchClassAccuracy(
   detectedClasses: Set<number>,
-  expectedClasses: Set<number>,
+  expectedClasses: Set<number>
 ): number {
   if (expectedClasses.size === 0) return 0;
   let overlap = 0;
@@ -37,9 +37,10 @@ export function calculatePitchClassAccuracy(
 
 export function calculateScore(
   acc: TurnAccumulators,
-  options: ScoreOptions = { mode: "fun" },
+  options: ScoreOptions = { mode: "fun" }
 ): PlayerScore {
-  const { frameCount, totalRMS, activeFrames, pitchBuckets, pitchClasses, elapsed, hasBumpers } = acc;
+  const { frameCount, totalRMS, activeFrames, pitchBuckets, pitchClasses, elapsed, hasBumpers } =
+    acc;
   const { mode, expectedPitchClasses } = options;
   const weights = mode === "expert" ? EXPERT_SCORE_WEIGHTS : FUN_SCORE_WEIGHTS;
 
@@ -58,7 +59,7 @@ export function calculateScore(
   let sustainScore = Math.min(100, sustainPct);
   let durationScore = Math.min(
     100,
-    (Math.min(elapsed, MAX_DURATION_BONUS) / MAX_DURATION_BONUS) * 100,
+    (Math.min(elapsed, MAX_DURATION_BONUS) / MAX_DURATION_BONUS) * 100
   );
 
   if (hasBumpers) {
@@ -72,7 +73,7 @@ export function calculateScore(
     energyScore * weights.energy +
       pitchScore * weights.pitch +
       sustainScore * weights.sustain +
-      durationScore * weights.duration,
+      durationScore * weights.duration
   );
 
   return {

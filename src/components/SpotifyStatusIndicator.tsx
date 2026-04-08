@@ -9,12 +9,12 @@ export function SpotifyStatusIndicator() {
     <div className="flex items-center gap-1.5">
       <div
         className={`w-2 h-2 rounded-full ${
-          isPremium ? "bg-[#1DB954] shadow-[0_0_6px_#1DB954]" : "bg-[#ffd700] shadow-[0_0_6px_#ffd700]"
+          isPremium
+            ? "bg-[#1DB954] shadow-[0_0_6px_#1DB954]"
+            : "bg-[#ffd700] shadow-[0_0_6px_#ffd700]"
         }`}
       />
-      <span className="text-[10px] text-white/40">
-        {isPremium ? "Premium" : "Free"}
-      </span>
+      <span className="text-[10px] text-white/40">{isPremium ? "Premium" : "Free"}</span>
     </div>
   );
 }

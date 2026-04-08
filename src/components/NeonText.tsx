@@ -7,12 +7,7 @@ interface NeonTextProps {
   className?: string;
 }
 
-export function NeonText({
-  children,
-  color = "pink",
-  as: Tag = "span",
-  className,
-}: NeonTextProps) {
+export function NeonText({ children, color = "pink", as: Tag = "span", className }: NeonTextProps) {
   return (
     <Tag
       className={cn(
@@ -23,7 +18,7 @@ export function NeonText({
           "neon-gold": color === "gold",
           "neon-green": color === "green",
         },
-        className,
+        className
       )}
     >
       {children}

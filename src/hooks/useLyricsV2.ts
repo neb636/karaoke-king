@@ -30,15 +30,13 @@ const NULL_RESULT: UseLyricsV2Result = {
 const NEXT_LINE_LOOKAHEAD_MS = 3000;
 
 function getLeadLines(data: DataFormat): Line[] {
-  const track = data.isDuet
-    ? data.tracks.find((t) => t.player === "P1")
-    : data.tracks[0];
+  const track = data.isDuet ? data.tracks.find((t) => t.player === "P1") : data.tracks[0];
   return track?.lines ?? [];
 }
 
 export function useLyricsV2(
   extractedData: DataFormat | null,
-  currentPositionMs: number,
+  currentPositionMs: number
 ): UseLyricsV2Result {
   const windows = useMemo<LineWindow[]>(() => {
     if (!extractedData) return [];
@@ -90,8 +88,7 @@ export function useLyricsV2(
   if (activeWindow) {
     // We have an active line — prev is the one before, next is the one after
     prevLine = activeIdx > 0 ? windows[activeIdx - 1]!.line : null;
-    nextLine =
-      activeIdx < windows.length - 1 ? windows[activeIdx + 1]!.line : null;
+    nextLine = activeIdx < windows.length - 1 ? windows[activeIdx + 1]!.line : null;
   } else {
     // We're in a gap between lines (or before/after all lines).
     // Find the last line that ended before now.
@@ -127,8 +124,7 @@ export function useLyricsV2(
   }
 
   const activeLine = activeWindow?.line ?? null;
-  const activeLineHasGolden =
-    activeLine?.notes.some((n) => n.type === "golden") ?? false;
+  const activeLineHasGolden = activeLine?.notes.some((n) => n.type === "golden") ?? false;
 
   return { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden };
 }

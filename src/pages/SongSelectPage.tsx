@@ -15,8 +15,12 @@ import type { CategoryId } from "@/types/songs";
 export function SongSelectPage() {
   const navigate = useNavigate();
   const {
-    selectedCategories, toggleCategory, selectedSongId, selectSong,
-    getCategorySongs, selectSongForPlayer,
+    selectedCategories,
+    toggleCategory,
+    selectedSongId,
+    selectSong,
+    getCategorySongs,
+    selectSongForPlayer,
   } = useSongStore();
   const { isAuthenticated, isPremium } = useSpotifyStore();
   const { players, currentPlayer, currentRound, totalRounds } = useGameStore();
@@ -25,7 +29,7 @@ export function SongSelectPage() {
   // Clear selection when this page mounts (fresh pick for each player)
   useEffect(() => {
     selectSong(null);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const songs = getCategorySongs();
@@ -42,7 +46,7 @@ export function SongSelectPage() {
       (s) =>
         s.title.toLowerCase().includes(q) ||
         s.artist.toLowerCase().includes(q) ||
-        s.genre.toLowerCase().includes(q),
+        s.genre.toLowerCase().includes(q)
     );
   }, [songs, search, unavailable]);
 
@@ -65,29 +69,25 @@ export function SongSelectPage() {
     void navigate("/sing");
   }
 
-  const roundLabel = totalRounds > 1
-    ? `Round ${currentRound} of ${totalRounds} · `
-    : "";
+  const roundLabel = totalRounds > 1 ? `Round ${currentRound} of ${totalRounds} · ` : "";
 
-  const categoryLabel = selectedCategories.length === 0
-    ? "All Categories"
-    : selectedCategories.length === 1
-      ? (selectedCategories[0] as string)
-      : `${selectedCategories.length} categories`;
+  const categoryLabel =
+    selectedCategories.length === 0
+      ? "All Categories"
+      : selectedCategories.length === 1
+        ? (selectedCategories[0] as string)
+        : `${selectedCategories.length} categories`;
 
   return (
     <div className="screen-container overflow-y-auto justify-start py-6 px-4 gap-4">
       <div className="flex items-center justify-between w-full max-w-[900px]">
         <div>
-          <NeonText
-            as="h2"
-            color="cyan"
-            className="text-[clamp(1.3rem,3.5vw,2.5rem)]"
-          >
+          <NeonText as="h2" color="cyan" className="text-[clamp(1.3rem,3.5vw,2.5rem)]">
             {playerName.toUpperCase()}, PICK YOUR SONG
           </NeonText>
           <p className="text-xs opacity-40 tracking-wider mt-1">
-            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length} songs &middot; {categoryLabel}
+            {roundLabel}Singer {currentPlayer + 1} of {players.length} &middot; {filtered.length}{" "}
+            songs &middot; {categoryLabel}
           </p>
         </div>
         <SpotifyAuthButton />
@@ -124,16 +124,10 @@ export function SongSelectPage() {
       )}
 
       <div className="sticky bottom-0 bg-gradient-to-t from-[#0a0a1a] via-[#0a0a1a] to-transparent pt-6 pb-4 w-full max-w-[900px] flex flex-col items-center gap-2">
-        {confirmHint && (
-          <p className="text-xs text-white/50 tracking-wide">{confirmHint}</p>
-        )}
+        {confirmHint && <p className="text-xs text-white/50 tracking-wide">{confirmHint}</p>}
         {!(isAuthenticated && !isPremium) && (
           <div className="flex gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => void navigate("/mode")}
-            >
+            <Button variant="outline" size="sm" onClick={() => void navigate("/mode")}>
               Back
             </Button>
             <Button
@@ -147,11 +141,7 @@ export function SongSelectPage() {
           </div>
         )}
         {isAuthenticated && !isPremium && (
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => void navigate("/mode")}
-          >
+          <Button variant="outline" size="sm" onClick={() => void navigate("/mode")}>
             Back to Mode Select
           </Button>
         )}

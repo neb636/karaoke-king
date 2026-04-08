@@ -11,13 +11,7 @@ interface PlayerRowProps {
   onRemove: () => void;
 }
 
-export function PlayerRow({
-  player,
-  index,
-  showRemove,
-  onNameChange,
-  onRemove,
-}: PlayerRowProps) {
+export function PlayerRow({ player, index, showRemove, onNameChange, onRemove }: PlayerRowProps) {
   return (
     <div className="flex items-center gap-2.5 w-full animate-slide-in mb-1">
       {/* Player number */}
@@ -39,7 +33,7 @@ export function PlayerRow({
           "px-4 py-2.5 text-white outline-none",
           "transition-all duration-200",
           "focus:border-[#ff2d95] focus:shadow-[0_0_12px_rgba(255,45,149,0.27)]",
-          "placeholder:text-white/30",
+          "placeholder:text-white/30"
         )}
       />
 
@@ -50,7 +44,7 @@ export function PlayerRow({
           "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
           "border border-white/15 bg-red-500/15 text-red-400",
           "transition-all duration-150 hover:bg-red-500/35 hover:scale-110",
-          showRemove ? "visible" : "invisible",
+          showRemove ? "visible" : "invisible"
         )}
         aria-label="Remove player"
       >

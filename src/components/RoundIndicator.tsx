@@ -19,7 +19,7 @@ export function RoundIndicator({ totalRounds, currentRound }: RoundIndicatorProp
               "w-2.5 h-2.5 rounded-full transition-all duration-300",
               round < currentRound && "bg-[#ffd700] shadow-[0_0_8px_rgba(255,215,0,0.53)]",
               round === currentRound && "bg-[#ff2d95] shadow-[0_0_8px_rgba(255,45,149,0.53)]",
-              round > currentRound && "bg-white/15",
+              round > currentRound && "bg-white/15"
             )}
           />
         );

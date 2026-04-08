@@ -23,7 +23,7 @@ export function CategoryPicker({ selected, onToggle }: CategoryPickerProps) {
               "border transition-all duration-200 select-none",
               isActive
                 ? "bg-[#ff2d95]/20 border-[#ff2d95]/60 text-white shadow-[0_0_8px_rgba(255,45,149,0.3)]"
-                : "bg-white/[0.05] border-white/15 text-white/55 hover:border-white/30 hover:text-white/85",
+                : "bg-white/[0.05] border-white/15 text-white/55 hover:border-white/30 hover:text-white/85"
             )}
           >
             <span>{category.flag}</span>

@@ -107,9 +107,7 @@ export function ReadyOverlayV2({
             <span
               className={[
                 "absolute top-0.5 w-4 h-4 rounded-full transition-all duration-200",
-                coachingEnabled
-                  ? "left-[calc(100%-1.1rem)] bg-[#00e5ff]"
-                  : "left-0.5 bg-white/30",
+                coachingEnabled ? "left-[calc(100%-1.1rem)] bg-[#00e5ff]" : "left-0.5 bg-white/30",
               ].join(" ")}
             />
           </button>

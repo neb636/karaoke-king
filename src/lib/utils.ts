@@ -32,7 +32,7 @@ const EMPTY_SCORE: PlayerScore = {
 
 export function rankPlayersByScore(
   players: Player[],
-  scores: (PlayerScore | null)[],
+  scores: (PlayerScore | null)[]
 ): RankedPlayer[] {
   return players
     .map((player, i) => ({
@@ -45,7 +45,7 @@ export function rankPlayersByScore(
 
 export function rankPlayersByCumulative(
   players: Player[],
-  cumulativeScores: number[],
+  cumulativeScores: number[]
 ): { player: Player; index: number; cum: number }[] {
   return players
     .map((player, i) => ({ player, index: i, cum: cumulativeScores[i] ?? 0 }))

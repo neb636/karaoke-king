@@ -28,23 +28,14 @@ export function CumulativeStandings({
               key={entry.index}
               className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/[0.03]"
             >
-              <div className="font-display text-lg w-7 text-center opacity-50">
-                {rank + 1}
-              </div>
+              <div className="font-display text-lg w-7 text-center opacity-50">{rank + 1}</div>
               <div className="flex-1 font-bold text-base text-white/90">
                 {entry.player.name || `Player ${entry.index + 1}`}
               </div>
-              <div
-                className={cn(
-                  "font-display text-2xl",
-                  rank === 0 ? "neon-gold" : "",
-                )}
-              >
+              <div className={cn("font-display text-2xl", rank === 0 ? "neon-gold" : "")}>
                 {entry.cum}
               </div>
-              <div className="text-xs opacity-40 min-w-[56px] text-right">
-                avg {avg}/rd
-              </div>
+              <div className="text-xs opacity-40 min-w-[56px] text-right">avg {avg}/rd</div>
             </div>
           );
         })}

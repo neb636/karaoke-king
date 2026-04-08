@@ -64,11 +64,7 @@ export const BottomBarV2 = memo(function BottomBarV2({
             : "shrink-0 rounded-lg px-3 py-1.5 text-[0.72rem] font-semibold bg-white/[0.06] border border-white/15 text-white/60 cursor-pointer hover:bg-white/10 hover:text-white/80 transition-colors"
         }
       >
-        {isCurated
-          ? finishTimerDone
-            ? "Finish"
-            : `${finishSecondsLeft}s`
-          : "Stop"}
+        {isCurated ? (finishTimerDone ? "Finish" : `${finishSecondsLeft}s`) : "Stop"}
       </button>
     </div>
   );
@@ -88,7 +84,9 @@ const StatPill = memo(function StatPill({ label, value, colorClass }: StatPillPr
       <span className="text-[0.5rem] uppercase tracking-[1.5px] text-white/30 leading-none">
         {label}
       </span>
-      <span className={`font-display text-sm sm:text-base leading-tight tabular-nums ${colorClass}`}>
+      <span
+        className={`font-display text-sm sm:text-base leading-tight tabular-nums ${colorClass}`}
+      >
         {value}
       </span>
     </div>

@@ -8,17 +8,17 @@ const MIN_GAP_MS = 5000;
 export function useCoachingCues(
   songId: string | null,
   currentPositionMs: number,
-  extractedData?: DataFormat | null,
+  extractedData?: DataFormat | null
 ) {
   const [currentCue, setCurrentCue] = useState<CoachingCue | null>(null);
   const lastCueTimeRef = useRef(0);
   const pointerRef = useRef(0);
 
-  const manualCues = songId ? COACHING_DATA[songId] ?? null : null;
+  const manualCues = songId ? (COACHING_DATA[songId] ?? null) : null;
   const autoCues = useMemo<CoachingCue[] | null>(
     () => (!manualCues && extractedData ? generateCoachingCues(extractedData) : null),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [extractedData, !!manualCues],
+    [extractedData, !!manualCues]
   );
   const cues = manualCues ?? autoCues;
 
