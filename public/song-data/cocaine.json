@@ -1,0 +1,1092 @@
+{
+  "artist": "Eric Clapton",
+  "title": "Cocaine",
+  "mp3Filename": "Eric Clapton - Cocaine.mp3",
+  "creator": "RetroGirl",
+  "edition": null,
+  "genre": "Blues",
+  "year": 1977,
+  "language": "English",
+  "bpm": 207.89,
+  "gapMs": 18220,
+  "startSeconds": null,
+  "video": {
+    "youtubeId": null,
+    "coverImage": "https://i.imgur.com/CnPu4dI.jpeg",
+    "backgroundImage": "clapton-eric-4ffae6112f302.jpg",
+    "previewStartSeconds": null,
+    "medleyStartBeat": null,
+    "medleyEndBeat": null,
+    "duetSinger1": null,
+    "duetSinger2": null
+  },
+  "isDuet": false,
+  "tracks": [
+    {
+      "player": null,
+      "lines": [
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 0,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "If"
+            },
+            {
+              "type": "normal",
+              "beat": 4,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 8,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "wan"
+            },
+            {
+              "type": "normal",
+              "beat": 12,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "na"
+            },
+            {
+              "type": "normal",
+              "beat": 16,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "hang"
+            },
+            {
+              "type": "normal",
+              "beat": 21,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "out"
+            }
+          ],
+          "nextLineStartBeat": 25
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 27,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "You"
+            },
+            {
+              "type": "normal",
+              "beat": 29,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "~’ve"
+            },
+            {
+              "type": "normal",
+              "beat": 32,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "got"
+            },
+            {
+              "type": "normal",
+              "beat": 36,
+              "duration": 1,
+              "pitch": -5,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 43,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "take"
+            },
+            {
+              "type": "normal",
+              "beat": 47,
+              "duration": 2,
+              "pitch": -5,
+              "syllable": "her"
+            },
+            {
+              "type": "normal",
+              "beat": 51,
+              "duration": 6,
+              "pitch": -8,
+              "syllable": "out"
+            }
+          ],
+          "nextLineStartBeat": 59
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 63,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 67,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 76
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 127,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "If"
+            },
+            {
+              "type": "normal",
+              "beat": 130,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 134,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "want"
+            },
+            {
+              "type": "normal",
+              "beat": 139,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 143,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 147,
+              "duration": 5,
+              "pitch": 4,
+              "syllable": "down"
+            }
+          ],
+          "nextLineStartBeat": 154
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 166,
+              "duration": 4,
+              "pitch": -3,
+              "syllable": "Down"
+            },
+            {
+              "type": "normal",
+              "beat": 171,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "on"
+            },
+            {
+              "type": "normal",
+              "beat": 175,
+              "duration": 1,
+              "pitch": -5,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 179,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "grou"
+            },
+            {
+              "type": "normal",
+              "beat": 182,
+              "duration": 4,
+              "pitch": -5,
+              "syllable": "~nd"
+            }
+          ],
+          "nextLineStartBeat": 188
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 190,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 194,
+              "duration": 10,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 206
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 250,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 254,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 258,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 266,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 270,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 274,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 282,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 286,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 290,
+              "duration": 12,
+              "pitch": -5,
+              "syllable": "lie"
+            }
+          ],
+          "nextLineStartBeat": 304
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 318,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 323,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 332
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 447,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "If"
+            },
+            {
+              "type": "normal",
+              "beat": 451,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 455,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "got"
+            },
+            {
+              "type": "golden",
+              "beat": 459,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "tha"
+            },
+            {
+              "type": "golden",
+              "beat": 464,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "~t"
+            },
+            {
+              "type": "golden",
+              "beat": 467,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "lo"
+            },
+            {
+              "type": "golden",
+              "beat": 471,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~se"
+            }
+          ],
+          "nextLineStartBeat": 473
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 475,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "You"
+            },
+            {
+              "type": "normal",
+              "beat": 479,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "want"
+            },
+            {
+              "type": "normal",
+              "beat": 483,
+              "duration": 1,
+              "pitch": -5,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 490,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "kick"
+            },
+            {
+              "type": "normal",
+              "beat": 494,
+              "duration": 2,
+              "pitch": -5,
+              "syllable": "them"
+            },
+            {
+              "type": "normal",
+              "beat": 499,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "blues"
+            }
+          ],
+          "nextLineStartBeat": 505
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 510,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 515,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 524
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 574,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "When"
+            },
+            {
+              "type": "normal",
+              "beat": 578,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "your"
+            },
+            {
+              "type": "normal",
+              "beat": 582,
+              "duration": 7,
+              "pitch": 4,
+              "syllable": "day"
+            },
+            {
+              "type": "normal",
+              "beat": 590,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "is"
+            },
+            {
+              "type": "golden",
+              "beat": 594,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "do"
+            },
+            {
+              "type": "golden",
+              "beat": 598,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~ne"
+            }
+          ],
+          "nextLineStartBeat": 601
+        },
+        {
+          "notes": [
+            {
+              "type": "golden",
+              "beat": 606,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "A"
+            },
+            {
+              "type": "golden",
+              "beat": 608,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~nd"
+            },
+            {
+              "type": "normal",
+              "beat": 610,
+              "duration": 2,
+              "pitch": -5,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 614,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "want"
+            },
+            {
+              "type": "normal",
+              "beat": 619,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "to"
+            },
+            {
+              "type": "golden",
+              "beat": 622,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "ri"
+            },
+            {
+              "type": "golden",
+              "beat": 624,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "~de"
+            },
+            {
+              "type": "golden",
+              "beat": 630,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "on"
+            }
+          ],
+          "nextLineStartBeat": 634
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 637,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 641,
+              "duration": 8,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 651
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 697,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 701,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 705,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 713,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 717,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 721,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 729,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 733,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 737,
+              "duration": 12,
+              "pitch": -5,
+              "syllable": "lie"
+            }
+          ],
+          "nextLineStartBeat": 751
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 765,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 770,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 779
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1655,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "If"
+            },
+            {
+              "type": "normal",
+              "beat": 1659,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "your"
+            },
+            {
+              "type": "normal",
+              "beat": 1663,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "day"
+            },
+            {
+              "type": "normal",
+              "beat": 1671,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "is"
+            },
+            {
+              "type": "normal",
+              "beat": 1675,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 1679,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~ne"
+            }
+          ],
+          "nextLineStartBeat": 1682
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1687,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "And"
+            },
+            {
+              "type": "normal",
+              "beat": 1691,
+              "duration": 2,
+              "pitch": -5,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 1695,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "want"
+            },
+            {
+              "type": "normal",
+              "beat": 1700,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 1703,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "ri"
+            },
+            {
+              "type": "normal",
+              "beat": 1707,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "~de"
+            },
+            {
+              "type": "normal",
+              "beat": 1711,
+              "duration": 4,
+              "pitch": -5,
+              "syllable": "on"
+            }
+          ],
+          "nextLineStartBeat": 1717
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1719,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 1723,
+              "duration": 8,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 1733
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1782,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 1786,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 1790,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 1794,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "this"
+            },
+            {
+              "type": "normal",
+              "beat": 1802,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "fact"
+            }
+          ],
+          "nextLineStartBeat": 1808
+        },
+        {
+          "notes": [
+            {
+              "type": "golden",
+              "beat": 1810,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "You"
+            },
+            {
+              "type": "golden",
+              "beat": 1812,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "golden",
+              "beat": 1818,
+              "duration": 2,
+              "pitch": -5,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 1821,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "~n’t"
+            },
+            {
+              "type": "normal",
+              "beat": 1826,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 1830,
+              "duration": 1,
+              "pitch": -5,
+              "syllable": "it"
+            },
+            {
+              "type": "golden",
+              "beat": 1834,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "ba"
+            },
+            {
+              "type": "golden",
+              "beat": 1836,
+              "duration": 6,
+              "pitch": -5,
+              "syllable": "~ck"
+            }
+          ],
+          "nextLineStartBeat": 1844
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1846,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 1850,
+              "duration": 10,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 1862
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1905,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 1909,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 1913,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 1921,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 1925,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 1929,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 1937,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 1941,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 1945,
+              "duration": 12,
+              "pitch": -5,
+              "syllable": "lie"
+            }
+          ],
+          "nextLineStartBeat": 1959
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1973,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 1978,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": 1987
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 2098,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 2102,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 2106,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 2114,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 2118,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 2122,
+              "duration": 5,
+              "pitch": -5,
+              "syllable": "lie,"
+            },
+            {
+              "type": "normal",
+              "beat": 2130,
+              "duration": 2,
+              "pitch": -10,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 2134,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "don’t"
+            },
+            {
+              "type": "normal",
+              "beat": 2138,
+              "duration": 12,
+              "pitch": -5,
+              "syllable": "lie"
+            }
+          ],
+          "nextLineStartBeat": 2152
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 2166,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 2171,
+              "duration": 7,
+              "pitch": -8,
+              "syllable": "caine"
+            }
+          ],
+          "nextLineStartBeat": null
+        }
+      ]
+    }
+  ]
+}

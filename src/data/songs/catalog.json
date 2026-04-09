@@ -1828,5 +1828,245 @@
     "difficulty": "easy",
     "spotifyUri": "spotify:track:6oYkwjI1TKP9D0Y9II1GT7",
     "durationMs": 195146
+  },
+  "wonderful-tonight": {
+    "id": "wonderful-tonight",
+    "title": "Wonderful Tonight",
+    "artist": "Eric Clapton",
+    "year": 1977,
+    "genre": "Soft Rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:6zC0mpGYwbNTpk9SKwh08f",
+    "durationMs": 225026
+  },
+  "cocaine": {
+    "id": "cocaine",
+    "title": "Cocaine",
+    "artist": "Eric Clapton",
+    "year": 1977,
+    "genre": "Blues",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:2udGjDmpK1dH9VGyw7nrei",
+    "durationMs": 221640
+  },
+  "tears-in-heaven": {
+    "id": "tears-in-heaven",
+    "title": "Tears in Heaven",
+    "artist": "Eric Clapton",
+    "year": 1999,
+    "genre": "Blues",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:7utRJ4BeYx85khzP3lKoBX",
+    "durationMs": 271760
+  },
+  "fire-on-the-mountain-2013-remaster": {
+    "id": "fire-on-the-mountain-2013-remaster",
+    "title": "Fire on the Mountain - 2013 Remaster",
+    "artist": "Grateful Dead",
+    "year": 1978,
+    "genre": "Jam band",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:4DpBfWl3q8e0gGB76lAaox",
+    "durationMs": 229009
+  },
+  "scarlet-begonias-2013-remaster": {
+    "id": "scarlet-begonias-2013-remaster",
+    "title": "Scarlet Begonias - 2013 Remaster",
+    "artist": "Grateful Dead",
+    "year": 1974,
+    "genre": "Jam band",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:3euDGpS2R0NC2Xssqxohva",
+    "durationMs": 259702
+  },
+  "uncle-johns-band-2013-remaster": {
+    "id": "uncle-johns-band-2013-remaster",
+    "title": "Uncle John's Band - 2013 Remaster",
+    "artist": "Grateful Dead",
+    "year": 1970,
+    "genre": "Jam band",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:0kp728Knw5PYvU3QzMZ0yJ",
+    "durationMs": 284909
+  },
+  "santeria": {
+    "id": "santeria",
+    "title": "Santeria",
+    "artist": "Sublime",
+    "year": 1996,
+    "genre": "Rock",
+    "difficulty": "expert",
+    "spotifyUri": "spotify:track:2hnMS47jN0etwvFPzYk11f",
+    "durationMs": 182746
+  },
+  "what-i-got": {
+    "id": "what-i-got",
+    "title": "What I Got",
+    "artist": "Sublime",
+    "year": 1996,
+    "genre": "Reggae rock",
+    "difficulty": "expert",
+    "spotifyUri": "spotify:track:3B4q6KbHbGV51HO3GznBFF",
+    "durationMs": 170906
+  },
+  "hits-from-the-bong": {
+    "id": "hits-from-the-bong",
+    "title": "Hits from the Bong",
+    "artist": "Cypress Hill",
+    "year": 1993,
+    "genre": "West coast hip hop",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:0cfqYhY6B8PbGF9vaVNUeG",
+    "durationMs": 160866
+  },
+  "california-love-original-version": {
+    "id": "california-love-original-version",
+    "title": "California Love - Original Version",
+    "artist": "2Pac, Roger, Dr. Dre",
+    "year": 1998,
+    "genre": "Old school hip hop",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:3ia3dJETSOllPsv3LJkE35",
+    "durationMs": 284906
+  },
+  "creep-2017-remaster": {
+    "id": "creep-2017-remaster",
+    "title": "Creep - 2017 Remaster",
+    "artist": "Stone Temple Pilots",
+    "year": 1992,
+    "genre": "Grunge",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:6dmueYtoihUhlQZlImBCmm",
+    "durationMs": 334386
+  },
+  "gin-and-juice": {
+    "id": "gin-and-juice",
+    "title": "Gin and Juice",
+    "artist": "Snoop Dogg",
+    "year": 1993,
+    "genre": "G-funk",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:39QBkWKnap8wRSW4WB9OK0",
+    "durationMs": 211866
+  },
+  "nuthin-but-a-g-thang": {
+    "id": "nuthin-but-a-g-thang",
+    "title": "Nuthin' But A \"G\" Thang",
+    "artist": "Dr. Dre, Snoop Dogg",
+    "year": 1992,
+    "genre": "Old school hip hop",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:5Tbpp3OLLClPJF8t1DmrFD",
+    "durationMs": 237573
+  },
+  "wake-me-up-when-september-ends": {
+    "id": "wake-me-up-when-september-ends",
+    "title": "Wake Me up When September Ends",
+    "artist": "Green Day",
+    "year": 2004,
+    "genre": "Punk",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:3ZffCQKLFLUvYM59XKLbVm",
+    "durationMs": 285653
+  },
+  "name": {
+    "id": "name",
+    "title": "Name",
+    "artist": "The Goo Goo Dolls",
+    "year": 1995,
+    "genre": "Pop",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:1G8jae4jD8mwkXdodqHsBM",
+    "durationMs": 270000
+  },
+  "say-it-aint-so-original-mix": {
+    "id": "say-it-aint-so-original-mix",
+    "title": "Say It Ain't So - Original Mix",
+    "artist": "Weezer",
+    "year": 1994,
+    "genre": "Alternative rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:6VoIBz0VhCyz7OdEoRYDiA",
+    "durationMs": 258826
+  },
+  "dont-fear-the-reaper": {
+    "id": "dont-fear-the-reaper",
+    "title": "(Don't Fear) The Reaper",
+    "artist": "Blue Öyster Cult",
+    "year": 1976,
+    "genre": "Classic rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:5QTxFnGygVM4jFQiBovmRo",
+    "durationMs": 308123
+  },
+  "the-joker": {
+    "id": "the-joker",
+    "title": "The Joker",
+    "artist": "Steve Miller Band",
+    "year": 1973,
+    "genre": "Pop",
+    "difficulty": "hard",
+    "spotifyUri": "spotify:track:1bp2IO61zbQrbWNmKKxg3f",
+    "durationMs": 264503
+  },
+  "loser": {
+    "id": "loser",
+    "title": "Loser",
+    "artist": "Beck",
+    "year": 1994,
+    "genre": "Alternative Rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:5PntSbMHC1ud6Vvl8x56qd",
+    "durationMs": 235000
+  },
+  "wish-you-were-here": {
+    "id": "wish-you-were-here",
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "year": 1975,
+    "genre": "Progressive Rock, Folk Rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:6mFkJmJqdDVQ1REhVfGgd1",
+    "durationMs": 338466
+  },
+  "message-in-a-bottle": {
+    "id": "message-in-a-bottle",
+    "title": "Message In A Bottle",
+    "artist": "The Police",
+    "year": 1979,
+    "genre": "Rock",
+    "difficulty": "hard",
+    "spotifyUri": "spotify:track:1oYYd2gnWZYrt89EBXdFiO",
+    "durationMs": 290280
+  },
+  "mr-jones": {
+    "id": "mr-jones",
+    "title": "Mr. Jones",
+    "artist": "Counting Crows",
+    "year": 1993,
+    "genre": "Alternative Rock",
+    "difficulty": "hard",
+    "spotifyUri": "spotify:track:5DiXcVovI0FcY2s0icWWUu",
+    "durationMs": 272293
+  },
+  "more-than-a-feeling": {
+    "id": "more-than-a-feeling",
+    "title": "More Than a Feeling",
+    "artist": "Boston",
+    "year": 1976,
+    "genre": "Rock",
+    "difficulty": "hard",
+    "spotifyUri": "spotify:track:1QEEqeFIZktqIpPI4jSVSF",
+    "durationMs": 285133
+  },
+  "for-what-its-worth": {
+    "id": "for-what-its-worth",
+    "title": "For What It's Worth",
+    "artist": "Buffalo Springfield",
+    "year": 1966,
+    "genre": "Folk rock",
+    "difficulty": "medium",
+    "spotifyUri": "spotify:track:1qRA5BS78u3gME0loMl9AA",
+    "durationMs": 153693
   }
 }
