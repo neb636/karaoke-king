@@ -1,0 +1,18 @@
+# Karaoke King
+
+Browser-based party karaoke scoring game. React 19 + TypeScript (strict) + Vite + Tailwind CSS v3 + shadcn/ui. State via Zustand v5. Scoring via Web Audio API.
+
+## Key Paths
+- `src/features/` — feature modules
+- `src/data/songs/catalog.json` — song catalog
+- `src/data/songs/category-songs.json` — category → song ID mappings
+- `public/song-data/` — per-song UltraStar data JSON
+- `scripts/merge-extraction.mjs` — merges song data from music-metadata-extractor
+
+## Adding Songs
+```
+npm run merge-songs -- /path/to/music-metadata-extractor/results/timestamp-dir
+```
+
+## Philosophy
+Fun-first: effort and energy rewarded over technical precision. See planning/app-vision.md.
