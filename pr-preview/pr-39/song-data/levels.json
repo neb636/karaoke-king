@@ -1,0 +1,737 @@
+{
+  "artist": "Avicii",
+  "title": "Levels",
+  "mp3Filename": "Avicii - Levels.mp3",
+  "creator": "Fepo",
+  "edition": null,
+  "genre": "Pop",
+  "year": 2011,
+  "language": "English",
+  "bpm": 252,
+  "gapMs": 83280,
+  "startSeconds": null,
+  "video": {
+    "youtubeId": "_ovdm2yX4MA",
+    "coverImage": "levels-4f866901c293b.jpg",
+    "backgroundImage": "avicii-54aba8c60cc29.jpg",
+    "previewStartSeconds": null,
+    "medleyStartBeat": null,
+    "medleyEndBeat": null,
+    "duetSinger1": null,
+    "duetSinger2": null
+  },
+  "isDuet": false,
+  "tracks": [
+    {
+      "player": null,
+      "lines": [
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 0,
+              "duration": 10,
+              "pitch": 8,
+              "syllable": "Oh"
+            },
+            {
+              "type": "normal",
+              "beat": 12,
+              "duration": 10,
+              "pitch": 6,
+              "syllable": "ho"
+            },
+            {
+              "type": "normal",
+              "beat": 28,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "some"
+            },
+            {
+              "type": "normal",
+              "beat": 32,
+              "duration": 15,
+              "pitch": 1,
+              "syllable": "times"
+            }
+          ],
+          "nextLineStartBeat": 49
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 52,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 56,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 58,
+              "duration": 1,
+              "pitch": -6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 60,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "good"
+            },
+            {
+              "type": "normal",
+              "beat": 64,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 68,
+              "duration": 5,
+              "pitch": 1,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 75
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 92,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "Yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 96,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 100,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 105
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 136,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "Get"
+            },
+            {
+              "type": "normal",
+              "beat": 140,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 144,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 148,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 151
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 152,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "That"
+            },
+            {
+              "type": "normal",
+              "beat": 156,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 160,
+              "duration": 2,
+              "pitch": 13,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 164,
+              "duration": 1,
+              "pitch": 13,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 166,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 169,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 172,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 175,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "ver"
+            }
+          ],
+          "nextLineStartBeat": 177
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 177,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Ne"
+            },
+            {
+              "type": "normal",
+              "beat": 180,
+              "duration": 2,
+              "pitch": 1,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 183,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "had"
+            },
+            {
+              "type": "normal",
+              "beat": 187,
+              "duration": 1,
+              "pitch": 1,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 189,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 192,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fore"
+            }
+          ],
+          "nextLineStartBeat": 196
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 196,
+              "duration": 2,
+              "pitch": -4,
+              "syllable": "Oh"
+            },
+            {
+              "type": "normal",
+              "beat": 200,
+              "duration": 2,
+              "pitch": 1,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 204,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 208,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 211
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 212,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 216,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 218,
+              "duration": 1,
+              "pitch": -6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 220,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "good"
+            },
+            {
+              "type": "golden",
+              "beat": 224,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 228,
+              "duration": 5,
+              "pitch": 1,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 235
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 236,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "Yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 240,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 244,
+              "duration": 2,
+              "pitch": -6,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 248
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 256,
+              "duration": 10,
+              "pitch": 8,
+              "syllable": "Oh"
+            },
+            {
+              "type": "golden",
+              "beat": 268,
+              "duration": 10,
+              "pitch": 6,
+              "syllable": "ho"
+            },
+            {
+              "type": "normal",
+              "beat": 284,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "some"
+            },
+            {
+              "type": "normal",
+              "beat": 288,
+              "duration": 14,
+              "pitch": 1,
+              "syllable": "times"
+            }
+          ],
+          "nextLineStartBeat": 304
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 308,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 312,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 314,
+              "duration": 1,
+              "pitch": -6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 316,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "good"
+            },
+            {
+              "type": "normal",
+              "beat": 320,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 324,
+              "duration": 4,
+              "pitch": 1,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 330
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 348,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "Yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 352,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 356,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 361
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 392,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "Get"
+            },
+            {
+              "type": "normal",
+              "beat": 396,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 400,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 404,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 407
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 408,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "That"
+            },
+            {
+              "type": "normal",
+              "beat": 412,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 416,
+              "duration": 2,
+              "pitch": 13,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 420,
+              "duration": 1,
+              "pitch": 13,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 422,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 425,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 428,
+              "duration": 2,
+              "pitch": 8,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 431,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "ver"
+            }
+          ],
+          "nextLineStartBeat": 433
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 433,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Ne"
+            },
+            {
+              "type": "normal",
+              "beat": 436,
+              "duration": 2,
+              "pitch": 1,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 439,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "had"
+            },
+            {
+              "type": "normal",
+              "beat": 443,
+              "duration": 1,
+              "pitch": 1,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 445,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 448,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fore"
+            }
+          ],
+          "nextLineStartBeat": 452
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 452,
+              "duration": 2,
+              "pitch": -4,
+              "syllable": "Oh"
+            },
+            {
+              "type": "normal",
+              "beat": 456,
+              "duration": 2,
+              "pitch": 1,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 460,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 464,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 467
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 468,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 472,
+              "duration": 1,
+              "pitch": -4,
+              "syllable": "get"
+            },
+            {
+              "type": "normal",
+              "beat": 474,
+              "duration": 1,
+              "pitch": -6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 476,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "good"
+            },
+            {
+              "type": "normal",
+              "beat": 480,
+              "duration": 3,
+              "pitch": 1,
+              "syllable": "fee"
+            },
+            {
+              "type": "normal",
+              "beat": 484,
+              "duration": 4,
+              "pitch": 1,
+              "syllable": "ling"
+            }
+          ],
+          "nextLineStartBeat": 490
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 492,
+              "duration": 3,
+              "pitch": -6,
+              "syllable": "Yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 496,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 500,
+              "duration": 2,
+              "pitch": -6,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": null
+        }
+      ]
+    }
+  ]
+}
