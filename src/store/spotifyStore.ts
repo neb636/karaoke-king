@@ -5,6 +5,7 @@ import {
   getStoredToken,
   clearToken,
 } from "@/services/spotify/auth";
+import { USE_CODE_PASTE_FLOW } from "@/services/spotify/constants";
 import { getCurrentUser, type SpotifyUser } from "@/services/spotify/api";
 import { initSpotifySDK } from "@/services/spotify/sdk";
 
@@ -31,7 +32,11 @@ export const useSpotifyStore = create<SpotifyState>((set) => ({
   login: async () => {
     try {
       const url = await buildAuthUrl();
-      window.location.href = url;
+      if (USE_CODE_PASTE_FLOW) {
+        window.open(url, "_blank");
+      } else {
+        window.location.href = url;
+      }
     } catch (e) {
       set({ error: e instanceof Error ? e.message : "Failed to start login" });
     }

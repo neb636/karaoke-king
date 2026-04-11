@@ -1,6 +1,19 @@
 export const SPOTIFY_CLIENT_ID = (import.meta.env.VITE_SPOTIFY_CLIENT_ID as string) ?? "";
 
-export const SPOTIFY_REDIRECT_URI = `${window.location.origin}${import.meta.env.BASE_URL ?? "/"}spotify-callback`;
+// In production (GitHub Pages), redirect lands on the same origin's callback route.
+// For local dev, set VITE_SPOTIFY_REDIRECT_URI in .env.local to point to the
+// deployed GitHub Pages callback page — Spotify rejects http:// redirect URIs,
+// so we redirect there and paste the auth code back manually.
+//
+// .env.local example:
+//   VITE_SPOTIFY_REDIRECT_URI=https://neb636.github.io/karaoke-king/oauth-callback.html
+
+const redirectOverride = import.meta.env.VITE_SPOTIFY_REDIRECT_URI as string | undefined;
+
+export const SPOTIFY_REDIRECT_URI =
+  redirectOverride || `${window.location.origin}${import.meta.env.BASE_URL ?? "/"}spotify-callback`;
+
+export const USE_CODE_PASTE_FLOW = !!redirectOverride;
 
 export const SPOTIFY_SCOPES = [
   "streaming",
