@@ -55,5 +55,7 @@ export const CATEGORIES: Record<CategoryId, Category> = {
 export const CATEGORY_IDS = Object.keys(CATEGORIES) as CategoryId[];
 
 /** Song IDs per category. Cross-category songs share catalog entries. */
-export const CATEGORY_SONGS: Record<CategoryId, string[]> =
-  categorySongs as Record<CategoryId, string[]>;
+export const CATEGORY_SONGS: Record<CategoryId, string[]> = categorySongs as Record<
+  CategoryId,
+  string[]
+>;

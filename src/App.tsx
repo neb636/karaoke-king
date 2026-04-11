@@ -19,7 +19,7 @@ export function App() {
   }, [checkAuth]);
 
   return (
-    <BrowserRouter basename="/karaoke-king">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="relative w-screen h-screen overflow-hidden bg-game flex items-stretch justify-center">
         <Routes>
           <Route path="/" element={<TitlePage />} />

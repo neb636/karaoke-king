@@ -77,7 +77,6 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
   activeSyllableIdx,
   activeLineHasGolden,
 }: LyricsCardV2Props) {
-
   const borderColor =
     activeLineHasGolden && activeLine
       ? "border-[#ffd700]/30 shadow-[0_0_16px_rgba(255,215,0,0.06)]"

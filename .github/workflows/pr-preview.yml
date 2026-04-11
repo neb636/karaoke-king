@@ -30,6 +30,7 @@ jobs:
         run: npx tsc -b && npx vite build --base /karaoke-king/pr-preview/pr-${{ github.event.number }}/
         env:
           VITE_SPOTIFY_CLIENT_ID: ${{ secrets.VITE_SPOTIFY_CLIENT_ID }}
+          VITE_SPOTIFY_REDIRECT_URI: https://neb636.github.io/karaoke-king/spotify-callback
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
