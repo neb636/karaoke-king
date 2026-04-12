@@ -27,7 +27,8 @@
     "genre": "Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:62AuGbAkt8Ox2IrFFb8GKV",
-    "durationMs": 200000
+    "durationMs": 200000,
+    "flagged": true
   },
   "livin-on-a-prayer": {
     "id": "livin-on-a-prayer",
@@ -37,7 +38,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:37ZJ0p5Jm13wMxj1EEyuFr",
-    "durationMs": 249000
+    "durationMs": 249000,
+    "flagged": true
   },
   "i-will-survive": {
     "id": "i-will-survive",
@@ -47,7 +49,8 @@
     "genre": "Disco",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:2VxeLMjYPIew7VKPnkwIIB",
-    "durationMs": 198000
+    "durationMs": 198000,
+    "flagged": true
   },
   "dancing-queen": {
     "id": "dancing-queen",
@@ -67,7 +70,8 @@
     "genre": "Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:1GbMCniRGhBmOWJiRkEGgP",
-    "durationMs": 334000
+    "durationMs": 334000,
+    "flagged": true
   },
   "take-me-home-country-roads": {
     "id": "take-me-home-country-roads",
@@ -77,7 +81,8 @@
     "genre": "Country",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:3fSsw5Bc9A6pVil2Hn4iGb",
-    "durationMs": 191000
+    "durationMs": 191000,
+    "flagged": true
   },
   "mr-brightside": {
     "id": "mr-brightside",
@@ -97,7 +102,8 @@
     "genre": "Pop Rock",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:7bywjHOc0wSHCJz7mKNqPo",
-    "durationMs": 195000
+    "durationMs": 195000,
+    "flagged": true
   },
   "somebody-that-i-used-to-know": {
     "id": "somebody-that-i-used-to-know",
@@ -147,7 +153,8 @@
     "genre": "Pop Soul",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:4OSBTbBKRFOaPjDGHIsfMZ",
-    "durationMs": 228000
+    "durationMs": 228000,
+    "flagged": true
   },
   "old-town-road": {
     "id": "old-town-road",
@@ -187,7 +194,8 @@
     "genre": "Pop Rock",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:70C4NKPgBMOv1dJMxyEPcZ",
-    "durationMs": 338000
+    "durationMs": 338000,
+    "flagged": true
   },
   "just-the-way-you-are": {
     "id": "just-the-way-you-are",
@@ -217,7 +225,8 @@
     "genre": "Country Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:1D4PL9B8gOg78jiHg3FvBn",
-    "durationMs": 235000
+    "durationMs": 235000,
+    "flagged": true
   },
   "hallelujah": {
     "id": "hallelujah",
@@ -227,7 +236,8 @@
     "genre": "Folk",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:3qiyyUfYe7CRYLucrPmulD",
-    "durationMs": 282000
+    "durationMs": 282000,
+    "flagged": true
   },
   "wonderwall": {
     "id": "wonderwall",
@@ -317,7 +327,8 @@
     "genre": "Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:6bALp4CbZPCa5Aeq65EYqq",
-    "durationMs": 258000
+    "durationMs": 258000,
+    "flagged": true
   },
   "dont-look-back-in-anger": {
     "id": "dont-look-back-in-anger",
@@ -337,7 +348,8 @@
     "genre": "Britpop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:2gSLBJaGJXRwMcb0irNjjH",
-    "durationMs": 352000
+    "durationMs": 352000,
+    "flagged": true
   },
   "somebody-to-love": {
     "id": "somebody-to-love",
@@ -347,7 +359,8 @@
     "genre": "Rock",
     "difficulty": "expert",
     "spotifyUri": "spotify:track:3S0OphMat5TYIhKFGIqEHp",
-    "durationMs": 297000
+    "durationMs": 297000,
+    "flagged": true
   },
   "waterloo-sunset": {
     "id": "waterloo-sunset",
@@ -357,7 +370,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:4mYwYaGHRQRHR7GKPfZ7X9",
-    "durationMs": 195000
+    "durationMs": 195000,
+    "flagged": true
   },
   "sit-down": {
     "id": "sit-down",
@@ -367,7 +381,8 @@
     "genre": "Indie Rock",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:42M4GWs6hTe9JXfBs0PGtf",
-    "durationMs": 247000
+    "durationMs": 247000,
+    "flagged": true
   },
   "stop": {
     "id": "stop",
@@ -377,7 +392,8 @@
     "genre": "Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:3cVrMfWFNTkgTFREiYzE2N",
-    "durationMs": 225000
+    "durationMs": 225000,
+    "flagged": true
   },
   "bittersweet-symphony": {
     "id": "bittersweet-symphony",
@@ -387,7 +403,8 @@
     "genre": "Britpop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:57iDDD9N9tTWe75x6ShhlO",
-    "durationMs": 357000
+    "durationMs": 357000,
+    "flagged": true
   },
   "sweet-child-o-mine": {
     "id": "sweet-child-o-mine",
@@ -427,7 +444,8 @@
     "genre": "R&B",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:5IVuqXILoxVWvWEPm82Bkj",
-    "durationMs": 236000
+    "durationMs": 236000,
+    "flagged": true
   },
   "umbrella": {
     "id": "umbrella",
@@ -437,7 +455,8 @@
     "genre": "Pop R&B",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:2VEZx7NWsZ1D0eJ4UqMsGB",
-    "durationMs": 276000
+    "durationMs": 276000,
+    "flagged": true
   },
   "somewhere-only-we-know": {
     "id": "somewhere-only-we-know",
@@ -447,7 +466,8 @@
     "genre": "Pop Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:0ll8uFnc0nANY35E0Lfwvg",
-    "durationMs": 237000
+    "durationMs": 237000,
+    "flagged": true
   },
   "come-on-eileen": {
     "id": "come-on-eileen",
@@ -457,7 +477,8 @@
     "genre": "New Wave",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:0EMmVULe7fbnGSbmTmhiNR",
-    "durationMs": 248000
+    "durationMs": 248000,
+    "flagged": true
   },
   "freedom": {
     "id": "freedom",
@@ -467,7 +488,8 @@
     "genre": "Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:5JFJyTdoqqpK3TEdTjERlj",
-    "durationMs": 359000
+    "durationMs": 359000,
+    "flagged": true
   },
   "hey-ya": {
     "id": "hey-ya",
@@ -517,7 +539,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:67GFKNPnzjwRJhOLXtYfev",
-    "durationMs": 298000
+    "durationMs": 298000,
+    "flagged": true
   },
   "september": {
     "id": "september",
@@ -557,7 +580,8 @@
     "genre": "Latin Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:6F5c58TMEs1byxUstkzs9D",
-    "durationMs": 239000
+    "durationMs": 239000,
+    "flagged": true
   },
   "la-bamba": {
     "id": "la-bamba",
@@ -567,7 +591,8 @@
     "genre": "Rock",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:5mcdJ9W4FTpNqLkOGnjGN2",
-    "durationMs": 124000
+    "durationMs": 124000,
+    "flagged": true
   },
   "bamboleo": {
     "id": "bamboleo",
@@ -577,7 +602,8 @@
     "genre": "Flamenco Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:5sBYdPeQE6VlIgZiXsJfVq",
-    "durationMs": 254000
+    "durationMs": 254000,
+    "flagged": true
   },
   "bailando": {
     "id": "bailando",
@@ -587,7 +613,8 @@
     "genre": "Latin Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:0Gc1WR2enOACQWIDNSNOyT",
-    "durationMs": 252000
+    "durationMs": 252000,
+    "flagged": true
   },
   "suavemente": {
     "id": "suavemente",
@@ -597,7 +624,8 @@
     "genre": "Merengue",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:1ANOKFu4Yz4sEjAqOw8IJo",
-    "durationMs": 266000
+    "durationMs": 266000,
+    "flagged": true
   },
   "hips-dont-lie": {
     "id": "hips-dont-lie",
@@ -627,7 +655,8 @@
     "genre": "Reggaeton",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:228BxWlRRMZP99bDP7iBMs",
-    "durationMs": 192000
+    "durationMs": 192000,
+    "flagged": true
   },
   "waka-waka": {
     "id": "waka-waka",
@@ -637,7 +666,8 @@
     "genre": "Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:2Cd9iWfMKViDRnSsGMYl2x",
-    "durationMs": 210000
+    "durationMs": 210000,
+    "flagged": true
   },
   "vivir-mi-vida": {
     "id": "vivir-mi-vida",
@@ -657,7 +687,8 @@
     "genre": "Reggaeton",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:4Oun2ylBir7QPpRiXCCpQe",
-    "durationMs": 189000
+    "durationMs": 189000,
+    "flagged": true
   },
   "danza-kuduro": {
     "id": "danza-kuduro",
@@ -687,7 +718,8 @@
     "genre": "Pop Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:3GXsRC3h8OhOOaP6hSPoRi",
-    "durationMs": 228000
+    "durationMs": 228000,
+    "flagged": true
   },
   "obsesion": {
     "id": "obsesion",
@@ -697,7 +729,8 @@
     "genre": "Bachata",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:7tv8eyAq9tLwYMpdEdvV3y",
-    "durationMs": 236000
+    "durationMs": 236000,
+    "flagged": true
   },
   "clandestino": {
     "id": "clandestino",
@@ -707,7 +740,8 @@
     "genre": "World",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:5LCcLOepkJfSJf0bLtsvz8",
-    "durationMs": 226000
+    "durationMs": 226000,
+    "flagged": true
   },
   "como-la-flor": {
     "id": "como-la-flor",
@@ -727,7 +761,8 @@
     "genre": "Reggaeton",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:1sdVFgdSClq7eIQndrNfKi",
-    "durationMs": 209000
+    "durationMs": 209000,
+    "flagged": true
   },
   "feliz-navidad": {
     "id": "feliz-navidad",
@@ -737,7 +772,8 @@
     "genre": "Latin Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:0oPMCQo28WDEiZ3JIAbdpB",
-    "durationMs": 182000
+    "durationMs": 182000,
+    "flagged": true
   },
   "taki-taki": {
     "id": "taki-taki",
@@ -797,7 +833,8 @@
     "genre": "K-Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:4w1aMicqNTqMYfOmSiEo7F",
-    "durationMs": 183000
+    "durationMs": 183000,
+    "flagged": true
   },
   "butter": {
     "id": "butter",
@@ -877,7 +914,8 @@
     "genre": "K-Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:4ZH7QGHBWKIfKCmkraH94J",
-    "durationMs": 209000
+    "durationMs": 209000,
+    "flagged": true
   },
   "cheer-up": {
     "id": "cheer-up",
@@ -907,7 +945,8 @@
     "genre": "K-Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:4JGoVExCAOjYjNAeBTidfQ",
-    "durationMs": 186000
+    "durationMs": 186000,
+    "flagged": true
   },
   "gods-menu": {
     "id": "gods-menu",
@@ -927,7 +966,8 @@
     "genre": "K-Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:3SRFOR5UhFauXqK3y3bIH3",
-    "durationMs": 188000
+    "durationMs": 188000,
+    "flagged": true
   },
   "antifragile": {
     "id": "antifragile",
@@ -1017,7 +1057,8 @@
     "genre": "Bollywood",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:0U4nJOOQ0dYUlg4w4eKB5F",
-    "durationMs": 320000
+    "durationMs": 320000,
+    "flagged": true
   },
   "chaiyya-chaiyya": {
     "id": "chaiyya-chaiyya",
@@ -1227,7 +1268,8 @@
     "genre": "Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:0fPwXOFRBD6U5qGIQTcEoI",
-    "durationMs": 213000
+    "durationMs": 213000,
+    "flagged": true
   },
   "ymca": {
     "id": "ymca",
@@ -1237,7 +1279,8 @@
     "genre": "Disco",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:1WGxbAkkePHAH0CgFc2gZO",
-    "durationMs": 287000
+    "durationMs": 287000,
+    "flagged": true
   },
   "africa": {
     "id": "africa",
@@ -1257,7 +1300,8 @@
     "genre": "Synth-pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:2WfaOiMkCvy7F5fcp2zZ8L",
-    "durationMs": 225000
+    "durationMs": 225000,
+    "flagged": true
   },
   "dont-stop-me-now": {
     "id": "dont-stop-me-now",
@@ -1277,7 +1321,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:7ccI9cSQnfsS44EhVTv2Jv",
-    "durationMs": 179000
+    "durationMs": 179000,
+    "flagged": true
   },
   "eye-of-the-tiger": {
     "id": "eye-of-the-tiger",
@@ -1297,7 +1342,8 @@
     "genre": "Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:14wVGCGqq2Mvo01u0bkvpP",
-    "durationMs": 205000
+    "durationMs": 205000,
+    "flagged": true
   },
   "you-make-me-feel": {
     "id": "you-make-me-feel",
@@ -1307,7 +1353,8 @@
     "genre": "Disco",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:3ksHTZkXIWjfFMrnKHMFDj",
-    "durationMs": 371000
+    "durationMs": 371000,
+    "flagged": true
   },
   "aint-no-mountain": {
     "id": "aint-no-mountain",
@@ -1337,7 +1384,8 @@
     "genre": "Eurodance",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:6v3KW9xbBJRFKDp5KS3FNb",
-    "durationMs": 268000
+    "durationMs": 268000,
+    "flagged": true
   },
   "levels": {
     "id": "levels",
@@ -1347,7 +1395,8 @@
     "genre": "EDM",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:0xEOop0LFfFkTvBdjRwQoy",
-    "durationMs": 202000
+    "durationMs": 202000,
+    "flagged": true
   },
   "no-woman-no-cry": {
     "id": "no-woman-no-cry",
@@ -1357,7 +1406,8 @@
     "genre": "Reggae",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:5wz80SknTb3BzPRRKH5yQB",
-    "durationMs": 428000
+    "durationMs": 428000,
+    "flagged": true
   },
   "dj-got-us-fallin": {
     "id": "dj-got-us-fallin",
@@ -1387,17 +1437,8 @@
     "genre": "Eurodance",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:1sTJ0R5DrPvPJCO8ND2pOv",
-    "durationMs": 222000
-  },
-  "sandstorm": {
-    "id": "sandstorm",
-    "title": "Sandstorm",
-    "artist": "Darude",
-    "year": 1999,
-    "genre": "Trance",
-    "difficulty": "easy",
-    "spotifyUri": "spotify:track:6Sy9BUbgFse0n0LPA5lwy5",
-    "durationMs": 227000
+    "durationMs": 222000,
+    "flagged": true
   },
   "wake-me-up": {
     "id": "wake-me-up",
@@ -1417,7 +1458,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:2GBlaMR0j2CMZe2fEEXzW3",
-    "durationMs": 309000
+    "durationMs": 309000,
+    "flagged": true
   },
   "titanium": {
     "id": "titanium",
@@ -1437,7 +1479,8 @@
     "genre": "Latin Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:48UPSzbZjgc449aqKiTwey",
-    "durationMs": 214000
+    "durationMs": 214000,
+    "flagged": true
   },
   "blue-da-ba-dee": {
     "id": "blue-da-ba-dee",
@@ -1447,7 +1490,8 @@
     "genre": "Eurodance",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:29TPjc8wEgccaJRK8bRpVh",
-    "durationMs": 218000
+    "durationMs": 218000,
+    "flagged": true
   },
   "who-let-the-dogs-out": {
     "id": "who-let-the-dogs-out",
@@ -1467,7 +1511,8 @@
     "genre": "Eurodance",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:5ZrDlcxIDZyjOzHdYW1ydr",
-    "durationMs": 197960
+    "durationMs": 197960,
+    "flagged": true
   },
   "my-way": {
     "id": "my-way",
@@ -1477,7 +1522,8 @@
     "genre": "Traditional Pop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:3faiJQfCVBhE3IZCd3IDPB",
-    "durationMs": 277000
+    "durationMs": 277000,
+    "flagged": true
   },
   "respect": {
     "id": "respect",
@@ -1497,7 +1543,8 @@
     "genre": "Pop",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:7pKfPomDEeI4TPT7TECFU8",
-    "durationMs": 187000
+    "durationMs": 187000,
+    "flagged": true
   },
   "i-want-it-that-way": {
     "id": "i-want-it-that-way",
@@ -1527,7 +1574,8 @@
     "genre": "R&B",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:3SdTKo2uVsxFblQjpScoHy",
-    "durationMs": 175000
+    "durationMs": 175000,
+    "flagged": true
   },
   "build-me-up-buttercup": {
     "id": "build-me-up-buttercup",
@@ -1537,7 +1585,8 @@
     "genre": "Pop Soul",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:4V3OMBICmvsCrGRT1y8bvi",
-    "durationMs": 178000
+    "durationMs": 178000,
+    "flagged": true
   },
   "superstition": {
     "id": "superstition",
@@ -1597,7 +1646,8 @@
     "genre": "Rock",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:2EqlS6tkEnphGEIEU4M6sa",
-    "durationMs": 260000
+    "durationMs": 260000,
+    "flagged": true
   },
   "hotel-california": {
     "id": "hotel-california",
@@ -1647,7 +1697,8 @@
     "genre": "Jazz",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:1qCQTy0fTXerET3JIAqBx3",
-    "durationMs": 138000
+    "durationMs": 138000,
+    "flagged": true
   },
   "summertime": {
     "id": "summertime",
@@ -1657,7 +1708,8 @@
     "genre": "Hip Hop",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:3kk1IH51guRvR3rdAMKsYh",
-    "durationMs": 252000
+    "durationMs": 252000,
+    "flagged": true
   },
   "fly-me-to-the-moon": {
     "id": "fly-me-to-the-moon",
@@ -1667,7 +1719,8 @@
     "genre": "Jazz",
     "difficulty": "medium",
     "spotifyUri": "spotify:track:5b7OgznPJJr1knljrwbSDz",
-    "durationMs": 149000
+    "durationMs": 149000,
+    "flagged": true
   },
   "unchained-melody": {
     "id": "unchained-melody",
@@ -1677,7 +1730,8 @@
     "genre": "Pop",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:4aKni5JtYEfZSjsJaRjaci",
-    "durationMs": 217000
+    "durationMs": 217000,
+    "flagged": true
   },
   "thriller": {
     "id": "thriller",
@@ -1717,7 +1771,8 @@
     "genre": "Pop Rock",
     "difficulty": "expert",
     "spotifyUri": "spotify:track:54X78diSLoUDI3joC2bjMz",
-    "durationMs": 521000
+    "durationMs": 521000,
+    "flagged": true
   },
   "jolene": {
     "id": "jolene",
@@ -1727,7 +1782,8 @@
     "genre": "Country",
     "difficulty": "easy",
     "spotifyUri": "spotify:track:5fdhThPDe6jQQDqCyWrdAn",
-    "durationMs": 161533
+    "durationMs": 161533,
+    "flagged": true
   },
   "you-dont-know-how-it-feels": {
     "id": "you-dont-know-how-it-feels",
@@ -1747,7 +1803,8 @@
     "genre": "Rock",
     "difficulty": "hard",
     "spotifyUri": "spotify:track:391CwgcBxvUHmEKda2b5In",
-    "durationMs": 316466
+    "durationMs": 316466,
+    "flagged": true
   },
   "sweet-home-alabama": {
     "id": "sweet-home-alabama",
