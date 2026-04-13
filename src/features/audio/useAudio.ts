@@ -39,6 +39,10 @@ export interface AudioHook {
   dataArray: React.MutableRefObject<Uint8Array>;
   freqArray: React.MutableRefObject<Uint8Array>;
   analyserRef: React.MutableRefObject<AnalyserNode | null>;
+  /** Raw detected pitch in Hz, updated every animation frame. -1 = no pitch detected. */
+  livePitchHz: React.MutableRefObject<number>;
+  /** Raw RMS energy, updated every animation frame. */
+  liveRms: React.MutableRefObject<number>;
   initAudio: () => Promise<void>;
   startListening: () => void;
   stopListening: (hasBumpers: boolean, options?: ScoreOptions) => PlayerScore;
@@ -84,6 +88,10 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
   const dataArray = useRef<Uint8Array>(new Uint8Array(0));
   const freqArray = useRef<Uint8Array>(new Uint8Array(0));
   const analyserRef = useRef<AnalyserNode | null>(null);
+
+  // Live per-frame values for external consumers (e.g. useNoteScoring)
+  const livePitchHz = useRef(-1);
+  const liveRms = useRef(0);
 
   // ── Sound effects ────────────────────────────────────────────────────────
 
@@ -186,6 +194,7 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
       sum += v * v;
     }
     const rms = Math.sqrt(sum / dataArray.current.length);
+    liveRms.current = rms;
     frameCount.current++;
     totalRMS.current += rms;
     if (rms > NOISE_FLOOR) activeFrames.current++;
@@ -193,6 +202,7 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
     // Pitch
     const sampleRate = audioCtx?.sampleRate ?? 44100;
     const pitch = detectPitch(dataArray.current, sampleRate);
+    livePitchHz.current = pitch;
     if (pitch > 0) {
       const bucket = Math.round(12 * Math.log2(pitch / 440));
       pitchBuckets.current.add(bucket);
@@ -280,6 +290,8 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
     dataArray,
     freqArray,
     analyserRef,
+    livePitchHz,
+    liveRms,
     initAudio,
     startListening,
     stopListening,

@@ -28,6 +28,14 @@ const EMPTY_SCORE: PlayerScore = {
   duration: 0,
   time: 0,
   bumpers: false,
+  noteAccuracy: undefined,
+  bestStreak: undefined,
+  goldenHits: undefined,
+  goldenTotal: undefined,
+  perfects: undefined,
+  goods: undefined,
+  oks: undefined,
+  noteMisses: undefined,
 };
 
 export function rankPlayersByScore(

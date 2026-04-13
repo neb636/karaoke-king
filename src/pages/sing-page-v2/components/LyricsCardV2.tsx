@@ -1,5 +1,6 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import type { Line } from "@/types/songs";
+import type { NoteGrade } from "@/hooks/useNoteScoring";
 
 /* ── helpers ─────────────────────────────────────────────────────────── */
 
@@ -13,15 +14,40 @@ function lineText(line: Line): string {
     .join("");
 }
 
+const gradeColor: Record<NoteGrade, string> = {
+  perfect: "text-[#39ff14]",
+  good: "text-[#00e5ff]",
+  ok: "text-[#ffd700]/80",
+  miss: "text-[#ff2d95]/60",
+};
+
 /* ── ActiveLine (inner, memoised separately) ─────────────────────────── */
 
 interface ActiveLineProps {
   line: Line;
   idx: number;
+  lastGrade: NoteGrade | null;
 }
 
-const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
+const ActiveLine = memo(function ActiveLine({ line, idx, lastGrade }: ActiveLineProps) {
   const allRap = line.notes.every((n) => n.type === "rap" || n.type === "freestyle");
+  const gradeRef = useRef<HTMLSpanElement>(null);
+  const prevIdx = useRef(-1);
+
+  useEffect(() => {
+    if (
+      lastGrade &&
+      lastGrade !== "miss" &&
+      idx >= 0 &&
+      idx !== prevIdx.current &&
+      gradeRef.current
+    ) {
+      gradeRef.current.classList.remove("animate-note-grade");
+      void gradeRef.current.offsetWidth;
+      gradeRef.current.classList.add("animate-note-grade");
+    }
+    prevIdx.current = idx;
+  }, [idx, lastGrade]);
 
   return (
     <span>
@@ -32,12 +58,15 @@ const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
 
         let color: string;
         if (i === idx) {
-          color =
-            note.type === "golden"
-              ? "text-[#ffd700]/70"
-              : note.type === "rap" || note.type === "freestyle"
-                ? "text-white/50"
-                : "text-[#00e5ff]/70";
+          if (lastGrade && lastGrade !== "miss") {
+            color = gradeColor[lastGrade];
+          } else if (note.type === "golden") {
+            color = "text-[#ffd700]/70";
+          } else if (note.type === "rap" || note.type === "freestyle") {
+            color = "text-white/50";
+          } else {
+            color = "text-[#00e5ff]/70";
+          }
         } else if (i < idx) {
           color = "text-white/50";
         } else {
@@ -47,7 +76,12 @@ const ActiveLine = memo(function ActiveLine({ line, idx }: ActiveLineProps) {
         return (
           <span key={i}>
             {spacer}
-            <span className={`transition-colors duration-100 ${color}`}>{text}</span>
+            <span
+              ref={i === idx ? gradeRef : undefined}
+              className={`transition-colors duration-100 ${color}`}
+            >
+              {text}
+            </span>
           </span>
         );
       })}
@@ -68,6 +102,7 @@ interface LyricsCardV2Props {
   nextLine: Line | null;
   activeSyllableIdx: number;
   activeLineHasGolden: boolean;
+  lastGrade?: NoteGrade | null;
 }
 
 export const LyricsCardV2 = memo(function LyricsCardV2({
@@ -76,6 +111,7 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
   nextLine,
   activeSyllableIdx,
   activeLineHasGolden,
+  lastGrade = null,
 }: LyricsCardV2Props) {
 
   const borderColor =
@@ -94,7 +130,11 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
 
       {/* Active line */}
       <div className="min-h-[2rem] text-[18px] sm:text-[20px] font-bold py-1">
-        {activeLine ? <ActiveLine line={activeLine} idx={activeSyllableIdx} /> : "\u00A0"}
+        {activeLine ? (
+          <ActiveLine line={activeLine} idx={activeSyllableIdx} lastGrade={lastGrade} />
+        ) : (
+          "\u00A0"
+        )}
       </div>
 
       {/* Next line */}

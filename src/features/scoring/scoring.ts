@@ -18,9 +18,23 @@ export interface TurnAccumulators {
   hasBumpers: boolean;
 }
 
+export interface NoteAccumulators {
+  weightedScore: number;
+  totalWeight: number;
+  perfects: number;
+  goods: number;
+  oks: number;
+  misses: number;
+  goldenHits: number;
+  goldenTotal: number;
+  bestStreak: number;
+  notesScored: number;
+}
+
 export interface ScoreOptions {
   mode: ScoringMode;
   expectedPitchClasses?: Set<number>;
+  noteAccumulators?: NoteAccumulators;
 }
 
 export function calculatePitchClassAccuracy(
@@ -41,19 +55,10 @@ export function calculateScore(
 ): PlayerScore {
   const { frameCount, totalRMS, activeFrames, pitchBuckets, pitchClasses, elapsed, hasBumpers } =
     acc;
-  const { mode, expectedPitchClasses } = options;
-  const weights = mode === "expert" ? EXPERT_SCORE_WEIGHTS : FUN_SCORE_WEIGHTS;
+  const { mode, expectedPitchClasses, noteAccumulators } = options;
 
   const avgRMS = frameCount > 0 ? totalRMS / frameCount : 0;
-
   let energyScore = Math.min(100, avgRMS * 500);
-
-  let pitchScore: number;
-  if (mode === "expert" && expectedPitchClasses && expectedPitchClasses.size > 0) {
-    pitchScore = calculatePitchClassAccuracy(pitchClasses, expectedPitchClasses);
-  } else {
-    pitchScore = Math.min(100, pitchBuckets.size * 5);
-  }
 
   const sustainPct = frameCount > 0 ? (activeFrames / frameCount) * 100 : 0;
   let sustainScore = Math.min(100, sustainPct);
@@ -64,9 +69,79 @@ export function calculateScore(
 
   if (hasBumpers) {
     energyScore = Math.min(100, energyScore * BUMPERS_MULTIPLIER);
-    pitchScore = Math.min(100, pitchScore * BUMPERS_MULTIPLIER);
     sustainScore = Math.min(100, sustainScore * BUMPERS_MULTIPLIER);
     durationScore = Math.min(100, durationScore * BUMPERS_MULTIPLIER);
+  }
+
+  // When per-note scoring data is available, use it as the primary score
+  if (noteAccumulators && noteAccumulators.totalWeight > 0) {
+    const noteScore =
+      noteAccumulators.totalWeight > 0
+        ? Math.min(
+            100,
+            Math.round(
+              (noteAccumulators.weightedScore / noteAccumulators.totalWeight) * 100
+            )
+          )
+        : 0;
+
+    let pitchScore = noteScore;
+    if (hasBumpers) {
+      pitchScore = Math.min(100, pitchScore * BUMPERS_MULTIPLIER);
+    }
+
+    // Note-aware weights: note accuracy is the primary driver
+    const noteWeights =
+      mode === "expert"
+        ? { noteAccuracy: 0.60, energy: 0.20, sustain: 0.10, duration: 0.10 }
+        : { noteAccuracy: 0.35, energy: 0.35, sustain: 0.20, duration: 0.10 };
+
+    const total = Math.round(
+      pitchScore * noteWeights.noteAccuracy +
+        energyScore * noteWeights.energy +
+        sustainScore * noteWeights.sustain +
+        durationScore * noteWeights.duration
+    );
+
+    const noteAccPct =
+      noteAccumulators.notesScored > 0
+        ? Math.round(
+            ((noteAccumulators.perfects + noteAccumulators.goods + noteAccumulators.oks) /
+              noteAccumulators.notesScored) *
+              100
+          )
+        : 0;
+
+    return {
+      total: Math.min(100, Math.max(0, total)),
+      energy: Math.round(energyScore),
+      pitch: Math.round(pitchScore),
+      sustain: Math.round(sustainScore),
+      duration: Math.round(durationScore),
+      time: elapsed,
+      bumpers: hasBumpers,
+      noteAccuracy: noteAccPct,
+      bestStreak: noteAccumulators.bestStreak,
+      goldenHits: noteAccumulators.goldenHits,
+      goldenTotal: noteAccumulators.goldenTotal,
+      perfects: noteAccumulators.perfects,
+      goods: noteAccumulators.goods,
+      oks: noteAccumulators.oks,
+      noteMisses: noteAccumulators.misses,
+    };
+  }
+
+  // Fallback: original scoring (freeform or songs without note data)
+  const weights = mode === "expert" ? EXPERT_SCORE_WEIGHTS : FUN_SCORE_WEIGHTS;
+
+  let pitchScore: number;
+  if (mode === "expert" && expectedPitchClasses && expectedPitchClasses.size > 0) {
+    pitchScore = calculatePitchClassAccuracy(pitchClasses, expectedPitchClasses);
+  } else {
+    pitchScore = Math.min(100, pitchBuckets.size * 5);
+  }
+  if (hasBumpers) {
+    pitchScore = Math.min(100, pitchScore * BUMPERS_MULTIPLIER);
   }
 
   const total = Math.round(

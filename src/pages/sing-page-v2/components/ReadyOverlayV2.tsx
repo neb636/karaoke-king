@@ -1,6 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import { NeonText } from "@/components/NeonText";
 import { Button } from "@/components/ui/button";
+import { ScoringModeToggle } from "@/components/ScoringModeToggle";
+import type { ScoringMode } from "@/lib/constants";
 
 interface ReadyOverlayV2Props {
   playerName: string;
@@ -16,6 +18,8 @@ interface ReadyOverlayV2Props {
   onStartSinging: () => void;
   onBack: () => void;
   isLoadingSongData?: boolean;
+  scoringMode: ScoringMode;
+  onScoringModeChange: (mode: ScoringMode) => void;
 }
 
 export function ReadyOverlayV2({
@@ -32,6 +36,8 @@ export function ReadyOverlayV2({
   onStartSinging,
   onBack,
   isLoadingSongData,
+  scoringMode,
+  onScoringModeChange,
 }: ReadyOverlayV2Props) {
   const isFirstTurn = currentPlayer === 0 && currentRound === 1;
 
@@ -93,27 +99,30 @@ export function ReadyOverlayV2({
       )}
 
       {isCurated && !isLoadingSongData && (
-        <div className="mb-4 flex items-center gap-2">
-          <button
-            onClick={onToggleCoaching}
-            className={[
-              "relative w-9 h-5 rounded-full border transition-all duration-200 flex-shrink-0",
-              coachingEnabled
-                ? "bg-[#00e5ff]/20 border-[#00e5ff]/50"
-                : "bg-white/[0.06] border-white/15",
-            ].join(" ")}
-            aria-label="Toggle coaching tips"
-          >
-            <span
+        <div className="mb-4 flex flex-col items-center gap-3">
+          <ScoringModeToggle mode={scoringMode} onChange={onScoringModeChange} />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onToggleCoaching}
               className={[
-                "absolute top-0.5 w-4 h-4 rounded-full transition-all duration-200",
-                coachingEnabled ? "left-[calc(100%-1.1rem)] bg-[#00e5ff]" : "left-0.5 bg-white/30",
+                "relative w-9 h-5 rounded-full border transition-all duration-200 flex-shrink-0",
+                coachingEnabled
+                  ? "bg-[#00e5ff]/20 border-[#00e5ff]/50"
+                  : "bg-white/[0.06] border-white/15",
               ].join(" ")}
-            />
-          </button>
-          <span className="text-xs text-white/50 tracking-wide">
-            Coaching tips {coachingEnabled ? "on" : "off"}
-          </span>
+              aria-label="Toggle coaching tips"
+            >
+              <span
+                className={[
+                  "absolute top-0.5 w-4 h-4 rounded-full transition-all duration-200",
+                  coachingEnabled ? "left-[calc(100%-1.1rem)] bg-[#00e5ff]" : "left-0.5 bg-white/30",
+                ].join(" ")}
+              />
+            </button>
+            <span className="text-xs text-white/50 tracking-wide">
+              Coaching tips {coachingEnabled ? "on" : "off"}
+            </span>
+          </div>
         </div>
       )}
 

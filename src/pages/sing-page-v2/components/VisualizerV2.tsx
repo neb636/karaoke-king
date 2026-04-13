@@ -2,18 +2,38 @@ import { memo, useEffect, useRef, useCallback } from "react";
 
 const BAR_COUNT = 32;
 
-// Pre-compute hues: magenta → purple → pink (300° → 360°)
-const BAR_HUES = Array.from({ length: BAR_COUNT }, (_, i) => 300 + (i / BAR_COUNT) * 60);
+export type VisualizerMood = "neutral" | "positive" | "great" | "negative";
+
+interface MoodConfig {
+  hueStart: number;
+  hueRange: number;
+  saturation: number;
+  lightness: number;
+}
+
+const MOOD_CONFIGS: Record<VisualizerMood, MoodConfig> = {
+  neutral: { hueStart: 300, hueRange: 60, saturation: 100, lightness: 60 },
+  positive: { hueStart: 40, hueRange: 30, saturation: 100, lightness: 60 },
+  great: { hueStart: 30, hueRange: 40, saturation: 100, lightness: 65 },
+  negative: { hueStart: 340, hueRange: 30, saturation: 70, lightness: 45 },
+};
 
 interface VisualizerV2Props {
   freqArray: React.MutableRefObject<Uint8Array>;
   isActive: boolean;
+  mood?: VisualizerMood;
 }
 
-export const VisualizerV2 = memo(function VisualizerV2({ freqArray, isActive }: VisualizerV2Props) {
+export const VisualizerV2 = memo(function VisualizerV2({
+  freqArray,
+  isActive,
+  mood = "neutral",
+}: VisualizerV2Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const rafRef = useRef<number>(0);
+  const moodRef = useRef<VisualizerMood>(mood);
+  moodRef.current = mood;
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -31,6 +51,7 @@ export const VisualizerV2 = memo(function VisualizerV2({ freqArray, isActive }: 
     const H = canvas.height;
     ctx.clearRect(0, 0, W, H);
 
+    const config = MOOD_CONFIGS[moodRef.current];
     const barW = W / BAR_COUNT;
     const step = Math.max(1, Math.floor(freq.length / BAR_COUNT));
     const radius = Math.min(barW * 0.3, 4);
@@ -38,10 +59,11 @@ export const VisualizerV2 = memo(function VisualizerV2({ freqArray, isActive }: 
     for (let i = 0; i < BAR_COUNT; i++) {
       const val = (freq[i * step] ?? 0) / 255;
       const barH = val * H * 0.9;
-      if (barH < 1) continue; // Skip invisible bars
+      if (barH < 1) continue;
 
       const alpha = 0.4 + val * 0.6;
-      ctx.fillStyle = `hsla(${BAR_HUES[i]},100%,60%,${alpha})`;
+      const hue = config.hueStart + (i / BAR_COUNT) * config.hueRange;
+      ctx.fillStyle = `hsla(${hue},${config.saturation}%,${config.lightness}%,${alpha})`;
 
       const x = i * barW + 1;
       const w = barW - 2;
@@ -57,18 +79,17 @@ export const VisualizerV2 = memo(function VisualizerV2({ freqArray, isActive }: 
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Resize canvas to match CSS size at device pixel ratio
     const resize = () => {
       const parent = canvas.parentElement;
       if (!parent) return;
-      const dpr = Math.min(window.devicePixelRatio ?? 1, 2); // Cap at 2x for perf
+      const dpr = Math.min(window.devicePixelRatio ?? 1, 2);
       const cssW = parent.clientWidth;
       const cssH = parent.clientHeight;
       canvas.width = Math.round(cssW * dpr);
       canvas.height = Math.round(cssH * dpr);
       canvas.style.width = `${cssW}px`;
       canvas.style.height = `${cssH}px`;
-      ctxRef.current = null; // force re-acquire after resize
+      ctxRef.current = null;
     };
 
     resize();
