@@ -1,0 +1,3395 @@
+{
+  "artist": "J Balvin & Willy William",
+  "title": "Mi gente",
+  "mp3Filename": "J Balvin & Willy William - Mi gente.mp3",
+  "creator": "blewmaxx",
+  "edition": null,
+  "genre": null,
+  "year": 2017,
+  "language": "Spanish",
+  "bpm": 208.2,
+  "gapMs": 9720,
+  "startSeconds": null,
+  "video": {
+    "youtubeId": "wnJ6LuUFpMo",
+    "coverImage": "mi-gente-5a6a3917b8d42.jpg",
+    "backgroundImage": "https://i.ytimg.com/vi/cBQw7kPMN2Y/maxresdefault.jpg",
+    "previewStartSeconds": null,
+    "medleyStartBeat": null,
+    "medleyEndBeat": null,
+    "duetSinger1": null,
+    "duetSinger2": null
+  },
+  "isDuet": false,
+  "tracks": [
+    {
+      "player": null,
+      "lines": [
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 0,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Si el"
+            },
+            {
+              "type": "normal",
+              "beat": 2,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "rit"
+            },
+            {
+              "type": "normal",
+              "beat": 6,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 8,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 10,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "lle"
+            },
+            {
+              "type": "normal",
+              "beat": 12,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "va"
+            },
+            {
+              "type": "normal",
+              "beat": 14,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 16,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 18,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ver"
+            },
+            {
+              "type": "normal",
+              "beat": 22,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 24,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 26,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 28,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "za"
+            }
+          ],
+          "nextLineStartBeat": 30
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 31,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Ya"
+            },
+            {
+              "type": "normal",
+              "beat": 33,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "empe"
+            },
+            {
+              "type": "normal",
+              "beat": 36,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "za"
+            },
+            {
+              "type": "normal",
+              "beat": 39,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 41,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "co"
+            },
+            {
+              "type": "normal",
+              "beat": 44,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 48,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "es"
+            }
+          ],
+          "nextLineStartBeat": 52
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 63,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Mi"
+            },
+            {
+              "type": "normal",
+              "beat": 65,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "mu"
+            },
+            {
+              "type": "normal",
+              "beat": 69,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 71,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 73,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 77,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "dis"
+            },
+            {
+              "type": "normal",
+              "beat": 79,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "cri"
+            },
+            {
+              "type": "normal",
+              "beat": 81,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 85,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "na"
+            },
+            {
+              "type": "normal",
+              "beat": 87,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 89,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "nadie"
+            }
+          ],
+          "nextLineStartBeat": 92
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 93,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "A"
+            },
+            {
+              "type": "normal",
+              "beat": 95,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 97,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "que"
+            },
+            {
+              "type": "normal",
+              "beat": 101,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "va"
+            },
+            {
+              "type": "normal",
+              "beat": 103,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 105,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 109,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "romp"
+            },
+            {
+              "type": "normal",
+              "beat": 111,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "er"
+            }
+          ],
+          "nextLineStartBeat": 113
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 113,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "To"
+            },
+            {
+              "type": "normal",
+              "beat": 117,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "da"
+            },
+            {
+              "type": "normal",
+              "beat": 119,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 121,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 125,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 127,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 129,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "mue"
+            },
+            {
+              "type": "normal",
+              "beat": 133,
+              "duration": 4,
+              "pitch": 9,
+              "syllable": "ve"
+            }
+          ],
+          "nextLineStartBeat": 139
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 143,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Mi"
+            },
+            {
+              "type": "normal",
+              "beat": 145,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 147,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "el"
+            },
+            {
+              "type": "normal",
+              "beat": 149,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "rit"
+            },
+            {
+              "type": "normal",
+              "beat": 151,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 153,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "co"
+            },
+            {
+              "type": "normal",
+              "beat": 157,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 159,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "los"
+            },
+            {
+              "type": "normal",
+              "beat": 161,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 165,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ne"
+            }
+          ],
+          "nextLineStartBeat": 169
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 175,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Ha"
+            },
+            {
+              "type": "normal",
+              "beat": 177,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 181,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mu"
+            },
+            {
+              "type": "normal",
+              "beat": 183,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 185,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 189,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "que en"
+            },
+            {
+              "type": "normal",
+              "beat": 191,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "que en"
+            },
+            {
+              "type": "normal",
+              "beat": 193,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "tre"
+            },
+            {
+              "type": "normal",
+              "beat": 195,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 197,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "ne"
+            }
+          ],
+          "nextLineStartBeat": 201
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 207,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "El"
+            },
+            {
+              "type": "normal",
+              "beat": 209,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "mun"
+            },
+            {
+              "type": "normal",
+              "beat": 213,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 215,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "nos"
+            },
+            {
+              "type": "normal",
+              "beat": 217,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "quie"
+            },
+            {
+              "type": "normal",
+              "beat": 221,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "re"
+            },
+            {
+              "type": "normal",
+              "beat": 223,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "nos"
+            },
+            {
+              "type": "normal",
+              "beat": 225,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "quie"
+            },
+            {
+              "type": "normal",
+              "beat": 227,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "re"
+            }
+          ],
+          "nextLineStartBeat": 230
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 230,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 232,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "me quie"
+            },
+            {
+              "type": "normal",
+              "beat": 234,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "re"
+            },
+            {
+              "type": "normal",
+              "beat": 236,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 238,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "mi"
+            }
+          ],
+          "nextLineStartBeat": 241
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 241,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "To"
+            },
+            {
+              "type": "normal",
+              "beat": 243,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "da"
+            },
+            {
+              "type": "normal",
+              "beat": 245,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 247,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 251,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 253,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 255,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "mue"
+            },
+            {
+              "type": "normal",
+              "beat": 259,
+              "duration": 4,
+              "pitch": 9,
+              "syllable": "ve"
+            }
+          ],
+          "nextLineStartBeat": 265
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 270,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Mi"
+            },
+            {
+              "type": "normal",
+              "beat": 272,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 274,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "el"
+            },
+            {
+              "type": "normal",
+              "beat": 276,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "rit"
+            },
+            {
+              "type": "normal",
+              "beat": 278,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 280,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "co"
+            },
+            {
+              "type": "normal",
+              "beat": 284,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mo"
+            },
+            {
+              "type": "normal",
+              "beat": 286,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "los"
+            },
+            {
+              "type": "normal",
+              "beat": 288,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 292,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ne"
+            }
+          ],
+          "nextLineStartBeat": 296
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 302,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Ha"
+            },
+            {
+              "type": "normal",
+              "beat": 304,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 308,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mu"
+            },
+            {
+              "type": "normal",
+              "beat": 310,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 312,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 316,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "que en"
+            },
+            {
+              "type": "normal",
+              "beat": 318,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "que en"
+            },
+            {
+              "type": "normal",
+              "beat": 320,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "tre"
+            },
+            {
+              "type": "normal",
+              "beat": 322,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 324,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "ne"
+            }
+          ],
+          "nextLineStartBeat": 330
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 334,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Mi"
+            },
+            {
+              "type": "normal",
+              "beat": 336,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "mu"
+            },
+            {
+              "type": "normal",
+              "beat": 340,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 342,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 344,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "los"
+            },
+            {
+              "type": "normal",
+              "beat": 348,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 350,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 352,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "fuer"
+            },
+            {
+              "type": "normal",
+              "beat": 356,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 358,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "bai"
+            },
+            {
+              "type": "normal",
+              "beat": 360,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "lan"
+            },
+            {
+              "type": "normal",
+              "beat": 362,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "do"
+            }
+          ],
+          "nextLineStartBeat": 365
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 366,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 368,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "se bai"
+            },
+            {
+              "type": "normal",
+              "beat": 372,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "la a"
+            },
+            {
+              "type": "normal",
+              "beat": 374,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "si"
+            }
+          ],
+          "nextLineStartBeat": 378
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 627,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "Ta"
+            },
+            {
+              "type": "normal",
+              "beat": 631,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "mos’"
+            },
+            {
+              "type": "normal",
+              "beat": 633,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "rom"
+            },
+            {
+              "type": "normal",
+              "beat": 635,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "pien"
+            },
+            {
+              "type": "normal",
+              "beat": 639,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 641,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 643,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "dis"
+            },
+            {
+              "type": "normal",
+              "beat": 647,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "co"
+            },
+            {
+              "type": "normal",
+              "beat": 651,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 655,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "ca"
+            }
+          ],
+          "nextLineStartBeat": 657
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 657,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "La"
+            },
+            {
+              "type": "normal",
+              "beat": 659,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "fies"
+            },
+            {
+              "type": "normal",
+              "beat": 662,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 664,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 666,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 670,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 672,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 674,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "penas"
+            },
+            {
+              "type": "normal",
+              "beat": 678,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "com"
+            },
+            {
+              "type": "normal",
+              "beat": 682,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "ien"
+            },
+            {
+              "type": "normal",
+              "beat": 686,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "za"
+            },
+            {
+              "type": "normal",
+              "beat": 690,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "Eeh"
+            }
+          ],
+          "nextLineStartBeat": 695
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 696,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "C’est"
+            },
+            {
+              "type": "normal",
+              "beat": 698,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "comme"
+            },
+            {
+              "type": "normal",
+              "beat": 702,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "ci"
+            },
+            {
+              "type": "normal",
+              "beat": 706,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 712,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "c’est"
+            },
+            {
+              "type": "normal",
+              "beat": 714,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "comme"
+            },
+            {
+              "type": "normal",
+              "beat": 718,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 722,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "Eeh"
+            }
+          ],
+          "nextLineStartBeat": 727
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 728,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Ma"
+            },
+            {
+              "type": "normal",
+              "beat": 730,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "che"
+            },
+            {
+              "type": "normal",
+              "beat": 734,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "rie"
+            },
+            {
+              "type": "normal",
+              "beat": 738,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 740,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 744,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 746,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 750,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 754,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "Eeh"
+            }
+          ],
+          "nextLineStartBeat": 760
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 762,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Fran"
+            },
+            {
+              "type": "normal",
+              "beat": 764,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ci"
+            },
+            {
+              "type": "normal",
+              "beat": 766,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 770,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 776,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Co"
+            },
+            {
+              "type": "normal",
+              "beat": 778,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "lom"
+            },
+            {
+              "type": "normal",
+              "beat": 780,
+              "duration": 1,
+              "pitch": 6,
+              "syllable": "bi"
+            },
+            {
+              "type": "normal",
+              "beat": 782,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 786,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "Eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 792,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "me"
+            },
+            {
+              "type": "normal",
+              "beat": 794,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "gus"
+            },
+            {
+              "type": "normal",
+              "beat": 798,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 802,
+              "duration": 8,
+              "pitch": 11,
+              "syllable": "Freeze"
+            }
+          ],
+          "nextLineStartBeat": 812
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 818,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "Eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 824,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "J"
+            },
+            {
+              "type": "normal",
+              "beat": 826,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "Bal"
+            },
+            {
+              "type": "normal",
+              "beat": 830,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "vin"
+            }
+          ],
+          "nextLineStartBeat": 833
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 834,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "Eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 838,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "Wil"
+            },
+            {
+              "type": "normal",
+              "beat": 840,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 842,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "Wil"
+            },
+            {
+              "type": "normal",
+              "beat": 846,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "liam"
+            }
+          ],
+          "nextLineStartBeat": 849
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 850,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "Eeh"
+            },
+            {
+              "type": "normal",
+              "beat": 856,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "me"
+            },
+            {
+              "type": "normal",
+              "beat": 858,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "gus"
+            },
+            {
+              "type": "normal",
+              "beat": 862,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 866,
+              "duration": 8,
+              "pitch": 11,
+              "syllable": "Freeze"
+            }
+          ],
+          "nextLineStartBeat": 876
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 880,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Los"
+            },
+            {
+              "type": "normal",
+              "beat": 882,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "D"
+            },
+            {
+              "type": "normal",
+              "beat": 886,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "J’s"
+            },
+            {
+              "type": "normal",
+              "beat": 888,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 890,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "mien"
+            },
+            {
+              "type": "normal",
+              "beat": 894,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ten"
+            },
+            {
+              "type": "normal",
+              "beat": 896,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "le"
+            },
+            {
+              "type": "normal",
+              "beat": 898,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "gus"
+            },
+            {
+              "type": "normal",
+              "beat": 902,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 904,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "a mi"
+            },
+            {
+              "type": "normal",
+              "beat": 906,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 910,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 913
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 914,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Y’e"
+            },
+            {
+              "type": "normal",
+              "beat": 916,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "so"
+            },
+            {
+              "type": "normal",
+              "beat": 920,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 922,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "fu"
+            },
+            {
+              "type": "normal",
+              "beat": 924,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "e"
+            },
+            {
+              "type": "normal",
+              "beat": 928,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mun"
+            },
+            {
+              "type": "normal",
+              "beat": 930,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "dial"
+            },
+            {
+              "type": "normal",
+              "beat": 932,
+              "duration": 8,
+              "pitch": 11,
+              "syllable": "Freeze"
+            }
+          ],
+          "nextLineStartBeat": 942
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 945,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "No"
+            },
+            {
+              "type": "normal",
+              "beat": 947,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "le"
+            },
+            {
+              "type": "normal",
+              "beat": 951,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ba"
+            },
+            {
+              "type": "normal",
+              "beat": 953,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "ja"
+            },
+            {
+              "type": "normal",
+              "beat": 957,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 959,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "mas"
+            },
+            {
+              "type": "normal",
+              "beat": 961,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "nun"
+            },
+            {
+              "type": "normal",
+              "beat": 965,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "ca"
+            },
+            {
+              "type": "normal",
+              "beat": 967,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 969,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 973,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "mos"
+            }
+          ],
+          "nextLineStartBeat": 975
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 975,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Es"
+            },
+            {
+              "type": "normal",
+              "beat": 977,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "ot"
+            },
+            {
+              "type": "normal",
+              "beat": 979,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ro"
+            },
+            {
+              "type": "normal",
+              "beat": 982,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 984,
+              "duration": 3,
+              "pitch": 6,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 988,
+              "duration": 3,
+              "pitch": 7,
+              "syllable": "y"
+            },
+            {
+              "type": "normal",
+              "beat": 992,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "blam"
+            }
+          ],
+          "nextLineStartBeat": 995
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 996,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 998,
+              "duration": 1,
+              "pitch": 19,
+              "syllable": "don"
+            },
+            {
+              "type": "normal",
+              "beat": 1000,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 1002,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "es"
+            },
+            {
+              "type": "normal",
+              "beat": 1004,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 1006,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 1008,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 1014,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1018
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1028,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Mais"
+            },
+            {
+              "type": "normal",
+              "beat": 1030,
+              "duration": 3,
+              "pitch": 19,
+              "syllable": "fais"
+            },
+            {
+              "type": "normal",
+              "beat": 1034,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "boug"
+            },
+            {
+              "type": "normal",
+              "beat": 1036,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "er"
+            },
+            {
+              "type": "normal",
+              "beat": 1038,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 1040,
+              "duration": 3,
+              "pitch": 16,
+              "syllable": "tê"
+            },
+            {
+              "type": "normal",
+              "beat": 1044,
+              "duration": 4,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1050
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1060,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 1062,
+              "duration": 3,
+              "pitch": 19,
+              "syllable": "don"
+            },
+            {
+              "type": "normal",
+              "beat": 1066,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 1068,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "esta"
+            },
+            {
+              "type": "normal",
+              "beat": 1070,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 1072,
+              "duration": 3,
+              "pitch": 16,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 1076,
+              "duration": 4,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1082
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1091,
+              "duration": 3,
+              "pitch": 14,
+              "syllable": "Say"
+            },
+            {
+              "type": "normal",
+              "beat": 1095,
+              "duration": 2,
+              "pitch": 14,
+              "syllable": "yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 1098,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "ye"
+            },
+            {
+              "type": "normal",
+              "beat": 1100,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "ah"
+            },
+            {
+              "type": "normal",
+              "beat": 1102,
+              "duration": 2,
+              "pitch": 16,
+              "syllable": "yeah"
+            }
+          ],
+          "nextLineStartBeat": 1105
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1105,
+              "duration": 2,
+              "pitch": 16,
+              "syllable": "Un"
+            },
+            {
+              "type": "normal",
+              "beat": 1111,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "dos"
+            },
+            {
+              "type": "normal",
+              "beat": 1119,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "tres"
+            },
+            {
+              "type": "normal",
+              "beat": 1127,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "leg"
+            },
+            {
+              "type": "normal",
+              "beat": 1129,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "go’"
+            }
+          ],
+          "nextLineStartBeat": 1135
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1390,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Es"
+            },
+            {
+              "type": "normal",
+              "beat": 1392,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "quina"
+            },
+            {
+              "type": "normal",
+              "beat": 1394,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1396,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "esqui"
+            },
+            {
+              "type": "normal",
+              "beat": 1398,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "na"
+            }
+          ],
+          "nextLineStartBeat": 1402
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1406,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "De"
+            },
+            {
+              "type": "normal",
+              "beat": 1408,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ahi"
+            },
+            {
+              "type": "normal",
+              "beat": 1410,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "no’"
+            },
+            {
+              "type": "normal",
+              "beat": 1412,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "va"
+            },
+            {
+              "type": "normal",
+              "beat": 1414,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "mo’"
+            }
+          ],
+          "nextLineStartBeat": 1418
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1421,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "El"
+            },
+            {
+              "type": "normal",
+              "beat": 1423,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "mun"
+            },
+            {
+              "type": "normal",
+              "beat": 1425,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1427,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "es gran"
+            },
+            {
+              "type": "normal",
+              "beat": 1429,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "de"
+            }
+          ],
+          "nextLineStartBeat": 1432
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1432,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Pe"
+            },
+            {
+              "type": "normal",
+              "beat": 1434,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ro"
+            },
+            {
+              "type": "normal",
+              "beat": 1436,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 1438,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ten"
+            },
+            {
+              "type": "normal",
+              "beat": 1440,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 1442,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "en"
+            },
+            {
+              "type": "normal",
+              "beat": 1444,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mi’ ma"
+            },
+            {
+              "type": "normal",
+              "beat": 1446,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "nos"
+            }
+          ],
+          "nextLineStartBeat": 1450
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1454,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Es"
+            },
+            {
+              "type": "normal",
+              "beat": 1456,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "toy"
+            },
+            {
+              "type": "normal",
+              "beat": 1458,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "muy"
+            },
+            {
+              "type": "normal",
+              "beat": 1460,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "du"
+            },
+            {
+              "type": "normal",
+              "beat": 1462,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ro"
+            },
+            {
+              "type": "normal",
+              "beat": 1464,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "si"
+            }
+          ],
+          "nextLineStartBeat": 1468
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1470,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "O"
+            },
+            {
+              "type": "normal",
+              "beat": 1472,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "kay"
+            },
+            {
+              "type": "normal",
+              "beat": 1474,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1476,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "hi va"
+            },
+            {
+              "type": "normal",
+              "beat": 1478,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "mos"
+            }
+          ],
+          "nextLineStartBeat": 1482
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1485,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 1487,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "con"
+            },
+            {
+              "type": "normal",
+              "beat": 1489,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "el"
+            },
+            {
+              "type": "normal",
+              "beat": 1491,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "tiem"
+            },
+            {
+              "type": "normal",
+              "beat": 1493,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "po"
+            },
+            {
+              "type": "normal",
+              "beat": 1495,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "nos"
+            },
+            {
+              "type": "normal",
+              "beat": 1497,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 1499,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "gui"
+            },
+            {
+              "type": "normal",
+              "beat": 1501,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 1503,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "e"
+            },
+            {
+              "type": "normal",
+              "beat": 1505,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "le"
+            },
+            {
+              "type": "normal",
+              "beat": 1507,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "van"
+            },
+            {
+              "type": "normal",
+              "beat": 1511,
+              "duration": 3,
+              "pitch": 9,
+              "syllable": "do"
+            }
+          ],
+          "nextLineStartBeat": 1515
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1515,
+              "duration": 4,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 1522,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "que"
+            },
+            {
+              "type": "normal",
+              "beat": 1524,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 1526,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "gui"
+            },
+            {
+              "type": "normal",
+              "beat": 1528,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 1530,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "rom"
+            },
+            {
+              "type": "normal",
+              "beat": 1532,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "pien"
+            },
+            {
+              "type": "normal",
+              "beat": 1534,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1536,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1538,
+              "duration": 5,
+              "pitch": 9,
+              "syllable": "qui"
+            },
+            {
+              "type": "normal",
+              "beat": 1544,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "y"
+            }
+          ],
+          "nextLineStartBeat": 1548
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1554,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "Es"
+            },
+            {
+              "type": "normal",
+              "beat": 1556,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 1558,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "fies"
+            },
+            {
+              "type": "normal",
+              "beat": 1560,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 1562,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 1564,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 1566,
+              "duration": 3,
+              "pitch": 9,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 1570,
+              "duration": 5,
+              "pitch": 9,
+              "syllable": "fin"
+            },
+            {
+              "type": "normal",
+              "beat": 1576,
+              "duration": 4,
+              "pitch": 9,
+              "syllable": "y"
+            }
+          ],
+          "nextLineStartBeat": 1582
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1586,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "Bo"
+            },
+            {
+              "type": "normal",
+              "beat": 1588,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 1590,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "llas"
+            },
+            {
+              "type": "normal",
+              "beat": 1592,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 1594,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 1596,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ar"
+            },
+            {
+              "type": "normal",
+              "beat": 1598,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ri"
+            },
+            {
+              "type": "normal",
+              "beat": 1600,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1602,
+              "duration": 4,
+              "pitch": 9,
+              "syllable": "si"
+            }
+          ],
+          "nextLineStartBeat": 1608
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1609,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Los"
+            },
+            {
+              "type": "normal",
+              "beat": 1611,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ten"
+            },
+            {
+              "type": "normal",
+              "beat": 1615,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 1617,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "bai"
+            },
+            {
+              "type": "normal",
+              "beat": 1619,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "lan"
+            },
+            {
+              "type": "normal",
+              "beat": 1623,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1625,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "rom"
+            },
+            {
+              "type": "normal",
+              "beat": 1627,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "pien"
+            },
+            {
+              "type": "normal",
+              "beat": 1631,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1633,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "y"
+            },
+            {
+              "type": "normal",
+              "beat": 1635,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "yo"
+            },
+            {
+              "type": "normal",
+              "beat": 1639,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "si"
+            },
+            {
+              "type": "normal",
+              "beat": 1641,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 1643,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "aqui"
+            },
+            {
+              "type": "normal",
+              "beat": 1645,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "aqui"
+            }
+          ],
+          "nextLineStartBeat": 1648
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1649,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Que"
+            },
+            {
+              "type": "normal",
+              "beat": 1651,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "se"
+            },
+            {
+              "type": "normal",
+              "beat": 1653,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "gui"
+            },
+            {
+              "type": "normal",
+              "beat": 1655,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "mos"
+            },
+            {
+              "type": "normal",
+              "beat": 1657,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "rom"
+            },
+            {
+              "type": "normal",
+              "beat": 1659,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "pien"
+            },
+            {
+              "type": "normal",
+              "beat": 1663,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1665,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1667,
+              "duration": 5,
+              "pitch": 9,
+              "syllable": "qui"
+            },
+            {
+              "type": "normal",
+              "beat": 1673,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "y"
+            }
+          ],
+          "nextLineStartBeat": 1677
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1679,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Es"
+            },
+            {
+              "type": "normal",
+              "beat": 1681,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 1683,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "fies"
+            },
+            {
+              "type": "normal",
+              "beat": 1685,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ta"
+            },
+            {
+              "type": "normal",
+              "beat": 1687,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "no"
+            },
+            {
+              "type": "normal",
+              "beat": 1689,
+              "duration": 3,
+              "pitch": 9,
+              "syllable": "tie"
+            },
+            {
+              "type": "normal",
+              "beat": 1693,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 1697,
+              "duration": 5,
+              "pitch": 9,
+              "syllable": "fin"
+            },
+            {
+              "type": "normal",
+              "beat": 1703,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "y"
+            }
+          ],
+          "nextLineStartBeat": 1707
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1711,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Bo"
+            },
+            {
+              "type": "normal",
+              "beat": 1713,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "te"
+            },
+            {
+              "type": "normal",
+              "beat": 1715,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "llas"
+            },
+            {
+              "type": "normal",
+              "beat": 1717,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 1719,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "ra"
+            },
+            {
+              "type": "normal",
+              "beat": 1721,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "arri"
+            },
+            {
+              "type": "normal",
+              "beat": 1725,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1729,
+              "duration": 5,
+              "pitch": 9,
+              "syllable": "si"
+            }
+          ],
+          "nextLineStartBeat": 1735
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1735,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "Los"
+            },
+            {
+              "type": "normal",
+              "beat": 1737,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "ten"
+            },
+            {
+              "type": "normal",
+              "beat": 1741,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 1743,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "bai"
+            },
+            {
+              "type": "normal",
+              "beat": 1745,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "lan"
+            },
+            {
+              "type": "normal",
+              "beat": 1749,
+              "duration": 1,
+              "pitch": 9,
+              "syllable": "do"
+            },
+            {
+              "type": "normal",
+              "beat": 1751,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "rom"
+            },
+            {
+              "type": "normal",
+              "beat": 1753,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "pien"
+            }
+          ],
+          "nextLineStartBeat": 1756
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1756,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 1758,
+              "duration": 1,
+              "pitch": 19,
+              "syllable": "don"
+            },
+            {
+              "type": "normal",
+              "beat": 1760,
+              "duration": 2,
+              "pitch": 18,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 1764,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "esta"
+            },
+            {
+              "type": "normal",
+              "beat": 1766,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 1768,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 1774,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1778
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1788,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Mais"
+            },
+            {
+              "type": "normal",
+              "beat": 1790,
+              "duration": 3,
+              "pitch": 19,
+              "syllable": "fais"
+            },
+            {
+              "type": "normal",
+              "beat": 1794,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "boug"
+            },
+            {
+              "type": "normal",
+              "beat": 1796,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "er"
+            },
+            {
+              "type": "normal",
+              "beat": 1798,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "la"
+            },
+            {
+              "type": "normal",
+              "beat": 1800,
+              "duration": 3,
+              "pitch": 16,
+              "syllable": "tê"
+            },
+            {
+              "type": "normal",
+              "beat": 1804,
+              "duration": 4,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1810
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1820,
+              "duration": 1,
+              "pitch": 11,
+              "syllable": "Y"
+            },
+            {
+              "type": "normal",
+              "beat": 1822,
+              "duration": 3,
+              "pitch": 19,
+              "syllable": "don"
+            },
+            {
+              "type": "normal",
+              "beat": 1826,
+              "duration": 1,
+              "pitch": 18,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 1828,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "esta"
+            },
+            {
+              "type": "normal",
+              "beat": 1830,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "mi"
+            },
+            {
+              "type": "normal",
+              "beat": 1832,
+              "duration": 3,
+              "pitch": 16,
+              "syllable": "gen"
+            },
+            {
+              "type": "normal",
+              "beat": 1836,
+              "duration": 4,
+              "pitch": 11,
+              "syllable": "te"
+            }
+          ],
+          "nextLineStartBeat": 1842
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1852,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "Say"
+            },
+            {
+              "type": "normal",
+              "beat": 1856,
+              "duration": 2,
+              "pitch": 14,
+              "syllable": "yeah"
+            },
+            {
+              "type": "normal",
+              "beat": 1859,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "ye"
+            },
+            {
+              "type": "normal",
+              "beat": 1861,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "ah"
+            },
+            {
+              "type": "normal",
+              "beat": 1863,
+              "duration": 2,
+              "pitch": 16,
+              "syllable": "yeah"
+            }
+          ],
+          "nextLineStartBeat": 1866
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1866,
+              "duration": 2,
+              "pitch": 16,
+              "syllable": "Un"
+            },
+            {
+              "type": "normal",
+              "beat": 1872,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "dos"
+            },
+            {
+              "type": "normal",
+              "beat": 1880,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "tres"
+            },
+            {
+              "type": "normal",
+              "beat": 1888,
+              "duration": 1,
+              "pitch": 16,
+              "syllable": "leg"
+            },
+            {
+              "type": "normal",
+              "beat": 1890,
+              "duration": 4,
+              "pitch": 16,
+              "syllable": "go’"
+            }
+          ],
+          "nextLineStartBeat": 1896
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 2091,
+              "duration": 3,
+              "pitch": -8,
+              "syllable": "World"
+            },
+            {
+              "type": "normal",
+              "beat": 2095,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "wide"
+            },
+            {
+              "type": "normal",
+              "beat": 2107,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "Wil"
+            },
+            {
+              "type": "normal",
+              "beat": 2109,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 2111,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "Wil"
+            },
+            {
+              "type": "normal",
+              "beat": 2113,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "liam"
+            }
+          ],
+          "nextLineStartBeat": 2117
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 2123,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "J"
+            },
+            {
+              "type": "normal",
+              "beat": 2127,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "Bal"
+            },
+            {
+              "type": "normal",
+              "beat": 2131,
+              "duration": 3,
+              "pitch": -8,
+              "syllable": "vin"
+            },
+            {
+              "type": "normal",
+              "beat": 2135,
+              "duration": 6,
+              "pitch": -8,
+              "syllable": "man,"
+            },
+            {
+              "type": "normal",
+              "beat": 2147,
+              "duration": 3,
+              "pitch": -8,
+              "syllable": "ah"
+            },
+            {
+              "type": "normal",
+              "beat": 2151,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "hah"
+            }
+          ],
+          "nextLineStartBeat": 2157
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 2179,
+              "duration": 3,
+              "pitch": -8,
+              "syllable": "Ah"
+            },
+            {
+              "type": "normal",
+              "beat": 2183,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "hah"
+            },
+            {
+              "type": "normal",
+              "beat": 2211,
+              "duration": 1,
+              "pitch": -8,
+              "syllable": "ah"
+            },
+            {
+              "type": "normal",
+              "beat": 2215,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "hah"
+            },
+            {
+              "type": "normal",
+              "beat": 2243,
+              "duration": 3,
+              "pitch": -8,
+              "syllable": "ah"
+            },
+            {
+              "type": "normal",
+              "beat": 2247,
+              "duration": 4,
+              "pitch": -8,
+              "syllable": "hah"
+            }
+          ],
+          "nextLineStartBeat": null
+        }
+      ]
+    }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Si el rit mo te\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 37309.337175792505,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 51892.91066282421,
+      "message": "Coming up: \"Ta mos’ rom pien...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 91848.24207492796,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 106864.09221902018,
+      "message": "Coming up: \"Es quina a esqui...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 146675.33141210375,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 157368.4149855908,
+      "message": "Coming up: \"World wide Wil ly...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 166708.47262247838,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
+  ]
+}

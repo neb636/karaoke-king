@@ -1,0 +1,2409 @@
+{
+  "artist": "Pinkfong feat. Luis Fonsi",
+  "title": "Baby Shark",
+  "mp3Filename": "Pinkfong feat. Luis Fonsi - Baby Shark.mp3",
+  "creator": "Volodia",
+  "edition": null,
+  "genre": "Children",
+  "year": 2018,
+  "language": "English",
+  "bpm": 231.45,
+  "gapMs": 3643,
+  "startSeconds": 11.5,
+  "video": {
+    "youtubeId": "gsw-de5xcCU",
+    "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/53/d5/4e/53d54ef3-6600-0953-d7be-c1484ad5e39e/20UMGIM51234.rgb.jpg/5000x5000bb.jpg",
+    "backgroundImage": null,
+    "previewStartSeconds": 15.28,
+    "medleyStartBeat": 0,
+    "medleyEndBeat": 628,
+    "duetSinger1": null,
+    "duetSinger2": null
+  },
+  "isDuet": false,
+  "tracks": [
+    {
+      "player": null,
+      "lines": [
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 0,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 3,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 5,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 11,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 15,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 19,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 23,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 25,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 29,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 31,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 33
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 35,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 39,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 43,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 47,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 51,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 55,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 57,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 61,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 63,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 66
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 68,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 71,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 75,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 79,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 83,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 88,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 90,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 94,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 96,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 98
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 100,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "Ba"
+            },
+            {
+              "type": "golden",
+              "beat": 103,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "by"
+            },
+            {
+              "type": "golden",
+              "beat": 108,
+              "duration": 4,
+              "pitch": 1,
+              "syllable": "shark!"
+            }
+          ],
+          "nextLineStartBeat": 114
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 124,
+              "duration": 7,
+              "pitch": -3,
+              "syllable": "Mom"
+            },
+            {
+              "type": "normal",
+              "beat": 132,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 134,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 140,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 144,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 148,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 152,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 154,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 158,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 160,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 162
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 164,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Mom"
+            },
+            {
+              "type": "normal",
+              "beat": 167,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 172,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 176,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 180,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 184,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 186,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 190,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 192,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 194
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 196,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "Mom"
+            },
+            {
+              "type": "normal",
+              "beat": 200,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 204,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 208,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 212,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 217,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 219,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 222,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 224,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 226
+        },
+        {
+          "notes": [
+            {
+              "type": "golden",
+              "beat": 228,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "Mom"
+            },
+            {
+              "type": "golden",
+              "beat": 232,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 236,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "shark"
+            },
+            {
+              "type": "normal",
+              "beat": 238,
+              "duration": 2,
+              "pitch": 1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 241,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~!"
+            }
+          ],
+          "nextLineStartBeat": 244
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 253,
+              "duration": 6,
+              "pitch": -3,
+              "syllable": "Dad"
+            },
+            {
+              "type": "normal",
+              "beat": 260,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "dy"
+            },
+            {
+              "type": "normal",
+              "beat": 262,
+              "duration": 5,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 268,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 273,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 277,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 281,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 284,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 287,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 289,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 291
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 293,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Dad"
+            },
+            {
+              "type": "normal",
+              "beat": 296,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "dy"
+            },
+            {
+              "type": "normal",
+              "beat": 301,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 305,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 309,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 313,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 315,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 319,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 321,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 323
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 325,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "Dad"
+            },
+            {
+              "type": "normal",
+              "beat": 329,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "dy"
+            },
+            {
+              "type": "normal",
+              "beat": 333,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 337,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 341,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 345,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 347,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 351,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 353,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 355
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 357,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "Dad"
+            },
+            {
+              "type": "normal",
+              "beat": 361,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "dy"
+            },
+            {
+              "type": "normal",
+              "beat": 365,
+              "duration": 5,
+              "pitch": 1,
+              "syllable": "shark!"
+            }
+          ],
+          "nextLineStartBeat": 372
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 382,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 384,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 386,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 389,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "ma"
+            },
+            {
+              "type": "normal",
+              "beat": 391,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 397,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 401,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 404,
+              "duration": 5,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 410,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 412,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 416,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 418,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 420
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 422,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 425,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "ma"
+            },
+            {
+              "type": "normal",
+              "beat": 430,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 434,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 438,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 442,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 444,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 448,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 450,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 452
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 454,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 457,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "ma"
+            },
+            {
+              "type": "normal",
+              "beat": 461,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 466,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 470,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 474,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 476,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 480,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 482,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 484
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 486,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 490,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "ma"
+            },
+            {
+              "type": "golden",
+              "beat": 494,
+              "duration": 4,
+              "pitch": 1,
+              "syllable": "shark!"
+            }
+          ],
+          "nextLineStartBeat": 500
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 510,
+              "duration": 6,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 518,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 520,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 526,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 530,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 534,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 538,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 540,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 544,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 546,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 548
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 550,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 554,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 558,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 563,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 567,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 571,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 573,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 577,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 579,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 581
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 583,
+              "duration": 1,
+              "pitch": -3,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 586,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 591,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 595,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 599,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 603,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 605,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 609,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 611,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 613
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 614,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "Grand"
+            },
+            {
+              "type": "normal",
+              "beat": 619,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "pa"
+            },
+            {
+              "type": "normal",
+              "beat": 623,
+              "duration": 5,
+              "pitch": 1,
+              "syllable": "shark!"
+            }
+          ],
+          "nextLineStartBeat": 630
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 639,
+              "duration": 3,
+              "pitch": -3,
+              "syllable": "Let s"
+            },
+            {
+              "type": "normal",
+              "beat": 647,
+              "duration": 6,
+              "pitch": -1,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 654,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "hunt,"
+            },
+            {
+              "type": "normal",
+              "beat": 659,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 663,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 667,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 669,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 673,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 675,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 677
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 679,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Let s"
+            },
+            {
+              "type": "normal",
+              "beat": 683,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 687,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "hunt,"
+            },
+            {
+              "type": "normal",
+              "beat": 691,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 695,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 699,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 701,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 705,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 707,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 709
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 711,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "Let s"
+            },
+            {
+              "type": "golden",
+              "beat": 715,
+              "duration": 3,
+              "pitch": -1,
+              "syllable": "go"
+            },
+            {
+              "type": "golden",
+              "beat": 719,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "hunt,"
+            },
+            {
+              "type": "golden",
+              "beat": 724,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 728,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 732,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 734,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 737,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 739,
+              "duration": 1,
+              "pitch": 2,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 741
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 743,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "Let s"
+            },
+            {
+              "type": "normal",
+              "beat": 747,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "go"
+            },
+            {
+              "type": "normal",
+              "beat": 751,
+              "duration": 4,
+              "pitch": 1,
+              "syllable": "hunt!"
+            }
+          ],
+          "nextLineStartBeat": 757
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 767,
+              "duration": 6,
+              "pitch": -2,
+              "syllable": "Run"
+            },
+            {
+              "type": "normal",
+              "beat": 775,
+              "duration": 1,
+              "pitch": -2,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 777,
+              "duration": 3,
+              "pitch": 0,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 783,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "way,"
+            },
+            {
+              "type": "normal",
+              "beat": 787,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 791,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 794,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 796,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 800,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 802,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 804
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 805,
+              "duration": 2,
+              "pitch": -2,
+              "syllable": "Run"
+            },
+            {
+              "type": "normal",
+              "beat": 809,
+              "duration": 2,
+              "pitch": 0,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 812,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "way,"
+            },
+            {
+              "type": "normal",
+              "beat": 817,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 820,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 824,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 826,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 830,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 832,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 834
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 835,
+              "duration": 2,
+              "pitch": -2,
+              "syllable": "Run"
+            },
+            {
+              "type": "normal",
+              "beat": 839,
+              "duration": 2,
+              "pitch": 0,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 842,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "way,"
+            },
+            {
+              "type": "normal",
+              "beat": 847,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 850,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 854,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 856,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 859,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "golden",
+              "beat": 861,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 863
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 865,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "Run"
+            },
+            {
+              "type": "normal",
+              "beat": 868,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 872,
+              "duration": 1,
+              "pitch": 0,
+              "syllable": "way"
+            },
+            {
+              "type": "normal",
+              "beat": 874,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "~!"
+            }
+          ],
+          "nextLineStartBeat": 882
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 894,
+              "duration": 6,
+              "pitch": 5,
+              "syllable": "Hey!"
+            }
+          ],
+          "nextLineStartBeat": 902
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 913,
+              "duration": 2,
+              "pitch": 10,
+              "syllable": "Ba"
+            },
+            {
+              "type": "freestyle",
+              "beat": 916,
+              "duration": 2,
+              "pitch": 11,
+              "syllable": "by"
+            },
+            {
+              "type": "freestyle",
+              "beat": 920,
+              "duration": 3,
+              "pitch": 10,
+              "syllable": "shark"
+            },
+            {
+              "type": "freestyle",
+              "beat": 926,
+              "duration": 5,
+              "pitch": 11,
+              "syllable": "join"
+            },
+            {
+              "type": "freestyle",
+              "beat": 932,
+              "duration": 6,
+              "pitch": 3,
+              "syllable": "us!"
+            }
+          ],
+          "nextLineStartBeat": 940
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 946,
+              "duration": 1,
+              "pitch": 1,
+              "syllable": "Ha"
+            },
+            {
+              "type": "freestyle",
+              "beat": 948,
+              "duration": 5,
+              "pitch": 3,
+              "syllable": "~,"
+            },
+            {
+              "type": "freestyle",
+              "beat": 954,
+              "duration": 3,
+              "pitch": 5,
+              "syllable": "ooh!"
+            }
+          ],
+          "nextLineStartBeat": 959
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 966,
+              "duration": 3,
+              "pitch": 5,
+              "syllable": "Read"
+            },
+            {
+              "type": "freestyle",
+              "beat": 970,
+              "duration": 2,
+              "pitch": 12,
+              "syllable": "y?"
+            }
+          ],
+          "nextLineStartBeat": 974
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 978,
+              "duration": 1,
+              "pitch": -2,
+              "syllable": "No"
+            },
+            {
+              "type": "freestyle",
+              "beat": 980,
+              "duration": 2,
+              "pitch": 0,
+              "syllable": "~"
+            },
+            {
+              "type": "freestyle",
+              "beat": 983,
+              "duration": 5,
+              "pitch": -2,
+              "syllable": "~"
+            }
+          ],
+          "nextLineStartBeat": 990
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 992,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "Can"
+            },
+            {
+              "type": "freestyle",
+              "beat": 997,
+              "duration": 4,
+              "pitch": 15,
+              "syllable": "te"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1002,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "mos"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1006,
+              "duration": 3,
+              "pitch": 15,
+              "syllable": "jun"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1011,
+              "duration": 1,
+              "pitch": 7,
+              "syllable": "tos!"
+            }
+          ],
+          "nextLineStartBeat": 1013
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 1015,
+              "duration": 7,
+              "pitch": 5,
+              "syllable": "Oh,"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1023,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "oh,"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1026,
+              "duration": 1,
+              "pitch": 5,
+              "syllable": "ooh"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1028,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "~,"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1030,
+              "duration": 1,
+              "pitch": 5,
+              "syllable": "ooh,"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1035,
+              "duration": 1,
+              "pitch": -2,
+              "syllable": "hey"
+            }
+          ],
+          "nextLineStartBeat": 1038
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1047,
+              "duration": 3,
+              "pitch": -2,
+              "syllable": "It s"
+            },
+            {
+              "type": "normal",
+              "beat": 1055,
+              "duration": 1,
+              "pitch": -2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1057,
+              "duration": 5,
+              "pitch": 0,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 1063,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "end,"
+            },
+            {
+              "type": "normal",
+              "beat": 1067,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1071,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1075,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1077,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1081,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1083,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1085
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1087,
+              "duration": 2,
+              "pitch": -2,
+              "syllable": "It s"
+            },
+            {
+              "type": "normal",
+              "beat": 1091,
+              "duration": 3,
+              "pitch": 0,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1095,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "end,"
+            },
+            {
+              "type": "normal",
+              "beat": 1099,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1103,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1107,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1109,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1113,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1115,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1117
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1119,
+              "duration": 1,
+              "pitch": -2,
+              "syllable": "It s"
+            },
+            {
+              "type": "normal",
+              "beat": 1123,
+              "duration": 3,
+              "pitch": 0,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1127,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "end,"
+            },
+            {
+              "type": "normal",
+              "beat": 1131,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1135,
+              "duration": 4,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1140,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1142,
+              "duration": 2,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1146,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1148,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1150
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1151,
+              "duration": 1,
+              "pitch": 3,
+              "syllable": "It s"
+            },
+            {
+              "type": "normal",
+              "beat": 1155,
+              "duration": 4,
+              "pitch": 3,
+              "syllable": "the"
+            },
+            {
+              "type": "golden",
+              "beat": 1160,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "end!"
+            }
+          ],
+          "nextLineStartBeat": 1168
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 1175,
+              "duration": 8,
+              "pitch": 15,
+              "syllable": "Hey!"
+            }
+          ],
+          "nextLineStartBeat": 1185
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 1204,
+              "duration": 3,
+              "pitch": 3,
+              "syllable": "Wait!"
+            }
+          ],
+          "nextLineStartBeat": 1209
+        },
+        {
+          "notes": [
+            {
+              "type": "freestyle",
+              "beat": 1216,
+              "duration": 3,
+              "pitch": 5,
+              "syllable": "My"
+            },
+            {
+              "type": "freestyle",
+              "beat": 1221,
+              "duration": 5,
+              "pitch": 3,
+              "syllable": "turn!"
+            }
+          ],
+          "nextLineStartBeat": 1228
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1238,
+              "duration": 6,
+              "pitch": 1,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1247,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 1254,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 1258,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1261,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1265,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1269,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1272
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1275,
+              "duration": 1,
+              "pitch": 1,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1277,
+              "duration": 3,
+              "pitch": 2,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 1281,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 1285,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1287,
+              "duration": 3,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1292,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1295
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1301,
+              "duration": 1,
+              "pitch": 1,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1303,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 1306,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "shark,"
+            },
+            {
+              "type": "normal",
+              "beat": 1310,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1313,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 1317,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "doo"
+            }
+          ],
+          "nextLineStartBeat": 1320
+        },
+        {
+          "notes": [
+            {
+              "type": "normal",
+              "beat": 1326,
+              "duration": 1,
+              "pitch": 4,
+              "syllable": "Ba"
+            },
+            {
+              "type": "normal",
+              "beat": 1328,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "by"
+            },
+            {
+              "type": "normal",
+              "beat": 1332,
+              "duration": 1,
+              "pitch": 14,
+              "syllable": "shark!"
+            }
+          ],
+          "nextLineStartBeat": null
+        }
+      ]
+    }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 3643,
+      "message": "CHORUS! \"Ba by shark, doo...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 61582.079714841224,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 69423.94620868439,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 79793.356448477,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 89579.48736228127,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
+  ]
+}
