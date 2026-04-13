@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import type { CoachingCue, DataFormat } from "@/types/songs";
-import { COACHING_DATA, generateCoachingCues } from "@/data/coaching";
+import { generateCoachingCues } from "@/data/coaching";
 
 const CUE_DISPLAY_MS = 3000;
 const MIN_GAP_MS = 5000;
@@ -14,13 +14,15 @@ export function useCoachingCues(
   const lastCueTimeRef = useRef(0);
   const pointerRef = useRef(0);
 
-  const manualCues = songId ? (COACHING_DATA[songId] ?? null) : null;
-  const autoCues = useMemo<CoachingCue[] | null>(
-    () => (!manualCues && extractedData ? generateCoachingCues(extractedData) : null),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [extractedData, !!manualCues]
-  );
-  const cues = manualCues ?? autoCues;
+  const cues = useMemo<CoachingCue[] | null>(() => {
+    if (!extractedData) return null;
+    // Prefer pre-generated cues baked into the song JSON
+    if (extractedData.coachingCues && extractedData.coachingCues.length > 0) {
+      return extractedData.coachingCues;
+    }
+    // Fallback: generate at runtime from note data
+    return generateCoachingCues(extractedData);
+  }, [extractedData]);
 
   useEffect(() => {
     // Reset when song changes

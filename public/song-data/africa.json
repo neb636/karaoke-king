@@ -3098,5 +3098,57 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I hear the drums\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 76337.89903329752,
+      "message": "CHORUS! \"It’s gon na take...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 100602.66809881848,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 106769.69280343717,
+      "message": "Coming up: \"The wild dogs...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 143443.16219119227,
+      "message": "CHORUS AGAIN! \"It’s gon na take...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 167546.8141783029,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 189422.75402792697,
+      "message": "Coming up: \"Hur ry boy...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 192422.75402792697,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 199189.67132116004,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 242530.16541353386,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

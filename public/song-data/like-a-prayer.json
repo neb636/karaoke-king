@@ -4309,5 +4309,52 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Life is a mys\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 10097,
+      "message": "CHORUS! \"Life is a mys...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 29966.973190348526,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 34912.01340482573,
+      "message": "Coming up: \"When you call my...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 37912.01340482573,
+      "message": "CHORUS AGAIN! \"When you call my...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 176146.59785522788,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 180957.58981233244,
+      "message": "Coming up: \"Life is a mys...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 183957.58981233244,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 294011.20911528147,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

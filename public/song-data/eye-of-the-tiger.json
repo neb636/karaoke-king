@@ -2696,5 +2696,82 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Ri sin’ up\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 144234.2857142857,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 148482.85714285716,
+      "message": "Coming up: \"Ri sin’ up...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 191137.14285714287,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 197305.7142857143,
+      "message": "Coming up: \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 200305.7142857143,
+      "message": "CHORUS! \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 203068.57142857142,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 206151.42857142858,
+      "message": "Coming up: \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 209151.42857142858,
+      "message": "CHORUS AGAIN! \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 212325.7142857143,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 214997.14285714287,
+      "message": "Coming up: \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 217997.14285714287,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 220828.57142857142,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 223842.85714285713,
+      "message": "Coming up: \"The eye of the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 226842.85714285713,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    }
   ]
 }

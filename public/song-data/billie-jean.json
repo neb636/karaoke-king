@@ -3933,5 +3933,77 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"She was more like\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 41692.76231263383,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 50359.78586723769,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 99251.64882226981,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 107790.19271948608,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 181665.99571734475,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 185791.26338329766,
+      "message": "CHORUS! \"Bil lie Jean is...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 206334.08993576016,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 221592.1199143469,
+      "message": "Coming up: \"She says I am...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 231130.66381156316,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 235127.45182012848,
+      "message": "CHORUS AGAIN! \"Bil lie Jea is...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 255670.278372591,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 265018.24411134905,
+      "message": "Coming up: \"Bil lie Jean is...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 280352.2912205567,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

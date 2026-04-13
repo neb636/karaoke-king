@@ -8070,5 +8070,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 2000,
+      "message": "\"It might seem cra...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 7817.04456606724,
+      "message": "CHORUS! \"Sun shine she’s he...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 65863.95621579359,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 67863.95621579359,
+      "message": "CHORUS AGAIN! \"No of fence to...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 96386.2392494136,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 168442.5332290852,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 228677.09147771695,
+      "message": "Everybody sing!",
+      "type": "hype"
+    }
   ]
 }

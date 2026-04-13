@@ -2952,5 +2952,52 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"A rou the world,\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 64554,
+      "message": "CHORUS! \"A rou the world,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 96584.78888797296,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 101122.04880059352,
+      "message": "Coming up: \"A rou the world,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 104122.04880059352,
+      "message": "CHORUS AGAIN! \"A rou the world,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 151980.0572088039,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 164430.92688154316,
+      "message": "Coming up: \"A rou the world,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 167430.92688154316,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 238653.4147226115,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

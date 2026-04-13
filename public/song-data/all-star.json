@@ -4179,5 +4179,32 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "CHORUS! \"Some bo dy once...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 92278.84615384616,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 108346.15384615384,
+      "message": "Coming up: \"Hey now...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 111346.15384615384,
+      "message": "CHORUS AGAIN! \"Hey now...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 188653.84615384616,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

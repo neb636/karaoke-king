@@ -3522,5 +3522,27 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"On a dark de\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 116263.64973730297,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 196123.54465849386,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 261696.2241681261,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

@@ -4178,5 +4178,57 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"They told him:\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 38240,
+      "message": "CHORUS! \"They told him:...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 146718.33935018053,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 151525.19855595668,
+      "message": "CHORUS AGAIN! \"Beat it, beat it,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 156249.02527075814,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 161055.8844765343,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 163180.4332129964,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 194391.62454873646,
+      "message": "Coming up: \"Beat it, beat it,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 197391.62454873646,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 269954.8014440433,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

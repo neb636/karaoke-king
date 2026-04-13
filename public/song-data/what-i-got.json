@@ -3013,5 +3013,47 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Ear ly in the\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 40185.675515193856,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 47373.76493188962,
+      "message": "Coming up: \"Life is...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 49373.76493188962,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 120608.30911631156,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 133192.8358365351,
+      "message": "Coming up: \"Lo vin’,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 136192.8358365351,
+      "message": "CHORUS! \"Lo vin’,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 154111.10338805447,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

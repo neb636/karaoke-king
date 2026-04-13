@@ -1431,5 +1431,67 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I looked out this\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 37598.70593445527,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 47384.79982285208,
+      "message": "Coming up: \"It’s more than a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 50384.79982285208,
+      "message": "CHORUS! \"It’s more than a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 81797.11160318866,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 111999.50310008858,
+      "message": "Coming up: \"When I’m ti...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 113999.50310008858,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 136092.94862710364,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 153187.72276350754,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 164656.72187776794,
+      "message": "Coming up: \"It’s more than a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 167656.72187776794,
+      "message": "CHORUS AGAIN! \"It’s more than a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 182537.14703277237,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

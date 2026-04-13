@@ -3869,5 +3869,57 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I come home\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 36672.811485642946,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 39789.540574282146,
+      "message": "Coming up: \"The phone rings...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 86485.54556803995,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 99527.36828963795,
+      "message": "Coming up: \"Some boys take...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 162702.14981273407,
+      "message": "CHORUS! \"Just want to...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 194537.35580524342,
+      "message": "CHORUS AGAIN! \"Just want to...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 210579.80274656677,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 242477.43071161048,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 251965.57053682895,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

@@ -4142,5 +4142,47 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Well, good for you\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 6000,
+      "message": "CHORUS! \"Well, good for you...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 52980.52416446261,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 57710.14666987256,
+      "message": "CHORUS AGAIN! \"Well, good for you...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 104645.58788170232,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 110096.53762923779,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 168392.88290454436,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 173122.5054099543,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    }
   ]
 }

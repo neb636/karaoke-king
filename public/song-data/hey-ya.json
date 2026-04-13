@@ -4310,5 +4310,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": -160,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 184814.53747854283,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 188295.27369826435,
+      "message": "Coming up: \"You know what to...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 191295.27369826435,
+      "message": "CHORUS! \"You know what to...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 203639.63761205418,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 207717.16955941258,
+      "message": "CHORUS AGAIN! \"Oh oh...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 229803.76120541675,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

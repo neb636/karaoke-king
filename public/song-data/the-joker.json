@@ -3066,5 +3066,72 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 2416,
+      "message": "\"Some peo ple call...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 12231.317498788174,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 24273.85264178381,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 35816.50896752303,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 37816.50896752303,
+      "message": "CHORUS! \"Well don’t you wor...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 74625.8885118759,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 94211.20116335434,
+      "message": "Coming up: \"Well you’re the cu...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 142972.95588948135,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 162331.0508967523,
+      "message": "Coming up: \"Woo...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 174828.26369365002,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 176828.26369365002,
+      "message": "CHORUS AGAIN! \"Say I’m do in’...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 191915.0305380514,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 206548.33155598643,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }
