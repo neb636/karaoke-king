@@ -6846,5 +6846,122 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 200,
+      "message": "\"Is this the real...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 47811.371629542795,
+      "message": "CHORUS! \"To me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 50861.19577960141,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 54460.84407971864,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 104891.09026963658,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 111854.16178194608,
+      "message": "Coming up: \"Too late...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 156986.63540445486,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 182853.5756154748,
+      "message": "Coming up: \"I see a lit...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 184853.5756154748,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 206180.65650644785,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 210681.8288393904,
+      "message": "Coming up: \"Ea sy come...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 213681.8288393904,
+      "message": "CHORUS AGAIN! \"Ea sy come...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 219484.87690504105,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 247505.39273153577,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 251830.71512309497,
+      "message": "Coming up: \"So you think you...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 278103.28253223916,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 291880.5392731536,
+      "message": "Coming up: \"Ooh ooh ooh...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 303205.8616647128,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 308762.1336459555,
+      "message": "Coming up: \"No thing real ly...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 311762.1336459555,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 330682.41500586167,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 339887.5732708089,
+      "message": "Coming up: \"A ny way the...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 342887.5732708089,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    }
   ]
 }

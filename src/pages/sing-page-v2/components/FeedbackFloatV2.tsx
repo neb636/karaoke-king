@@ -26,11 +26,9 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
   const spanRef = useRef<HTMLSpanElement>(null);
   const prevMsg = useRef("");
 
-  // Re-trigger pop animation on feedback message change
   useEffect(() => {
     if (feedbackMessage && feedbackMessage !== prevMsg.current && spanRef.current) {
       spanRef.current.classList.remove("animate-feedback-pop");
-      // Force reflow with void to suppress lint
       void spanRef.current.offsetWidth;
       spanRef.current.classList.add("animate-feedback-pop");
     }
@@ -38,12 +36,13 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
   }, [feedbackMessage]);
 
   return (
-    <div className="relative h-8 flex items-center justify-center shrink-0 overflow-visible">
-      {showCoaching && coachingCue ? (
+    <div className="relative flex flex-col items-center gap-1 shrink-0 overflow-visible min-h-[2.5rem]">
+      {/* Coaching cue (top slot) */}
+      {showCoaching && coachingCue && (
         <span
           key={coachingCue.timestampMs}
           className={cn(
-            "absolute font-display text-sm sm:text-base tracking-wide",
+            "font-display text-sm sm:text-base tracking-wide",
             "rounded-full border px-3 py-0.5 backdrop-blur-sm",
             "animate-feedback-pop whitespace-nowrap",
             cueColors[coachingCue.type]
@@ -51,18 +50,21 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
         >
           {coachingCue.message}
         </span>
-      ) : feedbackMessage ? (
+      )}
+
+      {/* Performance feedback (separate slot, shown alongside coaching) */}
+      {feedbackMessage && (
         <span
           ref={spanRef}
           className={cn(
-            "absolute font-display text-lg sm:text-xl tracking-widest whitespace-nowrap",
+            "font-display text-lg sm:text-xl tracking-widest whitespace-nowrap",
             "animate-feedback-pop",
             feedbackColor
           )}
         >
           {feedbackMessage}
         </span>
-      ) : null}
+      )}
     </div>
   );
 });

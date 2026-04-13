@@ -2295,5 +2295,52 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I can show you\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 54201.660613650594,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 67157.51534126487,
+      "message": "Coming up: \"Now I’m in a...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 77645.6180338134,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 86468.72385723231,
+      "message": "Coming up: \"Don’t you dare close...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 88468.72385723231,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 95829.71321227301,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 99843.80212899185,
+      "message": "Coming up: \"A whole new world...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 133876.9893550407,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

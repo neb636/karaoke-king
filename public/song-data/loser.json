@@ -3584,5 +3584,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"In the time of\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 21862,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 145549.5,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 152237,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 171049.5,
+      "message": "Coming up: \"I’m a dri ver,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 174049.5,
+      "message": "CHORUS! \"I’m a dri ver,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 218549.5,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

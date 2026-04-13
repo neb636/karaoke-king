@@ -2378,5 +2378,32 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 3643,
+      "message": "CHORUS! \"Ba by shark, doo...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 61582.079714841224,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 69423.94620868439,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 79793.356448477,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 89579.48736228127,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

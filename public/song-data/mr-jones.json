@@ -4973,5 +4973,57 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Sha la la la\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 68697.45599151644,
+      "message": "CHORUS! \"Be lieve in me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 79938.17709437964,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 121083.45811240721,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 142292.36585365856,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 180256.31071049842,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 186459.91622481443,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 202101.4856839873,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 210160.8706256628,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 262811.9840933192,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

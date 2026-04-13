@@ -1641,5 +1641,147 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Would you know my\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 14560,
+      "message": "CHORUS! \"Would you know my...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 20635.949367088608,
+      "message": "CHORUS AGAIN! \"If I saw you...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 26711.898734177215,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 32692.91139240506,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 39243.54430379747,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 45319.49367088608,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 57496.70886075949,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 66053.67088607594,
+      "message": "Coming up: \"Would you hold my...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 75224.55696202532,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 87376.45569620254,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 99097.97468354431,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 112180.25316455697,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 121116.96202531646,
+      "message": "Coming up: \"Time can bring you...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 130408.10126582278,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 133363.79746835443,
+      "message": "Coming up: \"Time can break your...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 149965.06329113923,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 170009.3670886076,
+      "message": "Coming up: \"Be yond the door...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 191167.59493670886,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 200009.3670886076,
+      "message": "Coming up: \"Would you know my...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 203009.3670886076,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 209085.31645569621,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 215161.2658227848,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 221237.21518987342,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 227787.84810126582,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 233863.79746835443,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 245946.07594936708,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 255889.11392405065,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

@@ -2877,5 +2877,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 14000,
+      "message": "Get ready... \"Oh her eye her\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 69203.42351860358,
+      "message": "CHORUS! \"And when you smile...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 72613.16169039963,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 139759.2342673404,
+      "message": "CHORUS AGAIN! \"And when you smile...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 155122.57831878733,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 172761.53100597154,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 210315.04501607717,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

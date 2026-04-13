@@ -2,135 +2,10 @@ import type { CoachingCue, DataFormat } from "@/types/songs";
 import { beatToMs } from "@/data/songs/songData";
 
 /**
- * Timestamped coaching cues for select popular songs.
- * Songs without entries here will use the standard FeedbackToast instead.
- */
-export const COACHING_DATA: Record<string, CoachingCue[]> = {
-  "dont-stop-believin": [
-    { timestampMs: 0, message: "Here comes the piano intro...", type: "intro" },
-    { timestampMs: 17000, message: "Just a small town girl...", type: "verse" },
-    { timestampMs: 34000, message: "Keep that melody going!", type: "verse" },
-    { timestampMs: 50000, message: "Strangers waiting...", type: "verse" },
-    { timestampMs: 68000, message: "Build it up!", type: "hype" },
-    { timestampMs: 120000, message: "DON'T STOP! Here it comes!", type: "hype" },
-    { timestampMs: 150000, message: "🎵 CHORUS TIME! Belt it out!", type: "chorus" },
-    { timestampMs: 180000, message: "Don't stop believin'!", type: "chorus" },
-    { timestampMs: 210000, message: "Hold on to that feelin'!", type: "chorus" },
-    { timestampMs: 235000, message: "Bring it home! LOUDER!", type: "hype" },
-  ],
-  "bohemian-rhapsody": [
-    { timestampMs: 0, message: "Is this the real life...", type: "intro" },
-    { timestampMs: 15000, message: "Soft and gentle... build slowly", type: "verse" },
-    { timestampMs: 49000, message: "Mama... just killed a man...", type: "verse" },
-    { timestampMs: 90000, message: "Here comes the ballad section", type: "verse" },
-    { timestampMs: 130000, message: "Guitar solo — catch your breath!", type: "instrumental" },
-    { timestampMs: 175000, message: "GALILEO! GALILEO!", type: "chorus" },
-    { timestampMs: 195000, message: "Let me go! Give it everything!", type: "hype" },
-    { timestampMs: 215000, message: "HEAD BANG TIME! 🎸", type: "hype" },
-    { timestampMs: 260000, message: "Nothing really matters...", type: "verse" },
-    { timestampMs: 320000, message: "Any way the wind blows...", type: "chorus" },
-  ],
-  "sweet-caroline": [
-    { timestampMs: 0, message: "Instrumental intro — get ready!", type: "intro" },
-    { timestampMs: 12000, message: "Where it began...", type: "verse" },
-    { timestampMs: 35000, message: "Build up to the chorus!", type: "verse" },
-    { timestampMs: 48000, message: "SWEET CAROLINE! 🎵", type: "chorus" },
-    { timestampMs: 55000, message: "BUM BUM BUM!", type: "hype" },
-    { timestampMs: 62000, message: "Good times never seemed so good!", type: "chorus" },
-    { timestampMs: 90000, message: "Second verse — keep the energy!", type: "verse" },
-    { timestampMs: 120000, message: "Here it comes again!", type: "hype" },
-    { timestampMs: 130000, message: "SWEET CAROLINE! LOUDER!", type: "chorus" },
-    { timestampMs: 170000, message: "SO GOOD! SO GOOD! SO GOOD!", type: "hype" },
-  ],
-  "dancing-queen": [
-    { timestampMs: 0, message: "Piano intro... get in the mood!", type: "intro" },
-    { timestampMs: 22000, message: "You can dance, you can jive!", type: "verse" },
-    { timestampMs: 40000, message: "Friday night and the lights are low", type: "verse" },
-    { timestampMs: 55000, message: "Looking out for a place to go...", type: "verse" },
-    { timestampMs: 75000, message: "You are the DANCING QUEEN!", type: "chorus" },
-    { timestampMs: 95000, message: "Feel the beat of the tambourine!", type: "chorus" },
-    { timestampMs: 120000, message: "Keep dancing! 💃", type: "hype" },
-    { timestampMs: 150000, message: "You are the dancing queen!", type: "chorus" },
-    { timestampMs: 190000, message: "One more time! Give it all!", type: "hype" },
-    { timestampMs: 215000, message: "Finish strong! 🌟", type: "hype" },
-  ],
-  "livin-on-a-prayer": [
-    { timestampMs: 0, message: "Talk box intro... WOAH!", type: "intro" },
-    { timestampMs: 12000, message: "Tommy used to work on the docks...", type: "verse" },
-    { timestampMs: 30000, message: "She says we've gotta hold on...", type: "verse" },
-    { timestampMs: 48000, message: "GET READY FOR THE CHORUS!", type: "hype" },
-    { timestampMs: 60000, message: "WOAH! LIVIN' ON A PRAYER!", type: "chorus" },
-    { timestampMs: 75000, message: "Take my hand, we'll make it!", type: "chorus" },
-    { timestampMs: 105000, message: "Second verse — keep it going!", type: "verse" },
-    { timestampMs: 140000, message: "WOAH! ONE MORE TIME!", type: "chorus" },
-    { timestampMs: 180000, message: "Key change! GO HIGHER!", type: "hype" },
-    { timestampMs: 210000, message: "LIVIN' ON A PRAYER! 🔥", type: "chorus" },
-  ],
-  "i-will-survive": [
-    { timestampMs: 0, message: "At first I was afraid...", type: "intro" },
-    { timestampMs: 10000, message: "I was petrified...", type: "verse" },
-    { timestampMs: 28000, message: "Build it up!", type: "verse" },
-    { timestampMs: 45000, message: "Oh no not I! I WILL SURVIVE!", type: "chorus" },
-    { timestampMs: 60000, message: "As long as I know how to love!", type: "chorus" },
-    { timestampMs: 80000, message: "I know I'll stay alive!", type: "chorus" },
-    { timestampMs: 100000, message: "Keep that energy! 💪", type: "hype" },
-    { timestampMs: 130000, message: "I will survive! HEY HEY!", type: "chorus" },
-    { timestampMs: 160000, message: "Bring it home!", type: "hype" },
-    { timestampMs: 185000, message: "I WILL SURVIVE! 🎤", type: "chorus" },
-  ],
-  "mr-brightside": [
-    { timestampMs: 0, message: "Guitar riff incoming...", type: "intro" },
-    { timestampMs: 13000, message: "Coming out of my cage!", type: "verse" },
-    { timestampMs: 22000, message: "And I've been doing just fine!", type: "verse" },
-    { timestampMs: 35000, message: "It started out with a kiss...", type: "verse" },
-    { timestampMs: 50000, message: "JEALOUSY! Turning saints into the sea!", type: "chorus" },
-    { timestampMs: 68000, message: "I'M MR. BRIGHTSIDE!", type: "chorus" },
-    { timestampMs: 90000, message: "Coming out of my cage!", type: "verse" },
-    { timestampMs: 120000, message: "HERE IT COMES AGAIN!", type: "hype" },
-    { timestampMs: 150000, message: "I NEVER! 🎤", type: "chorus" },
-    { timestampMs: 190000, message: "I'M MR BRIGHTSIDE! LOUDER!", type: "chorus" },
-  ],
-  "uptown-funk": [
-    { timestampMs: 0, message: "This hit, that ice cold!", type: "intro" },
-    { timestampMs: 12000, message: "Michelle Pfeiffer, that white gold!", type: "verse" },
-    { timestampMs: 26000, message: "I'm too hot! Hot damn!", type: "verse" },
-    { timestampMs: 40000, message: "Don't believe me just watch!", type: "hype" },
-    { timestampMs: 58000, message: "UPTOWN FUNK YOU UP!", type: "chorus" },
-    { timestampMs: 80000, message: "Say my name you know who I am!", type: "chorus" },
-    { timestampMs: 120000, message: "Saturday night and we in the spot!", type: "verse" },
-    { timestampMs: 155000, message: "Don't believe me just WATCH! 👀", type: "hype" },
-    { timestampMs: 190000, message: "UPTOWN FUNK YOU UP!", type: "chorus" },
-    { timestampMs: 240000, message: "Bring it home! 🔥", type: "hype" },
-  ],
-  "rolling-in-the-deep": [
-    { timestampMs: 0, message: "There's a fire starting in my heart...", type: "intro" },
-    { timestampMs: 14000, message: "Reaching a fever pitch...", type: "verse" },
-    { timestampMs: 30000, message: "The scars of your love...", type: "verse" },
-    { timestampMs: 55000, message: "We could have had it ALL!", type: "chorus" },
-    { timestampMs: 68000, message: "ROLLING IN THE DEEP!", type: "chorus" },
-    { timestampMs: 80000, message: "You had my heart inside your hand!", type: "chorus" },
-    { timestampMs: 110000, message: "Baby I have no story to be told...", type: "verse" },
-    { timestampMs: 145000, message: "We could have had it ALL!", type: "chorus" },
-    { timestampMs: 180000, message: "ROLLING IN THE DEEP! LOUDER!", type: "chorus" },
-    { timestampMs: 210000, message: "You played it to the beat! 🔥", type: "hype" },
-  ],
-  dynamite: [
-    { timestampMs: 0, message: "Light it up!", type: "intro" },
-    { timestampMs: 10000, message: "Shoes on, get up in the morn...", type: "verse" },
-    { timestampMs: 25000, message: "Cup of milk, let's rock and roll!", type: "verse" },
-    { timestampMs: 40000, message: "Bring a friend, join the crowd!", type: "verse" },
-    { timestampMs: 52000, message: "'Cause I-I-I'm in the stars tonight!", type: "chorus" },
-    { timestampMs: 68000, message: "DY-NA-NA-NA-MITE! 💥", type: "chorus" },
-    { timestampMs: 90000, message: "Shining through the city!", type: "verse" },
-    { timestampMs: 120000, message: "LIGHT IT UP LIKE DYNAMITE!", type: "chorus" },
-    { timestampMs: 155000, message: "DY-NA-NA-NA-MITE!", type: "chorus" },
-    { timestampMs: 185000, message: "One more time! DYNAMITE! 🔥", type: "hype" },
-  ],
-};
-
-/**
- * Derives timestamped coaching cues from a song's note data.
- * Used as a fallback for songs without hand-written coaching entries.
+ * Runtime fallback: derives coaching cues from a song's note data.
+ * Used only for songs that don't have pre-generated coachingCues
+ * in their JSON file. New songs should have cues generated via
+ * the mastering tool or `npm run generate-coaching`.
  */
 export function generateCoachingCues(data: DataFormat): CoachingCue[] {
   const { bpm, gapMs, startSeconds } = data;
@@ -141,13 +16,11 @@ export function generateCoachingCues(data: DataFormat): CoachingCue[] {
   const cues: CoachingCue[] = [];
   const playbackStartMs = (startSeconds ?? 0) * 1000;
 
-  // Intro cue — if the song has a long intro before singing starts
   const firstNoteMs = beatToMs(lines[0]!.notes[0]!.beat, bpm, gapMs);
   if (firstNoteMs - playbackStartMs > 3000) {
     cues.push({ timestampMs: playbackStartMs, message: "Get ready to sing!", type: "intro" });
   }
 
-  // Scan consecutive line pairs for gaps and special sections
   for (let i = 0; i < lines.length - 1; i++) {
     const line = lines[i]!;
     const nextLine = lines[i + 1]!;
@@ -170,7 +43,6 @@ export function generateCoachingCues(data: DataFormat): CoachingCue[] {
       });
     }
 
-    // Preview upcoming lyrics 3 seconds before they start (after a long enough gap)
     const warningMs = nextStartMs - 3000;
     if (gapDuration > 6000 && warningMs > lineEndMs + 1500) {
       const preview = nextLine.notes
@@ -183,21 +55,18 @@ export function generateCoachingCues(data: DataFormat): CoachingCue[] {
       }
     }
 
-    // Golden note warning — 2 seconds before a line with golden notes
     if (nextLine.notes.some((n) => n.type === "golden")) {
       const goldenWarningMs = nextStartMs - 2000;
-      // Only fire if the warning time is in a gap (not during the current line)
       if (goldenWarningMs >= lineEndMs) {
         cues.push({
           timestampMs: goldenWarningMs,
-          message: "⭐ Golden notes! Hold it!",
+          message: "Golden notes — hold it!",
           type: "hype",
         });
       }
     }
   }
 
-  // Rap section announcements
   for (const line of lines) {
     if (line.notes.every((n) => n.type === "rap" || n.type === "freestyle")) {
       cues.push({
@@ -208,7 +77,6 @@ export function generateCoachingCues(data: DataFormat): CoachingCue[] {
     }
   }
 
-  // Sort and deduplicate (remove cues within 1500ms of an earlier one)
   cues.sort((a, b) => a.timestampMs - b.timestampMs);
   const deduped: CoachingCue[] = [];
   for (const cue of cues) {

@@ -1342,5 +1342,37 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"So\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 99731.53237410072,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 157567.26378896882,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 193215.94484412472,
+      "message": "Coming up: \"How I wi...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 196215.94484412472,
+      "message": "CHORUS! \"How I wi...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 221935.36930455634,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

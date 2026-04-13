@@ -6520,5 +6520,47 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"And I would do\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 20342.323355878543,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 63959.82227658656,
+      "message": "CHORUS! \"No I won’t do...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 66704.74960425962,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 72832.03410562672,
+      "message": "Coming up: \"And some days it...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 74832.03410562672,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 163506.66354871204,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 414859.2322636351,
+      "message": "CHORUS AGAIN! \"No I won’t do...\"",
+      "type": "chorus"
+    }
   ]
 }

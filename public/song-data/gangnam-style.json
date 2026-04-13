@@ -4311,5 +4311,47 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Op pan gang nam\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 9900,
+      "message": "CHORUS! \"Op pan gang nam...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 13990.909090909092,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 66252.27272727274,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 148070.45454545456,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 216706.81818181818,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 242809.0909090909,
+      "message": "Coming up: \"Op pan gang nam...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 245809.0909090909,
+      "message": "CHORUS AGAIN! \"Op pan gang nam...\"",
+      "type": "chorus"
+    }
   ]
 }

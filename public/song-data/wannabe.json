@@ -4631,5 +4631,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 4234,
+      "message": "CHORUS! \"Yo I’ll tell you...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 142028.11764705883,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 146557.5294117647,
+      "message": "CHORUS AGAIN! \"Slam your bo dy...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 153131.0588235294,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 155528.11764705883,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 163189.88235294117,
+      "message": "Coming up: \"If you wan na...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 166189.88235294117,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    }
   ]
 }

@@ -3630,5 +3630,57 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I got my dri\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 54153.042993519615,
+      "message": "CHORUS! \"And I know we...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 142460.33865235874,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 165655.76057417603,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 168165.79471813812,
+      "message": "Coming up: \"Side walks we crossed...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 192465.7389728939,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 194975.77311685597,
+      "message": "Coming up: \"I know we weren’t...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 197975.77311685597,
+      "message": "CHORUS AGAIN! \"I know we weren’t...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 231057.0914918821,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 234349.54497944395,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

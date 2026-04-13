@@ -61,6 +61,8 @@ export interface DataFormat {
   // Song structure
   isDuet: boolean;
   tracks: Track[];
+  /** Pre-generated coaching cues (from the mastering tool / batch script) */
+  coachingCues?: CoachingCue[];
 }
 
 // ── Song Difficulty ──────────────────────────────────────────────────────────

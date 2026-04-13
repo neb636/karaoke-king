@@ -3632,5 +3632,87 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Just a cast a\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 51998.52592129919,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 53998.52592129919,
+      "message": "CHORUS! \"Mes sage in a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 71823.63522798251,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 106227.13304184885,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 119006.64584634603,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 121006.64584634603,
+      "message": "CHORUS AGAIN! \"Mes sage in a...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 124467.29544034979,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 128162.79825109307,
+      "message": "Coming up: \"Walked out this mor...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 147638.75078076203,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 188713.07932542163,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 190713.07932542163,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 194848.30730793255,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 206863.61024359774,
+      "message": "Coming up: \"Sen din’ out an...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 208863.61024359774,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 257533.816364772,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

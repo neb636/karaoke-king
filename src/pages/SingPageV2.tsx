@@ -8,9 +8,12 @@ import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { useSongData } from "@/hooks/useSongData";
 import { useLyricsV2 } from "@/hooks/useLyricsV2";
+import { useNoteScoring } from "@/hooks/useNoteScoring";
+import { usePerformanceFeedback } from "@/hooks/usePerformanceFeedback";
 import { getExpectedPitchClasses } from "@/data/songs/songData";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
 import { isDebugMode } from "./sing-page-v2/components/DebugPanel";
+import type { VisualizerMood } from "./sing-page-v2/components/VisualizerV2";
 
 import { ReadyOverlayV2 } from "./sing-page-v2/components/ReadyOverlayV2";
 import { CountdownOverlayV2 } from "./sing-page-v2/components/CountdownOverlayV2";
@@ -35,6 +38,7 @@ export function SingPageV2() {
     coachingEnabled,
     toggleCoaching,
     scoringMode,
+    setScoringMode,
   } = useGameStore();
 
   const { playMode, getPlayerSong } = useSongStore();
@@ -47,7 +51,6 @@ export function SingPageV2() {
 
   const [gapMsOverride, setGapMsOverride] = useState<number | null>(null);
 
-  // Sync override to the song's gapMs when song data first loads
   useEffect(() => {
     if (extractedData) {
       setGapMsOverride(extractedData.gapMs);
@@ -64,8 +67,10 @@ export function SingPageV2() {
   const {
     isListening,
     stats,
-    feedback,
+    feedback: audioFeedback,
     freqArray,
+    livePitchHz,
+    liveRms,
     initAudio,
     startListening,
     stopListening,
@@ -77,17 +82,14 @@ export function SingPageV2() {
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
   const [finishSecondsLeft, setFinishSecondsLeft] = useState(FINISH_EARLY_TIMER_SECONDS);
 
-  // Reset overlay when player changes
   useEffect(() => {
     setShowReadyOverlay(true);
   }, [currentPlayer]);
 
-  // Reset finish countdown when listening starts
   useEffect(() => {
     if (isListening) setFinishSecondsLeft(FINISH_EARLY_TIMER_SECONDS);
   }, [isListening]);
 
-  // Tick the finish countdown
   useEffect(() => {
     if (!isListening || !isCurated || finishSecondsLeft <= 0) return;
     const t = setTimeout(() => setFinishSecondsLeft((s) => Math.max(0, s - 1)), 1000);
@@ -109,6 +111,62 @@ export function SingPageV2() {
     pause: spotifyPause,
   } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
 
+  // Per-note scoring (curated mode only)
+  const {
+    state: noteScoring,
+    tick: noteScoringTick,
+    reset: noteScoringReset,
+    getAccumulators: getNoteAccumulators,
+  } = useNoteScoring(
+    isCurated ? effectiveExtractedData ?? null : null,
+    scoringMode
+  );
+
+  // Performance-reactive feedback
+  const songDurationMs = isCurated ? song.durationMs : undefined;
+  const { evaluate: evaluateFeedback, reset: resetFeedback } = usePerformanceFeedback(
+    scoringMode,
+    isCurated,
+    songDurationMs
+  );
+
+  const [perfFeedback, setPerfFeedback] = useState({ message: "", colorClass: "" });
+
+  // Drive note scoring from the audio tick (~10fps via stats updates).
+  // tick() returns the fresh snapshot so we don't read stale React state.
+  const lastNoteTickMs = useRef(0);
+  useEffect(() => {
+    if (!isListening || !isCurated) return;
+    const now = performance.now();
+    if (now - lastNoteTickMs.current < 90) return;
+    lastNoteTickMs.current = now;
+
+    const freshScoring = noteScoringTick(currentPositionMs, livePitchHz.current, liveRms.current);
+
+    const fb = evaluateFeedback(
+      freshScoring,
+      liveRms.current,
+      stats.elapsed,
+      currentPositionMs,
+      freshScoring.inNote
+    );
+    if (fb.message) {
+      setPerfFeedback(fb);
+    }
+  }, [
+    isListening,
+    isCurated,
+    stats,
+    currentPositionMs,
+    noteScoringTick,
+    evaluateFeedback,
+    livePitchHz,
+    liveRms,
+  ]);
+
+  // For freeform mode, use the old audio feedback
+  const activeFeedback = isCurated ? perfFeedback : audioFeedback;
+
   const { currentCue } = useCoachingCues(
     isCurated && coachingEnabled ? song!.id : null,
     currentPositionMs,
@@ -122,6 +180,23 @@ export function SingPageV2() {
 
   const player = players[currentPlayer];
 
+  // Compute visualizer mood and background class from note scoring state
+  const visualizerMood: VisualizerMood = useMemo(() => {
+    if (!isCurated || !noteScoring) return "neutral";
+    if (noteScoring.streak >= 20) return "great";
+    if (noteScoring.streak >= 10) return "positive";
+    if (noteScoring.consecutiveMisses >= 4) return "negative";
+    return "neutral";
+  }, [isCurated, noteScoring]);
+
+  const bgPerformanceClass = useMemo(() => {
+    if (!isCurated || !noteScoring) return "";
+    if (noteScoring.streak >= 20) return "bg-performance-great";
+    if (noteScoring.streak >= 10) return "bg-performance-positive";
+    if (noteScoring.consecutiveMisses >= 4) return "bg-performance-negative";
+    return "";
+  }, [isCurated, noteScoring]);
+
   async function handleStartSinging() {
     setShowReadyOverlay(false);
     try {
@@ -130,6 +205,9 @@ export function SingPageV2() {
       setShowReadyOverlay(true);
       return;
     }
+    noteScoringReset();
+    resetFeedback();
+    setPerfFeedback({ message: "", colorClass: "" });
     playSound(900, 100);
     runCountdown(async () => {
       startListening();
@@ -141,9 +219,13 @@ export function SingPageV2() {
 
   function handleStop() {
     if (!player) return;
+
+    const noteAcc = isCurated ? getNoteAccumulators() : undefined;
+
     const score = stopListening(player.bumpers, {
       mode: isCurated ? scoringMode : "fun",
       expectedPitchClasses,
+      noteAccumulators: noteAcc && noteAcc.totalWeight > 0 ? noteAcc : undefined,
     });
 
     if (isCurated) {
@@ -176,6 +258,9 @@ export function SingPageV2() {
       await spotifyPause();
     }
     stopListening(player?.bumpers ?? false, { mode: "fun" });
+    noteScoringReset();
+    resetFeedback();
+    setPerfFeedback({ message: "", colorClass: "" });
     setShowReadyOverlay(true);
   }
 
@@ -187,7 +272,7 @@ export function SingPageV2() {
   const playerName = player?.name || `Player ${currentPlayer + 1}`;
 
   return (
-    <div className="screen-container px-4 sm:px-8 relative">
+    <div className={`screen-container px-4 sm:px-8 relative transition-all duration-500 ${bgPerformanceClass}`}>
       {/* ── Overlays ──────────────────────────────────────────── */}
       {showReadyOverlay && (
         <ReadyOverlayV2
@@ -204,6 +289,8 @@ export function SingPageV2() {
           onStartSinging={() => void handleStartSinging()}
           onBack={() => void navigate(isCurated ? "/songs" : "/mode")}
           isLoadingSongData={songDataLoading}
+          scoringMode={scoringMode}
+          onScoringModeChange={setScoringMode}
         />
       )}
 
@@ -211,7 +298,6 @@ export function SingPageV2() {
 
       {/* ── Main singing UI ───────────────────────────────────── */}
       <div className="flex flex-col items-center gap-2 sm:gap-3 w-full max-w-[640px]">
-        {/* Header: turn label + player name + song (combined) */}
         <HeaderV2
           playerName={playerName}
           turnLabel={turnLabel}
@@ -221,11 +307,11 @@ export function SingPageV2() {
           songArtist={isCurated ? song.artist : undefined}
         />
 
-        {/* Feedback / coaching (fixed height, no layout shift) */}
+        {/* Feedback / coaching (both can show simultaneously now) */}
         <FeedbackFloatV2
           coachingCue={isCurated && coachingEnabled ? currentCue : null}
-          feedbackMessage={feedback.message}
-          feedbackColor={feedback.colorClass}
+          feedbackMessage={activeFeedback.message}
+          feedbackColor={activeFeedback.colorClass}
           showCoaching={isCurated && coachingEnabled}
         />
 
@@ -240,6 +326,7 @@ export function SingPageV2() {
                   nextLine={nextLine}
                   activeSyllableIdx={activeSyllableIdx}
                   activeLineHasGolden={activeLineHasGolden}
+                  lastGrade={noteScoring.lastGrade}
                 />
               </div>
             )}
@@ -252,7 +339,11 @@ export function SingPageV2() {
             )}
 
             {/* Visualizer */}
-            <VisualizerV2 freqArray={freqArray} isActive={isListening} />
+            <VisualizerV2
+              freqArray={freqArray}
+              isActive={isListening}
+              mood={visualizerMood}
+            />
 
             {/* Spotify error */}
             {spotifyError && <p className="text-xs text-[#ff2d95]">Spotify: {spotifyError}</p>}
@@ -269,6 +360,7 @@ export function SingPageV2() {
               finishSecondsLeft={finishSecondsLeft}
               finishTimerDone={finishTimerDone}
               onStop={handleStop}
+              noteScoring={isCurated ? noteScoring : null}
             />
           </>
         ) : !showReadyOverlay && !countdownActive ? (
@@ -295,7 +387,7 @@ export function SingPageV2() {
         currentPositionMs={currentPositionMs}
         finishSecondsLeft={finishSecondsLeft}
         stats={stats}
-        feedback={feedback}
+        feedback={activeFeedback}
         activeLine={activeLine}
         spotifyError={spotifyError}
         gapMs={gapMsOverride}

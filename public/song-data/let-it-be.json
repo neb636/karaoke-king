@@ -2654,5 +2654,72 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"When I find my\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 12800,
+      "message": "CHORUS! \"When I find my...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 25686.785584273755,
+      "message": "CHORUS AGAIN! \"And in my hour...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 51678.77684746997,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 64729.377502730254,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 84933.23625773571,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 103070.65890061886,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 142817.83764106297,
+      "message": "Coming up: \"Let it be, let...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 145817.83764106297,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 149312.55915544232,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 191358.42737531854,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 205282.70840917365,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 212490.571532581,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

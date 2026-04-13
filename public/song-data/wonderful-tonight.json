@@ -1592,5 +1592,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"It’s late in the\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 56923.22033898305,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 63433.813559322036,
+      "message": "Coming up: \"We go to a...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 129539.74576271186,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 144789.74576271186,
+      "message": "Coming up: \"It’s time to go...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 186560.93220338982,
+      "message": "CHORUS! \"Oh my dar ling...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 188944.40677966102,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

@@ -4439,5 +4439,37 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 452,
+      "message": "CHORUS! \"Who let the dogs...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 56237.603715170284,
+      "message": "CHORUS AGAIN! \"I tell my self:...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 63725.99380804954,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 100448.9040247678,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 104476.7678018576,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 188068.09907120746,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

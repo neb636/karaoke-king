@@ -2711,5 +2711,77 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"To day is gon\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 22031,
+      "message": "CHORUS! \"To day is gon...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 39442.13028472821,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 61530.13718723037,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 85345.92666091459,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 87345.92666091459,
+      "message": "CHORUS AGAIN! \"Be cause may be...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 107431.77653149267,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 111524.52890422779,
+      "message": "Coming up: \"To day was gon...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 114524.52890422779,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 131935.659188956,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 155708.30802415876,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 157708.30802415876,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 201841.18119068161,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 218622.8895599655,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

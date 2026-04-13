@@ -3675,5 +3675,152 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"There’s a la dy\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 78802.5,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 119177.5,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 134427.5,
+      "message": "Coming up: \"Ooh, it makes me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 137427.5,
+      "message": "CHORUS! \"Ooh, it makes me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 142052.5,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 157177.5,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 181865,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 186240,
+      "message": "Coming up: \"Ooh, it makes me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 189240,
+      "message": "CHORUS AGAIN! \"Ooh, it makes me...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 192052.5,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 195490,
+      "message": "Coming up: \"Ooh, it real ly...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 203802.5,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 208177.5,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 231927.5,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 247865,
+      "message": "Coming up: \"Oh ooh oh ooh...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 254115,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 256740,
+      "message": "Coming up: \"If there’s a bus...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 280865,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 286365,
+      "message": "Coming up: \"And it makes me...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 291740,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 295865,
+      "message": "Coming up: \"Oh...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 301865,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 305302.5,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 333927.5,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 401490,
+      "message": "Coming up: \"And as we wind...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 448927.5,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 463052.5,
+      "message": "Coming up: \"And she’s buy ing...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 475115,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

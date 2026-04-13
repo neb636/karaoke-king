@@ -5526,5 +5526,37 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I stay out too\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 5320,
+      "message": "CHORUS! \"I stay out too...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 138820,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 152695,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 163382.5,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 223007.5,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }
