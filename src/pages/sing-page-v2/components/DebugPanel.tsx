@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { LiveStats, FeedbackState } from "@/features/audio/useAudio";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 import { DataFormat } from "@/types/songs";
 
 const DEBUG_KEY = "karaoke-debug";

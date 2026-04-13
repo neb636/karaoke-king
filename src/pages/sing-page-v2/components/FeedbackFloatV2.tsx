@@ -36,7 +36,7 @@ export const FeedbackFloatV2 = memo(function FeedbackFloatV2({
   }, [feedbackMessage]);
 
   return (
-    <div className="relative flex flex-col items-center gap-1 shrink-0 overflow-visible min-h-[2.5rem]">
+    <div className="relative flex flex-col items-center gap-1 shrink-0 overflow-visible h-[4.5rem]">
       {/* Coaching cue (top slot) */}
       {showCoaching && coachingCue && (
         <span

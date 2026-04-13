@@ -43,6 +43,10 @@ export function useSingSession(deps: SingSessionDeps) {
   const [showReadyOverlay, setShowReadyOverlay] = useState(true);
   const [finishSecondsLeft, setFinishSecondsLeft] = useState(FINISH_EARLY_TIMER_SECONDS);
 
+  // Keep a stable ref to deps so callbacks don't need to depend on the object
+  const depsRef = useRef(deps);
+  depsRef.current = deps;
+
   useEffect(() => {
     setShowReadyOverlay(true);
   }, [currentPlayer]);
@@ -62,26 +66,27 @@ export function useSingSession(deps: SingSessionDeps) {
   const player = players[currentPlayer];
 
   const handleStop = useCallback(() => {
+    const d = depsRef.current;
     if (!player) return;
 
-    const noteAcc = deps.isCurated ? deps.getNoteAccumulators() : undefined;
+    const noteAcc = d.isCurated ? d.getNoteAccumulators() : undefined;
 
-    const score = deps.stopListening(player.bumpers, {
-      mode: deps.isCurated ? scoringMode : "fun",
-      expectedPitchClasses: deps.expectedPitchClasses,
+    const score = d.stopListening(player.bumpers, {
+      mode: d.isCurated ? scoringMode : "fun",
+      expectedPitchClasses: d.expectedPitchClasses,
       noteAccumulators: noteAcc && noteAcc.totalWeight > 0 ? noteAcc : undefined,
     });
 
-    if (deps.isCurated && deps.song) {
-      const modifier = DIFFICULTY_MODIFIERS[deps.song.difficulty] ?? 1.0;
+    if (d.isCurated && d.song) {
+      const modifier = DIFFICULTY_MODIFIERS[d.song.difficulty] ?? 1.0;
       score.total = Math.min(100, Math.round(score.total * modifier));
     }
 
-    if (deps.isCurated && deps.spotifyPlaying) {
-      void deps.spotifyPause();
+    if (d.isCurated && d.spotifyPlaying) {
+      void d.spotifyPause();
     }
 
-    deps.playSound(400, 150);
+    d.playSound(400, 150);
     recordScore(score);
 
     const nextPlayerIdx = currentPlayer + 1;
@@ -95,45 +100,48 @@ export function useSingSession(deps: SingSessionDeps) {
         void navigate("/results");
       }, 800);
     }
-  }, [
-    player, deps, scoringMode, recordScore,
-    currentPlayer, players.length, advancePlayer, navigate, playMode,
-  ]);
+  }, [player, scoringMode, recordScore, currentPlayer, players.length, advancePlayer, navigate, playMode]);
 
   const handleStopRef = useRef(handleStop);
   handleStopRef.current = handleStop;
   const stableHandleStop = useCallback(() => handleStopRef.current(), []);
 
   const handleStart = useCallback(async () => {
+    const d = depsRef.current;
     setShowReadyOverlay(false);
     try {
-      await deps.initAudio();
+      await d.initAudio();
     } catch {
       setShowReadyOverlay(true);
       return;
     }
-    deps.noteScoringReset();
-    deps.resetFeedback();
-    deps.clearPerfFeedback();
-    deps.playSound(900, 100);
-    deps.runCountdown(async () => {
-      deps.startListening();
-      if (deps.isCurated && deps.song) {
-        await deps.spotifyPlay(deps.song.spotifyUri);
+    d.noteScoringReset();
+    d.resetFeedback();
+    d.clearPerfFeedback();
+    d.playSound(900, 100);
+    d.runCountdown(async () => {
+      d.startListening();
+      if (d.isCurated && d.song) {
+        try {
+          await d.spotifyPlay(d.song.spotifyUri);
+        } catch (err) {
+          console.error("Spotify playback failed:", err);
+        }
       }
-    }, deps.playSound);
-  }, [deps]);
+    }, d.playSound);
+  }, []);
 
   const handleDebugRestart = useCallback(async () => {
-    if (deps.isCurated && deps.spotifyPlaying) {
-      await deps.spotifyPause();
+    const d = depsRef.current;
+    if (d.isCurated && d.spotifyPlaying) {
+      await d.spotifyPause();
     }
-    deps.stopListening(player?.bumpers ?? false, { mode: "fun" });
-    deps.noteScoringReset();
-    deps.resetFeedback();
-    deps.clearPerfFeedback();
+    d.stopListening(player?.bumpers ?? false, { mode: "fun" });
+    d.noteScoringReset();
+    d.resetFeedback();
+    d.clearPerfFeedback();
     setShowReadyOverlay(true);
-  }, [deps, player]);
+  }, [player]);
 
   return {
     showReadyOverlay,

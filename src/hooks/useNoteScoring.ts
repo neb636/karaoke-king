@@ -103,6 +103,7 @@ export function useNoteScoring(
   const activeNoteGrades = useRef<NoteGrade[]>([]);
 
   const prevStreakTier = useRef<StreakTier | null>(null);
+  const prevSnapshotKey = useRef("");
 
   const reset = useCallback(() => {
     accWeightedScore.current = 0;
@@ -122,6 +123,7 @@ export function useNoteScoring(
     activeNoteIdx.current = -1;
     activeNoteGrades.current = [];
     prevStreakTier.current = null;
+    prevSnapshotKey.current = "";
     setState(INITIAL_STATE);
   }, []);
 
@@ -228,7 +230,13 @@ export function useNoteScoring(
         inNote,
       };
 
-      setState(snapshot);
+      // Only trigger a React re-render when values actually changed
+      const key = `${liveScore}|${snapshot.streak}|${snapshot.bestStreak}|${snapshot.lastGrade}|${snapshot.perfects}|${snapshot.goods}|${snapshot.oks}|${snapshot.misses}|${snapshot.notesScored}|${snapshot.consecutiveMisses}|${inNote}|${tierUp}`;
+      if (key !== prevSnapshotKey.current) {
+        prevSnapshotKey.current = key;
+        setState(snapshot);
+      }
+
       return snapshot;
     },
     [noteWindows, totalWeight, scoringMode]

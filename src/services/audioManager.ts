@@ -7,6 +7,7 @@
 let audioCtx: AudioContext | null = null;
 let analyser: AnalyserNode | null = null;
 let micStream: MediaStream | null = null;
+let sourceNode: MediaStreamAudioSourceNode | null = null;
 
 export function isInitialized(): boolean {
   return audioCtx !== null && micStream !== null;
@@ -15,13 +16,29 @@ export function isInitialized(): boolean {
 export async function init(): Promise<void> {
   if (audioCtx && micStream) return;
 
-  micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  audioCtx = new AudioContext();
-  const source = audioCtx.createMediaStreamSource(micStream);
-  analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 2048;
-  analyser.smoothingTimeConstant = 0.8;
-  source.connect(analyser);
+  let stream: MediaStream | null = null;
+  let ctx: AudioContext | null = null;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    ctx = new AudioContext();
+    const source = ctx.createMediaStreamSource(stream);
+    const node = ctx.createAnalyser();
+    node.fftSize = 2048;
+    node.smoothingTimeConstant = 0.8;
+    source.connect(node);
+
+    micStream = stream;
+    audioCtx = ctx;
+    analyser = node;
+    sourceNode = source;
+  } catch (err) {
+    // Clean up partial resources so we don't leak the mic stream
+    if (stream) {
+      for (const track of stream.getTracks()) track.stop();
+    }
+    if (ctx) void ctx.close();
+    throw err;
+  }
 }
 
 export function getAnalyser(): AnalyserNode | null {
@@ -37,6 +54,10 @@ export function getSampleRate(): number {
 }
 
 export function destroy(): void {
+  if (sourceNode) {
+    sourceNode.disconnect();
+    sourceNode = null;
+  }
   if (micStream) {
     for (const track of micStream.getTracks()) {
       track.stop();
