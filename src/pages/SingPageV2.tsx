@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useAudio } from "@/features/audio/useAudio";
@@ -96,8 +96,10 @@ export function SingPageV2() {
 
   const finishTimerDone = finishSecondsLeft === 0;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleTrackEnd = useCallback(() => handleStop(), []);
+  const handleStopRef = useRef(handleStop);
+  handleStopRef.current = handleStop;
+
+  const handleTrackEnd = useCallback(() => handleStopRef.current(), []);
 
   const {
     isPlaying: spotifyPlaying,

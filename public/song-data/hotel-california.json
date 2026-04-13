@@ -8,7 +8,7 @@
   "year": 2005,
   "language": "English",
   "bpm": 285.5,
-  "gapMs": 158720,
+  "gapMs": 52064,
   "startSeconds": null,
   "video": {
     "youtubeId": "VgVa2ep-3AQ",
@@ -27,766 +27,3496 @@
       "lines": [
         {
           "notes": [
-            { "type": "normal", "beat": 0, "duration": 2, "pitch": 6, "syllable": "On" },
-            { "type": "normal", "beat": 4, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 8, "duration": 4, "pitch": 6, "syllable": "dark" },
-            { "type": "normal", "beat": 16, "duration": 2, "pitch": 4, "syllable": "de" },
-            { "type": "normal", "beat": 20, "duration": 2, "pitch": 4, "syllable": "sert" },
-            { "type": "normal", "beat": 24, "duration": 6, "pitch": 4, "syllable": "high" },
-            { "type": "normal", "beat": 32, "duration": 4, "pitch": 6, "syllable": "way," }
+            {
+              "type": "normal",
+              "beat": 0,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "On"
+            },
+            {
+              "type": "normal",
+              "beat": 4,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 8,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "dark"
+            },
+            {
+              "type": "normal",
+              "beat": 16,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 20,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "sert"
+            },
+            {
+              "type": "normal",
+              "beat": 24,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "high"
+            },
+            {
+              "type": "normal",
+              "beat": 32,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "way,"
+            }
           ],
           "nextLineStartBeat": 46
         },
         {
           "notes": [
-            { "type": "normal", "beat": 64, "duration": 2, "pitch": 4, "syllable": "Coo" },
-            { "type": "normal", "beat": 68, "duration": 2, "pitch": 6, "syllable": "~l" },
-            { "type": "normal", "beat": 72, "duration": 2, "pitch": 6, "syllable": "wind" },
-            { "type": "normal", "beat": 76, "duration": 2, "pitch": 4, "syllable": "in" },
-            { "type": "normal", "beat": 82, "duration": 4, "pitch": 4, "syllable": "my" },
-            { "type": "normal", "beat": 88, "duration": 6, "pitch": 4, "syllable": "hair," }
+            {
+              "type": "normal",
+              "beat": 64,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Coo"
+            },
+            {
+              "type": "normal",
+              "beat": 68,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "~l"
+            },
+            {
+              "type": "normal",
+              "beat": 72,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "wind"
+            },
+            {
+              "type": "normal",
+              "beat": 76,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 82,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 88,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "hair,"
+            }
           ],
           "nextLineStartBeat": 104
         },
         {
           "notes": [
-            { "type": "normal", "beat": 126, "duration": 2, "pitch": 4, "syllable": "Wa" },
-            { "type": "normal", "beat": 130, "duration": 4, "pitch": 6, "syllable": "~rm" },
-            { "type": "normal", "beat": 136, "duration": 4, "pitch": 6, "syllable": "smell" },
-            { "type": "normal", "beat": 142, "duration": 2, "pitch": 4, "syllable": "of" },
-            { "type": "normal", "beat": 146, "duration": 2, "pitch": 4, "syllable": "co" },
-            { "type": "normal", "beat": 150, "duration": 6, "pitch": 4, "syllable": "li" },
-            { "type": "normal", "beat": 160, "duration": 6, "pitch": 6, "syllable": "tas" }
+            {
+              "type": "normal",
+              "beat": 126,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Wa"
+            },
+            {
+              "type": "normal",
+              "beat": 130,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~rm"
+            },
+            {
+              "type": "normal",
+              "beat": 136,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "smell"
+            },
+            {
+              "type": "normal",
+              "beat": 142,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "of"
+            },
+            {
+              "type": "normal",
+              "beat": 146,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "co"
+            },
+            {
+              "type": "normal",
+              "beat": 150,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 160,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "tas"
+            }
           ],
           "nextLineStartBeat": 176
         },
         {
           "notes": [
-            { "type": "normal", "beat": 188, "duration": 4, "pitch": 6, "syllable": "Ri" },
-            { "type": "normal", "beat": 194, "duration": 2, "pitch": 6, "syllable": "sing" },
-            { "type": "normal", "beat": 198, "duration": 2, "pitch": 6, "syllable": "up" },
-            { "type": "normal", "beat": 204, "duration": 4, "pitch": 4, "syllable": "through" },
-            { "type": "normal", "beat": 210, "duration": 2, "pitch": 4, "syllable": "the" },
-            { "type": "normal", "beat": 214, "duration": 4, "pitch": 4, "syllable": "ai" },
-            { "type": "normal", "beat": 220, "duration": 2, "pitch": 2, "syllable": "~" },
-            { "type": "normal", "beat": 224, "duration": 2, "pitch": -1, "syllable": "~r." }
+            {
+              "type": "normal",
+              "beat": 188,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "Ri"
+            },
+            {
+              "type": "normal",
+              "beat": 194,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "sing"
+            },
+            {
+              "type": "normal",
+              "beat": 198,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "up"
+            },
+            {
+              "type": "normal",
+              "beat": 204,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "through"
+            },
+            {
+              "type": "normal",
+              "beat": 210,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 214,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ai"
+            },
+            {
+              "type": "normal",
+              "beat": 220,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 224,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "~r."
+            }
           ],
           "nextLineStartBeat": 236
         },
         {
           "notes": [
-            { "type": "normal", "beat": 254, "duration": 2, "pitch": 6, "syllable": "Up" },
-            { "type": "normal", "beat": 258, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 262, "duration": 4, "pitch": 6, "syllable": "head" },
-            { "type": "normal", "beat": 270, "duration": 2, "pitch": 4, "syllable": "in" },
-            { "type": "normal", "beat": 274, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 278, "duration": 4, "pitch": 2, "syllable": "dis" },
-            { "type": "normal", "beat": 286, "duration": 6, "pitch": 6, "syllable": "tance" }
+            {
+              "type": "normal",
+              "beat": 254,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Up"
+            },
+            {
+              "type": "normal",
+              "beat": 258,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 262,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "head"
+            },
+            {
+              "type": "normal",
+              "beat": 270,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 274,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 278,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "dis"
+            },
+            {
+              "type": "normal",
+              "beat": 286,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "tance"
+            }
           ],
           "nextLineStartBeat": 302
         },
         {
           "notes": [
-            { "type": "normal", "beat": 312, "duration": 4, "pitch": 2, "syllable": "I" },
-            { "type": "normal", "beat": 318, "duration": 2, "pitch": 6, "syllable": "saw" },
-            { "type": "normal", "beat": 322, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 326, "duration": 2, "pitch": 6, "syllable": "shim" },
-            { "type": "normal", "beat": 330, "duration": 4, "pitch": 4, "syllable": "me" },
-            { "type": "normal", "beat": 336, "duration": 4, "pitch": 2, "syllable": "ring" },
-            { "type": "normal", "beat": 342, "duration": 4, "pitch": 2, "syllable": "light." }
+            {
+              "type": "normal",
+              "beat": 312,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 318,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "saw"
+            },
+            {
+              "type": "normal",
+              "beat": 322,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 326,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "shim"
+            },
+            {
+              "type": "normal",
+              "beat": 330,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "me"
+            },
+            {
+              "type": "normal",
+              "beat": 336,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "ring"
+            },
+            {
+              "type": "normal",
+              "beat": 342,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "light."
+            }
           ],
           "nextLineStartBeat": 356
         },
         {
           "notes": [
-            { "type": "normal", "beat": 376, "duration": 2, "pitch": 2, "syllable": "My" },
-            { "type": "normal", "beat": 380, "duration": 2, "pitch": 4, "syllable": "head" },
-            { "type": "normal", "beat": 384, "duration": 2, "pitch": 4, "syllable": "grew" },
-            { "type": "normal", "beat": 388, "duration": 2, "pitch": 4, "syllable": "hea" },
-            { "type": "normal", "beat": 392, "duration": 2, "pitch": 4, "syllable": "vy" },
-            { "type": "normal", "beat": 396, "duration": 2, "pitch": 4, "syllable": "and" },
-            { "type": "normal", "beat": 400, "duration": 2, "pitch": 2, "syllable": "my" },
-            { "type": "normal", "beat": 404, "duration": 4, "pitch": 4, "syllable": "sight" },
-            { "type": "normal", "beat": 412, "duration": 4, "pitch": 2, "syllable": "grew" },
-            { "type": "normal", "beat": 418, "duration": 4, "pitch": 6, "syllable": "dim," }
+            {
+              "type": "normal",
+              "beat": 376,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "My"
+            },
+            {
+              "type": "normal",
+              "beat": 380,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "head"
+            },
+            {
+              "type": "normal",
+              "beat": 384,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "grew"
+            },
+            {
+              "type": "normal",
+              "beat": 388,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "hea"
+            },
+            {
+              "type": "normal",
+              "beat": 392,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "vy"
+            },
+            {
+              "type": "normal",
+              "beat": 396,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "and"
+            },
+            {
+              "type": "normal",
+              "beat": 400,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 404,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "sight"
+            },
+            {
+              "type": "normal",
+              "beat": 412,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "grew"
+            },
+            {
+              "type": "normal",
+              "beat": 418,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "dim,"
+            }
           ],
           "nextLineStartBeat": 432
         },
         {
           "notes": [
-            { "type": "normal", "beat": 440, "duration": 2, "pitch": 2, "syllable": "I" },
-            { "type": "normal", "beat": 444, "duration": 2, "pitch": 6, "syllable": "had" },
-            { "type": "normal", "beat": 448, "duration": 2, "pitch": 6, "syllable": "to" },
-            { "type": "normal", "beat": 452, "duration": 4, "pitch": 6, "syllable": "stop" },
-            { "type": "normal", "beat": 460, "duration": 2, "pitch": 4, "syllable": "for" },
-            { "type": "normal", "beat": 464, "duration": 4, "pitch": 4, "syllable": "the" },
-            { "type": "normal", "beat": 472, "duration": 4, "pitch": 6, "syllable": "night." }
+            {
+              "type": "normal",
+              "beat": 440,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 444,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "had"
+            },
+            {
+              "type": "normal",
+              "beat": 448,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 452,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "stop"
+            },
+            {
+              "type": "normal",
+              "beat": 460,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 464,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 472,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "night."
+            }
           ],
           "nextLineStartBeat": 486
         },
         {
           "notes": [
-            { "type": "normal", "beat": 508, "duration": 2, "pitch": 6, "syllable": "There" },
-            { "type": "normal", "beat": 512, "duration": 4, "pitch": 6, "syllable": "she" },
-            { "type": "normal", "beat": 520, "duration": 2, "pitch": 7, "syllable": "stood" },
-            { "type": "normal", "beat": 524, "duration": 2, "pitch": 6, "syllable": "in" },
-            { "type": "normal", "beat": 528, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 532, "duration": 4, "pitch": 7, "syllable": "door" },
-            { "type": "normal", "beat": 540, "duration": 4, "pitch": 6, "syllable": "way," }
+            {
+              "type": "normal",
+              "beat": 508,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "There"
+            },
+            {
+              "type": "normal",
+              "beat": 512,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 520,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "stood"
+            },
+            {
+              "type": "normal",
+              "beat": 524,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 528,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 532,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "door"
+            },
+            {
+              "type": "normal",
+              "beat": 540,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "way,"
+            }
           ],
           "nextLineStartBeat": 554
         },
         {
           "notes": [
-            { "type": "normal", "beat": 566, "duration": 2, "pitch": 2, "syllable": "I" },
-            { "type": "normal", "beat": 570, "duration": 2, "pitch": 6, "syllable": "heard" },
-            { "type": "normal", "beat": 574, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 578, "duration": 4, "pitch": 6, "syllable": "mis" },
-            { "type": "normal", "beat": 584, "duration": 4, "pitch": 4, "syllable": "sion" },
-            { "type": "normal", "beat": 592, "duration": 6, "pitch": 4, "syllable": "bell." }
+            {
+              "type": "normal",
+              "beat": 566,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 570,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "heard"
+            },
+            {
+              "type": "normal",
+              "beat": 574,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 578,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "mis"
+            },
+            {
+              "type": "normal",
+              "beat": 584,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "sion"
+            },
+            {
+              "type": "normal",
+              "beat": 592,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "bell."
+            }
           ],
           "nextLineStartBeat": 617
         },
         {
           "notes": [
-            { "type": "normal", "beat": 638, "duration": 2, "pitch": -3, "syllable": "And" },
-            { "type": "normal", "beat": 642, "duration": 2, "pitch": 4, "syllable": "I" },
-            { "type": "normal", "beat": 646, "duration": 2, "pitch": 4, "syllable": "was" },
-            { "type": "normal", "beat": 650, "duration": 2, "pitch": 4, "syllable": "thin" },
-            { "type": "normal", "beat": 654, "duration": 2, "pitch": 2, "syllable": "king" },
-            { "type": "normal", "beat": 658, "duration": 2, "pitch": 4, "syllable": "to" },
-            { "type": "normal", "beat": 662, "duration": 4, "pitch": 4, "syllable": "my" },
-            { "type": "normal", "beat": 670, "duration": 4, "pitch": 6, "syllable": "self:" }
+            {
+              "type": "normal",
+              "beat": 638,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "And"
+            },
+            {
+              "type": "normal",
+              "beat": 642,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 646,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "was"
+            },
+            {
+              "type": "normal",
+              "beat": 650,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "thin"
+            },
+            {
+              "type": "normal",
+              "beat": 654,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "king"
+            },
+            {
+              "type": "normal",
+              "beat": 658,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 662,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 670,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "self:"
+            }
           ],
           "nextLineStartBeat": 674
         },
         {
           "notes": [
-            { "type": "normal", "beat": 676, "duration": 2, "pitch": 6, "syllable": "“This" },
-            { "type": "normal", "beat": 680, "duration": 2, "pitch": 6, "syllable": "could" },
-            { "type": "normal", "beat": 684, "duration": 4, "pitch": 6, "syllable": "be" },
-            { "type": "normal", "beat": 690, "duration": 4, "pitch": 6, "syllable": "hea" },
-            { "type": "normal", "beat": 696, "duration": 4, "pitch": 6, "syllable": "ven" },
-            { "type": "normal", "beat": 702, "duration": 2, "pitch": 6, "syllable": "or" },
-            { "type": "normal", "beat": 706, "duration": 2, "pitch": 6, "syllable": "this" },
-            { "type": "normal", "beat": 712, "duration": 2, "pitch": 4, "syllable": "could" },
-            { "type": "normal", "beat": 716, "duration": 4, "pitch": 4, "syllable": "be" },
-            { "type": "normal", "beat": 724, "duration": 4, "pitch": 4, "syllable": "he" },
-            { "type": "normal", "beat": 730, "duration": 2, "pitch": 2, "syllable": "~" },
-            { "type": "normal", "beat": 734, "duration": 4, "pitch": -1, "syllable": "~ll.”" }
+            {
+              "type": "normal",
+              "beat": 676,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "“This"
+            },
+            {
+              "type": "normal",
+              "beat": 680,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "could"
+            },
+            {
+              "type": "normal",
+              "beat": 684,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 690,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "hea"
+            },
+            {
+              "type": "normal",
+              "beat": 696,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "ven"
+            },
+            {
+              "type": "normal",
+              "beat": 702,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "or"
+            },
+            {
+              "type": "normal",
+              "beat": 706,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "this"
+            },
+            {
+              "type": "normal",
+              "beat": 712,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "could"
+            },
+            {
+              "type": "normal",
+              "beat": 716,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 724,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "he"
+            },
+            {
+              "type": "normal",
+              "beat": 730,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 734,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "~ll.”"
+            }
           ],
           "nextLineStartBeat": 748
         },
         {
           "notes": [
-            { "type": "normal", "beat": 762, "duration": 2, "pitch": 6, "syllable": "Then" },
-            { "type": "normal", "beat": 766, "duration": 2, "pitch": 6, "syllable": "she" },
-            { "type": "normal", "beat": 770, "duration": 4, "pitch": 6, "syllable": "lit" },
-            { "type": "normal", "beat": 776, "duration": 2, "pitch": 4, "syllable": "up" },
-            { "type": "normal", "beat": 780, "duration": 2, "pitch": 2, "syllable": "a" },
-            { "type": "normal", "beat": 786, "duration": 4, "pitch": 2, "syllable": "can" },
-            { "type": "golden", "beat": 794, "duration": 6, "pitch": 6, "syllable": "dle" }
+            {
+              "type": "normal",
+              "beat": 762,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Then"
+            },
+            {
+              "type": "normal",
+              "beat": 766,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 770,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "lit"
+            },
+            {
+              "type": "normal",
+              "beat": 776,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "up"
+            },
+            {
+              "type": "normal",
+              "beat": 780,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 786,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "can"
+            },
+            {
+              "type": "golden",
+              "beat": 794,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "dle"
+            }
           ],
           "nextLineStartBeat": 810
         },
         {
           "notes": [
-            { "type": "normal", "beat": 824, "duration": 2, "pitch": -3, "syllable": "And" },
-            { "type": "normal", "beat": 828, "duration": 4, "pitch": 2, "syllable": "she" },
-            { "type": "normal", "beat": 834, "duration": 6, "pitch": 6, "syllable": "showed" },
-            { "type": "normal", "beat": 842, "duration": 2, "pitch": 4, "syllable": "me" },
-            { "type": "normal", "beat": 846, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 850, "duration": 4, "pitch": 2, "syllable": "wa" },
-            { "type": "normal", "beat": 856, "duration": 2, "pitch": -3, "syllable": "~y." }
+            {
+              "type": "normal",
+              "beat": 824,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "And"
+            },
+            {
+              "type": "normal",
+              "beat": 828,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 834,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "showed"
+            },
+            {
+              "type": "normal",
+              "beat": 842,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "me"
+            },
+            {
+              "type": "normal",
+              "beat": 846,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 850,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "wa"
+            },
+            {
+              "type": "normal",
+              "beat": 856,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "~y."
+            }
           ],
           "nextLineStartBeat": 868
         },
         {
           "notes": [
-            { "type": "normal", "beat": 888, "duration": 2, "pitch": 4, "syllable": "There" },
-            { "type": "normal", "beat": 892, "duration": 2, "pitch": 4, "syllable": "were" },
-            { "type": "normal", "beat": 896, "duration": 2, "pitch": 4, "syllable": "voi" },
-            { "type": "normal", "beat": 900, "duration": 2, "pitch": 4, "syllable": "ces" },
-            { "type": "normal", "beat": 904, "duration": 2, "pitch": 4, "syllable": "down" },
-            { "type": "normal", "beat": 908, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 914, "duration": 4, "pitch": 4, "syllable": "cor" },
-            { "type": "normal", "beat": 920, "duration": 2, "pitch": 2, "syllable": "ri" },
-            { "type": "normal", "beat": 924, "duration": 6, "pitch": 6, "syllable": "dor," }
+            {
+              "type": "normal",
+              "beat": 888,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "There"
+            },
+            {
+              "type": "normal",
+              "beat": 892,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "were"
+            },
+            {
+              "type": "normal",
+              "beat": 896,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "voi"
+            },
+            {
+              "type": "normal",
+              "beat": 900,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ces"
+            },
+            {
+              "type": "normal",
+              "beat": 904,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "down"
+            },
+            {
+              "type": "normal",
+              "beat": 908,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 914,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "cor"
+            },
+            {
+              "type": "normal",
+              "beat": 920,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "ri"
+            },
+            {
+              "type": "normal",
+              "beat": 924,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "dor,"
+            }
           ],
           "nextLineStartBeat": 942
         },
         {
           "notes": [
-            { "type": "normal", "beat": 946, "duration": 2, "pitch": 6, "syllable": "I" },
-            { "type": "normal", "beat": 950, "duration": 2, "pitch": 6, "syllable": "thought" },
-            { "type": "normal", "beat": 956, "duration": 2, "pitch": 4, "syllable": "I" },
-            { "type": "normal", "beat": 960, "duration": 4, "pitch": 6, "syllable": "heard" },
-            { "type": "normal", "beat": 966, "duration": 2, "pitch": 9, "syllable": "the" },
-            { "type": "normal", "beat": 970, "duration": 2, "pitch": 10, "syllable": "~m" },
-            { "type": "normal", "beat": 976, "duration": 2, "pitch": 6, "syllable": "sa" },
-            { "type": "normal", "beat": 980, "duration": 6, "pitch": 4, "syllable": "~y:" }
+            {
+              "type": "normal",
+              "beat": 946,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 950,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "thought"
+            },
+            {
+              "type": "normal",
+              "beat": 956,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 960,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "heard"
+            },
+            {
+              "type": "normal",
+              "beat": 966,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 970,
+              "duration": 2,
+              "pitch": 10,
+              "syllable": "~m"
+            },
+            {
+              "type": "normal",
+              "beat": 976,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "sa"
+            },
+            {
+              "type": "normal",
+              "beat": 980,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "~y:"
+            }
           ],
           "nextLineStartBeat": 996
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1016, "duration": 2, "pitch": 7, "syllable": "“Wel" },
-            { "type": "normal", "beat": 1020, "duration": 4, "pitch": 7, "syllable": "come" },
-            { "type": "normal", "beat": 1028, "duration": 2, "pitch": 7, "syllable": "to" },
-            { "type": "normal", "beat": 1032, "duration": 2, "pitch": 7, "syllable": "the" },
-            { "type": "normal", "beat": 1036, "duration": 6, "pitch": 7, "syllable": "Ho" },
-            { "type": "normal", "beat": 1044, "duration": 6, "pitch": 7, "syllable": "tel" },
-            { "type": "normal", "beat": 1056, "duration": 4, "pitch": 9, "syllable": "Ca" },
-            { "type": "normal", "beat": 1062, "duration": 4, "pitch": 7, "syllable": "li" },
-            { "type": "normal", "beat": 1068, "duration": 4, "pitch": 7, "syllable": "for" },
-            { "type": "normal", "beat": 1076, "duration": 4, "pitch": 6, "syllable": "nia," }
+            {
+              "type": "normal",
+              "beat": 1016,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "“Wel"
+            },
+            {
+              "type": "normal",
+              "beat": 1020,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "come"
+            },
+            {
+              "type": "normal",
+              "beat": 1028,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 1032,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1036,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "Ho"
+            },
+            {
+              "type": "normal",
+              "beat": 1044,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "tel"
+            },
+            {
+              "type": "normal",
+              "beat": 1056,
+              "duration": 4,
+              "pitch": 9,
+              "syllable": "Ca"
+            },
+            {
+              "type": "normal",
+              "beat": 1062,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 1068,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 1076,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nia,"
+            }
           ],
           "nextLineStartBeat": 1099
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1126, "duration": 2, "pitch": 6, "syllable": "Such" },
-            { "type": "normal", "beat": 1130, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 1134, "duration": 2, "pitch": 6, "syllable": "lo" },
-            { "type": "normal", "beat": 1138, "duration": 2, "pitch": 4, "syllable": "~ve" },
-            { "type": "normal", "beat": 1142, "duration": 2, "pitch": 4, "syllable": "ly" },
-            { "type": "normal", "beat": 1146, "duration": 6, "pitch": 4, "syllable": "place," }
+            {
+              "type": "normal",
+              "beat": 1126,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Such"
+            },
+            {
+              "type": "normal",
+              "beat": 1130,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1134,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 1138,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~ve"
+            },
+            {
+              "type": "normal",
+              "beat": 1142,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 1146,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "place,"
+            }
           ],
           "nextLineStartBeat": 1162
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1188, "duration": 2, "pitch": 4, "syllable": "Such" },
-            { "type": "normal", "beat": 1192, "duration": 2, "pitch": 4, "syllable": "a" },
-            { "type": "normal", "beat": 1196, "duration": 2, "pitch": 4, "syllable": "lo" },
-            { "type": "normal", "beat": 1200, "duration": 4, "pitch": 2, "syllable": "~ve" },
-            { "type": "normal", "beat": 1206, "duration": 2, "pitch": 2, "syllable": "ly" },
-            { "type": "normal", "beat": 1210, "duration": 6, "pitch": 2, "syllable": "face." }
+            {
+              "type": "normal",
+              "beat": 1188,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Such"
+            },
+            {
+              "type": "normal",
+              "beat": 1192,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1196,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 1200,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "~ve"
+            },
+            {
+              "type": "normal",
+              "beat": 1206,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 1210,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "face."
+            }
           ],
           "nextLineStartBeat": 1235
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1260, "duration": 2, "pitch": 7, "syllable": "Plen" },
-            { "type": "normal", "beat": 1264, "duration": 2, "pitch": 7, "syllable": "ty" },
-            { "type": "normal", "beat": 1268, "duration": 4, "pitch": 7, "syllable": "of" },
-            { "type": "normal", "beat": 1274, "duration": 4, "pitch": 7, "syllable": "room" },
-            { "type": "normal", "beat": 1280, "duration": 4, "pitch": 7, "syllable": "at" },
-            { "type": "normal", "beat": 1288, "duration": 2, "pitch": 7, "syllable": "the" },
-            { "type": "normal", "beat": 1292, "duration": 6, "pitch": 7, "syllable": "Ho" },
-            { "type": "normal", "beat": 1300, "duration": 4, "pitch": 7, "syllable": "tel" },
-            { "type": "golden", "beat": 1308, "duration": 6, "pitch": 9, "syllable": "Ca" },
-            { "type": "normal", "beat": 1316, "duration": 4, "pitch": 7, "syllable": "li" },
-            { "type": "normal", "beat": 1322, "duration": 6, "pitch": 7, "syllable": "for" },
-            { "type": "normal", "beat": 1330, "duration": 4, "pitch": 6, "syllable": "nia," }
+            {
+              "type": "normal",
+              "beat": 1260,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "Plen"
+            },
+            {
+              "type": "normal",
+              "beat": 1264,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "ty"
+            },
+            {
+              "type": "normal",
+              "beat": 1268,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "of"
+            },
+            {
+              "type": "normal",
+              "beat": 1274,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "room"
+            },
+            {
+              "type": "normal",
+              "beat": 1280,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "at"
+            },
+            {
+              "type": "normal",
+              "beat": 1288,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1292,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "Ho"
+            },
+            {
+              "type": "normal",
+              "beat": 1300,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "tel"
+            },
+            {
+              "type": "golden",
+              "beat": 1308,
+              "duration": 6,
+              "pitch": 9,
+              "syllable": "Ca"
+            },
+            {
+              "type": "normal",
+              "beat": 1316,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 1322,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 1330,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nia,"
+            }
           ],
           "nextLineStartBeat": 1353
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1380, "duration": 2, "pitch": 4, "syllable": "A" },
-            { "type": "normal", "beat": 1384, "duration": 2, "pitch": 6, "syllable": "ny" },
-            { "type": "normal", "beat": 1388, "duration": 6, "pitch": 6, "syllable": "time" },
-            { "type": "normal", "beat": 1396, "duration": 2, "pitch": 4, "syllable": "of" },
-            { "type": "normal", "beat": 1400, "duration": 6, "pitch": 4, "syllable": "year," }
+            {
+              "type": "normal",
+              "beat": 1380,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "A"
+            },
+            {
+              "type": "normal",
+              "beat": 1384,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "ny"
+            },
+            {
+              "type": "normal",
+              "beat": 1388,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "time"
+            },
+            {
+              "type": "normal",
+              "beat": 1396,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "of"
+            },
+            {
+              "type": "normal",
+              "beat": 1400,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "year,"
+            }
           ],
           "nextLineStartBeat": 1416
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1444, "duration": 2, "pitch": 7, "syllable": "You" },
-            { "type": "normal", "beat": 1448, "duration": 2, "pitch": 7, "syllable": "can" },
-            { "type": "normal", "beat": 1452, "duration": 4, "pitch": 7, "syllable": "find" },
-            { "type": "normal", "beat": 1460, "duration": 2, "pitch": 6, "syllable": "it" },
-            { "type": "normal", "beat": 1464, "duration": 6, "pitch": 6, "syllable": "here.”" }
+            {
+              "type": "normal",
+              "beat": 1444,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "You"
+            },
+            {
+              "type": "normal",
+              "beat": 1448,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "can"
+            },
+            {
+              "type": "normal",
+              "beat": 1452,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "find"
+            },
+            {
+              "type": "normal",
+              "beat": 1460,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "it"
+            },
+            {
+              "type": "normal",
+              "beat": 1464,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "here.”"
+            }
           ],
           "nextLineStartBeat": 1489
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1518, "duration": 2, "pitch": 6, "syllable": "Her" },
-            { "type": "normal", "beat": 1522, "duration": 2, "pitch": 6, "syllable": "mind" },
-            { "type": "normal", "beat": 1526, "duration": 2, "pitch": 6, "syllable": "is" },
-            { "type": "normal", "beat": 1532, "duration": 2, "pitch": 7, "syllable": "Tif" },
-            { "type": "normal", "beat": 1536, "duration": 2, "pitch": 6, "syllable": "fa" },
-            { "type": "normal", "beat": 1540, "duration": 4, "pitch": 6, "syllable": "ny-" },
-            { "type": "normal", "beat": 1546, "duration": 4, "pitch": 7, "syllable": "twis" },
-            { "type": "normal", "beat": 1554, "duration": 6, "pitch": 6, "syllable": "ted." }
+            {
+              "type": "normal",
+              "beat": 1518,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Her"
+            },
+            {
+              "type": "normal",
+              "beat": 1522,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "mind"
+            },
+            {
+              "type": "normal",
+              "beat": 1526,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "is"
+            },
+            {
+              "type": "normal",
+              "beat": 1532,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "Tif"
+            },
+            {
+              "type": "normal",
+              "beat": 1536,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "fa"
+            },
+            {
+              "type": "normal",
+              "beat": 1540,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "ny-"
+            },
+            {
+              "type": "normal",
+              "beat": 1546,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "twis"
+            },
+            {
+              "type": "normal",
+              "beat": 1554,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "ted."
+            }
           ],
           "nextLineStartBeat": 1570
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1582, "duration": 2, "pitch": 6, "syllable": "She" },
-            { "type": "normal", "beat": 1586, "duration": 2, "pitch": 6, "syllable": "got" },
-            { "type": "normal", "beat": 1590, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 1594, "duration": 4, "pitch": 6, "syllable": "Mer" },
-            { "type": "normal", "beat": 1600, "duration": 4, "pitch": 4, "syllable": "ce" },
-            { "type": "normal", "beat": 1606, "duration": 4, "pitch": 4, "syllable": "des" },
-            { "type": "normal", "beat": 1614, "duration": 2, "pitch": 4, "syllable": "Be" },
-            { "type": "normal", "beat": 1618, "duration": 4, "pitch": 6, "syllable": "~nz." }
+            {
+              "type": "normal",
+              "beat": 1582,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 1586,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "got"
+            },
+            {
+              "type": "normal",
+              "beat": 1590,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1594,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "Mer"
+            },
+            {
+              "type": "normal",
+              "beat": 1600,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ce"
+            },
+            {
+              "type": "normal",
+              "beat": 1606,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "des"
+            },
+            {
+              "type": "normal",
+              "beat": 1614,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Be"
+            },
+            {
+              "type": "normal",
+              "beat": 1618,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~nz."
+            }
           ],
           "nextLineStartBeat": 1632
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1646, "duration": 2, "pitch": 4, "syllable": "She" },
-            { "type": "normal", "beat": 1650, "duration": 2, "pitch": 4, "syllable": "got" },
-            { "type": "normal", "beat": 1654, "duration": 2, "pitch": 4, "syllable": "a" },
-            { "type": "normal", "beat": 1658, "duration": 2, "pitch": 4, "syllable": "lot" },
-            { "type": "normal", "beat": 1662, "duration": 2, "pitch": 4, "syllable": "of" },
-            { "type": "normal", "beat": 1666, "duration": 2, "pitch": 6, "syllable": "pret" },
-            { "type": "normal", "beat": 1670, "duration": 4, "pitch": 4, "syllable": "ty," },
-            { "type": "normal", "beat": 1678, "duration": 2, "pitch": 6, "syllable": "pret" },
-            { "type": "normal", "beat": 1682, "duration": 2, "pitch": 4, "syllable": "ty" },
-            { "type": "golden", "beat": 1688, "duration": 6, "pitch": 6, "syllable": "boys," }
+            {
+              "type": "normal",
+              "beat": 1646,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "She"
+            },
+            {
+              "type": "normal",
+              "beat": 1650,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "got"
+            },
+            {
+              "type": "normal",
+              "beat": 1654,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 1658,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "lot"
+            },
+            {
+              "type": "normal",
+              "beat": 1662,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "of"
+            },
+            {
+              "type": "normal",
+              "beat": 1666,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "pret"
+            },
+            {
+              "type": "normal",
+              "beat": 1670,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ty,"
+            },
+            {
+              "type": "normal",
+              "beat": 1678,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "pret"
+            },
+            {
+              "type": "normal",
+              "beat": 1682,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ty"
+            },
+            {
+              "type": "golden",
+              "beat": 1688,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "boys,"
+            }
           ],
           "nextLineStartBeat": 1704
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1716, "duration": 2, "pitch": 2, "syllable": "That" },
-            { "type": "normal", "beat": 1720, "duration": 2, "pitch": 6, "syllable": "she" },
-            { "type": "normal", "beat": 1724, "duration": 4, "pitch": 4, "syllable": "calls" },
-            { "type": "normal", "beat": 1734, "duration": 2, "pitch": 4, "syllable": "frie" },
-            { "type": "normal", "beat": 1738, "duration": 2, "pitch": 2, "syllable": "~" },
-            { "type": "normal", "beat": 1742, "duration": 4, "pitch": -1, "syllable": "~nds." }
+            {
+              "type": "normal",
+              "beat": 1716,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "That"
+            },
+            {
+              "type": "normal",
+              "beat": 1720,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "she"
+            },
+            {
+              "type": "normal",
+              "beat": 1724,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "calls"
+            },
+            {
+              "type": "normal",
+              "beat": 1734,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "frie"
+            },
+            {
+              "type": "normal",
+              "beat": 1738,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 1742,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "~nds."
+            }
           ],
           "nextLineStartBeat": 1756
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1776, "duration": 2, "pitch": 6, "syllable": "How" },
-            { "type": "normal", "beat": 1780, "duration": 2, "pitch": 6, "syllable": "they" },
-            { "type": "normal", "beat": 1784, "duration": 4, "pitch": 6, "syllable": "dance" },
-            { "type": "normal", "beat": 1792, "duration": 2, "pitch": 4, "syllable": "in" },
-            { "type": "normal", "beat": 1796, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 1800, "duration": 4, "pitch": 2, "syllable": "court" },
-            { "type": "normal", "beat": 1808, "duration": 2, "pitch": 4, "syllable": "ya" },
-            { "type": "normal", "beat": 1812, "duration": 4, "pitch": 6, "syllable": "~rd," }
+            {
+              "type": "normal",
+              "beat": 1776,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "How"
+            },
+            {
+              "type": "normal",
+              "beat": 1780,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "they"
+            },
+            {
+              "type": "normal",
+              "beat": 1784,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "dance"
+            },
+            {
+              "type": "normal",
+              "beat": 1792,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 1796,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 1800,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "court"
+            },
+            {
+              "type": "normal",
+              "beat": 1808,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ya"
+            },
+            {
+              "type": "normal",
+              "beat": 1812,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~rd,"
+            }
           ],
           "nextLineStartBeat": 1828
         },
         {
           "notes": [
-            { "type": "golden", "beat": 1832, "duration": 16, "pitch": 6, "syllable": "Sweet" },
-            { "type": "normal", "beat": 1852, "duration": 4, "pitch": 4, "syllable": "sum" },
-            { "type": "normal", "beat": 1858, "duration": 2, "pitch": 2, "syllable": "mer" },
-            { "type": "normal", "beat": 1864, "duration": 6, "pitch": 2, "syllable": "sweat." }
+            {
+              "type": "golden",
+              "beat": 1832,
+              "duration": 16,
+              "pitch": 6,
+              "syllable": "Sweet"
+            },
+            {
+              "type": "normal",
+              "beat": 1852,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "sum"
+            },
+            {
+              "type": "normal",
+              "beat": 1858,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "mer"
+            },
+            {
+              "type": "normal",
+              "beat": 1864,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "sweat."
+            }
           ],
           "nextLineStartBeat": 1880
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1902, "duration": 4, "pitch": 4, "syllable": "Some" },
-            { "type": "normal", "beat": 1910, "duration": 4, "pitch": 4, "syllable": "dance" },
-            { "type": "normal", "beat": 1918, "duration": 2, "pitch": 4, "syllable": "to" },
-            { "type": "normal", "beat": 1922, "duration": 2, "pitch": 2, "syllable": "re" },
-            { "type": "normal", "beat": 1926, "duration": 6, "pitch": 6, "syllable": "mem" },
-            { "type": "normal", "beat": 1934, "duration": 6, "pitch": 4, "syllable": "ber." }
+            {
+              "type": "normal",
+              "beat": 1902,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "Some"
+            },
+            {
+              "type": "normal",
+              "beat": 1910,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "dance"
+            },
+            {
+              "type": "normal",
+              "beat": 1918,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 1922,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "re"
+            },
+            {
+              "type": "normal",
+              "beat": 1926,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "mem"
+            },
+            {
+              "type": "normal",
+              "beat": 1934,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "ber."
+            }
           ],
           "nextLineStartBeat": 1950
         },
         {
           "notes": [
-            { "type": "normal", "beat": 1966, "duration": 4, "pitch": 6, "syllable": "Some" },
-            { "type": "normal", "beat": 1974, "duration": 4, "pitch": 6, "syllable": "dance" },
-            { "type": "normal", "beat": 1982, "duration": 2, "pitch": 4, "syllable": "to" },
-            { "type": "normal", "beat": 1986, "duration": 6, "pitch": 4, "syllable": "for" },
-            { "type": "normal", "beat": 1994, "duration": 6, "pitch": 6, "syllable": "get." }
+            {
+              "type": "normal",
+              "beat": 1966,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "Some"
+            },
+            {
+              "type": "normal",
+              "beat": 1974,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "dance"
+            },
+            {
+              "type": "normal",
+              "beat": 1982,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 1986,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 1994,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "get."
+            }
           ],
           "nextLineStartBeat": 2010
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2030, "duration": 2, "pitch": 6, "syllable": "So" },
-            { "type": "normal", "beat": 2034, "duration": 4, "pitch": 6, "syllable": "I" },
-            { "type": "normal", "beat": 2042, "duration": 2, "pitch": 6, "syllable": "called" },
-            { "type": "normal", "beat": 2046, "duration": 2, "pitch": 6, "syllable": "up" },
-            { "type": "normal", "beat": 2050, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 2054, "duration": 4, "pitch": 7, "syllable": "cap" },
-            { "type": "normal", "beat": 2062, "duration": 2, "pitch": 4, "syllable": "tai" },
-            { "type": "normal", "beat": 2066, "duration": 4, "pitch": 6, "syllable": "~n:" }
+            {
+              "type": "normal",
+              "beat": 2030,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "So"
+            },
+            {
+              "type": "normal",
+              "beat": 2034,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 2042,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "called"
+            },
+            {
+              "type": "normal",
+              "beat": 2046,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "up"
+            },
+            {
+              "type": "normal",
+              "beat": 2050,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2054,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "cap"
+            },
+            {
+              "type": "normal",
+              "beat": 2062,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "tai"
+            },
+            {
+              "type": "normal",
+              "beat": 2066,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~n:"
+            }
           ],
           "nextLineStartBeat": 2080
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2090, "duration": 2, "pitch": 4, "syllable": "“Plea" },
-            { "type": "normal", "beat": 2094, "duration": 6, "pitch": 6, "syllable": "~se," },
-            { "type": "normal", "beat": 2104, "duration": 4, "pitch": 6, "syllable": "bring" },
-            { "type": "normal", "beat": 2110, "duration": 2, "pitch": 4, "syllable": "me" },
-            { "type": "normal", "beat": 2114, "duration": 4, "pitch": 4, "syllable": "my" },
-            { "type": "normal", "beat": 2120, "duration": 2, "pitch": 4, "syllable": "wi" },
-            { "type": "normal", "beat": 2124, "duration": 4, "pitch": 6, "syllable": "~ne!”" }
+            {
+              "type": "normal",
+              "beat": 2090,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "“Plea"
+            },
+            {
+              "type": "normal",
+              "beat": 2094,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "~se,"
+            },
+            {
+              "type": "normal",
+              "beat": 2104,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "bring"
+            },
+            {
+              "type": "normal",
+              "beat": 2110,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "me"
+            },
+            {
+              "type": "normal",
+              "beat": 2114,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "my"
+            },
+            {
+              "type": "normal",
+              "beat": 2120,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "wi"
+            },
+            {
+              "type": "normal",
+              "beat": 2124,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~ne!”"
+            }
           ],
           "nextLineStartBeat": 2134
         },
         {
           "notes": [
-            { "type": "freestyle", "beat": 2136, "duration": 2, "pitch": -8, "syllable": "He" },
-            { "type": "freestyle", "beat": 2142, "duration": 4, "pitch": -6, "syllable": "said:" }
+            {
+              "type": "freestyle",
+              "beat": 2136,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "He"
+            },
+            {
+              "type": "freestyle",
+              "beat": 2142,
+              "duration": 4,
+              "pitch": -6,
+              "syllable": "said:"
+            }
           ],
           "nextLineStartBeat": 2152
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2154, "duration": 2, "pitch": 4, "syllable": "“We" },
-            { "type": "normal", "beat": 2158, "duration": 2, "pitch": 4, "syllable": "ha" },
-            { "type": "normal", "beat": 2162, "duration": 2, "pitch": 4, "syllable": "ven’t" },
-            { "type": "normal", "beat": 2168, "duration": 4, "pitch": 4, "syllable": "had" },
-            { "type": "normal", "beat": 2174, "duration": 4, "pitch": 4, "syllable": "that" },
-            { "type": "normal", "beat": 2184, "duration": 2, "pitch": 4, "syllable": "spi" },
-            { "type": "normal", "beat": 2188, "duration": 4, "pitch": 4, "syllable": "rit" },
-            { "type": "normal", "beat": 2194, "duration": 6, "pitch": 6, "syllable": "here," }
+            {
+              "type": "normal",
+              "beat": 2154,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "“We"
+            },
+            {
+              "type": "normal",
+              "beat": 2158,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ha"
+            },
+            {
+              "type": "normal",
+              "beat": 2162,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ven’t"
+            },
+            {
+              "type": "normal",
+              "beat": 2168,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "had"
+            },
+            {
+              "type": "normal",
+              "beat": 2174,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "that"
+            },
+            {
+              "type": "normal",
+              "beat": 2184,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "spi"
+            },
+            {
+              "type": "normal",
+              "beat": 2188,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "rit"
+            },
+            {
+              "type": "normal",
+              "beat": 2194,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "here,"
+            }
           ],
           "nextLineStartBeat": 2204
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2206, "duration": 4, "pitch": -1, "syllable": "Since" },
-            { "type": "golden", "beat": 2218, "duration": 4, "pitch": 6, "syllable": "nine" },
-            { "type": "golden", "beat": 2226, "duration": 4, "pitch": 6, "syllable": "teen" },
-            { "type": "normal", "beat": 2234, "duration": 4, "pitch": 4, "syllable": "six" },
-            { "type": "normal", "beat": 2240, "duration": 2, "pitch": 4, "syllable": "ty-" },
-            { "type": "normal", "beat": 2244, "duration": 4, "pitch": 4, "syllable": "ni" },
-            { "type": "normal", "beat": 2250, "duration": 2, "pitch": 2, "syllable": "~" },
-            { "type": "normal", "beat": 2254, "duration": 4, "pitch": -1, "syllable": "~ne.”" }
+            {
+              "type": "normal",
+              "beat": 2206,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "Since"
+            },
+            {
+              "type": "golden",
+              "beat": 2218,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nine"
+            },
+            {
+              "type": "golden",
+              "beat": 2226,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "teen"
+            },
+            {
+              "type": "normal",
+              "beat": 2234,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "six"
+            },
+            {
+              "type": "normal",
+              "beat": 2240,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ty-"
+            },
+            {
+              "type": "normal",
+              "beat": 2244,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ni"
+            },
+            {
+              "type": "normal",
+              "beat": 2250,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 2254,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "~ne.”"
+            }
           ],
           "nextLineStartBeat": 2268
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2284, "duration": 4, "pitch": 6, "syllable": "And" },
-            { "type": "normal", "beat": 2292, "duration": 4, "pitch": 6, "syllable": "still" },
-            { "type": "normal", "beat": 2300, "duration": 4, "pitch": 6, "syllable": "those" },
-            { "type": "normal", "beat": 2308, "duration": 2, "pitch": 6, "syllable": "voi" },
-            { "type": "normal", "beat": 2312, "duration": 2, "pitch": 4, "syllable": "ces" },
-            { "type": "normal", "beat": 2316, "duration": 2, "pitch": 2, "syllable": "are" },
-            { "type": "normal", "beat": 2320, "duration": 4, "pitch": 2, "syllable": "cal" },
-            { "type": "normal", "beat": 2326, "duration": 2, "pitch": 4, "syllable": "ling" }
+            {
+              "type": "normal",
+              "beat": 2284,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "And"
+            },
+            {
+              "type": "normal",
+              "beat": 2292,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "still"
+            },
+            {
+              "type": "normal",
+              "beat": 2300,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "those"
+            },
+            {
+              "type": "normal",
+              "beat": 2308,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "voi"
+            },
+            {
+              "type": "normal",
+              "beat": 2312,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ces"
+            },
+            {
+              "type": "normal",
+              "beat": 2316,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "are"
+            },
+            {
+              "type": "normal",
+              "beat": 2320,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "cal"
+            },
+            {
+              "type": "normal",
+              "beat": 2326,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ling"
+            }
           ],
           "nextLineStartBeat": 2330
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2332, "duration": 4, "pitch": 6, "syllable": "From" },
-            { "type": "golden", "beat": 2340, "duration": 14, "pitch": 6, "syllable": "fa" },
-            { "type": "normal", "beat": 2358, "duration": 2, "pitch": 4, "syllable": "~r" },
-            { "type": "normal", "beat": 2362, "duration": 2, "pitch": 2, "syllable": "a" },
-            { "type": "normal", "beat": 2366, "duration": 20, "pitch": 2, "syllable": "wa" },
-            { "type": "normal", "beat": 2390, "duration": 1, "pitch": -1, "syllable": "~" },
-            { "type": "normal", "beat": 2392, "duration": 2, "pitch": -3, "syllable": "~y." }
+            {
+              "type": "normal",
+              "beat": 2332,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "From"
+            },
+            {
+              "type": "golden",
+              "beat": 2340,
+              "duration": 14,
+              "pitch": 6,
+              "syllable": "fa"
+            },
+            {
+              "type": "normal",
+              "beat": 2358,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~r"
+            },
+            {
+              "type": "normal",
+              "beat": 2362,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 2366,
+              "duration": 20,
+              "pitch": 2,
+              "syllable": "wa"
+            },
+            {
+              "type": "normal",
+              "beat": 2390,
+              "duration": 1,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 2392,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "~y."
+            }
           ],
           "nextLineStartBeat": 2406
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2410, "duration": 2, "pitch": 4, "syllable": "Wake" },
-            { "type": "normal", "beat": 2414, "duration": 2, "pitch": 4, "syllable": "you" },
-            { "type": "normal", "beat": 2418, "duration": 4, "pitch": 4, "syllable": "up" },
-            { "type": "normal", "beat": 2426, "duration": 2, "pitch": 4, "syllable": "in" },
-            { "type": "normal", "beat": 2430, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 2434, "duration": 2, "pitch": 4, "syllable": "mid" },
-            { "type": "normal", "beat": 2438, "duration": 2, "pitch": 4, "syllable": "dle" },
-            { "type": "normal", "beat": 2442, "duration": 2, "pitch": 4, "syllable": "of" },
-            { "type": "normal", "beat": 2446, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 2450, "duration": 2, "pitch": 4, "syllable": "ni" },
-            { "type": "normal", "beat": 2454, "duration": 4, "pitch": 6, "syllable": "~ght," }
+            {
+              "type": "normal",
+              "beat": 2410,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Wake"
+            },
+            {
+              "type": "normal",
+              "beat": 2414,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 2418,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "up"
+            },
+            {
+              "type": "normal",
+              "beat": 2426,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 2430,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2434,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "mid"
+            },
+            {
+              "type": "normal",
+              "beat": 2438,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "dle"
+            },
+            {
+              "type": "normal",
+              "beat": 2442,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "of"
+            },
+            {
+              "type": "normal",
+              "beat": 2446,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2450,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ni"
+            },
+            {
+              "type": "normal",
+              "beat": 2454,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~ght,"
+            }
           ],
           "nextLineStartBeat": 2470
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2474, "duration": 2, "pitch": 6, "syllable": "Just" },
-            { "type": "normal", "beat": 2478, "duration": 2, "pitch": 4, "syllable": "to" },
-            { "type": "normal", "beat": 2482, "duration": 4, "pitch": 6, "syllable": "hear" },
-            { "type": "normal", "beat": 2490, "duration": 2, "pitch": 9, "syllable": "the" },
-            { "type": "normal", "beat": 2494, "duration": 2, "pitch": 10, "syllable": "~m" },
-            { "type": "normal", "beat": 2498, "duration": 10, "pitch": 6, "syllable": "sa" },
-            { "type": "normal", "beat": 2512, "duration": 2, "pitch": 4, "syllable": "~" },
-            { "type": "normal", "beat": 2516, "duration": 2, "pitch": 4, "syllable": "~" },
-            { "type": "normal", "beat": 2520, "duration": 4, "pitch": 6, "syllable": "~y:" }
+            {
+              "type": "normal",
+              "beat": 2474,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Just"
+            },
+            {
+              "type": "normal",
+              "beat": 2478,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 2482,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "hear"
+            },
+            {
+              "type": "normal",
+              "beat": 2490,
+              "duration": 2,
+              "pitch": 9,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2494,
+              "duration": 2,
+              "pitch": 10,
+              "syllable": "~m"
+            },
+            {
+              "type": "normal",
+              "beat": 2498,
+              "duration": 10,
+              "pitch": 6,
+              "syllable": "sa"
+            },
+            {
+              "type": "normal",
+              "beat": 2512,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 2516,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 2520,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~y:"
+            }
           ],
           "nextLineStartBeat": 2534
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2538, "duration": 2, "pitch": 7, "syllable": "“Wel" },
-            { "type": "normal", "beat": 2542, "duration": 4, "pitch": 7, "syllable": "come" },
-            { "type": "normal", "beat": 2550, "duration": 2, "pitch": 7, "syllable": "to" },
-            { "type": "normal", "beat": 2554, "duration": 2, "pitch": 7, "syllable": "the" },
-            { "type": "normal", "beat": 2558, "duration": 4, "pitch": 7, "syllable": "Ho" },
-            { "type": "normal", "beat": 2566, "duration": 6, "pitch": 7, "syllable": "tel" },
-            { "type": "golden", "beat": 2578, "duration": 6, "pitch": 9, "syllable": "Ca" },
-            { "type": "normal", "beat": 2586, "duration": 2, "pitch": 7, "syllable": "li" },
-            { "type": "normal", "beat": 2590, "duration": 4, "pitch": 7, "syllable": "for" },
-            { "type": "normal", "beat": 2598, "duration": 4, "pitch": 6, "syllable": "nia," }
+            {
+              "type": "normal",
+              "beat": 2538,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "“Wel"
+            },
+            {
+              "type": "normal",
+              "beat": 2542,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "come"
+            },
+            {
+              "type": "normal",
+              "beat": 2550,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 2554,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2558,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "Ho"
+            },
+            {
+              "type": "normal",
+              "beat": 2566,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "tel"
+            },
+            {
+              "type": "golden",
+              "beat": 2578,
+              "duration": 6,
+              "pitch": 9,
+              "syllable": "Ca"
+            },
+            {
+              "type": "normal",
+              "beat": 2586,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 2590,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 2598,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nia,"
+            }
           ],
           "nextLineStartBeat": 2621
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2648, "duration": 2, "pitch": 6, "syllable": "Such" },
-            { "type": "normal", "beat": 2652, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 2656, "duration": 2, "pitch": 6, "syllable": "lo" },
-            { "type": "normal", "beat": 2660, "duration": 2, "pitch": 4, "syllable": "~ve" },
-            { "type": "normal", "beat": 2664, "duration": 2, "pitch": 4, "syllable": "ly" },
-            { "type": "normal", "beat": 2670, "duration": 6, "pitch": 4, "syllable": "place," }
+            {
+              "type": "normal",
+              "beat": 2648,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Such"
+            },
+            {
+              "type": "normal",
+              "beat": 2652,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 2656,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 2660,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~ve"
+            },
+            {
+              "type": "normal",
+              "beat": 2664,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 2670,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "place,"
+            }
           ],
           "nextLineStartBeat": 2686
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2712, "duration": 2, "pitch": 4, "syllable": "Such" },
-            { "type": "normal", "beat": 2716, "duration": 2, "pitch": 4, "syllable": "a" },
-            { "type": "normal", "beat": 2720, "duration": 2, "pitch": 4, "syllable": "lo" },
-            { "type": "normal", "beat": 2724, "duration": 2, "pitch": 2, "syllable": "~ve" },
-            { "type": "normal", "beat": 2728, "duration": 2, "pitch": 2, "syllable": "ly" },
-            { "type": "normal", "beat": 2734, "duration": 6, "pitch": -1, "syllable": "face." }
+            {
+              "type": "normal",
+              "beat": 2712,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Such"
+            },
+            {
+              "type": "normal",
+              "beat": 2716,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 2720,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "lo"
+            },
+            {
+              "type": "normal",
+              "beat": 2724,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~ve"
+            },
+            {
+              "type": "normal",
+              "beat": 2728,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 2734,
+              "duration": 6,
+              "pitch": -1,
+              "syllable": "face."
+            }
           ],
           "nextLineStartBeat": 2759
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2780, "duration": 2, "pitch": 2, "syllable": "They" },
-            { "type": "normal", "beat": 2784, "duration": 2, "pitch": 7, "syllable": "li" },
-            { "type": "normal", "beat": 2788, "duration": 2, "pitch": 7, "syllable": "vin’" },
-            { "type": "normal", "beat": 2792, "duration": 2, "pitch": 7, "syllable": "it" },
-            { "type": "normal", "beat": 2796, "duration": 4, "pitch": 7, "syllable": "up" },
-            { "type": "normal", "beat": 2802, "duration": 4, "pitch": 7, "syllable": "at" },
-            { "type": "normal", "beat": 2810, "duration": 2, "pitch": 7, "syllable": "the" },
-            { "type": "normal", "beat": 2814, "duration": 4, "pitch": 7, "syllable": "Ho" },
-            { "type": "normal", "beat": 2822, "duration": 4, "pitch": 7, "syllable": "tel" },
-            { "type": "golden", "beat": 2830, "duration": 6, "pitch": 9, "syllable": "Ca" },
-            { "type": "normal", "beat": 2838, "duration": 2, "pitch": 7, "syllable": "li" },
-            { "type": "normal", "beat": 2842, "duration": 6, "pitch": 7, "syllable": "for" },
-            { "type": "normal", "beat": 2852, "duration": 4, "pitch": 6, "syllable": "nia." }
+            {
+              "type": "normal",
+              "beat": 2780,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "They"
+            },
+            {
+              "type": "normal",
+              "beat": 2784,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 2788,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "vin’"
+            },
+            {
+              "type": "normal",
+              "beat": 2792,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "it"
+            },
+            {
+              "type": "normal",
+              "beat": 2796,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "up"
+            },
+            {
+              "type": "normal",
+              "beat": 2802,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "at"
+            },
+            {
+              "type": "normal",
+              "beat": 2810,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 2814,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "Ho"
+            },
+            {
+              "type": "normal",
+              "beat": 2822,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "tel"
+            },
+            {
+              "type": "golden",
+              "beat": 2830,
+              "duration": 6,
+              "pitch": 9,
+              "syllable": "Ca"
+            },
+            {
+              "type": "normal",
+              "beat": 2838,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 2842,
+              "duration": 6,
+              "pitch": 7,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 2852,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nia."
+            }
           ],
           "nextLineStartBeat": 2875
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2902, "duration": 2, "pitch": 4, "syllable": "What" },
-            { "type": "normal", "beat": 2906, "duration": 2, "pitch": 6, "syllable": "a" },
-            { "type": "normal", "beat": 2910, "duration": 4, "pitch": 6, "syllable": "nice" },
-            { "type": "normal", "beat": 2918, "duration": 2, "pitch": 4, "syllable": "sur" },
-            { "type": "normal", "beat": 2922, "duration": 8, "pitch": 4, "syllable": "prise," }
+            {
+              "type": "normal",
+              "beat": 2902,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "What"
+            },
+            {
+              "type": "normal",
+              "beat": 2906,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 2910,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "nice"
+            },
+            {
+              "type": "normal",
+              "beat": 2918,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "sur"
+            },
+            {
+              "type": "normal",
+              "beat": 2922,
+              "duration": 8,
+              "pitch": 4,
+              "syllable": "prise,"
+            }
           ],
           "nextLineStartBeat": 2940
         },
         {
           "notes": [
-            { "type": "normal", "beat": 2966, "duration": 2, "pitch": 7, "syllable": "Bring" },
-            { "type": "normal", "beat": 2970, "duration": 2, "pitch": 7, "syllable": "your" },
-            { "type": "normal", "beat": 2974, "duration": 4, "pitch": 7, "syllable": "a" },
-            { "type": "normal", "beat": 2982, "duration": 2, "pitch": 6, "syllable": "li" },
-            { "type": "normal", "beat": 2986, "duration": 24, "pitch": 6, "syllable": "bis!”" }
+            {
+              "type": "normal",
+              "beat": 2966,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "Bring"
+            },
+            {
+              "type": "normal",
+              "beat": 2970,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "your"
+            },
+            {
+              "type": "normal",
+              "beat": 2974,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 2982,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "li"
+            },
+            {
+              "type": "normal",
+              "beat": 2986,
+              "duration": 24,
+              "pitch": 6,
+              "syllable": "bis!”"
+            }
           ],
           "nextLineStartBeat": 3020
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3046, "duration": 2, "pitch": 6, "syllable": "Mir" },
-            { "type": "normal", "beat": 3050, "duration": 4, "pitch": 6, "syllable": "rors" },
-            { "type": "normal", "beat": 3058, "duration": 2, "pitch": 7, "syllable": "on" },
-            { "type": "normal", "beat": 3062, "duration": 4, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 3070, "duration": 4, "pitch": 7, "syllable": "cei" },
-            { "type": "normal", "beat": 3078, "duration": 6, "pitch": 6, "syllable": "ling," }
+            {
+              "type": "normal",
+              "beat": 3046,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Mir"
+            },
+            {
+              "type": "normal",
+              "beat": 3050,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "rors"
+            },
+            {
+              "type": "normal",
+              "beat": 3058,
+              "duration": 2,
+              "pitch": 7,
+              "syllable": "on"
+            },
+            {
+              "type": "normal",
+              "beat": 3062,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3070,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "cei"
+            },
+            {
+              "type": "normal",
+              "beat": 3078,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "ling,"
+            }
           ],
           "nextLineStartBeat": 3094
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3104, "duration": 2, "pitch": 4, "syllable": "The" },
-            { "type": "normal", "beat": 3108, "duration": 4, "pitch": 6, "syllable": "pink" },
-            { "type": "normal", "beat": 3116, "duration": 2, "pitch": 6, "syllable": "cham" },
-            { "type": "normal", "beat": 3120, "duration": 4, "pitch": 6, "syllable": "pagne" },
-            { "type": "normal", "beat": 3126, "duration": 4, "pitch": 4, "syllable": "on" },
-            { "type": "normal", "beat": 3132, "duration": 6, "pitch": 6, "syllable": "ice" }
+            {
+              "type": "normal",
+              "beat": 3104,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "The"
+            },
+            {
+              "type": "normal",
+              "beat": 3108,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "pink"
+            },
+            {
+              "type": "normal",
+              "beat": 3116,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "cham"
+            },
+            {
+              "type": "normal",
+              "beat": 3120,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "pagne"
+            },
+            {
+              "type": "normal",
+              "beat": 3126,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "on"
+            },
+            {
+              "type": "normal",
+              "beat": 3132,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "ice"
+            }
           ],
           "nextLineStartBeat": 3142
         },
         {
           "notes": [
-            { "type": "freestyle", "beat": 3144, "duration": 2, "pitch": -8, "syllable": "And" },
-            { "type": "freestyle", "beat": 3150, "duration": 2, "pitch": -6, "syllable": "she" },
-            { "type": "freestyle", "beat": 3154, "duration": 4, "pitch": -6, "syllable": "said:" }
+            {
+              "type": "freestyle",
+              "beat": 3144,
+              "duration": 2,
+              "pitch": -8,
+              "syllable": "And"
+            },
+            {
+              "type": "freestyle",
+              "beat": 3150,
+              "duration": 2,
+              "pitch": -6,
+              "syllable": "she"
+            },
+            {
+              "type": "freestyle",
+              "beat": 3154,
+              "duration": 4,
+              "pitch": -6,
+              "syllable": "said:"
+            }
           ],
           "nextLineStartBeat": 3168
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3172, "duration": 2, "pitch": 6, "syllable": "“We" },
-            { "type": "normal", "beat": 3176, "duration": 2, "pitch": 4, "syllable": "are" },
-            { "type": "normal", "beat": 3180, "duration": 4, "pitch": 4, "syllable": "all" },
-            { "type": "normal", "beat": 3188, "duration": 4, "pitch": 4, "syllable": "just" },
-            { "type": "normal", "beat": 3196, "duration": 4, "pitch": 6, "syllable": "pri" },
-            { "type": "normal", "beat": 3202, "duration": 2, "pitch": 4, "syllable": "so" },
-            { "type": "normal", "beat": 3206, "duration": 4, "pitch": 4, "syllable": "ners" },
-            { "type": "normal", "beat": 3212, "duration": 6, "pitch": 6, "syllable": "here" }
+            {
+              "type": "normal",
+              "beat": 3172,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "“We"
+            },
+            {
+              "type": "normal",
+              "beat": 3176,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "are"
+            },
+            {
+              "type": "normal",
+              "beat": 3180,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "all"
+            },
+            {
+              "type": "normal",
+              "beat": 3188,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "just"
+            },
+            {
+              "type": "normal",
+              "beat": 3196,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "pri"
+            },
+            {
+              "type": "normal",
+              "beat": 3202,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "so"
+            },
+            {
+              "type": "normal",
+              "beat": 3206,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ners"
+            },
+            {
+              "type": "normal",
+              "beat": 3212,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "here"
+            }
           ],
           "nextLineStartBeat": 3230
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3234, "duration": 2, "pitch": 6, "syllable": "Of" },
-            { "type": "normal", "beat": 3238, "duration": 4, "pitch": 6, "syllable": "our" },
-            { "type": "normal", "beat": 3244, "duration": 2, "pitch": 6, "syllable": "o" },
-            { "type": "normal", "beat": 3248, "duration": 2, "pitch": 4, "syllable": "~wn" },
-            { "type": "normal", "beat": 3254, "duration": 2, "pitch": 2, "syllable": "de" },
-            { "type": "normal", "beat": 3258, "duration": 6, "pitch": 2, "syllable": "vice.”" }
+            {
+              "type": "normal",
+              "beat": 3234,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "Of"
+            },
+            {
+              "type": "normal",
+              "beat": 3238,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "our"
+            },
+            {
+              "type": "normal",
+              "beat": 3244,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "o"
+            },
+            {
+              "type": "normal",
+              "beat": 3248,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~wn"
+            },
+            {
+              "type": "normal",
+              "beat": 3254,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "de"
+            },
+            {
+              "type": "normal",
+              "beat": 3258,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "vice.”"
+            }
           ],
           "nextLineStartBeat": 3274
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3296, "duration": 2, "pitch": 2, "syllable": "And" },
-            { "type": "normal", "beat": 3300, "duration": 2, "pitch": 6, "syllable": "in" },
-            { "type": "normal", "beat": 3304, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 3310, "duration": 4, "pitch": 6, "syllable": "ma" },
-            { "type": "normal", "beat": 3316, "duration": 4, "pitch": 4, "syllable": "ster’s" },
-            { "type": "normal", "beat": 3324, "duration": 4, "pitch": 2, "syllable": "cham" },
-            { "type": "normal", "beat": 3330, "duration": 6, "pitch": 6, "syllable": "bers" }
+            {
+              "type": "normal",
+              "beat": 3296,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "And"
+            },
+            {
+              "type": "normal",
+              "beat": 3300,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "in"
+            },
+            {
+              "type": "normal",
+              "beat": 3304,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3310,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "ma"
+            },
+            {
+              "type": "normal",
+              "beat": 3316,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "ster’s"
+            },
+            {
+              "type": "normal",
+              "beat": 3324,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "cham"
+            },
+            {
+              "type": "normal",
+              "beat": 3330,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "bers"
+            }
           ],
           "nextLineStartBeat": 3346
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3356, "duration": 4, "pitch": -3, "syllable": "They" },
-            { "type": "normal", "beat": 3364, "duration": 4, "pitch": 6, "syllable": "ga" },
-            { "type": "normal", "beat": 3370, "duration": 4, "pitch": 4, "syllable": "thered" },
-            { "type": "normal", "beat": 3376, "duration": 4, "pitch": 4, "syllable": "for" },
-            { "type": "normal", "beat": 3382, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 3388, "duration": 4, "pitch": 2, "syllable": "feast." }
+            {
+              "type": "normal",
+              "beat": 3356,
+              "duration": 4,
+              "pitch": -3,
+              "syllable": "They"
+            },
+            {
+              "type": "normal",
+              "beat": 3364,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "ga"
+            },
+            {
+              "type": "normal",
+              "beat": 3370,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "thered"
+            },
+            {
+              "type": "normal",
+              "beat": 3376,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 3382,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3388,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "feast."
+            }
           ],
           "nextLineStartBeat": 3402
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3420, "duration": 2, "pitch": -3, "syllable": "They" },
-            { "type": "normal", "beat": 3426, "duration": 4, "pitch": 4, "syllable": "stab" },
-            { "type": "normal", "beat": 3432, "duration": 4, "pitch": 4, "syllable": "it" },
-            { "type": "normal", "beat": 3438, "duration": 2, "pitch": 4, "syllable": "with" },
-            { "type": "normal", "beat": 3442, "duration": 4, "pitch": 2, "syllable": "their" },
-            { "type": "normal", "beat": 3452, "duration": 2, "pitch": 4, "syllable": "stee" },
-            { "type": "normal", "beat": 3456, "duration": 4, "pitch": 2, "syllable": "ly" },
-            { "type": "normal", "beat": 3462, "duration": 6, "pitch": 6, "syllable": "knives," }
+            {
+              "type": "normal",
+              "beat": 3420,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "They"
+            },
+            {
+              "type": "normal",
+              "beat": 3426,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "stab"
+            },
+            {
+              "type": "normal",
+              "beat": 3432,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "it"
+            },
+            {
+              "type": "normal",
+              "beat": 3438,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "with"
+            },
+            {
+              "type": "normal",
+              "beat": 3442,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "their"
+            },
+            {
+              "type": "normal",
+              "beat": 3452,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "stee"
+            },
+            {
+              "type": "normal",
+              "beat": 3456,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "ly"
+            },
+            {
+              "type": "normal",
+              "beat": 3462,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "knives,"
+            }
           ],
           "nextLineStartBeat": 3470
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3472, "duration": 2, "pitch": 6, "syllable": "But" },
-            { "type": "normal", "beat": 3476, "duration": 4, "pitch": 2, "syllable": "they" },
-            { "type": "normal", "beat": 3482, "duration": 4, "pitch": 6, "syllable": "just" },
-            { "type": "normal", "beat": 3490, "duration": 4, "pitch": 6, "syllable": "can’t" },
-            { "type": "golden", "beat": 3502, "duration": 4, "pitch": 6, "syllable": "kill" },
-            { "type": "normal", "beat": 3508, "duration": 2, "pitch": 4, "syllable": "the" },
-            { "type": "normal", "beat": 3512, "duration": 6, "pitch": 6, "syllable": "beast." }
+            {
+              "type": "normal",
+              "beat": 3472,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "But"
+            },
+            {
+              "type": "normal",
+              "beat": 3476,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "they"
+            },
+            {
+              "type": "normal",
+              "beat": 3482,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "just"
+            },
+            {
+              "type": "normal",
+              "beat": 3490,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "can’t"
+            },
+            {
+              "type": "golden",
+              "beat": 3502,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "kill"
+            },
+            {
+              "type": "normal",
+              "beat": 3508,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3512,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "beast."
+            }
           ],
           "nextLineStartBeat": 3528
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3552, "duration": 4, "pitch": 6, "syllable": "Last" },
-            { "type": "normal", "beat": 3560, "duration": 2, "pitch": 6, "syllable": "thing" },
-            { "type": "normal", "beat": 3564, "duration": 4, "pitch": 7, "syllable": "I" },
-            { "type": "normal", "beat": 3572, "duration": 2, "pitch": 6, "syllable": "re" },
-            { "type": "normal", "beat": 3576, "duration": 4, "pitch": 7, "syllable": "mem" },
-            { "type": "normal", "beat": 3584, "duration": 2, "pitch": 5, "syllable": "be" },
-            { "type": "normal", "beat": 3588, "duration": 2, "pitch": 6, "syllable": "~r:" }
+            {
+              "type": "normal",
+              "beat": 3552,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "Last"
+            },
+            {
+              "type": "normal",
+              "beat": 3560,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "thing"
+            },
+            {
+              "type": "normal",
+              "beat": 3564,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 3572,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "re"
+            },
+            {
+              "type": "normal",
+              "beat": 3576,
+              "duration": 4,
+              "pitch": 7,
+              "syllable": "mem"
+            },
+            {
+              "type": "normal",
+              "beat": 3584,
+              "duration": 2,
+              "pitch": 5,
+              "syllable": "be"
+            },
+            {
+              "type": "normal",
+              "beat": 3588,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "~r:"
+            }
           ],
           "nextLineStartBeat": 3597
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3600, "duration": 2, "pitch": 2, "syllable": "I" },
-            { "type": "normal", "beat": 3604, "duration": 4, "pitch": 2, "syllable": "was" },
-            { "type": "normal", "beat": 3616, "duration": 2, "pitch": 6, "syllable": "run" },
-            { "type": "normal", "beat": 3620, "duration": 4, "pitch": 6, "syllable": "ning" },
-            { "type": "normal", "beat": 3626, "duration": 4, "pitch": 6, "syllable": "for" },
-            { "type": "normal", "beat": 3632, "duration": 2, "pitch": 4, "syllable": "the" },
-            { "type": "normal", "beat": 3636, "duration": 4, "pitch": 4, "syllable": "doo" },
-            { "type": "normal", "beat": 3642, "duration": 4, "pitch": 6, "syllable": "~r." }
+            {
+              "type": "normal",
+              "beat": 3600,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 3604,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "was"
+            },
+            {
+              "type": "normal",
+              "beat": 3616,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "run"
+            },
+            {
+              "type": "normal",
+              "beat": 3620,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "ning"
+            },
+            {
+              "type": "normal",
+              "beat": 3626,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "for"
+            },
+            {
+              "type": "normal",
+              "beat": 3632,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3636,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "doo"
+            },
+            {
+              "type": "normal",
+              "beat": 3642,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "~r."
+            }
           ],
           "nextLineStartBeat": 3656
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3684, "duration": 2, "pitch": 4, "syllable": "Had" },
-            { "type": "normal", "beat": 3688, "duration": 2, "pitch": 4, "syllable": "to" },
-            { "type": "normal", "beat": 3694, "duration": 2, "pitch": 4, "syllable": "find" },
-            { "type": "normal", "beat": 3698, "duration": 2, "pitch": 4, "syllable": "the" },
-            { "type": "normal", "beat": 3702, "duration": 4, "pitch": 4, "syllable": "pas" },
-            { "type": "normal", "beat": 3708, "duration": 4, "pitch": 4, "syllable": "sage" },
-            { "type": "normal", "beat": 3714, "duration": 6, "pitch": 6, "syllable": "back" }
+            {
+              "type": "normal",
+              "beat": 3684,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "Had"
+            },
+            {
+              "type": "normal",
+              "beat": 3688,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 3694,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "find"
+            },
+            {
+              "type": "normal",
+              "beat": 3698,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3702,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "pas"
+            },
+            {
+              "type": "normal",
+              "beat": 3708,
+              "duration": 4,
+              "pitch": 4,
+              "syllable": "sage"
+            },
+            {
+              "type": "normal",
+              "beat": 3714,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "back"
+            }
           ],
           "nextLineStartBeat": 3724
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3726, "duration": 2, "pitch": 6, "syllable": "To" },
-            { "type": "normal", "beat": 3730, "duration": 2, "pitch": 6, "syllable": "the" },
-            { "type": "normal", "beat": 3734, "duration": 4, "pitch": 6, "syllable": "place" },
-            { "type": "normal", "beat": 3742, "duration": 4, "pitch": 6, "syllable": "I" },
-            { "type": "normal", "beat": 3750, "duration": 2, "pitch": 6, "syllable": "wa" },
-            { "type": "normal", "beat": 3754, "duration": 2, "pitch": 4, "syllable": "~s" },
-            { "type": "normal", "beat": 3758, "duration": 2, "pitch": 2, "syllable": "be" },
-            { "type": "golden", "beat": 3762, "duration": 6, "pitch": 4, "syllable": "fo" },
-            { "type": "normal", "beat": 3770, "duration": 2, "pitch": 2, "syllable": "~" },
-            { "type": "normal", "beat": 3774, "duration": 4, "pitch": -1, "syllable": "~re." }
+            {
+              "type": "normal",
+              "beat": 3726,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "To"
+            },
+            {
+              "type": "normal",
+              "beat": 3730,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3734,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "place"
+            },
+            {
+              "type": "normal",
+              "beat": 3742,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "I"
+            },
+            {
+              "type": "normal",
+              "beat": 3750,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "wa"
+            },
+            {
+              "type": "normal",
+              "beat": 3754,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "~s"
+            },
+            {
+              "type": "normal",
+              "beat": 3758,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "be"
+            },
+            {
+              "type": "golden",
+              "beat": 3762,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "fo"
+            },
+            {
+              "type": "normal",
+              "beat": 3770,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 3774,
+              "duration": 4,
+              "pitch": -1,
+              "syllable": "~re."
+            }
           ],
           "nextLineStartBeat": 3788
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3804, "duration": 2, "pitch": 2, "syllable": "“Re" },
-            { "type": "normal", "beat": 3808, "duration": 6, "pitch": 6, "syllable": "lax!”" },
-            { "type": "normal", "beat": 3820, "duration": 2, "pitch": 4, "syllable": "said" },
-            { "type": "normal", "beat": 3824, "duration": 2, "pitch": 2, "syllable": "the" },
-            { "type": "normal", "beat": 3828, "duration": 4, "pitch": 2, "syllable": "night" },
-            { "type": "normal", "beat": 3836, "duration": 6, "pitch": 6, "syllable": "man." }
+            {
+              "type": "normal",
+              "beat": 3804,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "“Re"
+            },
+            {
+              "type": "normal",
+              "beat": 3808,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "lax!”"
+            },
+            {
+              "type": "normal",
+              "beat": 3820,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "said"
+            },
+            {
+              "type": "normal",
+              "beat": 3824,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "the"
+            },
+            {
+              "type": "normal",
+              "beat": 3828,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "night"
+            },
+            {
+              "type": "normal",
+              "beat": 3836,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "man."
+            }
           ],
           "nextLineStartBeat": 3849
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3852, "duration": 2, "pitch": 2, "syllable": "“We" },
-            { "type": "normal", "beat": 3856, "duration": 6, "pitch": -1, "syllable": "are" },
-            { "type": "normal", "beat": 3868, "duration": 2, "pitch": -1, "syllable": "pro" },
-            { "type": "normal", "beat": 3872, "duration": 6, "pitch": 2, "syllable": "grammed" },
-            { "type": "normal", "beat": 3880, "duration": 2, "pitch": 2, "syllable": "to" },
-            { "type": "normal", "beat": 3888, "duration": 2, "pitch": -1, "syllable": "re" },
-            { "type": "normal", "beat": 3892, "duration": 2, "pitch": 2, "syllable": "cei" },
-            { "type": "normal", "beat": 3896, "duration": 2, "pitch": -1, "syllable": "~" },
-            { "type": "normal", "beat": 3900, "duration": 2, "pitch": -3, "syllable": "~ve." }
+            {
+              "type": "normal",
+              "beat": 3852,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "“We"
+            },
+            {
+              "type": "normal",
+              "beat": 3856,
+              "duration": 6,
+              "pitch": -1,
+              "syllable": "are"
+            },
+            {
+              "type": "normal",
+              "beat": 3868,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "pro"
+            },
+            {
+              "type": "normal",
+              "beat": 3872,
+              "duration": 6,
+              "pitch": 2,
+              "syllable": "grammed"
+            },
+            {
+              "type": "normal",
+              "beat": 3880,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "to"
+            },
+            {
+              "type": "normal",
+              "beat": 3888,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "re"
+            },
+            {
+              "type": "normal",
+              "beat": 3892,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "cei"
+            },
+            {
+              "type": "normal",
+              "beat": 3896,
+              "duration": 2,
+              "pitch": -1,
+              "syllable": "~"
+            },
+            {
+              "type": "normal",
+              "beat": 3900,
+              "duration": 2,
+              "pitch": -3,
+              "syllable": "~ve."
+            }
           ],
           "nextLineStartBeat": 3912
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3932, "duration": 2, "pitch": 4, "syllable": "You" },
-            { "type": "normal", "beat": 3936, "duration": 2, "pitch": 4, "syllable": "can" },
-            { "type": "normal", "beat": 3940, "duration": 2, "pitch": 4, "syllable": "check" },
-            { "type": "normal", "beat": 3944, "duration": 2, "pitch": 4, "syllable": "out" },
-            { "type": "normal", "beat": 3948, "duration": 2, "pitch": 4, "syllable": "a" },
-            { "type": "normal", "beat": 3952, "duration": 4, "pitch": 2, "syllable": "ny" },
-            { "type": "normal", "beat": 3958, "duration": 6, "pitch": 4, "syllable": "time" },
-            { "type": "normal", "beat": 3966, "duration": 2, "pitch": 2, "syllable": "you" },
-            { "type": "normal", "beat": 3972, "duration": 6, "pitch": 6, "syllable": "like" }
+            {
+              "type": "normal",
+              "beat": 3932,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "You"
+            },
+            {
+              "type": "normal",
+              "beat": 3936,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "can"
+            },
+            {
+              "type": "normal",
+              "beat": 3940,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "check"
+            },
+            {
+              "type": "normal",
+              "beat": 3944,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "out"
+            },
+            {
+              "type": "normal",
+              "beat": 3948,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "a"
+            },
+            {
+              "type": "normal",
+              "beat": 3952,
+              "duration": 4,
+              "pitch": 2,
+              "syllable": "ny"
+            },
+            {
+              "type": "normal",
+              "beat": 3958,
+              "duration": 6,
+              "pitch": 4,
+              "syllable": "time"
+            },
+            {
+              "type": "normal",
+              "beat": 3966,
+              "duration": 2,
+              "pitch": 2,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 3972,
+              "duration": 6,
+              "pitch": 6,
+              "syllable": "like"
+            }
           ],
           "nextLineStartBeat": 3987
         },
         {
           "notes": [
-            { "type": "normal", "beat": 3990, "duration": 2, "pitch": 6, "syllable": "But" },
-            { "type": "normal", "beat": 3994, "duration": 4, "pitch": 6, "syllable": "you" },
-            { "type": "normal", "beat": 4000, "duration": 4, "pitch": 6, "syllable": "can" },
-            { "type": "golden", "beat": 4006, "duration": 4, "pitch": 10, "syllable": "ne" },
-            { "type": "normal", "beat": 4012, "duration": 2, "pitch": 6, "syllable": "ver" },
-            { "type": "golden", "beat": 4018, "duration": 2, "pitch": 4, "syllable": "lea" },
-            { "type": "golden", "beat": 4022, "duration": 8, "pitch": 6, "syllable": "~ve.”" }
+            {
+              "type": "normal",
+              "beat": 3990,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "But"
+            },
+            {
+              "type": "normal",
+              "beat": 3994,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "you"
+            },
+            {
+              "type": "normal",
+              "beat": 4000,
+              "duration": 4,
+              "pitch": 6,
+              "syllable": "can"
+            },
+            {
+              "type": "golden",
+              "beat": 4006,
+              "duration": 4,
+              "pitch": 10,
+              "syllable": "ne"
+            },
+            {
+              "type": "normal",
+              "beat": 4012,
+              "duration": 2,
+              "pitch": 6,
+              "syllable": "ver"
+            },
+            {
+              "type": "golden",
+              "beat": 4018,
+              "duration": 2,
+              "pitch": 4,
+              "syllable": "lea"
+            },
+            {
+              "type": "golden",
+              "beat": 4022,
+              "duration": 8,
+              "pitch": 6,
+              "syllable": "~ve.”"
+            }
           ],
           "nextLineStartBeat": null
         }

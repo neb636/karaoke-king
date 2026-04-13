@@ -111,5 +111,6 @@ export interface CuratedSong {
   difficulty: SongDifficulty;
   spotifyUri: string;
   durationMs: number;
+  flagged?: boolean;
   extractedData?: DataFormat | null;
 }

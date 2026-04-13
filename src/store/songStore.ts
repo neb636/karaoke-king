@@ -67,7 +67,7 @@ export const useSongStore = create<SongState>((set, get) => ({
         if (!seen.has(id)) {
           seen.add(id);
           const song = SONG_CATALOG[id];
-          if (song) songs.push(song);
+          if (song && !song.flagged) songs.push(song);
         }
       }
     }
