@@ -1,4 +1,4 @@
-import { DifficultyBadge } from "@/components/DifficultyBadge";
+import { DifficultyBadge } from "@/components/song/DifficultyBadge";
 import type { CuratedSong } from "@/types/songs";
 
 interface SongResultBadgeProps {

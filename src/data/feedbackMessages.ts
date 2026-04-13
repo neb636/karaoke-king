@@ -87,15 +87,6 @@ export const GOLDEN_HIT_MSGS = [
   "NAILED IT!",
 ];
 
-// ── Perfect note messages ────────────────────────────────────────────────────
-
-export const PERFECT_MSGS = [
-  "PERFECT!",
-  "BULLSEYE!",
-  "PITCH PERFECT!",
-  "FLAWLESS!",
-];
-
 // ── Pitch coaching (expert mode, when struggling) ────────────────────────────
 
 export const PITCH_COACHING_MSGS = [

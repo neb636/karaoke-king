@@ -1,4 +1,4 @@
-import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { SegmentedToggle } from "@/components/shared/SegmentedToggle";
 import type { PlayMode } from "@/types/songs";
 
 interface PlayModeToggleProps {

@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
-import { ScoreCard } from "@/components/ScoreCard";
-import { ScoreBreakdown } from "@/components/ScoreBreakdown";
-import { CumulativeStandings } from "@/components/CumulativeStandings";
-import { RoundIndicator } from "@/components/RoundIndicator";
-import { SongResultBadge } from "@/components/SongResultBadge";
+import { ScoreCard } from "@/components/game/ScoreCard";
+import { ScoreBreakdown } from "@/components/game/ScoreBreakdown";
+import { CumulativeStandings } from "@/components/game/CumulativeStandings";
+import { RoundIndicator } from "@/components/game/RoundIndicator";
+import { SongResultBadge } from "@/components/song/SongResultBadge";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useConfetti } from "@/hooks/useConfetti";

@@ -4,6 +4,7 @@ import { beatToMs } from "@/data/songs/songData";
 
 interface LineWindow {
   line: Line;
+  lineIdx: number;
   startMs: number;
   endMs: number;
   noteStartMs: number[];
@@ -25,6 +26,9 @@ const NULL_RESULT: UseLyricsResult = {
   activeLineHasGolden: false,
 };
 
+/** How many ms before a line starts to show it as the "next" preview */
+const NEXT_LINE_LOOKAHEAD_MS = 3000;
+
 function getLeadLines(data: DataFormat): Line[] {
   const track = data.isDuet ? data.tracks.find((t) => t.player === "P1") : data.tracks[0];
   return track?.lines ?? [];
@@ -36,67 +40,71 @@ export function useLyrics(
 ): UseLyricsResult {
   const windows = useMemo<LineWindow[]>(() => {
     if (!extractedData) return [];
-    const { bpm, gapMs, startSeconds } = extractedData;
-    const audioOffsetMs = (startSeconds ?? 0) * 1000;
+    const { bpm, gapMs } = extractedData;
     const lines = getLeadLines(extractedData);
+
+    // NOTE: We intentionally do NOT add startSeconds as an offset here.
+    // In UltraStar format, gapMs is already the absolute offset from the
+    // beginning of the audio file to beat 0. Spotify plays from position 0
+    // and reports absolute track position, so gapMs alone is correct.
 
     return lines.map((line, i) => {
       const firstNote = line.notes[0]!;
       const lastNote = line.notes[line.notes.length - 1]!;
-      const startMs = beatToMs(firstNote.beat, bpm, gapMs) + audioOffsetMs;
+      const startMs = beatToMs(firstNote.beat, bpm, gapMs);
 
-      // End: use nextLineStartBeat if available, otherwise last note's end
       const endMs =
-        (line.nextLineStartBeat != null
+        line.nextLineStartBeat != null
           ? beatToMs(line.nextLineStartBeat, bpm, gapMs)
           : i + 1 < lines.length
             ? beatToMs(lines[i + 1]!.notes[0]!.beat, bpm, gapMs)
-            : beatToMs(lastNote.beat + lastNote.duration, bpm, gapMs)) + audioOffsetMs;
+            : beatToMs(lastNote.beat + lastNote.duration, bpm, gapMs);
 
-      const noteStartMs = line.notes.map((n) => beatToMs(n.beat, bpm, gapMs) + audioOffsetMs);
+      const noteStartMs = line.notes.map((n) => beatToMs(n.beat, bpm, gapMs));
 
-      return { line, startMs, endMs, noteStartMs };
+      return { line, lineIdx: i, startMs, endMs, noteStartMs };
     });
   }, [extractedData]);
 
   if (!extractedData || windows.length === 0) return NULL_RESULT;
 
-  // Find active window
-  const activeIdx = windows.findIndex(
-    (w) => currentPositionMs >= w.startMs && currentPositionMs < w.endMs
-  );
+  let activeWindow: LineWindow | null = null;
+  let activeIdx = -1;
 
-  // If between lines, find where we are
-  let resolvedActiveIdx = activeIdx;
-  if (activeIdx === -1) {
-    // Use the last window whose endMs has passed as "prev" reference
-    resolvedActiveIdx = -1;
+  for (let i = 0; i < windows.length; i++) {
+    const w = windows[i]!;
+    if (currentPositionMs >= w.startMs && currentPositionMs < w.endMs) {
+      activeWindow = w;
+      activeIdx = i;
+      break;
+    }
   }
 
-  const activeWindow = resolvedActiveIdx >= 0 ? windows[resolvedActiveIdx]! : null;
-  const activeLine = activeWindow?.line ?? null;
-
-  // For prev/next when not in an active line, find surrounding windows
   let prevLine: Line | null = null;
   let nextLine: Line | null = null;
 
   if (activeWindow) {
-    prevLine = resolvedActiveIdx > 0 ? windows[resolvedActiveIdx - 1]!.line : null;
-    nextLine = resolvedActiveIdx < windows.length - 1 ? windows[resolvedActiveIdx + 1]!.line : null;
+    prevLine = activeIdx > 0 ? windows[activeIdx - 1]!.line : null;
+    nextLine = activeIdx < windows.length - 1 ? windows[activeIdx + 1]!.line : null;
   } else {
-    // In a gap — find the last line that ended before now and the next that starts after
     let lastEndedIdx = -1;
     for (let i = 0; i < windows.length; i++) {
       if (windows[i]!.endMs <= currentPositionMs) {
         lastEndedIdx = i;
       }
     }
+
     prevLine = lastEndedIdx >= 0 ? windows[lastEndedIdx]!.line : null;
-    const nextIdx = lastEndedIdx + 1;
-    nextLine = nextIdx < windows.length ? windows[nextIdx]!.line : null;
+
+    const candidateNextIdx = lastEndedIdx + 1;
+    if (candidateNextIdx < windows.length) {
+      const candidateNext = windows[candidateNextIdx]!;
+      if (candidateNext.startMs - currentPositionMs <= NEXT_LINE_LOOKAHEAD_MS) {
+        nextLine = candidateNext.line;
+      }
+    }
   }
 
-  // Find active syllable — last note that has started
   let activeSyllableIdx = -1;
   if (activeWindow) {
     for (let i = activeWindow.noteStartMs.length - 1; i >= 0; i--) {
@@ -107,6 +115,7 @@ export function useLyrics(
     }
   }
 
+  const activeLine = activeWindow?.line ?? null;
   const activeLineHasGolden = activeLine?.notes.some((n) => n.type === "golden") ?? false;
 
   return { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden };

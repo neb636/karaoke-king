@@ -3,7 +3,7 @@ import { getStoredToken, refreshAccessToken } from "./auth";
 
 // ── Authenticated fetch with auto-refresh ───────────────────────────────────
 
-async function getValidToken(): Promise<string> {
+export async function getValidToken(): Promise<string> {
   const token = getStoredToken();
   if (!token) throw new Error("Not authenticated with Spotify");
 

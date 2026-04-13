@@ -5,7 +5,7 @@ import {
   MAX_DURATION_BONUS,
   NOISE_FLOOR,
 } from "@/lib/constants";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 import type { PlayerScore } from "@/types";
 
 export interface TurnAccumulators {

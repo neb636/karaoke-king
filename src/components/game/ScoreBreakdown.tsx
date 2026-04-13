@@ -1,6 +1,6 @@
 import type { RankedPlayer, CuratedSong } from "@/types";
 import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 
 interface ScoreBreakdownProps {
   players: RankedPlayer[];

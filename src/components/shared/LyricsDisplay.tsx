@@ -1,6 +1,7 @@
 import type { Line } from "@/types/songs";
+import { lineToText } from "@/lib/lyrics";
 
-interface LyricsDisplayV2Props {
+interface LyricsDisplayProps {
   prevLine: Line | null;
   activeLine: Line | null;
   nextLine: Line | null;
@@ -8,18 +9,6 @@ interface LyricsDisplayV2Props {
   activeLineHasGolden: boolean;
 }
 
-/** Join note syllables into a plain-text string, respecting `~` continuations. */
-function lineText(line: Line): string {
-  return line.notes
-    .map((n, i) => {
-      const cont = n.syllable.startsWith("~");
-      const text = n.syllable.replace(/~/g, "");
-      return i === 0 || cont ? text : " " + text;
-    })
-    .join("");
-}
-
-/** Renders the active line with per-syllable highlighting. */
 function ActiveLine({ line, idx }: { line: Line; idx: number }) {
   const allRap = line.notes.every((n) => n.type === "rap" || n.type === "freestyle");
 
@@ -60,14 +49,13 @@ function ActiveLine({ line, idx }: { line: Line; idx: number }) {
   );
 }
 
-export function LyricsDisplayV2({
+export function LyricsDisplay({
   prevLine,
   activeLine,
   nextLine,
   activeSyllableIdx,
   activeLineHasGolden,
-}: LyricsDisplayV2Props) {
-  // Don't render the container at all if there's nothing to show
+}: LyricsDisplayProps) {
   if (!prevLine && !activeLine && !nextLine) return null;
 
   const borderColor =
@@ -77,19 +65,16 @@ export function LyricsDisplayV2({
     <div
       className={`w-full max-w-[600px] rounded-2xl px-4 py-2.5 text-center bg-white/[0.06] border transition-colors duration-300 ${borderColor}`}
     >
-      {/* Previous line */}
       <div className="min-h-[1.5rem] text-sm text-white/25 transition-opacity duration-300 truncate">
-        {prevLine ? lineText(prevLine) : null}
+        {prevLine ? lineToText(prevLine) : null}
       </div>
 
-      {/* Active line */}
       <div className="min-h-[1.75rem] text-base font-bold transition-opacity duration-300">
         {activeLine ? <ActiveLine line={activeLine} idx={activeSyllableIdx} /> : null}
       </div>
 
-      {/* Next line */}
       <div className="min-h-[1.5rem] text-sm text-white/45 transition-opacity duration-300 truncate">
-        {nextLine ? lineText(nextLine) : null}
+        {nextLine ? lineToText(nextLine) : null}
       </div>
     </div>
   );

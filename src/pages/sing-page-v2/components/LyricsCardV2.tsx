@@ -1,18 +1,7 @@
 import { memo, useEffect, useRef } from "react";
 import type { Line } from "@/types/songs";
 import type { NoteGrade } from "@/hooks/useNoteScoring";
-
-/* ── helpers ─────────────────────────────────────────────────────────── */
-
-function lineText(line: Line): string {
-  return line.notes
-    .map((n, i) => {
-      const cont = n.syllable.startsWith("~");
-      const text = n.syllable.replace(/~/g, "");
-      return i === 0 || cont ? text : " " + text;
-    })
-    .join("");
-}
+import { lineToText } from "@/lib/lyrics";
 
 const gradeColor: Record<NoteGrade, string> = {
   perfect: "text-[#39ff14]",
@@ -125,7 +114,7 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
     >
       {/* Previous line */}
       <div className="min-h-[1.4rem] text-[16px] text-white/20 truncate">
-        {prevLine ? lineText(prevLine) : "\u00A0"}
+        {prevLine ? lineToText(prevLine) : "\u00A0"}
       </div>
 
       {/* Active line */}
@@ -139,7 +128,7 @@ export const LyricsCardV2 = memo(function LyricsCardV2({
 
       {/* Next line */}
       <div className="min-h-[1.4rem] text-[16px] text-white/30 truncate">
-        {nextLine ? lineText(nextLine) : "\u00A0"}
+        {nextLine ? lineToText(nextLine) : "\u00A0"}
       </div>
     </div>
   );

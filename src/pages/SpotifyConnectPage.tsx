@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { ArrowLeft } from "lucide-react";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { USE_CODE_PASTE_FLOW } from "@/services/spotify/constants";

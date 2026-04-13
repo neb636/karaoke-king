@@ -1,5 +1,5 @@
-import { SegmentedToggle } from "@/components/SegmentedToggle";
-import type { ScoringMode } from "@/lib/constants";
+import { SegmentedToggle } from "@/components/shared/SegmentedToggle";
+import type { ScoringMode } from "@/types";
 
 interface ScoringModeToggleProps {
   mode: ScoringMode;

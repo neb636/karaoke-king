@@ -8,7 +8,7 @@ import { SpotifyConnectPage } from "@/pages/SpotifyConnectPage";
 import { SingPageV2 as SingPage } from "@/pages/SingPageV2";
 import { ResultsPage } from "@/pages/ResultsPage";
 import { SpotifyCallbackPage } from "@/pages/SpotifyCallbackPage";
-import { RequireSpotify } from "@/components/RequireSpotify";
+import { RequireSpotify } from "@/components/spotify/RequireSpotify";
 import { useSpotifyStore } from "@/store/spotifyStore";
 
 export function App() {

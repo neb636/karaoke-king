@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 
 interface HeaderV2Props {
   playerName: string;

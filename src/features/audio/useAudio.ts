@@ -9,13 +9,7 @@ import {
 } from "@/features/scoring/scoring";
 import type { ScoreOptions } from "@/features/scoring/scoring";
 import type { PlayerScore } from "@/types";
-
-// ── Web Audio refs (module-level singletons) ──────────────────────────────────
-// We keep these outside React state to avoid re-renders and ensure the
-// AudioContext/stream persists for the entire session.
-let audioCtx: AudioContext | null = null;
-let analyser: AnalyserNode | null = null;
-let micStream: MediaStream | null = null;
+import * as audioManager from "@/services/audioManager";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -60,7 +54,6 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
     pitchHits: 0,
     noteAccuracy: 0,
   });
-  // Keep expected pitch classes in a ref so the RAF closure always reads the latest value
   const expectedPitchClassesRef = useRef<Set<number> | undefined>(expectedPitchClasses);
   expectedPitchClassesRef.current = expectedPitchClasses;
   const [feedback, setFeedback] = useState<FeedbackState>({
@@ -97,17 +90,18 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
 
   const playSound = useCallback((frequency = 800, duration = 100) => {
     try {
-      if (!audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      const ctx = audioManager.getContext();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
       osc.connect(gain);
-      gain.connect(audioCtx.destination);
+      gain.connect(ctx.destination);
       osc.frequency.value = frequency;
       osc.type = "sine";
-      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration / 1000);
-      osc.start(audioCtx.currentTime);
-      osc.stop(audioCtx.currentTime + duration / 1000);
+      gain.gain.setValueAtTime(0.1, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration / 1000);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + duration / 1000);
     } catch {
       // Audio might be unavailable — silently ignore
     }
@@ -116,25 +110,13 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
   // ── Mic init ─────────────────────────────────────────────────────────────
 
   const initAudio = useCallback(async () => {
-    if (audioCtx && micStream) {
-      // Hook may have remounted (e.g. new round) — restore refs from singletons
-      if (analyser) {
-        dataArray.current = new Uint8Array(analyser.fftSize);
-        freqArray.current = new Uint8Array(analyser.frequencyBinCount);
-        analyserRef.current = analyser;
-      }
-      return;
+    await audioManager.init();
+    const analyserNode = audioManager.getAnalyser();
+    if (analyserNode) {
+      dataArray.current = new Uint8Array(analyserNode.fftSize);
+      freqArray.current = new Uint8Array(analyserNode.frequencyBinCount);
+      analyserRef.current = analyserNode;
     }
-    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    audioCtx = new AudioContext();
-    const source = audioCtx.createMediaStreamSource(micStream);
-    analyser = audioCtx.createAnalyser();
-    analyser.fftSize = 2048;
-    analyser.smoothingTimeConstant = 0.8;
-    source.connect(analyser);
-    dataArray.current = new Uint8Array(analyser.fftSize);
-    freqArray.current = new Uint8Array(analyser.frequencyBinCount);
-    analyserRef.current = analyser;
   }, []);
 
   // ── Live feedback logic ───────────────────────────────────────────────────
@@ -181,11 +163,12 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
   const lastStatsUpdate = useRef(0);
 
   const tick = useCallback(() => {
-    if (!isListeningRef.current || !analyser) return;
+    const analyserNode = audioManager.getAnalyser();
+    if (!isListeningRef.current || !analyserNode) return;
     animFrameId.current = requestAnimationFrame(tick);
 
-    analyser.getByteTimeDomainData(dataArray.current);
-    analyser.getByteFrequencyData(freqArray.current);
+    analyserNode.getByteTimeDomainData(dataArray.current);
+    analyserNode.getByteFrequencyData(freqArray.current);
 
     // RMS
     let sum = 0;
@@ -200,7 +183,7 @@ export function useAudio(expectedPitchClasses?: Set<number>): AudioHook {
     if (rms > NOISE_FLOOR) activeFrames.current++;
 
     // Pitch
-    const sampleRate = audioCtx?.sampleRate ?? 44100;
+    const sampleRate = audioManager.getSampleRate();
     const pitch = detectPitch(dataArray.current, sampleRate);
     livePitchHz.current = pitch;
     if (pitch > 0) {

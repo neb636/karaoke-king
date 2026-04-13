@@ -1,5 +1,5 @@
 import { formatTime } from "@/lib/utils";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 
 interface StatsStripProps {
   elapsed: number;

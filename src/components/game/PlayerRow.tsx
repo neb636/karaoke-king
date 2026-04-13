@@ -7,7 +7,6 @@ interface PlayerRowProps {
   index: number;
   showRemove: boolean;
   onNameChange: (name: string) => void;
-  onEmojiChange: (emoji: string) => void;
   onRemove: () => void;
 }
 

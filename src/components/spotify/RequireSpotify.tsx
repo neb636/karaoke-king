@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Navigate } from "react-router";
 import { useSpotifyStore } from "@/store/spotifyStore";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 
 interface RequireSpotifyProps {
   children: ReactNode;

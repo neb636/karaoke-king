@@ -1,11 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
-import { SongCard } from "@/components/SongCard";
-import { CategoryPicker } from "@/components/CategoryPicker";
-import { SpotifyAuthButton } from "@/components/SpotifyAuthButton";
-import { SpotifyPremiumGate } from "@/components/SpotifyPremiumGate";
+import { SongCard } from "@/components/song/SongCard";
+import { CategoryPicker } from "@/components/song/CategoryPicker";
+import { SpotifyAuthButton } from "@/components/spotify/SpotifyAuthButton";
+import { SpotifyPremiumGate } from "@/components/spotify/SpotifyPremiumGate";
 import { useSongStore } from "@/store/songStore";
 import { useSpotifyStore } from "@/store/spotifyStore";
 import { useGameStore } from "@/store/gameStore";

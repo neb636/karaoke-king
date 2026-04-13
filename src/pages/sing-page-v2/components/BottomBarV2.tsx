@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from "react";
 import { formatTime } from "@/lib/utils";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 import type { NoteScoringState } from "@/hooks/useNoteScoring";
 
 interface BottomBarV2Props {

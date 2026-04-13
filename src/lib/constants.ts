@@ -1,4 +1,4 @@
-import type { GameModeConfig, GameModeKey } from "@/types";
+import type { GameModeConfig, GameModeKey, SongDifficulty } from "@/types";
 
 export const GAME_MODES: Record<GameModeKey, GameModeConfig> = {
   quick: {
@@ -39,7 +39,7 @@ export const FEEDBACK_COOLDOWN = 1800; // ms between feedback changes
 export const BUMPERS_MULTIPLIER = 1.3; // 30% score boost
 
 // Difficulty colors
-export const DIFFICULTY_COLORS: Record<string, string> = {
+export const DIFFICULTY_COLORS: Record<SongDifficulty, string> = {
   easy: "#39ff14",
   medium: "#00e5ff",
   hard: "#ffd700",
@@ -47,22 +47,12 @@ export const DIFFICULTY_COLORS: Record<string, string> = {
 };
 
 // Difficulty score modifiers (applied to final score in curated mode)
-export const DIFFICULTY_MODIFIERS: Record<string, number> = {
+export const DIFFICULTY_MODIFIERS: Record<SongDifficulty, number> = {
   easy: 0.95,
   medium: 1.0,
   hard: 1.1,
   expert: 1.15,
 };
-
-// Scoring weights
-export const SCORE_WEIGHTS = {
-  energy: 0.4,
-  pitch: 0.3,
-  sustain: 0.2,
-  duration: 0.1,
-} as const;
-
-export type ScoringMode = "fun" | "expert";
 
 // Fun mode: rewards energy & enthusiasm (great for families/kids)
 export const FUN_SCORE_WEIGHTS = {

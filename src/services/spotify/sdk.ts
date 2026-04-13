@@ -1,5 +1,4 @@
-import { getStoredToken, refreshAccessToken } from "./auth";
-import { startPlayback } from "./api";
+import { getValidToken, startPlayback } from "./api";
 
 // ── Singleton state ──────────────────────────────────────────────────────────
 
@@ -15,25 +14,13 @@ const deviceReadyPromise = new Promise<string>((resolve) => {
 type StateListener = (state: Spotify.PlaybackState | null) => void;
 const stateListeners = new Set<StateListener>();
 
-// ── Internal helpers ─────────────────────────────────────────────────────────
-
-async function getToken(): Promise<string> {
-  const token = getStoredToken();
-  if (!token) throw new Error("Not authenticated with Spotify");
-  if (Date.now() > token.expires_at - 60_000) {
-    const refreshed = await refreshAccessToken(token.refresh_token);
-    return refreshed.access_token;
-  }
-  return token.access_token;
-}
-
 function createPlayer(): void {
   if (player) return;
 
   player = new window.Spotify.Player({
     name: "Karaoke King",
     getOAuthToken: (cb) => {
-      getToken()
+      getValidToken()
         .then(cb)
         .catch(() => cb(""));
     },

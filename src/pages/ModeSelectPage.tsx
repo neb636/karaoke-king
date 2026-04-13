@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
 import { ArrowLeft } from "lucide-react";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
-import { ModeCard } from "@/components/ModeCard";
-import { PlayModeToggle } from "@/components/PlayModeToggle";
-import { ScoringModeToggle } from "@/components/ScoringModeToggle";
+import { ModeCard } from "@/components/game/ModeCard";
+import { PlayModeToggle } from "@/components/shared/PlayModeToggle";
+import { ScoringModeToggle } from "@/components/shared/ScoringModeToggle";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { GAME_MODES, GAME_MODE_KEYS } from "@/lib/constants";

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { ArrowLeft } from "lucide-react";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
-import { PlayerRow } from "@/components/PlayerRow";
+import { PlayerRow } from "@/components/game/PlayerRow";
 import { useGameStore } from "@/store/gameStore";
 import { loadPlayerNames } from "@/services/playerHistory";
 import { MAX_PLAYERS, MIN_PLAYERS } from "@/lib/constants";
@@ -17,7 +17,6 @@ export function PlayerSetupPage() {
     addPlayer,
     removePlayer,
     updatePlayerName,
-    updatePlayerEmoji,
     loadSavedPlayers,
   } = useGameStore();
 
@@ -123,7 +122,6 @@ export function PlayerSetupPage() {
               index={i}
               showRemove={canRemove}
               onNameChange={(name) => updatePlayerName(i, name)}
-              onEmojiChange={(emoji) => updatePlayerEmoji(i, emoji)}
               onRemove={() => removePlayer(i)}
             />
           ))}

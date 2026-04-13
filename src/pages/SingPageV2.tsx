@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router";
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
+import { useNavigate } from "react-router";
 import { useGameStore } from "@/store/gameStore";
 import { useSongStore } from "@/store/songStore";
 import { useAudio } from "@/features/audio/useAudio";
@@ -7,13 +7,13 @@ import { useCountdown } from "@/hooks/useCountdown";
 import { useSpotifyPlayback } from "@/hooks/useSpotifyPlayback";
 import { useCoachingCues } from "@/hooks/useCoachingCues";
 import { useSongData } from "@/hooks/useSongData";
-import { useLyricsV2 } from "@/hooks/useLyricsV2";
+import { useLyrics } from "@/hooks/useLyrics";
 import { useNoteScoring } from "@/hooks/useNoteScoring";
 import { usePerformanceFeedback } from "@/hooks/usePerformanceFeedback";
+import { useSingSession } from "@/hooks/useSingSession";
 import { getExpectedPitchClasses } from "@/data/songs/songData";
-import { DIFFICULTY_MODIFIERS } from "@/lib/constants";
+import { derivePerformanceVisuals } from "@/lib/performance";
 import { isDebugMode } from "./sing-page-v2/components/DebugPanel";
-import type { VisualizerMood } from "./sing-page-v2/components/VisualizerV2";
 
 import { ReadyOverlayV2 } from "./sing-page-v2/components/ReadyOverlayV2";
 import { CountdownOverlayV2 } from "./sing-page-v2/components/CountdownOverlayV2";
@@ -24,8 +24,6 @@ import { VisualizerV2 } from "./sing-page-v2/components/VisualizerV2";
 import { BottomBarV2 } from "./sing-page-v2/components/BottomBarV2";
 import { DebugPanel } from "./sing-page-v2/components/DebugPanel";
 
-const FINISH_EARLY_TIMER_SECONDS = 40;
-
 export function SingPageV2() {
   const navigate = useNavigate();
   const {
@@ -33,8 +31,6 @@ export function SingPageV2() {
     currentPlayer,
     currentRound,
     totalRounds,
-    recordScore,
-    advancePlayer,
     coachingEnabled,
     toggleCoaching,
     scoringMode,
@@ -79,39 +75,14 @@ export function SingPageV2() {
 
   const { isActive: countdownActive, value: countdownValue, run: runCountdown } = useCountdown();
 
-  const [showReadyOverlay, setShowReadyOverlay] = useState(true);
-  const [finishSecondsLeft, setFinishSecondsLeft] = useState(FINISH_EARLY_TIMER_SECONDS);
-
-  useEffect(() => {
-    setShowReadyOverlay(true);
-  }, [currentPlayer]);
-
-  useEffect(() => {
-    if (isListening) setFinishSecondsLeft(FINISH_EARLY_TIMER_SECONDS);
-  }, [isListening]);
-
-  useEffect(() => {
-    if (!isListening || !isCurated || finishSecondsLeft <= 0) return;
-    const t = setTimeout(() => setFinishSecondsLeft((s) => Math.max(0, s - 1)), 1000);
-    return () => clearTimeout(t);
-  }, [isListening, isCurated, finishSecondsLeft]);
-
-  const finishTimerDone = finishSecondsLeft === 0;
-
-  const handleStopRef = useRef(handleStop);
-  handleStopRef.current = handleStop;
-
-  const handleTrackEnd = useCallback(() => handleStopRef.current(), []);
-
   const {
     isPlaying: spotifyPlaying,
     currentPositionMs,
     error: spotifyError,
     play: spotifyPlay,
     pause: spotifyPause,
-  } = useSpotifyPlayback({ onTrackEnd: handleTrackEnd });
+  } = useSpotifyPlayback({ onTrackEnd: () => handleStop() });
 
-  // Per-note scoring (curated mode only)
   const {
     state: noteScoring,
     tick: noteScoringTick,
@@ -122,7 +93,6 @@ export function SingPageV2() {
     scoringMode
   );
 
-  // Performance-reactive feedback
   const songDurationMs = isCurated ? song.durationMs : undefined;
   const { evaluate: evaluateFeedback, reset: resetFeedback } = usePerformanceFeedback(
     scoringMode,
@@ -131,9 +101,35 @@ export function SingPageV2() {
   );
 
   const [perfFeedback, setPerfFeedback] = useState({ message: "", colorClass: "" });
+  const clearPerfFeedback = useCallback(() => setPerfFeedback({ message: "", colorClass: "" }), []);
+
+  const {
+    showReadyOverlay,
+    finishSecondsLeft,
+    finishTimerDone,
+    handleStart,
+    handleStop,
+    handleDebugRestart,
+  } = useSingSession({
+    isCurated,
+    song: isCurated ? song : null,
+    expectedPitchClasses,
+    initAudio,
+    startListening,
+    stopListening,
+    playSound,
+    isListening,
+    spotifyPlaying,
+    spotifyPlay,
+    spotifyPause,
+    runCountdown,
+    noteScoringReset,
+    resetFeedback,
+    getNoteAccumulators,
+    clearPerfFeedback,
+  });
 
   // Drive note scoring from the audio tick (~10fps via stats updates).
-  // tick() returns the fresh snapshot so we don't read stale React state.
   const lastNoteTickMs = useRef(0);
   useEffect(() => {
     if (!isListening || !isCurated) return;
@@ -164,7 +160,6 @@ export function SingPageV2() {
     liveRms,
   ]);
 
-  // For freeform mode, use the old audio feedback
   const activeFeedback = isCurated ? perfFeedback : audioFeedback;
 
   const { currentCue } = useCoachingCues(
@@ -173,96 +168,17 @@ export function SingPageV2() {
     extractedData
   );
 
-  const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } = useLyricsV2(
+  const { prevLine, activeLine, nextLine, activeSyllableIdx, activeLineHasGolden } = useLyrics(
     effectiveExtractedData,
     currentPositionMs
   );
 
   const player = players[currentPlayer];
 
-  // Compute visualizer mood and background class from note scoring state
-  const visualizerMood: VisualizerMood = useMemo(() => {
-    if (!isCurated || !noteScoring) return "neutral";
-    if (noteScoring.streak >= 20) return "great";
-    if (noteScoring.streak >= 10) return "positive";
-    if (noteScoring.consecutiveMisses >= 4) return "negative";
-    return "neutral";
-  }, [isCurated, noteScoring]);
-
-  const bgPerformanceClass = useMemo(() => {
-    if (!isCurated || !noteScoring) return "";
-    if (noteScoring.streak >= 20) return "bg-performance-great";
-    if (noteScoring.streak >= 10) return "bg-performance-positive";
-    if (noteScoring.consecutiveMisses >= 4) return "bg-performance-negative";
-    return "";
-  }, [isCurated, noteScoring]);
-
-  async function handleStartSinging() {
-    setShowReadyOverlay(false);
-    try {
-      await initAudio();
-    } catch {
-      setShowReadyOverlay(true);
-      return;
-    }
-    noteScoringReset();
-    resetFeedback();
-    setPerfFeedback({ message: "", colorClass: "" });
-    playSound(900, 100);
-    runCountdown(async () => {
-      startListening();
-      if (isCurated) {
-        await spotifyPlay(song.spotifyUri);
-      }
-    }, playSound);
-  }
-
-  function handleStop() {
-    if (!player) return;
-
-    const noteAcc = isCurated ? getNoteAccumulators() : undefined;
-
-    const score = stopListening(player.bumpers, {
-      mode: isCurated ? scoringMode : "fun",
-      expectedPitchClasses,
-      noteAccumulators: noteAcc && noteAcc.totalWeight > 0 ? noteAcc : undefined,
-    });
-
-    if (isCurated) {
-      const modifier = DIFFICULTY_MODIFIERS[song.difficulty] ?? 1.0;
-      score.total = Math.min(100, Math.round(score.total * modifier));
-    }
-
-    if (isCurated && spotifyPlaying) {
-      void spotifyPause();
-    }
-
-    playSound(400, 150);
-    recordScore(score);
-
-    const nextPlayerIdx = currentPlayer + 1;
-    if (nextPlayerIdx < players.length) {
-      advancePlayer();
-      setTimeout(() => {
-        void navigate(isCurated ? "/songs" : "/sing");
-      }, 600);
-    } else {
-      setTimeout(() => {
-        void navigate("/results");
-      }, 800);
-    }
-  }
-
-  async function handleDebugRestart() {
-    if (isCurated && spotifyPlaying) {
-      await spotifyPause();
-    }
-    stopListening(player?.bumpers ?? false, { mode: "fun" });
-    noteScoringReset();
-    resetFeedback();
-    setPerfFeedback({ message: "", colorClass: "" });
-    setShowReadyOverlay(true);
-  }
+  const { mood: visualizerMood, bgClass: bgPerformanceClass } = useMemo(
+    () => derivePerformanceVisuals(noteScoring, isCurated),
+    [noteScoring, isCurated]
+  );
 
   const turnLabel =
     totalRounds > 1
@@ -273,7 +189,6 @@ export function SingPageV2() {
 
   return (
     <div className={`screen-container px-4 sm:px-8 relative transition-all duration-500 ${bgPerformanceClass}`}>
-      {/* ── Overlays ──────────────────────────────────────────── */}
       {showReadyOverlay && (
         <ReadyOverlayV2
           playerName={playerName}
@@ -286,7 +201,7 @@ export function SingPageV2() {
           songArtist={isCurated ? song.artist : undefined}
           coachingEnabled={coachingEnabled}
           onToggleCoaching={toggleCoaching}
-          onStartSinging={() => void handleStartSinging()}
+          onStartSinging={() => void handleStart()}
           onBack={() => void navigate(isCurated ? "/songs" : "/mode")}
           isLoadingSongData={songDataLoading}
           scoringMode={scoringMode}
@@ -296,7 +211,6 @@ export function SingPageV2() {
 
       <CountdownOverlayV2 isActive={countdownActive} value={countdownValue} />
 
-      {/* ── Main singing UI ───────────────────────────────────── */}
       <div className="flex flex-col items-center gap-2 sm:gap-3 w-full max-w-[640px]">
         <HeaderV2
           playerName={playerName}
@@ -307,7 +221,6 @@ export function SingPageV2() {
           songArtist={isCurated ? song.artist : undefined}
         />
 
-        {/* Feedback / coaching (both can show simultaneously now) */}
         <FeedbackFloatV2
           coachingCue={isCurated && coachingEnabled ? currentCue : null}
           feedbackMessage={activeFeedback.message}
@@ -317,7 +230,6 @@ export function SingPageV2() {
 
         {isListening ? (
           <>
-            {/* Lyrics card (curated only) */}
             {extractedData && (
               <div className="w-full my-[10px]">
                 <LyricsCardV2
@@ -331,24 +243,20 @@ export function SingPageV2() {
               </div>
             )}
 
-            {/* Freeform encouragement */}
             {!isCurated && (
               <p className="font-display text-[clamp(1.8rem,5vw,3rem)] tracking-[4px] neon-pink text-center animate-pulse-mic">
                 SING IT!
               </p>
             )}
 
-            {/* Visualizer */}
             <VisualizerV2
               freqArray={freqArray}
               isActive={isListening}
               mood={visualizerMood}
             />
 
-            {/* Spotify error */}
             {spotifyError && <p className="text-xs text-[#ff2d95]">Spotify: {spotifyError}</p>}
 
-            {/* Bottom bar: stats + energy + stop */}
             <BottomBarV2
               elapsed={stats.elapsed}
               avgEnergy={stats.avgEnergy}

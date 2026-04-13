@@ -1,8 +1,7 @@
 import { create } from "zustand";
 import { GAME_MODES } from "@/lib/constants";
 import { savePlayerNames } from "@/services/playerHistory";
-import type { GameModeKey, Player, PlayerScore } from "@/types";
-import type { ScoringMode } from "@/lib/constants";
+import type { GameModeKey, Player, PlayerScore, ScoringMode } from "@/types";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -32,7 +31,6 @@ interface GameState {
   addPlayer: () => void;
   removePlayer: (index: number) => void;
   updatePlayerName: (index: number, name: string) => void;
-  updatePlayerEmoji: (index: number, emoji: string) => void;
   updatePlayerBumpers: (index: number, bumpers: boolean) => void;
   setSelectedMode: (mode: GameModeKey) => void;
   confirmMode: () => void;
@@ -52,7 +50,6 @@ interface GameState {
 function makeDefaultPlayers(): Player[] {
   return [0, 1].map(() => ({
     name: "",
-    emoji: "",
     bumpers: false,
   }));
 }
@@ -73,7 +70,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   addPlayer: () => {
     const { players } = get();
     if (players.length >= 8) return;
-    const updated = [...players, { name: "", emoji: "", bumpers: false }];
+    const updated = [...players, { name: "", bumpers: false }];
     set({ players: updated });
     savePlayerNames(updated.map((p) => p.name));
   },
@@ -92,13 +89,6 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (player) players[index] = { ...player, name };
     set({ players });
     savePlayerNames(players.map((p) => p.name));
-  },
-
-  updatePlayerEmoji: (index, emoji) => {
-    const players = [...get().players];
-    const player = players[index];
-    if (player) players[index] = { ...player, emoji };
-    set({ players });
   },
 
   updatePlayerBumpers: (index, bumpers) => {
@@ -170,7 +160,6 @@ export const useGameStore = create<GameState>((set, get) => ({
     const count = Math.min(Math.max(names.length, 2), 8);
     const players: Player[] = Array.from({ length: count }, (_, i) => ({
       name: names[i] ?? "",
-      emoji: "",
       bumpers: false,
     }));
     set({ players });

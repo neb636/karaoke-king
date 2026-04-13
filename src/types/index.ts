@@ -2,7 +2,6 @@
 
 export interface Player {
   name: string;
-  emoji: string;
   bumpers: boolean;
 }
 
@@ -47,20 +46,9 @@ export interface RankedPlayer {
   score: PlayerScore;
 }
 
-// ── Feedback ─────────────────────────────────────────────────────────────────
+// ── Scoring Mode ─────────────────────────────────────────────────────────────
 
-export type FeedbackLevel = "quiet" | "medium" | "loud";
-
-// ── App Screens (used by React Router routes) ─────────────────────────────────
-
-export type AppRoute =
-  | "/"
-  | "/players"
-  | "/mode"
-  | "/songs"
-  | "/sing"
-  | "/results"
-  | "/spotify-callback";
+export type ScoringMode = "fun" | "expert";
 
 // ── Re-export song types ────────────────────────────────────────────────────
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
 import { useGameStore } from "@/store/gameStore";
 

@@ -1,7 +1,7 @@
 import { useRef, useCallback } from "react";
 import { pick } from "@/lib/utils";
 import { NOISE_FLOOR } from "@/lib/constants";
-import type { ScoringMode } from "@/lib/constants";
+import type { ScoringMode } from "@/types";
 import type { NoteScoringState } from "./useNoteScoring";
 import {
   QUIET_MSGS,

@@ -1,8 +1,8 @@
 import { ArrowLeft } from "lucide-react";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { Button } from "@/components/ui/button";
-import { ScoringModeToggle } from "@/components/ScoringModeToggle";
-import type { ScoringMode } from "@/lib/constants";
+import { ScoringModeToggle } from "@/components/shared/ScoringModeToggle";
+import type { ScoringMode } from "@/types";
 
 interface ReadyOverlayV2Props {
   playerName: string;

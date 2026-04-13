@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
-import { NeonText } from "@/components/NeonText";
+import { NeonText } from "@/components/shared/NeonText";
 import { useSpotifyStore } from "@/store/spotifyStore";
 
 export function SpotifyCallbackPage() {
