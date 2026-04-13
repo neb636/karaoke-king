@@ -189,6 +189,8 @@ export function useNoteScoring(
 
   // Track which notes we've already graded (by index into noteWindows)
   const gradedNotes = useRef(new Set<number>());
+  // Low-water-mark: all notes before this index have been graded or passed
+  const missScanStart = useRef(0);
   // For each active note, accumulate per-frame pitch samples to pick best grade
   const activeNoteIdx = useRef(-1);
   const activeNoteGrades = useRef<NoteGrade[]>([]);
@@ -209,6 +211,7 @@ export function useNoteScoring(
     accConsecutiveMisses.current = 0;
     lastGradeRef.current = null;
     gradedNotes.current = new Set();
+    missScanStart.current = 0;
     activeNoteIdx.current = -1;
     activeNoteGrades.current = [];
     prevStreakTier.current = null;
@@ -218,10 +221,12 @@ export function useNoteScoring(
   /**
    * Called on each animation frame (or throttled ~10fps) with current
    * playback position and live mic data.
+   * Returns the freshly computed state snapshot so callers don't need
+   * to wait for the async React setState to propagate.
    */
   const tick = useCallback(
-    (currentPositionMs: number, pitchHz: number, rms: number) => {
-      if (noteWindows.length === 0 || totalWeight === 0) return;
+    (currentPositionMs: number, pitchHz: number, rms: number): NoteScoringState => {
+      if (noteWindows.length === 0 || totalWeight === 0) return INITIAL_STATE;
 
       // Binary search for current note
       let currentNoteIdx = -1;
@@ -269,19 +274,23 @@ export function useNoteScoring(
         activeNoteGrades.current = [];
       }
 
-      // Check if we passed notes we never entered (very short notes)
-      for (let i = 0; i < noteWindows.length; i++) {
-        if (gradedNotes.current.has(i)) continue;
-        if (i === activeNoteIdx.current) continue;
+      // Grade any skipped notes (very short notes we never entered).
+      // Start from low-water-mark and break as soon as we hit a future note.
+      while (missScanStart.current < noteWindows.length) {
+        const i = missScanStart.current;
+        if (i === activeNoteIdx.current) {
+          missScanStart.current++;
+          continue;
+        }
         const w = noteWindows[i]!;
-        if (currentPositionMs >= w.endMs) {
-          // Missed entirely
+        if (currentPositionMs < w.endMs) break;
+        if (!gradedNotes.current.has(i)) {
           gradedNotes.current.add(i);
           applyGrade("miss", w);
         }
+        missScanStart.current++;
       }
 
-      // Update React state (throttled by caller)
       const liveScore =
         totalWeight > 0
           ? Math.min(
@@ -299,7 +308,7 @@ export function useNoteScoring(
         prevStreakTier.current = currentTier;
       }
 
-      setState({
+      const snapshot: NoteScoringState = {
         liveScore,
         streak: accStreak.current,
         bestStreak: accBestStreak.current,
@@ -315,7 +324,10 @@ export function useNoteScoring(
         notesScored: accNotesScored.current,
         consecutiveMisses: accConsecutiveMisses.current,
         inNote,
-      });
+      };
+
+      setState(snapshot);
+      return snapshot;
     },
     [noteWindows, totalWeight, scoringMode]
   );

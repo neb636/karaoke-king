@@ -132,7 +132,8 @@ export function SingPageV2() {
 
   const [perfFeedback, setPerfFeedback] = useState({ message: "", colorClass: "" });
 
-  // Drive note scoring from the audio tick (~10fps via stats updates)
+  // Drive note scoring from the audio tick (~10fps via stats updates).
+  // tick() returns the fresh snapshot so we don't read stale React state.
   const lastNoteTickMs = useRef(0);
   useEffect(() => {
     if (!isListening || !isCurated) return;
@@ -140,14 +141,14 @@ export function SingPageV2() {
     if (now - lastNoteTickMs.current < 90) return;
     lastNoteTickMs.current = now;
 
-    noteScoringTick(currentPositionMs, livePitchHz.current, liveRms.current);
+    const freshScoring = noteScoringTick(currentPositionMs, livePitchHz.current, liveRms.current);
 
     const fb = evaluateFeedback(
-      noteScoring,
+      freshScoring,
       liveRms.current,
       stats.elapsed,
       currentPositionMs,
-      noteScoring.inNote
+      freshScoring.inNote
     );
     if (fb.message) {
       setPerfFeedback(fb);
@@ -159,7 +160,6 @@ export function SingPageV2() {
     currentPositionMs,
     noteScoringTick,
     evaluateFeedback,
-    noteScoring,
     livePitchHz,
     liveRms,
   ]);
