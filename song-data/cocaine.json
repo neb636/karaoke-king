@@ -1088,5 +1088,82 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"If you wan na\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 35293.38568473712,
+      "message": "CHORUS! \"She don’t lie, she...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 41565.669103853,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 46507.63360430997,
+      "message": "Coming up: \"If you got tha...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 48507.63360430997,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 56671.13353215643,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 67546.0192890471,
+      "message": "CHORUS AGAIN! \"She don’t lie, she...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 73818.30270816298,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 133669.11323295976,
+      "message": "Coming up: \"If your day is...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 135669.11323295976,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 154707.49891769688,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 160979.78233681276,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 165633.13266631393,
+      "message": "Coming up: \"She don’t lie, she...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 168633.13266631393,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 173539.57357256243,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

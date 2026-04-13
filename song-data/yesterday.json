@@ -1554,5 +1554,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Yes ter day\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 5040,
+      "message": "CHORUS! \"Yes ter day...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 16915,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 34219.6875,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 71329.0625,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 109102.5,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 114571.25,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

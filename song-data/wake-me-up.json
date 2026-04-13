@@ -3684,5 +3684,32 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Fee lin’ my way\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 78580.67551266587,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 117843.03980699638,
+      "message": "Coming up: \"I tried ca ry...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 120843.03980699638,
+      "message": "CHORUS! \"I tried ca ry...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 196476.33293124248,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

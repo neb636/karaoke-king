@@ -2515,5 +2515,112 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Ve ry su per\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 29420,
+      "message": "CHORUS! \"Ve ry su per...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 39052.509720306036,
+      "message": "CHORUS AGAIN! \"Ve ry su per...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 48685.01944061207,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 68138.17383669886,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 81581.85877336009,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 94170.28220243321,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 98948.9100714913,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 103727.53794054936,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 113322.42066976045,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 123067.81136335131,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 125067.81136335131,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 138774.88523767717,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 145358.91885112255,
+      "message": "Coming up: \"Ah ha!...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 148358.91885112255,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 154013.81663113006,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 158829.38166311302,
+      "message": "Coming up: \"Ve ry su per...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 161829.38166311302,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 171386.63740122915,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 180793.38517496552,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 195091.6417910448,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    }
   ]
 }

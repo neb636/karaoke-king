@@ -4646,5 +4646,72 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"It’s close to mid\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 65449.21538850924,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 109014.76841305998,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 113107.7828397874,
+      "message": "Coming up: \"You hear the door...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 122270.27334851936,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 185039.19260946597,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 209312.03492786636,
+      "message": "CHORUS! \"All through the night...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 255053.74588711717,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 261424.66464186285,
+      "message": "Coming up: \"Dark ness falls a...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 264424.66464186285,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 294157.77018476336,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 311412.0096178183,
+      "message": "Coming up: \"The fou lest stench...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 341968.3244748165,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

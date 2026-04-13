@@ -4114,5 +4114,117 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": -150,
+      "message": "\"Hey Jude, don’t make...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 50601.077229035465,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 89580.19555850183,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 116776.08551541266,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 133133.39410009945,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 156550.69605568447,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 200103.89459728208,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 202103.89459728208,
+      "message": "CHORUS! \"Na- na- na- na-...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 228703.16539608885,
+      "message": "CHORUS AGAIN! \"Na- na- na- na-...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 266129.7480941333,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 279056.4965197216,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 291883.80841895926,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 304909.99337089824,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 317787.02353331127,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 330564.61716937355,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 343391.92906861124,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 356219.24096784886,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 369046.55286708655,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 381873.8647663242,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 394701.17666556186,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 407329.6155120981,
+      "message": "Golden notes coming — nail it!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 418229.18462048395,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

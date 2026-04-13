@@ -3730,5 +3730,72 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I threw a wish\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 4201,
+      "message": "CHORUS! \"I threw a wish...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 28451,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 44451,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 60451,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 64201,
+      "message": "CHORUS AGAIN! \"You took your time...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 88451,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 104451,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 136763.5,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 141451,
+      "message": "Coming up: \"It’s hard to look...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 144451,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 152451,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 182701,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

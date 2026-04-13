@@ -4274,5 +4274,47 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 30,
+      "message": "CHORUS! \"Chae yeon giya jo...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 27362.21476510067,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 30231.342281879195,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 69644.09395973154,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 96623.95973154363,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 109509.86577181208,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 122395.77181208054,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 165885.70469798657,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

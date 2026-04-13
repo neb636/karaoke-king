@@ -2219,5 +2219,102 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 9170,
+      "message": "CHORUS! \"Sum mer has come...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 23622.380952380954,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 42050.95238095238,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 45789.04761904762,
+      "message": "CHORUS AGAIN! \"Here comes the rain...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 79050.95238095238,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 137598.57142857142,
+      "message": "Coming up: \"Sum mer has come...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 140598.57142857142,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 155289.04761904763,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 173384.2857142857,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 177170,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 210479.52380952382,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 245027.14285714287,
+      "message": "Coming up: \"Sum mer has come...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 248027.14285714287,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 262574.7619047619,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 280908.09523809527,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 284598.5714285714,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 289955.71428571426,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 293741.4285714286,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 296027.14285714284,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

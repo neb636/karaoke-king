@@ -1867,5 +1867,72 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"When the night\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 31886.704225352114,
+      "message": "CHORUS! \"No I won’t...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 51428.957746478874,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 56076.84507042253,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 80161.35211267605,
+      "message": "CHORUS AGAIN! \"I won’t cry,...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 99809.23943661971,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 104245.85915492958,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 111400.78873239437,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 140119.0985915493,
+      "message": "Coming up: \"And da ling, dar...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 143119.0985915493,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 148189.52112676058,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 152626.14084507042,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 162555.71830985916,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

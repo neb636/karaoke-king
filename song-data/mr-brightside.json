@@ -2856,5 +2856,87 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Co min’ out of\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 39865.595942519016,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 42553.25443786982,
+      "message": "Coming up: \"I just can’t look...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 58131.44547759932,
+      "message": "CHORUS! \"Jea lou sy, tur...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 84092.13863060017,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 94387.57396449705,
+      "message": "Coming up: \"Co min’ out of...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 96387.57396449705,
+      "message": "Build it up!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 130753.16990701605,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 133440.82840236687,
+      "message": "Coming up: \"I just can’t look,...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 149019.01944209635,
+      "message": "CHORUS AGAIN! \"Jea lou sy, tur...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 174979.7125950972,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 184565.08875739644,
+      "message": "Coming up: \"I ne ver...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 187565.08875739644,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 190093.8292476754,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 193955.62130177516,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 206939.56043956045,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

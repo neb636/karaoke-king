@@ -4044,5 +4044,82 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"No he’s\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 8820,
+      "message": "CHORUS! \"No he’s...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 11127.692307692309,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 19204.615384615383,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 55839.230769230766,
+      "message": "CHORUS AGAIN! \"I kno I Moun...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 66512.30769230769,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 75743.07692307692,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 93339.23076923077,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 115839.23076923077,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 126512.30769230769,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 134589.23076923075,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 143820,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 154204.61538461538,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 164589.23076923078,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 169204.61538461538,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

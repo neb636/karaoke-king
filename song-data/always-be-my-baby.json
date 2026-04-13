@@ -5770,5 +5770,102 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Oh,\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 19501.241449201923,
+      "message": "CHORUS! \"Shoo do doot’n’...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 22541.525209019506,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 25581.808968837093,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 28622.092728654676,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 31662.37648847226,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 34702.660248289845,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 37742.94400810743,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 40783.227767925004,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 43823.511527742594,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 46863.79528756018,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 99641.22118064352,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 104581.6822903471,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 106101.82417025589,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 110092.19660501648,
+      "message": "CHORUS AGAIN! \"I ain’t gon na...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 232226.09576893845,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 235266.37952875602,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 238306.66328857362,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 241346.9470483912,
+      "message": "Everybody sing!",
+      "type": "hype"
+    }
   ]
 }

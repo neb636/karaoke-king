@@ -2747,5 +2747,27 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"I don’t prac tice\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 92687.76470588235,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 109746.58823529411,
+      "message": "Coming up: \"Ooh...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 177290.70588235295,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

@@ -4596,5 +4596,37 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Ho like a bul\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 8027,
+      "message": "CHORUS! \"Ho like a bul...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 27122.56313993174,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 79699.35494880546,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 127054.3037542662,
+      "message": "CHORUS AGAIN! \"El lle gó con...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 187771.02730375426,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }

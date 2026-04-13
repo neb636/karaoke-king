@@ -4661,5 +4661,102 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"Hiya Barbie\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 3733,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 8960.132974634897,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 21198.026902382782,
+      "message": "Coming up: \"Come on Bar bie...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 26485.113758647196,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 46390.186779400465,
+      "message": "Coming up: \"You’re my doll...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 56462.054573405076,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 76597.71944657956,
+      "message": "Coming up: \"Come on Bar bie...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 79597.71944657956,
+      "message": "CHORUS! \"Come on Bar bie...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 92953.21521906226,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 99945.14450422752,
+      "message": "Coming up: \"Come jump in...\"",
+      "type": "verse"
+    },
+    {
+      "timestampMs": 109959.36433512683,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 122716.08993082245,
+      "message": "Coming up: \"Come on Bar bie...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 125716.08993082245,
+      "message": "CHORUS AGAIN! \"Come on Bar bie...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 139071.58570330514,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 167047.37355880093,
+      "message": "Coming up: \"Come on Bar bie...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 170047.37355880093,
+      "message": "One more time! Sing it loud!",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 183402.86933128364,
+      "message": "Quick breather!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 187975.89008455037,
+      "message": "Rap section — keep the rhythm!",
+      "type": "verse"
+    }
   ]
 }

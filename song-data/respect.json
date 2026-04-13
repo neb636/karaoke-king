@@ -2255,5 +2255,42 @@
         }
       ]
     }
+  ],
+  "coachingCues": [
+    {
+      "timestampMs": 0,
+      "message": "Get ready... \"What you want\"",
+      "type": "intro"
+    },
+    {
+      "timestampMs": 30761.16740478299,
+      "message": "CHORUS! \"I ain’t gon na...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 48033.089459698844,
+      "message": "Everybody sing!",
+      "type": "hype"
+    },
+    {
+      "timestampMs": 69591.54827280779,
+      "message": "Instrumental break — catch your breath!",
+      "type": "instrumental"
+    },
+    {
+      "timestampMs": 85090.66253321523,
+      "message": "Coming up: \"Ooh your kis ses...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 88090.66253321523,
+      "message": "CHORUS AGAIN! \"Ooh your kis ses...\"",
+      "type": "chorus"
+    },
+    {
+      "timestampMs": 133927.68644818422,
+      "message": "Bring it home!",
+      "type": "hype"
+    }
   ]
 }
